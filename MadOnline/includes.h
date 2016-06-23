@@ -1,0 +1,17 @@
+#include <Windows.h>
+#include "Utilities.h"
+#include <sql.h>
+#include <sqltypes.h>
+#include <sqlext.h>
+#include <Odbcinst.h>
+#include <process.h>
+#include <stdio.h>
+#include <windows.h> 
+#include <string>
+#include <cstdio>
+#include <Winsock2.h>
+#include <ws2tcpip.h>
+#include <windows.h>
+#include <detours.h> 
+#include <process.h>
+#include "MadOnline.h"
