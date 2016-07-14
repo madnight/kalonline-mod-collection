@@ -1,0 +1,12 @@
+sudo: required
+dist: trusty
+
+language:
+  - cpp
+
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -y cppcheck
+
+script:
+ - cppcheck --enable=style,performance,portability,warning,information --inconclusive --std=posix -q -v .
