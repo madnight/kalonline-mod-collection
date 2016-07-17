@@ -6,7 +6,8 @@ language:
 
 before_install:
  - sudo apt-get update -qq
- - sudo apt-get install -y cppcheck
+ - sudo apt-get install -y cppcheck cloc
 
 script:
  - cppcheck --enable=style,performance,portability,warning,information --inconclusive --std=posix -q -v .
+ - cloc .
