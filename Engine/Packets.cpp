@@ -808,19 +808,21 @@ int IPackets::Recv(Engine::Packet *Data)
         if (Type == 245)
         {
             int free, range, prev, point, kill, die, dwin, dful, pwin, pful, swin, sful, rew;
-            Tools->ParseData(LeftData, "ddddddddddddddddd", &free, &free, &free, &free, &free, &range, &prev, &point, &kill, &die, &dwin, &dful, &pwin, &pful, &swin, &sful, &rew);
-            if(point != -1) *Engine::Honor::Range = range;
-            if(point != -1) *Engine::Honor::PrevRange = prev;
-            if(point != -1) *Engine::Honor::Point = point;
-            if(kill != -1) *Engine::Honor::Kill = kill;
-            if(die != -1) *Engine::Honor::Die = die;
-            if(dwin != -1) *Engine::Honor::DKPWin = dwin;
-            if(dful != -1) *Engine::Honor::DKPFull = dful;
-            if(pwin != -1) *Engine::Honor::PLWin = pwin;
-            if(pful != -1) *Engine::Honor::PLFull = pful;
-            if(swin != -1) *Engine::Honor::SVWin = swin;
-            if(sful != -1) *Engine::Honor::SVFull = sful;
-            if(rew != -1) *Engine::Honor::Reward = rew;
+            Tools->ParseData(LeftData, "ddddddddddddddddd", &free, &free, &free,
+                    &free, &free, &range, &prev, &point, &kill, &die, &dwin, &dful,
+                    &pwin, &pful, &swin, &sful, &rew);
+            if (point != -1) *Engine::Honor::Range = range;
+            if (point != -1) *Engine::Honor::PrevRange = prev;
+            if (point != -1) *Engine::Honor::Point = point;
+            if (kill  != -1) *Engine::Honor::Kill = kill;
+            if (die   != -1) *Engine::Honor::Die = die;
+            if (dwin  != -1) *Engine::Honor::DKPWin = dwin;
+            if (dful  != -1) *Engine::Honor::DKPFull = dful;
+            if (pwin  != -1) *Engine::Honor::PLWin = pwin;
+            if (pful  != -1) *Engine::Honor::PLFull = pful;
+            if (swin  != -1) *Engine::Honor::SVWin = swin;
+            if (sful  != -1) *Engine::Honor::SVFull = sful;
+            if (rew   != -1) *Engine::Honor::Reward = rew;
             return 1;
         }
 
