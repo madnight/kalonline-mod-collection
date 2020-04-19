@@ -30,28 +30,28 @@ FARPROC p[806] = {0};
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
-	switch (ul_reason_for_call)
-	{
-	case DLL_PROCESS_ATTACH:
-		{
-			InitializeADVAPI32();
-			SetMaxPacket();
-			DetourTransactionBegin();
-			DetourAttach(&(PVOID&)StorageInfo, StorageFix);
-			DetourAttach(&(PVOID&)Process, DBProcess);
-			DetourTransactionCommit();
-			break;
-		}
-	case DLL_PROCESS_DETACH:
-		{
-			FinalizeADVAPI32();
-			SetMaxPacket();
-			DetourTransactionBegin();
-			DetourDetach(&(PVOID&)StorageInfo, StorageFix);
-			DetourDetach(&(PVOID&)Process, DBProcess);
-			DetourTransactionCommit();
-			break;
-		}
-	}
-	return TRUE;
+    switch (ul_reason_for_call)
+    {
+    case DLL_PROCESS_ATTACH:
+    {
+        InitializeADVAPI32();
+        SetMaxPacket();
+        DetourTransactionBegin();
+        DetourAttach(&(PVOID&)StorageInfo, StorageFix);
+        DetourAttach(&(PVOID&)Process, DBProcess);
+        DetourTransactionCommit();
+        break;
+    }
+    case DLL_PROCESS_DETACH:
+    {
+        FinalizeADVAPI32();
+        SetMaxPacket();
+        DetourTransactionBegin();
+        DetourDetach(&(PVOID&)StorageInfo, StorageFix);
+        DetourDetach(&(PVOID&)Process, DBProcess);
+        DetourTransactionCommit();
+        break;
+    }
+    }
+    return TRUE;
 }

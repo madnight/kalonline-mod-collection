@@ -1,6 +1,6 @@
 struct xCDB
 {
-	int Data[4];
+    int Data[4];
 };
 
 static int (__stdcall *UpdatePlayer)(void *Data) = (int (__stdcall*)(void*))0x00413CB0;

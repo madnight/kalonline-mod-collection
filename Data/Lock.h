@@ -5,16 +5,29 @@
 
 class Lock
 {
-	private:
-		CRITICAL_SECTION _CriticalSection;
-		bool Locked;
+private:
+    CRITICAL_SECTION _CriticalSection;
+    bool Locked;
 
-	public:
-		Lock() { this->Locked = false; InitializeCriticalSection(&this->_CriticalSection); }
-		virtual ~Lock() { DeleteCriticalSection(&this->_CriticalSection); }
-		void Enter() { EnterCriticalSection(&this->_CriticalSection); this->Locked = true; }
-		void Leave() { this->Locked = false; LeaveCriticalSection(&this->_CriticalSection); }
-		bool IsLocked() { return this->Locked; }
+public:
+    Lock() {
+        this->Locked = false;
+        InitializeCriticalSection(&this->_CriticalSection);
+    }
+    virtual ~Lock() {
+        DeleteCriticalSection(&this->_CriticalSection);
+    }
+    void Enter() {
+        EnterCriticalSection(&this->_CriticalSection);
+        this->Locked = true;
+    }
+    void Leave() {
+        this->Locked = false;
+        LeaveCriticalSection(&this->_CriticalSection);
+    }
+    bool IsLocked() {
+        return this->Locked;
+    }
 };
 
 #endif
