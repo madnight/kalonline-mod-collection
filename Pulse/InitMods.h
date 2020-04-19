@@ -3,7 +3,7 @@
 
 namespace Mods
 {
-	void Initialize();
+void Initialize();
 }
 
 #endif

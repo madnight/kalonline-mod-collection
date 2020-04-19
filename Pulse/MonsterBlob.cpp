@@ -10,13 +10,13 @@
 
 class MonsterBlob
 {
-	private:
-		Lock Lock;
+private:
+    Lock Lock;
 
-	public:
-		MonsterBlob();
-		~MonsterBlob();
-		bool Observer(void *Monster);
+public:
+    MonsterBlob();
+    ~MonsterBlob();
+    bool Observer(void *Monster);
 };
 
 CREATE_INTERFACE(MonsterBlob)

@@ -8,8 +8,8 @@
 class CSocketProcess
 {
 public:
-	CSocketProcess();
-	~CSocketProcess();
+    CSocketProcess();
+    ~CSocketProcess();
 };
 
 CREATE_INTERFACE(CSocketProcess)
