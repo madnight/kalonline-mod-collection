@@ -3,10 +3,10 @@
 
 class ICore
 {
-	private:
-	public:
-		void Boot();
-		static unsigned long __stdcall Run(void* Arg);
+private:
+public:
+    void Boot();
+    static unsigned long __stdcall Run(void* Arg);
 };
 
 #endif

@@ -3,9 +3,9 @@
 
 namespace Hooks
 {
-	namespace CSocket
-	{
-		void __fastcall Login(void* Socket, void* _edx, int nId, int nUID);
-	}
+namespace CSocket
+{
+void __fastcall Login(void* Socket, void* _edx, int nId, int nUID);
+}
 }
 #endif

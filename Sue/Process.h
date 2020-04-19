@@ -3,12 +3,12 @@
 
 class IProcess
 {
-	private:
-		unsigned char MaxCharCount;
+private:
+    unsigned char MaxCharCount;
 
-	public:
-		void Hook();
-		void Login(void *Socket, int nId, int nUID);
+public:
+    void Hook();
+    void Login(void *Socket, int nId, int nUID);
 };
 
 #endif
