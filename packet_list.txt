@@ -1,0 +1,118 @@
+SEND:
+
+0x00____________ Restore Char
+0x01____________ AntiCp
+0x02____________ Login
+0x03____________ HackShield + engine.exe CRC check
+0x04____________ CreateChar
+0x05____________ Ping
+0x06____________ ???
+0x07____________ DeleteChar
+0x08____________ Welcome Packet
+0x09____________ VersionCheck
+0x0A____________ LoadChar
+0x0B____________ GameStart
+0x0C____________ SYSTEM_GUILDWAR_SIEGEGUN
+0x0D____________ SYSTEM_GUILDWAR_SIEGEGUN
+0x0E____________ SYSTEM_GUILDWAR_SIEGEGUN
+0x0F____________ Attack
+0x10____________ ExecuteSkill
+0x11____________ Chat
+0x12____________ OnTeleport
+0x13____________ Deactive in char -> CPlayer::LoadChar
+0x14____________ Move
+0x15____________ MoveStop
+0x16____________ NPC replay
+0x17____________ NPC tax
+0x18____________ BuyItem (NPC only ?)
+0x19____________ SellItem
+0x1A____________ DropItem
+0x1B____________ GameStop
+0x1C____________ AddTradeItem
+0x1D____________ AnimationState
+0x1E____________ AddSkillPoints
+0x1F____________ Rest/sit
+0x20____________ PicUpItem
+0x21____________ UseItem
+0x22____________ AskForTrade
+0x23____________ AnswereTheThreadAsk
+0x24____________ ChancelTrade
+0x25____________ Revival
+0x26____________ SiegeGunProcess ( FALSE )
+0x27____________ SiegeGunProcess ( TRUE )
+0x28____________ SiegeGunConrol
+0x29____________ LearnSkill
+0x2A____________ SkillUp
+0x2B____________ SkillAnimation
+0x2C____________ AskForParty
+0x2D____________ AnswerOfAskForParty
+0x2E____________ GUILD
+0x2F____________ LeadParty
+0x30____________ KickPlayerFromParty (only party owner)
+0x31____________ InsertIntoStorage
+0x32____________ GetFromStorage
+0x33____________ Quest ..+Fishing ?
+0x34____________ GetStorage
+0x35____________ BirdEvent
+0x36____________ Important no idea .. don't know what it does
+0x37____________ -> gives a error normaly..Invalid packet
+0x38____________ SaveRevivalPosition
+0x39____________ EnchantItem
+0x3A____________ SetShopName .. or more ?
+0x3C____________ useStoneOfJob
+0x3D____________ Emotion
+0x3E____________ AgreeTrade
+0x3F____________ DestroyItem
+0x40____________ FriendListSystem
+0x41____________ WearItem
+0x42____________ UnwearItem
+0x43____________ SwitchShop 0=end 1=start
+0x44____________ GambleSystem DICE
+0x45____________ StopFishing / Cooking
+0x46____________ GetShopName (or Info +items ?)
+0x47____________ BuyItemAtShop
+0x48____________ MasterOfPaper-Rock-Scissores
+0x49____________ IsCooking ..
+0x4A____________ RevivalAccept (from mage..)
+0x4B____________ use StoneOfChance
+0x4C____________ GoldenLuckyPouch / Silver
+0x4D____________ GoldenPot / Silver
+0x4E____________ StoneOfBirth
+0x4F____________ GetAssaList
+0x50____________ AskPVP
+0x51____________ AnswerAskPVP
+0x52____________ Transform
+0x53____________ Bless
+0x54____________ ExeciteTransformSkill
+0x55____________ Teacher/Student
+0x56____________ Invalidle packet at Process
+0x57____________ Invalidle packet at Process
+0x58____________ change state ?
+0x59____________ SkillBar
+0x5A____________ MovingScroll
+0x5B____________ UpgradeItem
+0x5C____________ SendMessage (friendlist)
+0x5D____________ StopOpeningWoodenBox
+0x5A____________ OpenWoodenBox
+0x5F____________ ChangeGuildName
+0x60____________ ChangePlayerName
+0x61____________ GoFishingIsland
+0x62____________ EnforceItem lvl 1 | MixItem | EnforceItem lvl 2
+0x63____________ BeadOfFire
+0x8a____________ Teleport Scroll
+0x89____________ Recall Scroll
+
+RECV
+
+0x3B____________ Item Away?
+0x36____________ Item Drop?
+0x46____________ Town Port(Send to All players? o.O)
+0x3E____________ Someone Attack
+0x3D____________ State?
+0x38____________ Mob Disapear
+0x24____________ Mob Move
+0x25____________ Mob Move Stop
+0x33____________ Mob Apear
+0x22____________ Player Move
+0x23____________ Player Move Stop
+0x32____________ Player Apear
