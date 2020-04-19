@@ -1,0 +1,1905 @@
+CActionCon::Action                                        0x0047B3C0 00000071 R......
+CActionCon::CActionCon                                    0x0047CA70 0000004C R......
+CActionExp::Action                                        0x0047B1E0 0000000B R......
+CActionExp::CActionExp                                    0x0047C960 00000015 R......
+CActionGState::Action                                     0x0047B4A0 0000005A R......
+CActionGState::CActionGState                              0x0047CB30 00000004 R......
+CActionGState::_scalar_deleting_destructor_               0x0047C990 00000013 R......
+CActionGuide::CActionGuide                                0x0047CB60 0000001A R......
+CActionItem::Action                                       0x0047B210 0000001E R......
+CActionItem::CActionItem                                  0x0047C9C0 00000058 R......
+CActionItem::_CActionItem                                 0x0047CA20 0000002C R... B..
+CActionRedistribute::Action                               0x0047B590 0000005E R......
+CActionRedistribute::CActionRedistribute                  0x0047CB90 00000030 R......
+CActionSaveFlag::Action                                   0x0047B460 00000020 R......
+CActionSaveFlag::CActionSaveFlag                          0x0047CAD0 00000060 R......
+CActionSpecialty::Action                                  0x0047B160 0000004C R......
+CActionSpecialty::_CActionSpecialty                       0x0047C8B0 00000058 R......
+CActionTeleport::CActionTeleport                          0x0047CBC0 0000017B R......
+CAction::_CAction                                         0x0047C890 0000001D R......
+CAlliance::Add                                            0x00419690 00000022 R... B..
+CAlliance::AllianceInfo                                   0x00419570 00000115 R... B..
+CAlliance::Broadcast                                      0x004197B0 00000042 R... B..
+CAlliance::BroadcastLock                                  0x00419750 00000056 R... B..
+CAlliance::CAlliance                                      0x00418B20 0000006D R... B..
+CAlliance::ChangeGuildName                                0x004198A0 0000009A R... B..
+CAlliance::ChangeLeaderName                               0x00419800 0000009A R... B..
+CAlliance::Clear                                          0x00418C60 00000051 R... B..
+CAlliance::DeleteSetGuild                                 0x004190C0 00000049 R... B..
+CAlliance::Expire                                         0x00419470 000000F6 R... B..
+CAlliance::GetSize                                        0x004196C0 0000004D R... B..
+CAlliance::IsLoad                                         0x00418D00 0000009B R... B..
+CAlliance::Join                                           0x00419110 0000025A R... B..
+CAlliance::Load                                           0x00418DA0 00000248 R... B..
+CAlliance::LoadSetGuild                                   0x00418FF0 000000CE R... B..
+CAlliance::OnDelete                                       0x00418CC0 00000035 R... B..
+CAlliance::Postpone                                       0x00419400 0000006A R... B..
+CAlliance::PostponeExpire                                 0x00419370 00000083 R... B..
+CAlliance::Stop                                           0x00418BE0 00000076 R... B..
+CAlliance::_CAlliance                                     0x00418BC0 0000001C R... B..
+CAlliance::_scalar_deleting_destructor_                   0x00418B90 0000002C R... B..
+CAmnesia::CAmnesia                                        0x0048F350 0000000F R......
+CAmnesia::GetSpendMP                                      0x0048F370 0000000F R......
+CAuraDefense::CAuraDefense                                0x0048F250 0000000F R......
+CAuraDefense::CanExcute                                   0x00485EA0 00000050 R......
+CAuraDefense::Excute                                      0x00488DB0 00000094 R......
+CAuraDefense::GetSpendMP                                  0x0048F270 0000000F R......
+CAuthPacket::CAuthPacket                                  0x00401F80 0000001F R... B..
+CAuthPacket::OnIOCallback                                 0x00401040 00000030 R... B..
+CAuthSocket::CAuthSocket                                  0x004010A0 00000029 R... B..
+CAuthSocket::Initialize                                   0x00401380 000000D1 R... B T.
+CAuthSocket::OnClose                                      0x00401490 00000047 R... B..
+CAuthSocket::OnRead                                       0x004014E0 0000008F R... B..
+CAuthSocket::OnTimer                                      0x00401460 0000002E R... B..
+CAuthSocket::Process                                      0x004015C0 000007D8 R... B..
+CAuthSocket::Start                                        0x00401190 00000132 R... B..
+CAuthSocket::Stop                                         0x00401320 00000059 R... B..
+CAuthSocket::Write                                        0x00401E00 00000075 R... B..
+CAuthSocket::_CAuthSocket                                 0x00401170 0000001C R... B..
+CAuthSocket::_scalar_deleting_destructor_                 0x00401140 0000002C R... B..
+CBaseList::Pop                                            0x00402430 0000002F R... B..
+CBaseList::Push                                           0x004023F0 00000033 R... B..
+CBase::CBase                                              0x00402110 00000068 R... B..
+CBase::Delete                                             0x00411780 00000027 R... B..
+CBase::Id                                                 0x00407760 00000011 R... B..
+CBase::IsDeleted                                          0x0040B2F0 00000014 R... B..
+CBase::Next                                               0x0043E420 00000011 R... B..
+CBase::OnDelete                                           0x00402180 0000001A R... B..
+CBase::OnFree                                             0x00402220 00000045 R... B..
+CBase::OnLoad                                             0x00490040 0000002F R......
+CBase::SendPacket                                         0x004021A0 0000000D R... B..
+CBase::Set                                                0x00402270 000000CD R... B..
+CBase::_CBase                                             0x004021F0 0000002A R... B..
+CBase::_scalar_deleting_destructor_                       0x004021C0 0000002C R... B..
+CBehead::CBehead                                          0x0048E0B0 00000022 R......
+CBehead::CanExcute                                        0x004816F0 00000060 R... B..
+CBenefitAblation::Apply                                   0x0048A8E0 00000040 R......
+CBenefitAblation::CBenefitAblation                        0x0048F700 0000000F R......
+CBerserk::CBerserk                                        0x0048F720 0000001F R... B..
+CBerserk::CanSkillUp                                      0x0048AA90 00000059 R......
+CBerserk::GetSpendMP                                      0x0048F760 0000001B R... B..
+CBlow::Apply                                              0x004823C0 0000001A R......
+CBlow::CBlow                                              0x0048E150 00000014 R... B..
+CBoost::CBoost                                            0x0048E090 0000000F R......
+CBoost::Excute                                            0x004815D0 00000053 R......
+CBuffBerserk::ApplyBuff                                   0x004088F0 00000061 R... B..
+CBuffBerserk::CBuffBerserk                                0x00406360 00000038 R... B..
+CBuffBerserk::FreeBuff                                    0x00408960 0000005C R... B..
+CBuffCTDefensePer::ApplyBuff                              0x00407E80 00000045 R... B..
+CBuffCTDefensePer::CBuffCTDefensePer                      0x00406050 00000033 R... B..
+CBuffCTDefensePer::Copy                                   0x00406010 0000003B R... B..
+CBuffCTDefensePer::FreeBuff                               0x00407ED0 00000040 R... B..
+CBuffCTHealing::ApplyBuff                                 0x00407F10 00000021 R... B..
+CBuffCTHealing::CBuffCTHealing                            0x00406110 00000033 R... B..
+CBuffCTHealing::Copy                                      0x004060D0 0000003B R... B..
+CBuffCTHealing::FreeBuff                                  0x00407F40 0000001C R... B..
+CBuffCTHealing::IsExpired                                 0x00407F60 00000079 R... B..
+CBuffCTPrtyPtEx::ApplyBuff                                0x00407FE0 0000004A R... B..
+CBuffCTPrtyPtEx::CBuffCTPrtyPtEx                          0x004061E0 00000033 R... B..
+CBuffCTPrtyPtEx::Copy                                     0x004061A0 0000003B R... B..
+CBuffCTPrtyPtEx::FreeBuff                                 0x00408030 00000045 R... B..
+CBuffExpireEvent::ApplyBuff                               0x00409610 00000069 R... B..
+CBuffExpireEvent::CBuffExpireEvent                        0x00406550 0000003A R... B..
+CBuffExpireEvent::FreeBuff                                0x00409680 00000054 R... B..
+CBuffExpireLuckyStone2::ApplyBuff                         0x004096E0 0000003C R... B..
+CBuffExpireLuckyStone2::CBuffExpireLuckyStone2            0x00406590 00000037 R... B..
+CBuffExpire::ApplyBuff                                    0x00409570 00000064 R... B..
+CBuffExpire::CBuffExpire                                  0x004064F0 00000054 R... B..
+CBuffExpire::FreeBuff                                     0x004097E0 0000004F R... B..
+CBuffExpire::IsExpired                                    0x004095E0 00000021 R... B..
+CBuffExpire::SetBuff                                      0x004094F0 0000007A R... B..
+CBuffFatalChance::ApplyBuff                               0x00406E40 00000055 R... B..
+CBuffFatalChance::CBuffFatalChance                        0x00405D70 00000038 R... B..
+CBuffFatalChance::FreeBuff                                0x00406EA0 00000050 R... B..
+CBuffFlagHP::ApplyBuff                                    0x00408800 00000024 R... B..
+CBuffFlagHP::CBuffFlagHP                                  0x00406330 0000002F R... B..
+CBuffFlagHP::FreeBuff                                     0x00408830 0000001F R... B..
+CBuffFlagHP::UpdateBuff                                   0x00408850 00000054 R... B..
+CBuffFlagPrty::ApplyBuff                                  0x00408660 000000C6 R... B..
+CBuffFlagPrty::CBuffFlagPrty                              0x004062D0 0000005B R... B..
+CBuffFlagPrty::FreeBuff                                   0x00408730 000000C1 R... B..
+CBuffHP::ApplyBuff                                        0x00407B00 00000059 R... B..
+CBuffHP::CBuffHP                                          0x00405F30 0000002F R... B..
+CBuffHP::FreeBuff                                         0x00407B60 0000001F R... B..
+CBuffHP::IsExpired                                        0x004088B0 00000033 R... B..
+CBuffHaste::ApplyBuff                                     0x00407A40 00000079 R... B..
+CBuffHaste::CBuffHaste                                    0x00405F00 0000002F R... B..
+CBuffHaste::FreeBuff                                      0x00407AC0 00000039 R... B..
+CBuffHydrochloricAcid::ApplyBuff                          0x0040A330 00000033 R... B..
+CBuffHydrochloricAcid::CBuffHydrochloricAcid              0x004068B0 00000043 R... B..
+CBuffHydrochloricAcid::FreeBuff                           0x0040A370 0000001D R... B..
+CBuffHydrochloricAcid::IsExpired                          0x0040A390 00000105 R... B..
+CBuffInchantWeapon::ApplyBuff                             0x00408310 00000063 R... B..
+CBuffInchantWeapon::CBuffInchantWeapon                    0x00406260 0000002F R... B..
+CBuffInchantWeapon::FreeBuff                              0x00408380 0000005E R... B..
+CBuffMP::ApplyBuff                                        0x00407B80 00000059 R... B..
+CBuffMP::CBuffMP                                          0x00405F60 0000002F R... B..
+CBuffMP::FreeBuff                                         0x00407BE0 0000001F R... B..
+CBuffMP::IsExpired                                        0x00407C00 00000033 R... B..
+CBuffManaBurn::ApplyBuff                                  0x00408BB0 00000024 R... B..
+CBuffManaBurn::CBuffManaBurn                              0x004063E0 00000039 R... B..
+CBuffManaBurn::FreeBuff                                   0x00408BE0 0000001F R... B..
+CBuffManaBurn::IsExpired                                  0x00408D30 0000006B R... B..
+CBuffManaBurn::UpdateBuff                                 0x00408C00 00000126 R... B..
+CBuffMeditation::ApplyBuff                                0x00406CE0 00000021 R... B..
+CBuffMeditation::CBuffMeditation                          0x00405D30 00000040 R... B..
+CBuffMeditation::FreeBuff                                 0x00406D10 0000001C R... B..
+CBuffMeditation::IsExpired                                0x00406D30 000000D8 R... B..
+CBuffMixDamage::ApplyBuff                                 0x0040A4A0 00000044 R... B..
+CBuffMixDamage::CBuffMixDamage                            0x00406900 00000068 R... B..
+CBuffMixDamage::IsExpired                                 0x0040A4F0 0000012B R... B..
+CBuffMoveSpeed::ApplyBuff                                 0x004069C0 0000003B R... B..
+CBuffMoveSpeed::CBuffMoveSpeed                            0x00405C60 00000039 R... B..
+CBuffMoveSpeed::FreeBuff                                  0x00406A00 00000040 R... B..
+CBuffMoveSpeed::IsExpired                                 0x00406BD0 0000004E R... B..
+CBuffMoveSpeed::UpdateBuff                                0x00406A40 00000152 R... B..
+CBuffMoveStop::ApplyBuff                                  0x00407260 0000004A R... B..
+CBuffMoveStop::CBuffMoveStop                              0x00405E20 00000039 R... B..
+CBuffMoveStop::FreeBuff                                   0x004072B0 00000045 R... B..
+CBuffMoveStop::IsExpired                                  0x00407440 00000051 R... B..
+CBuffMoveStop::UpdateBuff                                 0x00407300 00000140 R... B..
+CBuffPoisonCloud::ApplyBuff                               0x00407780 00000024 R... B..
+CBuffPoisonCloud::CBuffPoisonCloud                        0x00405EB0 0000004A R... B..
+CBuffPoisonCloud::FreeBuff                                0x004077B0 0000001F R... B..
+CBuffPoisonCloud::IsExpired                               0x00407900 00000136 R... B..
+CBuffPoisonCloud::UpdateBuff                              0x004077D0 00000126 R... B..
+CBuffPoison::ApplyBuff                                    0x004074A0 00000024 R... B..
+CBuffPoison::CBuffPoison                                  0x00405E60 0000004A R... B..
+CBuffPoison::FreeBuff                                     0x004074D0 0000001F R... B..
+CBuffPoison::IsExpired                                    0x00407620 00000136 R... B..
+CBuffPoison::UpdateBuff                                   0x004074F0 00000126 R... B..
+CBuffPrtyEx::ApplyBuff                                    0x00409160 000000C2 R... B..
+CBuffPrtyEx::CBuffPrtyEx                                  0x00406490 0000005F R... B..
+CBuffPrtyEx::FreeBuff                                     0x00409230 000000D4 R... B..
+CBuffPrtyEx::IsExpired                                    0x00409480 00000061 R... B..
+CBuffPrtyEx::UpdateBuff                                   0x00409330 00000149 R... B..
+CBuffPrty::ApplyBuff                                      0x00408DA0 000000C6 R... B..
+CBuffPrty::CBuffPrty                                      0x00406420 00000065 R... B..
+CBuffPrty::FreeBuff                                       0x00408E70 000000E8 R... B..
+CBuffPrty::IsExpired                                      0x004090E0 00000071 R... B..
+CBuffPrty::UpdateBuff                                     0x00408F60 00000155 R... B..
+CBuffRemainCount::CBuffRemainCount                        0x004067B0 00000037 R... B..
+CBuffRemainCount::UpdateBuff                              0x00409C80 000000FC R... B..
+CBuffRemainDeadEx::CBuffRemainDeadEx                      0x004066F0 00000036 R... B..
+CBuffRemainDeadEx::SetBuff                                0x00409AC0 00000021 R... B..
+CBuffRemainDead::ApplyBuff                                0x00409A40 0000003B R... B..
+CBuffRemainDead::CBuffRemainDead                          0x004066A0 0000004E R... B..
+CBuffRemainDead::FreeBuff                                 0x00409A80 00000036 R... B..
+CBuffRemainDead::SetBuff                                  0x004099E0 00000056 R... B..
+CBuffRemainEx::ApplyBuff                                  0x00409940 0000004D R... B..
+CBuffRemainEx::CBuffRemainEx                              0x00406630 0000004E R... B..
+CBuffRemainEx::FreeBuff                                   0x00409990 00000048 R... B..
+CBuffRemainEx::SetBuff                                    0x004098E0 00000021 R... B..
+CBuffRemainLuckyStone1::ApplyBuff                         0x00409D80 0000003C R... B..
+CBuffRemainLuckyStone1::CBuffRemainLuckyStone1            0x004067F0 00000037 R... B..
+CBuffRemainPet::ApplyBuff                                 0x00409DC0 000000C4 R... B..
+CBuffRemainPet::CBuffRemainPet                            0x00406830 00000051 R... B..
+CBuffRemainPet::FreeBuff                                  0x00409E90 00000191 R... B..
+CBuffRemainPet::IsExpired                                 0x0040A040 000002CE R... B..
+CBuffRemainPet::SetBuff                                   0x00406890 00000012 R... B..
+CBuffRemainPrty::ApplyBuff                                0x00409BF0 00000045 R... B..
+CBuffRemainPrty::CBuffRemainPrty                          0x00406770 00000040 R... B..
+CBuffRemainPrty::SetBuff                                  0x00409BA0 00000045 R... B..
+CBuffRemainXBlow::ApplyBuff                               0x00409B20 00000071 R... B..
+CBuffRemainXBlow::CBuffRemainXBlow                        0x00406730 00000037 R... B..
+CBuffRemain::ApplyBuff                                    0x00409780 00000058 R... B..
+CBuffRemain::CBuffRemain                                  0x00406680 0000001F R... B..
+CBuffRemain::IsExpired                                    0x00409830 0000006A R... B..
+CBuffRemain::SaveRemain                                   0x004098A0 00000036 R... B..
+CBuffRemain::SetBuff                                      0x00409750 0000002F R... B..
+CBuffRevivalSequela::ApplyBuff                            0x00406EF0 00000063 R... B..
+CBuffRevivalSequela::CBuffRevivalSequela                  0x00405DB0 0000002F R... B..
+CBuffRevivalSequela::FreeBuff                             0x00406F60 0000005E R... B..
+CBuffRevivalSequela::UpdateBuff                           0x00406FC0 00000048 R... B..
+CBuffSilenceShot::ApplyBuff                               0x004089C0 00000024 R... B..
+CBuffSilenceShot::CBuffSilenceShot                        0x004063A0 00000039 R... B..
+CBuffSilenceShot::FreeBuff                                0x004089F0 0000001F R... B..
+CBuffSilenceShot::IsExpired                               0x00408B40 0000006B R... B..
+CBuffSilenceShot::UpdateBuff                              0x00408A10 00000126 R... B..
+CBuffSleep::ApplyBuff                                     0x00407C40 0000004A R... B..
+CBuffSleep::CBuffSleep                                    0x00405F90 00000039 R... B..
+CBuffSleep::FreeBuff                                      0x00407C90 00000045 R... B..
+CBuffSleep::IsExpired                                     0x00407E20 00000051 R... B..
+CBuffSleep::UpdateBuff                                    0x00407CE0 00000140 R... B..
+CBuffSpiritDmg::ApplyBuff                                 0x004083E0 00000021 R... B..
+CBuffSpiritDmg::CBuffSpiritDmg                            0x00406290 00000039 R... B..
+CBuffSpiritDmg::FreeBuff                                  0x00408410 0000001C R... B..
+CBuffSpiritDmg::IsExpired                                 0x00408550 0000010C R... B..
+CBuffSpiritDmg::UpdateBuff                                0x00408430 00000120 R... B..
+CBuffStone::ApplyBuff                                     0x00406C20 0000005C R... B..
+CBuffStone::CBuffStone                                    0x00405CF0 00000038 R... B..
+CBuffStone::FreeBuff                                      0x00406C80 00000057 R... B..
+CBuffStun::ApplyBuff                                      0x00407010 00000061 R... B..
+CBuffStun::CBuffStun                                      0x00405DE0 00000039 R... B..
+CBuffStun::FreeBuff                                       0x00407080 0000001F R... B..
+CBuffStun::IsExpired                                      0x00407200 00000051 R... B..
+CBuffStun::UpdateBuff                                     0x004070A0 00000155 R... B..
+CBuffSuffering::ApplyBuff                                 0x00408080 00000024 R... B..
+CBuffSuffering::CBuffSuffering                            0x00406220 00000039 R... B..
+CBuffSuffering::FreeBuff                                  0x004080B0 0000001F R... B..
+CBuffSuffering::IsExpired                                 0x00408200 0000010F R... B..
+CBuffSuffering::UpdateBuff                                0x004080D0 00000126 R... B..
+CBuff::CBuff                                              0x00405CA0 0000004D R... B..
+CBuff::CreateBuff                                         0x00402610 0000346F R... B..
+CBuff::IsExpired                                          0x00406990 00000022 R... B..
+CBuff::IsPrty                                             0x004090C0 00000016 R... B..
+CBuff::UpdateBuff                                         0x00402580 00000039 R... B..
+CBuff::_CBuff                                             0x004025F0 00000014 R... B..
+CBuff::_scalar_deleting_destructor_                       0x004025C0 0000002C R... B..
+CCalendar::CCalendar                                      0x0040A620 0000001F R... B..
+CCalendar::ElapseTime                                     0x0040A770 00000211 R... B..
+CCalendar::GetTime                                        0x0040A730 00000013 R... B..
+CCalendar::IsIntercalary                                  0x0040A990 00000072 R... B..
+CCalendar::OnTimer                                        0x0040A750 00000015 R... B..
+CCalendar::Start                                          0x0040A690 00000090 R... B..
+CCalendar::Stop                                           0x0040A720 0000000F R... B..
+CCalendar::_CCalendar                                     0x0040A670 0000001C R... B..
+CCalendar::_scalar_deleting_destructor_                   0x0040A640 0000002C R... B..
+CCallLitning::CCallLitning                                0x0048E8C0 0000000F R......
+CCallLitning::GetMagic                                    0x004841B0 000002EC R......
+CCase::CCase                                              0x0047D100 00000004 R......
+CCase::_CCase                                             0x0047B5F0 00000226 R......
+CCastle::AddTax                                           0x0041B700 00000065 R... B..
+CCastle::BrokenStandard                                   0x0041B270 000000E2 R... B..
+CCastle::CCastle                                          0x00419940 000000B6 R... B..
+CCastle::ChangeGuildName                                  0x0041BBD0 000000AA R... B..
+CCastle::ChangeLeaderName                                 0x0041BB20 000000AA R... B..
+CCastle::ChangeLord                                       0x0041C210 00000100 R... B..
+CCastle::CreateGate                                       0x0041B3F0 0000008B R... B..
+CCastle::CreateNoExistGate                                0x0041B480 000000FB R... B..
+CCastle::CreateStandard                                   0x0041B360 0000008D R... B..
+CCastle::GateGoto                                         0x0041BA30 0000005A R... B..
+CCastle::GetCastle                                        0x0041A3B0 00000049 R... B..
+CCastle::GetMonsterTile2CID                               0x0041A400 000000AE R... B..
+CCastle::GetStandardUnfurl                                0x0041B0A0 0000002D R... B..
+CCastle::GetTax                                           0x0041B6D0 0000002D R... B..
+CCastle::GetTaxRate                                       0x0041B610 0000002D R... B..
+CCastle::GetWarSize                                       0x0041AD90 00000050 R... B..
+CCastle::IsAllCastleWarRelation                           0x0041A670 00000113 R... B..
+CCastle::IsAlliance                                       0x0041A5B0 00000056 R... B..
+CCastle::IsAlreadyDeclare                                 0x0041A610 0000005D R... B..
+CCastle::IsGateAlive                                      0x0041B580 00000081 R... B..
+CCastle::IsGateUse                                        0x0041B860 00000106 R... B..
+CCastle::IsGateUseWarring                                 0x0041B970 000000B8 R... B..
+CCastle::IsLord                                           0x0041A570 00000037 R... B..
+CCastle::IsPayment                                        0x0041B690 00000033 R... B..
+CCastle::IsStandardAlive                                  0x0041B060 00000033 R... B..
+CCastle::IsWarDeclared                                    0x0041C310 00000062 R... B..
+CCastle::IsWarEnd                                         0x0041C180 00000089 R... B..
+CCastle::Load                                             0x00419B30 0000024F R... B..
+CCastle::Login                                            0x0041A790 00000376 R... B..
+CCastle::OnDelete                                         0x0041A300 00000063 R... B..
+CCastle::ResetTax                                         0x0041B770 0000004E R... B..
+CCastle::SecondProcess                                    0x0041BCE0 000001FC R... B..
+CCastle::SetCurStandardGuild                              0x0041B100 00000055 R... B..
+CCastle::SetGateLimit                                     0x0041BA90 00000057 R... B..
+CCastle::SetGuild                                         0x0041A370 00000038 R... B..
+CCastle::SetLordDeclare                                   0x0041BC80 00000051 R... B..
+CCastle::SetStandardUnfurl                                0x0041B0D0 0000002A R... B..
+CCastle::SetTaxRate                                       0x0041B640 00000042 R... B..
+CCastle::SetWarGuild                                      0x00419D80 00000083 R... B..
+CCastle::SetWarRemainSecondTime                           0x0041BAF0 00000021 R... B..
+CCastle::Start                                            0x00419A60 00000042 R... B..
+CCastle::Stop                                             0x00419AB0 00000076 R... B..
+CCastle::SubGateState                                     0x0041A4B0 000000BB R... B..
+CCastle::TaxSave                                          0x0041B7C0 00000091 R... B..
+CCastle::UnfurlStandardCancel                             0x0041B160 00000102 R... B..
+CCastle::WarADD                                           0x0041AC80 0000010B R... B..
+CCastle::WarAllianceADD                                   0x0041AB10 00000167 R... B..
+CCastle::WarBegin                                         0x00419E10 00000218 R... B..
+CCastle::WarDelcareList                                   0x0041ADE0 00000272 R... B..
+CCastle::WarEnd                                           0x0041BEE0 00000296 R... B..
+CCastle::WarList                                          0x0041A1A0 0000015C R... B..
+CCastle::WarMsg                                           0x0041A170 0000002D R... B..
+CCastle::WarPortal                                        0x0041A030 0000009F R... B..
+CCastle::_CCastle                                         0x00419A30 00000027 R... B..
+CCastle::_WarMsg                                          0x0041A0D0 00000099 R... B..
+CCastle::_scalar_deleting_destructor_                     0x00419A00 0000002C R... B..
+CCellMap::AllocTile                                       0x00490280 00000042 R......
+CCellMap::GetClosestPlayer                                0x00490F90 0000007A R......
+CCellMap::GetLock                                         0x0043E440 0000002C R... B..
+CCellMap::GetLockRect                                     0x004904E0 000000F5 R......
+CCellMap::GetPlayerList                                   0x00490E00 0000006C R... B..
+CCellMap::GetPlayerMonsterList                            0x00490EC0 0000001E R......
+CCellMap::GetRWLockRect                                   0x00490830 000000A5 R... B..
+CCellMap::GetTile                                         0x00438220 00000026 R... B..
+CCellMap::IsMoveTile                                      0x0043E320 000000FD R... B..
+CCellMap::IsOnTile                                        0x0045CDF0 00000054 R... B..
+CCellMap::IsValidTile                                     0x004381C0 00000058 R... B..
+CCellMap::ReadLock                                        0x00490430 0000003B R......
+CCellMap::ReadTileAttr                                    0x00490370 0000000A R......
+CCellMap::ReadUnlock                                      0x004905E0 000000AE R... B..
+CCellMap::ReadWriteLock                                   0x00490690 000000EB R......
+CCellMap::SendCreate                                      0x00490CA0 0000002C R......
+CCellMap::SendDelete                                      0x00490B40 00000083 R......
+CCellMap::_CCellMap                                       0x00490120 00000080 R... B..
+CChainLitning::CChainLitning                              0x0048E9E0 0000000F R......
+CChainLitning::GetAddValueType                            0x0048EA00 0000000F R......
+CChainLitning::GetMagic                                   0x004856D0 000000EF R... B..
+CChainLitning::GetResistNum                               0x0048FEA0 0000001A R......
+CChainLitning::Redistribute                               0x004857C0 00000080 R... B..
+CChangeVitality::CChangeVitality                          0x0048F3B0 0000000C R......
+CChangeVitality::GetSpendMP                               0x00489980 00000082 R......
+CChantAccuracy::CChantAccuracy                            0x0048F920 0000000F R......
+CChantAccuracy::CanSkillUp                                0x0048B100 00000064 R......
+CChantBattle::CChantBattle                                0x0048F940 0000001F R... B..
+CChantBattle::CanSkillUp                                  0x004862B0 00000033 R......
+CChantDefFire::CChantDefFire                              0x0048F900 00000010 R... B..
+CChantDefFire::CanSkillUp                                 0x0048B010 000000C4 R......
+CChantDefLightning::CChantDefLightning                    0x0048F8C0 00000034 R......
+CChantDefLightning::CreateBuff                            0x0048AFE0 00000030 R... B..
+CChantHealing::CChantHealing                              0x0048F8A0 0000000F R......
+CChantHealing::CanSkillUp                                 0x0048AF80 00000007 R......
+CChantHealing::CreateBuff                                 0x0048AF50 00000004 R......
+CChantProtect::CChantProtect                              0x0048F860 00000010 R... B..
+CChantProtect::CanSkillUp                                 0x0048AEF0 00000060 R......
+CChantProtect::CreateBuff                                 0x0048AEB0 00000020 R......
+CChant::CChant                                            0x0048F880 0000000F R......
+CChant::Excute                                            0x0048AD60 00000031 R......
+CChar::AddBuff                                            0x0040B3D0 000000CF R... B..
+CChar::AddGState                                          0x00409910 0000002A R... B..
+CChar::AddMState                                          0x0040ABE0 00000031 R... B..
+CChar::AddMStateEx                                        0x0040AC50 0000002A R... B..
+CChar::CChar                                              0x0040AA10 0000019F R... B..
+CChar::CancelAllBuff                                      0x0040B750 00000090 R... B..
+CChar::CancelBuff                                         0x0040B6A0 000000A8 R... B..
+CChar::CancelBuffPrty                                     0x0040B870 000000A8 R... B..
+CChar::CheckHit                                           0x0043DA00 00000152 R... B..
+CChar::DeleteAllBuff                                      0x0040B7E0 00000081 R... B..
+CChar::GetASpeed                                          0x0043D8E0 00000084 R... B..
+CChar::GetAbsorb                                          0x00438F70 0000002F R... B..
+CChar::GetAttack                                          0x0043D970 0000002D R... B..
+CChar::GetBuffRemain                                      0x0040B4E0 00000053 R... B..
+CChar::GetDefense                                         0x00438F30 0000003F R... B..
+CChar::GetDex                                             0x0043BF20 00000036 R... B..
+CChar::GetDodge                                           0x0043DB90 00000029 R... B..
+CChar::GetDropPt                                          0x0040B060 000000AF R... B..
+CChar::GetFatalDamage                                     0x0043EAC0 00000072 R... B..
+CChar::GetFinalAbsorb                                     0x0040AD20 00000015 R... B..
+CChar::GetFinalDamage                                     0x0043AD50 00000155 R... B..
+CChar::GetFinalDefense                                    0x0040ACF0 00000024 R... B..
+CChar::GetFinalResist                                     0x0040AD40 00000021 R... B..
+CChar::GetHit                                             0x0043DB60 00000029 R... B..
+CChar::GetHth                                             0x0043BE60 00000036 R... B..
+CChar::GetInt                                             0x0043BEA0 00000036 R... B..
+CChar::GetMSpeed                                          0x0040AD70 00000012 R... B..
+CChar::GetMagic                                           0x004835F0 00000072 R......
+CChar::GetMaxAttack                                       0x0043D9D0 0000002F R... B..
+CChar::GetMaxHP                                           0x0043A200 00000033 R... B..
+CChar::GetMaxMP                                           0x0043AF90 00000033 R... B..
+CChar::GetMaxMagic                                        0x00458240 0000002F R... B..
+CChar::GetMinAttack                                       0x0043D9A0 0000002F R... B..
+CChar::GetMinMagic                                        0x00458210 0000002F R... B..
+CChar::GetResist                                          0x00438FA0 0000001A R... B..
+CChar::GetStr                                             0x0043BE20 00000036 R... B..
+CChar::GetWis                                             0x0043BEE0 00000036 R... B..
+CChar::Index                                              0x0040ABB0 0000001E R... B..
+CChar::IsBState                                           0x00409720 00000024 R... B..
+CChar::IsGState                                           0x0040B310 00000019 R... B..
+CChar::IsGStateExcept                                     0x0045F640 0000001B R... B..
+CChar::IsMState                                           0x00406BA0 00000024 R... B..
+CChar::IsMStateEx                                         0x00409310 00000019 R... B..
+CChar::IsNormal                                           0x0040B280 00000063 R... B..
+CChar::Lock                                               0x00412E90 00000019 R... B..
+CChar::RefreshBuff                                        0x0040B5F0 000000AE R... B..
+CChar::ResetAllBuff                                       0x0040B920 00000056 R... B..
+CChar::ReviseProperty                                     0x0040AE20 0000023C R... B..
+CChar::SaveAllBuff                                        0x0040B980 00000057 R... B..
+CChar::SetBuff                                            0x0040B330 0000009F R... B..
+CChar::SetDirection                                       0x0040B180 000000C0 R... B..
+CChar::SetReverseDirection                                0x0040B240 00000035 R... B..
+CChar::SetXY                                              0x0040B110 0000006A R... B..
+CChar::SubGState                                          0x0040AC20 0000002C R... B..
+CChar::SubMState                                          0x0040ACB0 00000035 R... B..
+CChar::SubMStateEx                                        0x0040AC80 0000002C R... B..
+CChar::Unlock                                             0x00412EB0 00000019 R... B..
+CChar::UpdateBuff                                         0x0040B540 000000B0 R... B..
+CChar::UpdateChild                                        0x0040AD90 00000015 R... B..
+CChar::WriteInRect                                        0x0040BA70 00000084 R... B..
+CChar::WriteInSight                                       0x0040B9E0 00000081 R... B..
+CChar::_CChar                                             0x0040ADE0 00000040 R... B..
+CChar::_FindBuff                                          0x0040B4A0 0000003E R... B..
+CChar::_scalar_deleting_destructor_                       0x0040ADB0 0000002C R... B..
+CCloudSight::CCloudSight                                  0x0048F590 0000000F R......
+CCloudSight::CanExcute                                    0x0048A360 0000005F R... B..
+CCompleteFire::CCompleteFire                              0x0048FE50 00000020 R... B..
+CCompleteFire::GetMagicM                                  0x0048D160 0000003B R......
+CCondClass::CCondClass                                    0x0047BCA0 00000042 R......
+CCondClear::IsMeet                                        0x0047B060 00000020 R......
+CCondContribute::CCondContribute                          0x0047BDD0 0000061C R......
+CCondGState::IsMeet                                       0x0047B0B0 0000000E R......
+CCondItem::IsMeet                                         0x0047AF50 0000001F R......
+CCondLevel::CCondLevel                                    0x0047BD70 00000055 R......
+CCondNotClear::IsMeet                                     0x0047B080 0000001C R......
+CCondParty::IsMeet                                        0x0047B010 0000003C R......
+CConfig::CConfig                                          0x0040BB00 00000029 R... B..
+CConfig::Close                                            0x0040BB70 0000006F R... B..
+CConfig::Find                                             0x0040C1B0 00000097 R... B..
+CConfig::Get                                              0x0040C920 00000042 R... B..
+CConfig::GetInt                                           0x0040C9A0 00000042 R... B..
+CConfig::GetList                                          0x0040C3C0 0000011E R... B..
+CConfig::GetTimeStamp                                     0x0040C9F0 00000058 R... B..
+CConfig::GetToken                                         0x0040BD40 0000037E R... B..
+CConfig::GetValue                                         0x0040C250 000000A6 R... B..
+CConfig::Open                                             0x0040C590 00000332 R... B T.
+CConfig::_CConfig                                         0x0040BB50 00000013 R... B..
+CControlAppetite::CControlAppetite                        0x0048F330 0000000F R......
+CDBPacket::CDBPacket                                      0x0040DDA0 0000001F R... B..
+CDBPacket::OnIOCallback                                   0x0040CA50 00000030 R... B..
+CDBPacket::_scalar_deleting_destructor_                   0x0040DDC0 0000002C R... B..
+CDBSocket::CDBSocket                                      0x0040CA80 00000029 R... B..
+CDBSocket::OnClose                                        0x0040CCA0 00000052 R... B..
+CDBSocket::OnRead                                         0x0040CD00 0000008F R... B..
+CDBSocket::Process                                        0x0040CD90 00000E52 R... B..
+CDBSocket::Start                                          0x0040CB00 0000013C R... B..
+CDBSocket::Stop                                           0x0040CC40 0000005F R... B..
+CDBSocket::Write                                          0x0040DC80 0000006A R... B..
+CDBSocket::_CDBSocket                                     0x0040CAE0 0000001C R... B..
+CDBSocket::_scalar_deleting_destructor_                   0x0040CAB0 0000002C R... B..
+CDarknessVision::CDarknessVision                          0x0048F2D0 0000000F R......
+CDarknessVision::CanSkillUp                               0x004893F0 00000060 R... B..
+CDarknessVision::GetSpendMP                               0x0048F2F0 0000000F R......
+CDash::CDash                                              0x0048F290 0000000F R......
+CDash::CanSkillUp                                         0x00488EF0 00000133 R......
+CDestroySight::Apply                                      0x0048A890 00000018 R......
+CDestroySight::CDestroySight                              0x0048F6E0 00000010 R... B..
+CDestroySight::CanExcute                                  0x0048A410 00000062 R......
+CDestructionFlame::CDestructionFlame                      0x0048FED0 000000D9 R......
+CDestructionFlame::ExcuteM                                0x0048C6D0 00000100 R......
+CDoAbsorb::CDoAbsorb                                      0x0048FBC0 0000000F R......
+CDoAscension::CDoAscension                                0x0048FB00 0000000F R......
+CDoAscension::ExcuteM                                     0x0048BBC0 000000BC R......
+CDoAscension::GetAddValueType                             0x0048FB60 0000000F R......
+CDoAscension::GetMagicM                                   0x0048B980 00000039 R......
+CDoAscension::GetRadiusTile                               0x0048FB20 0000000F R......
+CDoAscension::GetResistNum                                0x0048FB40 0000000F R......
+CDoAscension::PreExcuteM                                  0x0048B9F0 00000158 R......
+CDoFury::CDoFury                                          0x0048FAB0 0000001F R... B..
+CDoGroundFeal::ApplyM                                     0x0048B950 00000019 R......
+CDoGroundFeal::CDoGroundFeal                              0x0048FAE0 00000010 R... B..
+CDoGroundFeal::GetAddValueType                            0x0048FAD0 00000010 R... B..
+CDoGroundFeal::GetMagicM                                  0x0048B910 00000040 R......
+CDoOverrun::CDoOverrun                                    0x0048FC00 0000000F R......
+CDoOverrun::GetAddValueType                               0x0048FC20 0000001F R... B..
+CDoOverrun::GetMagicM                                     0x0048C0A0 0000000A R......
+CDoRage::CDoRage                                          0x0048FA80 0000000F R......
+CDoRage::GetAddValueType                                  0x0048FAA0 0000000F R......
+CDoResistAll::CDoResistAll                                0x0048FBE0 0000000F R......
+CDoSpiritAbsorb::CDoSpiritAbsorb                          0x0048FBA0 0000000F R......
+CDoSpiritAbsorb::ExcuteM                                  0x0048BF10 00000015 R... B..
+CDoTele::CDoTele                                          0x0048FB80 0000000F R......
+CDoTele::ExcuteM                                          0x0048BD80 00000178 R......
+CEdge::Apply                                              0x00482520 00000043 R......
+CEdge::CEdge                                              0x0048E4D0 0000000F R......
+CEdge::GetAttack                                          0x0048E4F0 00000009 R......
+CEdge::GetDelay                                           0x004824B0 0000002B R......
+CEdge::GetHit                                             0x0048E510 0000000F R......
+CEdge::GetSpendMP                                         0x0048EBF0 0000000F R......
+CEmergencyEscape::Apply                                   0x0048AC70 00000031 R......
+CEmergencyEscape::CEmergencyEscape                        0x0048F840 0000001F R... B..
+CEnrage::CEnrage                                          0x0048E2E0 0000000C R......
+CEnrage::GetHostility                                     0x0048E300 00000004 R......
+CEnrage::GetSpendMP                                       0x0048E320 0000000E R......
+CExplosion::CExplosion                                    0x0048E610 0000000F R......
+CExplosion::GetAttack                                     0x00482EE0 00000057 R......
+CExplosion::GetHostility                                  0x0048E630 0000000F R......
+CExplosion::GetSpendMP                                    0x0048E640 00000010 R... B..
+CExplosiveBurst::CExplosiveBurst                          0x0048E900 0000000F R......
+CExplosiveBurst::GetAddValueType                          0x0048E970 0000001F R... B..
+CExplosiveBurst::GetMagic                                 0x00485420 00000009 R......
+CExplosiveBurst::Redistribute                             0x00485490 00000007 R......
+CFatalChance::CFatalChance                                0x0048EDD0 0000001F R... B..
+CFatalChance::CanSkillUp                                  0x00486A90 00000005 R......
+CFatalChance::Excute                                      0x004869E0 00000067 R......
+CFatalWound::CFatalWound                                  0x0048E530 0000000F R......
+CFatalWound::GetAttack                                    0x0048E550 0000000F R......
+CFatalWound::GetDelay                                     0x004822D0 00000020 R......
+CFindPath::CFindPath                                      0x0040DE70 00000071 R... B..
+CFindPath::CalcH                                          0x0040E170 0000006D R... B..
+CFindPath::CheckList                                      0x0040E480 00000056 R... B..
+CFindPath::FindPath                                       0x0040DF10 0000021C R... B..
+CFindPath::FreeNode                                       0x0040E220 00000043 R... B..
+CFindPath::GetBestNode                                    0x0040E1E0 0000003C R... B..
+CFindPath::GetPixel                                       0x0043E860 00000014 R... B..
+CFindPath::Init                                           0x0043CF70 00000027 R... B..
+CFindPath::Insert                                         0x0040E5A0 000000A1 R... B..
+CFindPath::IsGoal                                         0x0043E840 0000001C R... B..
+CFindPath::LinkChild                                      0x0040E300 00000180 R... B..
+CFindPath::NODE::NODE                                     0x0040E6F0 00000053 R... B..
+CFindPath::Propagation                                    0x0040E4E0 000000BA R... B..
+CFindPath::SetNextPath                                    0x0043E880 00000035 R... B..
+CFindPath::_CFindPath                                     0x0040DEF0 00000013 R... B..
+CFireEruption::CFireEruption                              0x0048E790 0000001F R... B..
+CFireExplosion::CFireExplosion                            0x0048E770 0000001C R... B..
+CFireExplosion::CanSkillUp                                0x00483A30 00000040 R......
+CFireExplosion::GetMagic                                  0x004839A0 0000005C R......
+CFireExplosion::Redistribute                              0x00483A70 000000E0 R......
+CFireRain::AddMagicMonster                                0x00485C00 000000E0 R......
+CFireRain::CFireRain                                      0x0048EAF0 0000001C R... B..
+CFire::CFire                                              0x0048E750 0000001F R... B..
+CFire::GetMagic                                           0x004838E0 0000004A R......
+CFire::Redistribute                                       0x00483960 00000003 R......
+CFlameArrow::CFlameArrow                                  0x0048E3B0 0000001F R... B..
+CFlameArrow::GetAttack                                    0x0048E3D0 0000001F R... B..
+CFlameArrow::Redistribute                                 0x00482480 0000000C R......
+CFrostBlast::CFrostBlast                                  0x0048EF50 0000001F R... B..
+CFrostBlast::Excute                                       0x004873C0 00000062 R......
+CFrostBlast::Redistribute                                 0x00487550 00000030 R......
+CGenMonster::CGenMonster                                  0x004383C0 000000E6 R... B..
+CGenMonster::Copy                                         0x004384B0 00000037 R... B..
+CGenMonster::GetGenTile                                   0x00438880 000000C5 R... B..
+CGenMonster::OnLoad                                       0x00438710 0000005A R... B..
+CGenMonster::OnTimer                                      0x00438770 0000010F R... B..
+CGenMonster::Set                                          0x004384F0 0000019F R... B..
+CGenMonster::Stop                                         0x00438950 000000A5 R... B..
+CGenMonster::_CGenMonster                                 0x004383A0 0000001C R... B..
+CGenMonster::_scalar_deleting_destructor_                 0x00438370 0000002C R... B..
+CGenNPC::CGenNPC                                          0x00447E30 0000012F R... B..
+CGenNPC::Close                                            0x00447FB0 0000007A R... B..
+CGenNPC::Copy                                             0x00448030 0000003A R... B..
+CGenNPC::OnLoad                                           0x004484D0 0000005A R... B..
+CGenNPC::Set                                              0x00448070 000003AA R... B..
+CGenNPC::_CGenNPC                                         0x00447F90 0000001C R... B..
+CGenNPC::_scalar_deleting_destructor_                     0x00447F60 0000002C R... B..
+CGetherShot::CGetherShot                                  0x0048E670 00000010 R... B..
+CGetherShot::CanSkillUp                                   0x00483120 00000109 R......
+CGetherShot::GetFatalRate                                 0x0048E6B0 0000000F R......
+CGetherShot::GetHit                                       0x004830F0 00000030 R......
+CGetherShot::GetSpendMP                                   0x0048E690 0000000F R......
+CGetherShot::PreExcute                                    0x0048E6D0 0000000F R......
+CGoods::CGoods                                            0x004309C0 00000034 R... B..
+CGoods::ClearGoods                                        0x004308F0 00000084 R... B..
+CGoods::Copy                                              0x00430980 00000037 R... B..
+CGoods::ForcedStorageIn                                   0x00430680 0000026B R... B..
+CGoods::OnLoad                                            0x00430B30 0000005A R... B..
+CGoods::Set                                               0x00430A50 000000D3 R... B..
+CGoods::_CGoods                                           0x00430A30 0000001E R... B..
+CGoods::_scalar_deleting_destructor_                      0x00430A00 0000002C R... B..
+CGoto::CGoto                                              0x0040E7D0 0000003C R... B..
+CGoto::FindGoto                                           0x0040E860 00000067 R... B..
+CGoto::OnLoad                                             0x0040E990 00000064 R... B..
+CGoto::Set                                                0x0040E8D0 000000B4 R... B..
+CGoto::_CGoto                                             0x0040E840 0000001C R... B..
+CGoto::_scalar_deleting_destructor_                       0x0040E810 0000002C R... B..
+CGroundFeal2::ApplyM                                      0x0048CE60 00000042 R......
+CGroundFeal2::GetRadiusTile                               0x0048FE10 0000003A R......
+CGroup::CGroup                                            0x0042FF30 0000002A R... B..
+CGroup::Copy                                              0x0042FEF0 00000037 R... B..
+CGroup::GetItemInfo                                       0x00430200 000000AD R... B..
+CGroup::OnLoad                                            0x004301E0 00000017 R... B..
+CGroup::Set                                               0x0042FFB0 000001AC R... B..
+CGroup::_CGroup                                           0x0042FF90 0000001E R... B..
+CGroup::_scalar_deleting_destructor_                      0x0042FF60 0000002C R... B..
+CGuild::AdminInfo                                         0x00415170 0000008E R... B..
+CGuild::AllianceBroadcast                                 0x004173B0 0000003F R... B..
+CGuild::AllianceOffer                                     0x00416DE0 000001FF R... B T.
+CGuild::AllianceOfferAnswer                               0x00416FE0 0000037C R... B..
+CGuild::Appointment                                       0x004142D0 000005BD R... B T.
+CGuild::Banish                                            0x00414030 00000294 R... B T.
+CGuild::BasicInfo                                         0x00415200 0000005B R... B..
+CGuild::Broadcast                                         0x00416CF0 00000080 R... B..
+CGuild::BroadcastLock                                     0x00416CB0 00000031 R... B..
+CGuild::BrokenGate                                        0x00417BE0 0000007F R... B..
+CGuild::BrokenStandard                                    0x00417BA0 0000003D R... B..
+CGuild::CGuild                                            0x004114A0 000001DD R... B..
+CGuild::CalPenaltyLevel                                   0x00416B20 000000C8 R... B..
+CGuild::CalPenaltyTLevel                                  0x00416BF0 000000BF R... B..
+CGuild::CanAttack                                         0x00417C60 0000010C R... B..
+CGuild::CastleGateNPC                                     0x00418000 000000A4 R... B..
+CGuild::CastleInfo                                        0x00417D70 000000B9 R... B..
+CGuild::CastleSetGateLmit                                 0x004180B0 000000B7 R... B..
+CGuild::ChangeGuildName                                   0x004182E0 0000013F R... B..
+CGuild::ChangePlayerName                                  0x004181D0 00000110 R... B..
+CGuild::CheckStandard                                     0x00415340 000000A5 R... B..
+CGuild::Conflux                                           0x00413850 000001FB R... B..
+CGuild::ConfluxAnswer                                     0x00413A50 000001C6 R... B..
+CGuild::ConfluxSecedeAnswer                               0x00413C20 00000186 R... B..
+CGuild::Create                                            0x004164B0 000000C0 R... B..
+CGuild::CreateConsent                                     0x00413020 0000027C R... B..
+CGuild::CreateGuildName                                   0x00413310 00000070 R... B T.
+CGuild::CreateGuildNameAnswer                             0x00413380 00000410 R... B..
+CGuild::CreateTrial                                       0x00412A50 00000435 R... B..
+CGuild::CreateTrialSecedeAnswer                           0x00412EF0 00000121 R... B..
+CGuild::DelPlayer                                         0x00412720 00000326 R... B..
+CGuild::Dissolution                                       0x00414890 0000029B R... B..
+CGuild::FindGuild                                         0x004162B0 00000076 R... B T.
+CGuild::FindLeaderPlayer                                  0x00416330 00000076 R... B..
+CGuild::FindMember                                        0x00416430 0000007E R... B T.
+CGuild::GetAppointmentLimitTime                           0x00416100 0000008E R... B..
+CGuild::GetClass2Title                                    0x00415DD0 00000062 R... B..
+CGuild::GetGuildSkill                                     0x00416970 00000042 R... B..
+CGuild::GetLeaderName                                     0x004163B0 00000076 R... B..
+CGuild::GetTitle2Class                                    0x00415BC0 00000209 R... B T.
+CGuild::GetTodayMessage                                   0x00414EF0 00000041 R... B..
+CGuild::GetWarEndTime                                     0x00417470 0000008F R... B..
+CGuild::IsAllConsent                                      0x004132A0 0000006D R... B..
+CGuild::IsAlliancePeriod                                  0x00418170 00000056 R... B..
+CGuild::IsAppointmentFull                                 0x00416000 000000F5 R... B..
+CGuild::IsDeclareWarPeriod                                0x00417410 00000011 R... B..
+CGuild::IsLoad                                            0x00411BE0 00000094 R... B..
+CGuild::IsMemberFull                                      0x00415F20 000000C7 R... B..
+CGuild::IsSameName                                        0x00416190 00000093 R... B T.
+CGuild::IsSkillAble                                       0x00413790 000000A0 R... B..
+CGuild::IsTempMemberFUll                                  0x00413DB0 0000007D R... B..
+CGuild::IsWarWaitingPeriod                                0x00417430 00000011 R... B..
+CGuild::IsWarringPeriod                                   0x00417450 00000011 R... B..
+CGuild::Load                                              0x00411C80 00000589 R... B..
+CGuild::Login                                             0x00412210 000002D5 R... B..
+CGuild::LoginCastle                                       0x004124F0 00000029 R... B..
+CGuild::Logout                                            0x00412520 000001F8 R... B..
+CGuild::MemberADD                                         0x00416570 0000014B R... B..
+CGuild::MemberDEL                                         0x004166C0 0000011D R... B..
+CGuild::MinuteProcess                                     0x004117E0 000002C8 R... B..
+CGuild::OnDelete                                          0x00411AB0 0000012C R... B..
+CGuild::OnSetStandard                                     0x00415480 00000179 R... B..
+CGuild::Secession                                         0x00413E30 000001FD R... B..
+CGuild::SecondProcess                                     0x004117B0 00000027 R... B..
+CGuild::SendMemberInfo                                    0x00414F40 00000222 R... B..
+CGuild::SendPlayerSight                                   0x00416D70 00000067 R... B..
+CGuild::SetAlliance                                       0x00417360 0000004D R... B..
+CGuild::SetClassTitle                                     0x00415E50 000000B6 R... B..
+CGuild::SetConnectTell                                    0x00415A20 00000132 R... B..
+CGuild::SetExp                                            0x004158B0 00000170 R... B T.
+CGuild::SetExpADD                                         0x00415600 000002A7 R... B..
+CGuild::SetLevel                                          0x004167E0 0000018C R... B..
+CGuild::SetMemberLelvelUp                                 0x00415B60 00000058 R... B..
+CGuild::SetPointADD                                       0x004169D0 00000148 R... B..
+CGuild::SetSkillAble                                      0x00415260 000000D4 R... B..
+CGuild::SetStandard                                       0x004153F0 00000089 R... B..
+CGuild::SetTodayMessage                                   0x00414D90 00000153 R... B..
+CGuild::Stop                                              0x00411700 00000076 R... B..
+CGuild::TaxLevy                                           0x00417F10 000000EC R... B..
+CGuild::TaxRateControl                                    0x00417E30 000000D1 R... B..
+CGuild::TitleChange                                       0x00414B30 0000025E R... B..
+CGuild::TrialUnfurlStandard                               0x004178D0 000001BD R... B..
+CGuild::UnfurlStandard                                    0x00417A90 0000010B R... B..
+CGuild::WarDeclare                                        0x00417500 0000038D R... B..
+CGuild::WarDelcareList                                    0x00417890 0000003D R... B..
+CGuild::_CGuild                                           0x004116B0 0000002A R... B..
+CGuild::_scalar_deleting_destructor_                      0x00411680 0000002C R... B..
+CGunnery::CGunnery                                        0x0048EE10 0000001C R... B..
+CGunnery::ExcutePassive                                   0x004488D0 0000000D R... B..
+CHaste::CHaste                                            0x0048EF30 0000001C R... B..
+CHaste::CanExcute                                         0x004871E0 000001A4 R......
+CHaste::GetSpendMP                                        0x0048F1D0 0000001F R... B..
+CHealingAnyPlus::CHealingAnyPlus                          0x0048EBD0 00000010 R... B..
+CHealingAnyPlus::Redistribute                             0x00486220 00000016 R......
+CHealingAnyQuick::CHealingAnyQuick                        0x0048EC50 0000001F R... B..
+CHealingAnyQuick::Redistribute                            0x00486330 00000014 R......
+CHealingAny::CHealingAny                                  0x0048EB90 0000001F R... B..
+CHealingAny::Redistribute                                 0x00486140 000000A2 R......
+CHealingGreatRe::CHealingGreatRe                          0x0048ECB0 0000001F R... B..
+CHealingGreatRe::GetIncHP                                 0x004863F0 00000020 R......
+CHealingInstance::CHealingInstance                        0x0048EC70 0000001F R... B..
+CHealingInstance::GetIncHP                                0x00486360 00000044 R......
+CHealingInstance::GetSpendMP                              0x0048EC90 0000001F R... B..
+CHealingPartyIns::CHealingPartyIns                        0x0048EFC0 00000003 R......
+CHealingPartyIns::CanSkillUp                              0x00487890 00000069 R......
+CHealingPartyIns::GetIncHP                                0x00487850 00000009 R......
+CHealingPartyIns::GetSkillAddValue                        0x0048F000 0000000F R......
+CHealingPartyIns::GetSpendMP                              0x0048EFE0 0000000F R......
+CHealingPartyIns::Redistribute                            0x00482D50 00000003 R......
+CHealingParty::CHealingParty                              0x0048EF70 0000001F R... B..
+CHealingParty::Excute                                     0x00487580 00000029 R......
+CHealing::CHealing                                        0x0048EB50 0000001F R... B..
+CHealing::Excute                                          0x00485D30 00000089 R......
+CIOBuffer::AddRef                                         0x00401570 0000001A R... B..
+CIOBuffer::Alloc                                          0x00423F90 000000A1 R... B..
+CIOBuffer::CSlot::CSlot                                   0x004258A0 00000022 R... B..
+CIOBuffer::Free                                           0x00424040 00000051 R... B..
+CIOBuffer::FreeAll                                        0x004240A0 00000077 R... B..
+CIOBuffer::Release                                        0x00401070 00000026 R... B..
+CIOCriticalSection::CIOCriticalSection                    0x004235E0 0000002C R... B..
+CIOCriticalSection::Enter                                 0x00423640 00000081 R... B..
+CIOCriticalSection::Leave                                 0x004236D0 00000037 R... B..
+CIOCriticalSection::_CIOCriticalSection                   0x00423610 00000023 R... B..
+CIOException::CInit::CInit                                0x00420FF0 000000A9 R... B..
+CIOException::CInit::_CInit                               0x00422B00 0000002B R... B..
+CIOException::Disable                                     0x00422EE0 00000012 R... B..
+CIOException::DumpStack                                   0x00422F50 000001D7 R... B..
+CIOException::Enable                                      0x00422EC0 00000017 R... B..
+CIOException::Filter                                      0x00422DF0 00000036 R... B..
+CIOException::IsEnable                                    0x00422F00 0000000A R... B..
+CIOException::Lock                                        0x00421120 00000010 R... B..
+CIOException::Open                                        0x00422E30 00000084 R... B..
+CIOException::SendMail                                    0x00422F10 00000014 R... B..
+CIOException::ToggleRaise                                 0x00422F30 0000001B R... B..
+CIOException::Unlock                                      0x00421130 00000010 R... B..
+CIOObject::AddRef                                         0x004010D0 0000001A R... B..
+CIOObject::AddTimer                                       0x00423B40 0000008B R... B..
+CIOObject::CIOObject                                      0x00401FA0 00000035 R... B..
+CIOObject::OnFree                                         0x004010F0 00000037 R... B..
+CIOObject::OnIOCallback                                   0x00423C40 00000036 R... B..
+CIOObject::OnTimerCallback                                0x00423C00 00000035 R... B T.
+CIOObject::PostObject                                     0x00401590 00000024 R... B T.
+CIOObject::RegisterWait                                   0x00423AC0 00000078 R... B..
+CIOObject::Release                                        0x00401DE0 0000001A R... B..
+CIOObject::_CIOObject                                     0x00423960 00000014 R... B..
+CIOObject::_scalar_deleting_destructor_                   0x00401FE0 0000002C R... B..
+CIOServer::CIOServer                                      0x00424950 00000033 R... B..
+CIOServer::Close                                          0x004249F0 0000004B R... B..
+CIOServer::OnIOCallback                                   0x00424BD0 000000AA R... B..
+CIOServer::OnWaitCallback                                 0x00424B70 0000002C R... B..
+CIOServer::Start                                          0x00424A40 00000124 R... B T.
+CIOServer::_CIOServer                                     0x004249C0 00000024 R... B..
+CIOServer::_scalar_deleting_destructor_                   0x00424990 0000002C R... B..
+CIOSocket::AddIOThread                                    0x00423840 000000AA R... B..
+CIOSocket::CIOSocket                                      0x00424120 00000095 R... B..
+CIOSocket::CIOTimerInstance::CIOTimerInstance             0x00425880 0000001F R... B..
+CIOSocket::CIOTimerInstance::OnIOCallback                 0x00423CD0 0000003F R... B..
+CIOSocket::CIOTimerInstance::OnTimerCallback              0x00423C80 00000048 R... B..
+CIOSocket::CIOTimerInstance::_CIOTimerInstance            0x00402010 00000013 R... B..
+CIOSocket::CIOTimer::CIOTimer                             0x00423BD0 0000002A R... B..
+CIOSocket::CIOTimer::operator_                            0x004256C0 0000001E R... B..
+CIOSocket::CInit::_CInit                                  0x00423710 00000015 R... B..
+CIOSocket::Close                                          0x00424260 0000007E R... B..
+CIOSocket::CloseIOThread                                  0x004238F0 0000002B R... B..
+CIOSocket::CreateIOThread                                 0x00423730 0000010B R... B..
+CIOSocket::DumpStack                                      0x00423F30 00000026 R... B..
+CIOSocket::FreeIOThread                                   0x00423920 00000036 R... B..
+CIOSocket::GracefulClose                                  0x004242E0 00000058 R... B..
+CIOSocket::IOThread                                       0x00423EC0 00000061 R... B..
+CIOSocket::Initialize                                     0x00424C80 000000AA R... B..
+CIOSocket::OnCreate                                       0x004243D0 00000015 R... B..
+CIOSocket::OnIOCallback                                   0x00424340 00000090 R... B..
+CIOSocket::PendingWrite                                   0x004966A0 0000001C R......
+CIOSocket::Read                                           0x00424440 00000198 R... B..
+CIOSocket::ReadCallback                                   0x004243F0 00000043 R... B..
+CIOSocket::WaitThread                                     0x00423D10 000001A7 R... B..
+CIOSocket::Write                                          0x00424760 000001E3 R... B..
+CIOSocket::WriteCallback                                  0x004245E0 0000017F R... B..
+CIOSocket::_CIOSocket                                     0x004241F0 00000062 R... B..
+CIOSocket::_scalar_deleting_destructor_                   0x004241C0 0000002C R... B..
+CIOSpinLock::Enter                                        0x00401F00 00000025 R... B..
+CIOSpinLock::Leave                                        0x00401F30 00000017 R... B..
+CIOSpinLock::Wait                                         0x00423550 00000086 R... B..
+CIceLance::CIceLance                                      0x0048E800 0000000C R......
+CIceLance::CanSkillUp                                     0x00483C80 00000013 R......
+CIceLance::GetMagic                                       0x00483BF0 0000007B R......
+CIceRequiem::CIceRequiem                                  0x0048EA10 0000001F R... B..
+CIceRequiem::GetAddValueType                              0x0048EA30 0000001F R... B..
+CIceRequiem::Redistribute                                 0x00485860 0000005F R......
+CIceStorm::CIceStorm                                      0x0048EAD0 0000001F R... B..
+CIce::CIce                                                0x0048E7B0 0000001C R... B..
+CIce::GetSpendMP                                          0x0048E7D0 0000001F R... B..
+CInchantWeapon::CInchantWeapon                            0x0048F210 0000000F R......
+CInchantWeapon::Excute                                    0x00488BE0 0000010A R......
+CInchantWeapon::GetSpendMP                                0x0048F230 0000000F R......
+CInfernal::CInfernal                                      0x0048E5B0 00000010 R... B..
+CInfernal::CanExcute                                      0x004827A0 0000003A R......
+CInfernal::GetAttack                                      0x004827F0 00000035 R......
+CInitItem::ApplySpec                                      0x0041ED70 0000006B R... B..
+CInitItem::CInitItem                                      0x0041D380 00000172 R... B..
+CInitItem::Copy                                           0x0041D690 0000003A R... B..
+CInitItem::Enchant                                        0x0041EF60 00000062 R... B..
+CInitItem::FindKey                                        0x0041D640 0000004A R... B..
+CInitItem::FreeSpec                                       0x0041EDE0 0000006C R... B..
+CInitItem::GetSpecValue                                   0x0041EFD0 000000FA R... B..
+CInitItem::OnLoad                                         0x0041DCC0 00000036 R... B..
+CInitItem::Open                                           0x0041D5E0 0000005F R... B..
+CInitItem::Set                                            0x0041D6D0 00000515 R... B..
+CInitItem::SetSpec                                        0x0041DD00 00000CCB R... B..
+CInitItem::Use                                            0x0041EE50 00000109 R... B..
+CInitItem::_CInitItem                                     0x0041D530 00000083 R... B..
+CInitItem::_scalar_deleting_destructor_                   0x0041D500 0000002C R... B..
+CInitMap::CInitMap                                        0x00420C30 0000005D R... B..
+CInitMap::OnLoad                                          0x00420E10 00000017 R... B..
+CInitMap::Set                                             0x00420CE0 000000F4 R... B..
+CInitMap::_CInitMap                                       0x00420CC0 0000001C R... B..
+CInitMap::_scalar_deleting_destructor_                    0x00420C90 0000002C R... B..
+CInitMonster::CInitMonster                                0x00437110 00000141 R... B..
+CInitMonster::Copy                                        0x004372D0 0000003A R... B..
+CInitMonster::DropItem                                    0x00437D70 000003B7 R... B..
+CInitMonster::DropItemEx                                  0x00437C30 00000131 R... B..
+CInitMonster::IsRace                                      0x00441570 0000001D R... B..
+CInitMonster::OnLoad                                      0x00437BD0 0000005A R... B..
+CInitMonster::Set                                         0x00437310 000007C6 R... B..
+CInitMonster::_CInitMonster                               0x00437290 00000038 R... B..
+CInitMonster::_scalar_deleting_destructor_                0x00437260 0000002C R... B..
+CInitNPC::CInitNPC                                        0x00447C00 00000033 R... B..
+CInitNPC::Close                                           0x00447C90 0000007A R... B..
+CInitNPC::Copy                                            0x00447D10 00000037 R... B..
+CInitNPC::OnLoad                                          0x00447DD0 0000005A R... B..
+CInitNPC::Set                                             0x00447D50 00000078 R... B..
+CInitNPC::_CInitNPC                                       0x00447C70 0000001C R... B..
+CInitNPC::_scalar_deleting_destructor_                    0x00447C40 0000002C R... B..
+CInitSkill::OnLoad                                        0x0047F5A0 00000022 R......
+CInitSkill::_scalar_deleting_destructor_                  0x0047F260 000001CD R......
+CItemDefense::ApplySpec                                   0x0042AAF0 00000081 R... B..
+CItemDefense::CItemDefense                                0x0042A310 0000007A R... B..
+CItemDefense::CanSell                                     0x00428F00 0000002B R... B..
+CItemDefense::ChangePrefix                                0x0042B710 0000039B R... B..
+CItemDefense::Charming                                    0x0042B210 00000412 R... B..
+CItemDefense::CharmingCheat                               0x0042B630 000000D7 R... B..
+CItemDefense::Erase                                       0x0042AA10 000000DC R... B..
+CItemDefense::FreeSpec                                    0x0042AB80 00000081 R... B..
+CItemDefense::GetSellMoney                                0x0042BBD0 00000091 R... B..
+CItemDefense::Insert                                      0x0042AE90 000000F7 R... B..
+CItemDefense::IsBroken                                    0x00425FB0 00000019 R... B..
+CItemDefense::Protect                                     0x0042BAB0 0000011C R... B..
+CItemDefense::PutInfo                                     0x0042A3C0 000001C5 R... B..
+CItemDefense::PutOff                                      0x0042AD60 000000BC R... B..
+CItemDefense::PutOn                                       0x0042AC10 00000146 R... B..
+CItemDefense::Repair                                      0x00429730 00000078 R... B..
+CItemDefense::SetWearState                                0x0042A800 000000E6 R... B..
+CItemDefense::StorageIn                                   0x0042B0F0 0000011C R... B..
+CItemDefense::Trash                                       0x0042A8F0 0000011C R... B..
+CItemDefense::UpdateNum                                   0x0042AF90 00000155 R... B..
+CItemDefense::UpgradeDestroy                              0x0042BC70 0000015B R... B..
+CItemGeneral::CItemGeneral                                0x0042CF10 0000002A R... B..
+CItemGeneral::Enchant                                     0x0042D670 0000003D R... B..
+CItemGeneral::StorageIn                                   0x0042D180 000002D8 R... B..
+CItemGeneral::StorageOut                                  0x0042D460 0000020B R... B..
+CItemGeneral::Trade                                       0x0042D040 0000013A R... B..
+CItemGeneral::UpdateNum                                   0x0042D6E0 00000177 R... B..
+CItemGeneral::Use                                         0x0042CFB0 00000088 R... B..
+CItemGeneral::_CItemGeneral                               0x004275C0 00000013 R... B..
+CItemGeneral::_scalar_deleting_destructor_                0x0042A390 0000002C R... B..
+CItemGroup::CItemGroup                                    0x004303E0 0000002A R... B..
+CItemGroup::ClearGroup                                    0x00430310 00000084 R... B..
+CItemGroup::Copy                                          0x004303A0 00000037 R... B..
+CItemGroup::FindGroup                                     0x00430540 00000057 R... B..
+CItemGroup::GetFirstGroup                                 0x00430630 0000004A R... B..
+CItemGroup::GetItemInfo                                   0x004305A0 0000008E R... B..
+CItemGroup::InsertGroup                                   0x004302B0 00000051 R... B..
+CItemGroup::OnLoad                                        0x00430520 00000017 R... B..
+CItemGroup::Set                                           0x00430460 000000C0 R... B..
+CItemGroup::_CItemGroup                                   0x00430440 0000001E R... B..
+CItemGroup::_scalar_deleting_destructor_                  0x00430410 0000002C R... B..
+CItemMask::CItemMask                                      0x00425F80 00000025 R... B..
+CItemMask::Init                                           0x0042BE40 00000035 R... B..
+CItemMask::PutOn                                          0x0042BE10 00000022 R... B..
+CItemMask::SetWearState                                   0x0042BDD0 0000003F R... B..
+CItemMask::_scalar_deleting_destructor_                   0x00425FD0 0000002C R... B..
+CItemMoney::CItemMoney                                    0x0042D8D0 0000002A R... B..
+CItemMoney::CanMerge                                      0x0042D900 0000001E R... B..
+CItemMoney::CanSell                                       0x0048F5B0 0000000F R......
+CItemMoney::Drop                                          0x0042DD20 0000020F R... B..
+CItemMoney::Insert                                        0x0042D9C0 00000138 R... B..
+CItemMoney::SetEtc                                        0x0042E570 00000066 R... B..
+CItemMoney::StorageIn                                     0x0042E080 00000256 R... B..
+CItemMoney::StorageOut                                    0x0042E2E0 00000281 R... B..
+CItemMoney::Trade                                         0x0042DF30 00000145 R... B..
+CItemMoney::Trash                                         0x0042D920 00000091 R... B..
+CItemMoney::UpdateNum                                     0x0042DB00 00000215 R... B T.
+CItemOrnament::ApplySpec                                  0x0042C6E0 00000034 R... B..
+CItemOrnament::CItemOrnament                              0x0042C450 0000002A R... B..
+CItemOrnament::ChangePrefix                               0x0042CD20 00000116 R... B..
+CItemOrnament::Erase                                      0x0042C640 00000092 R... B..
+CItemOrnament::ForcedStorageIn                            0x0042CC80 00000092 R... B..
+CItemOrnament::FreeSpec                                   0x0042C720 00000034 R... B..
+CItemOrnament::GetSellMoney                               0x0042CE40 00000042 R... B..
+CItemOrnament::Init                                       0x0042C480 00000029 R... B..
+CItemOrnament::Insert                                     0x0042C920 000000F2 R... B..
+CItemOrnament::PutOff                                     0x0042C870 000000AC R... B..
+CItemOrnament::PutOn                                      0x0042C760 0000010C R... B..
+CItemOrnament::SetWearState                               0x0042C4B0 000000AE R... B..
+CItemOrnament::StorageIn                                  0x0042CB80 000000F4 R... B..
+CItemOrnament::Trash                                      0x0042C560 000000D6 R... B..
+CItemOrnament::UpdateNum                                  0x0042CA20 0000010C R... B..
+CItemOrnament::UpgradeDestroy                             0x0042CE90 00000073 R... B..
+CItemQuest::CItemQuest                                    0x0042D6B0 0000002A R... B..
+CItemQuest::CanMerge                                      0x0042D860 00000069 R... B..
+CItemStandard::ApplySpec                                  0x0042BEF0 00000031 R... B..
+CItemStandard::Broken                                     0x0042C340 00000105 R... B..
+CItemStandard::CItemStandard                              0x00426000 0000003C R... B..
+CItemStandard::CanDrop                                    0x0042C2B0 00000024 R... B..
+CItemStandard::CanTrade                                   0x0042C2E0 00000059 R... B..
+CItemStandard::FreeSpec                                   0x0042BF30 00000031 R... B..
+CItemStandard::PutOff                                     0x0042C1B0 000000F7 R... B..
+CItemStandard::PutOn                                      0x0042BF70 00000240 R... B..
+CItemStandard::SetWearState                               0x0042BE80 0000006A R... B..
+CItemStandard::_CItemStandard                             0x00426040 00000013 R... B..
+CItemTransform::ApplySpec                                 0x0042EA00 0000006E R... B..
+CItemTransform::ApplyTransform                            0x0042F300 00000160 R... B..
+CItemTransform::CItemTransform                            0x0042E5E0 00000052 R... B..
+CItemTransform::CanDrop                                   0x0042CB30 00000044 R... B..
+CItemTransform::CanTrade                                  0x0042EE90 00000033 R... B..
+CItemTransform::CheatLevelUp                              0x0042F200 000000BD R... B..
+CItemTransform::Erase                                     0x0042E980 0000007D R... B..
+CItemTransform::ForcedStorageIn                           0x0042EFB0 00000071 R... B..
+CItemTransform::FreeSpec                                  0x0042EA70 0000006E R... B..
+CItemTransform::FreeTransform                             0x0042F460 0000012C R... B..
+CItemTransform::Init                                      0x0042E7F0 00000030 R... B..
+CItemTransform::Insert                                    0x0042ECB0 000000D1 R... B..
+CItemTransform::PutInfo                                   0x0042E640 000000C7 R... B..
+CItemTransform::PutOff                                    0x0042EBD0 000000D9 R... B..
+CItemTransform::PutOn                                     0x0042EAE0 000000E6 R... B..
+CItemTransform::SaveInfo                                  0x0042F2C0 0000003C R... B..
+CItemTransform::SetWearState                              0x0042E820 0000009A R... B..
+CItemTransform::StorageIn                                 0x0042EED0 000000D9 R... B..
+CItemTransform::Trash                                     0x0042E8C0 000000C0 R... B..
+CItemTransform::UpdateExp                                 0x0042F030 000001CD R... B..
+CItemTransform::UpdateNum                                 0x0042ED90 000000F6 R... B..
+CItemWeapon::ApplySpec                                    0x00427E70 00000181 R... B..
+CItemWeapon::CItemWeapon                                  0x00427520 00000091 R... B..
+CItemWeapon::ChangePrefix                                 0x004297B0 000003AC R... B..
+CItemWeapon::Charming                                     0x00429100 000004AC R... B..
+CItemWeapon::CharmingCheat                                0x004295F0 00000131 R... B..
+CItemWeapon::Erase                                        0x00427D60 00000110 R... B..
+CItemWeapon::ForcedStorageIn                              0x00429060 00000097 R... B..
+CItemWeapon::FreeSpec                                     0x00428000 00000138 R... B..
+CItemWeapon::GetSellMoney                                 0x00429C90 000000B7 R... B..
+CItemWeapon::Init                                         0x00427A50 00000044 R... B..
+CItemWeapon::Protect                                      0x00429B60 0000012D R... B..
+CItemWeapon::PutInfo                                      0x004275E0 000001DD R... B..
+CItemWeapon::PutOff                                       0x00428770 0000055C R... B..
+CItemWeapon::PutOn                                        0x00428140 0000062D R... B..
+CItemWeapon::SetWearState                                 0x00427AA0 000000E9 R... B..
+CItemWeapon::StorageIn                                    0x00428F30 00000129 R... B..
+CItemWeapon::Trash                                        0x00427C00 00000152 R... B..
+CItemWeapon::UpdateNum                                    0x00428D70 0000018B R... B..
+CItemWeapon::UpgradeDestroy                               0x00429D50 00000109 R... B..
+CItemWeapon::UpgradeLevel                                 0x00429FB0 00000352 R... B..
+CItemWeapon::UpgradeRateUp                                0x00429E60 00000144 R... B..
+CItem::AddState                                           0x004261F0 0000001C R... B..
+CItem::CItem                                              0x004258F0 000000BF R... B..
+CItem::CanDrop                                            0x00427210 000000B9 R... B..
+CItem::CanSell                                            0x004270B0 00000080 R... B..
+CItem::CanTrade                                           0x00427150 000000B9 R... B..
+CItem::ChangePrefix                                       0x004259F0 0000000F R... B..
+CItem::ClearItemGroup                                     0x004265B0 00000089 R... B..
+CItem::Close                                              0x00426490 0000011C R... B..
+CItem::CreateCheatItem                                    0x00426170 00000074 R... B..
+CItem::CreateDropItem                                     0x00426290 000000F5 R... B..
+CItem::CreateItem                                         0x00426110 0000005F R... B..
+CItem::CreateOwnItem                                      0x00426210 00000077 R... B..
+CItem::CreateQuestItem                                    0x00426390 000000F4 R... B..
+CItem::Drop                                               0x00426D00 00000302 R... B..
+CItem::Enchant                                            0x004259D0 00000013 R... B..
+CItem::Erase                                              0x00426A60 0000006C R... B..
+CItem::FindInitItem                                       0x00425C60 00000049 R... B..
+CItem::FindPrefix                                         0x00425CB0 00000049 R... B..
+CItem::ForcedStorageIn                                    0x00427340 0000006C R... B..
+CItem::GetLevel                                           0x004295B0 00000037 R... B..
+CItem::GetSellMoney                                       0x004273E0 0000001A R... B..
+CItem::Init                                               0x004268E0 0000006B R... B..
+CItem::Insert                                             0x00426B40 000000CC R... B..
+CItem::InsertInitItem                                     0x00425A50 00000051 R... B..
+CItem::InsertItem                                         0x004274A0 0000007A R... B..
+CItem::InsertItemGroup                                    0x00425B10 00000051 R... B..
+CItem::InsertPrefix                                       0x00425AB0 00000051 R... B..
+CItem::IsState                                            0x00427130 00000016 R... B..
+CItem::NewIID                                             0x004273B0 0000002D R... B..
+CItem::NewItem                                            0x00425D00 0000025D R... B..
+CItem::OnTimer                                            0x00426640 00000101 R... B..
+CItem::PutInfo                                            0x00426750 000000BC R... B..
+CItem::ReloadItemGroup                                    0x00425B70 000000AE R... B..
+CItem::SendCreate                                         0x00426980 00000046 R... B..
+CItem::SendDelete                                         0x00426950 00000027 R... B..
+CItem::SendItemInfo                                       0x00427430 0000006F R... B..
+CItem::SetEtc                                             0x00427400 00000026 R... B..
+CItem::StorageIn                                          0x0041EB10 0000000F R... B..
+CItem::StorageOut                                         0x004272D0 00000066 R... B..
+CItem::SubState                                           0x00427B90 0000001E R... B..
+CItem::Sum                                                0x0042CF40 00000064 R... B..
+CItem::Trade                                              0x00427010 00000093 R... B..
+CItem::Trash                                              0x004269D0 00000086 R... B..
+CItem::UpdateNum                                          0x00426C10 000000E5 R... B..
+CItem::Use                                                0x004259B0 00000013 R... B..
+CItem::_CItem                                             0x00425A30 0000001C R... B..
+CItem::_scalar_deleting_destructor_                       0x00425A00 0000002C R... B..
+CLink::Initialize                                         0x00438A60 0000001C R... B..
+CLink::Insert                                             0x00438CE0 00000035 R... B..
+CLink::MoveTo                                             0x00438C40 0000005A R... B..
+CLink::Remove                                             0x0043A6F0 00000026 R... B..
+CLitning::CLitning                                        0x0048E820 0000000F R......
+CLitning::GetMagic                                        0x00483CF0 00000003 R......
+CLitning::GetSpendMP                                      0x0048E840 0000000A R......
+CLog::AddV                                                0x00432530 0000028A R... B T.
+CLog::CInit::_CInit                                       0x004324E0 00000047 R... B..
+CLog::Flush                                               0x00432800 00000056 R... B..
+CMFireFlowerExplosion::CMFireFlowerExplosion              0x0048FFB0 00000045 R... B..
+CMFireRain::GetMagicM                                     0x0048C2D0 00000034 R... B..
+CMFire::GetMagicM                                         0x0048C690 00000040 R......
+CMFujiExplosion::AddMagicMonsterM                         0x0048D750 00000015 R......
+CMIceStorm::CMIceStorm                                    0x0048FCD0 00000010 R... B..
+CMIceStorm::GetAddValueType                               0x0048FCF0 00000019 R......
+CMMagicFuJiExplosion::CMMagicFuJiExplosion                0x004900A0 00000030 R......
+CMMagicFuJiExplosion::ExcuteM                             0x0048D800 00000079 R......
+CMMagicFuJiExplosion::GetAddValueType                     0x004900D0 00000042 R......
+CMMagicFuJiExplosion::GetMagicM                           0x0048D7B0 00000050 R......
+CMPoisonCloud::ApplyM                                     0x0048C320 000001B0 R......
+CMPoisonCloud::CMPoisonCloud                              0x0048FD30 00000025 R......
+CMPoisonCloud::GetResistNum                               0x0048EF90 0000001F R... B..
+CMShock::ExcuteM                                          0x0048C9D0 00000097 R......
+CMShock::GetMagicM                                        0x0048C890 000000B9 R......
+CMShock::GetSpendMP                                       0x0048EB70 0000001F R... B..
+CMSiegeGunBallExplosion::ExcuteM                          0x0048D2E0 000000B0 R......
+CMSpark::ExcuteM                                          0x0048C4D0 0000013B R... B..
+CMThunderStorm::GetAddValueType                           0x0048FCC0 0000000F R......
+CMagicConti::AddMagicMonsterM                             0x0048EAC0 0000000E R......
+CMagicConti::CMagicConti                                  0x0048EAA0 0000000F R......
+CMagicWideFire::GetMagic                                  0x00485360 0000009F R......
+CMagicWideIce::GetMagic                                   0x004852A0 0000006A R... B..
+CMagicWidePos::CMagicWidePos                              0x0048E920 0000000F R......
+CMagicWidePos::Excute                                     0x00484FA0 00000083 R... B..
+CMagicWideSelf::CMagicWideSelf                            0x0048EA60 0000000F R......
+CMagicWideSelf::Excute                                    0x00484AD0 000000C1 R......
+CMagicWide::CMagicWide                                    0x0048E940 0000000F R......
+CMagicWide::Excute                                        0x004844C0 00000244 R......
+CMagicWide::ExcuteM                                       0x00484860 00000135 R......
+CMagic::ApplyPrtyIce                                      0x00483720 00000042 R......
+CMagic::CMagic                                            0x0048E730 0000001F R... B..
+CMagic::Excute                                            0x00483360 00000065 R... B..
+CMagic::GetResist                                         0x00483790 00000053 R......
+CMainConfig::Close                                        0x00432EE0 0000000F R... B..
+CMainConfig::Open                                         0x004328F0 000005C5 R... B..
+CManaBurn::CManaBurn                                      0x0048F5C0 0000001F R... B..
+CManaBurn::GetSpendMP                                     0x0048EB30 0000001F R... B..
+CMapObject::GetState                                      0x00494270 0000004B R......
+CMapObject::OnTimer                                       0x00494090 00000020 R......
+CMeditation::CMeditation                                  0x0048ED50 0000001F R... B..
+CMeditation::CanExcute                                    0x00486770 000000EC R......
+CMemoryPool_CAuthPacket::_Alloc                           0x00401E80 00000071 R... B..
+CMemoryPool_CAuthPacket::_CPool::CPool                    0x0040E750 00000019 R... B..
+CMemoryPool_CAuthPacket::_CPool::_CPool                   0x00402030 00000010 R... B..
+CMemoryPool_CAuthPacket::_Free                            0x00401F50 0000002E R... B..
+CMemoryPool_CAuthPacket::_FreeAll                         0x00402040 00000064 R... B..
+CMemoryPool_CBaseList::_Alloc                             0x00402460 00000057 R... B..
+CMemoryPool_CBaseList::_CPool::_CPool                     0x004024F0 00000010 R... B..
+CMemoryPool_CBaseList::_Free                              0x004024C0 0000002E R... B..
+CMemoryPool_CBaseList::_FreeAll                           0x00402500 0000004C R... B..
+CMemoryPool_CDBPacket::_Alloc                             0x0040DCF0 00000071 R... B..
+CMemoryPool_CDBPacket::_CPool::_CPool                     0x0040DDF0 00000010 R... B..
+CMemoryPool_CDBPacket::_Free                              0x0040DD70 0000002E R... B..
+CMemoryPool_CDBPacket::_FreeAll                           0x0040DE00 00000064 R... B..
+CMemoryPool_CFindPath::NODE::_Alloc                       0x0040E650 00000070 R... B..
+CMemoryPool_CFindPath::NODE::_CPool::_CPool               0x0040E770 00000010 R... B..
+CMemoryPool_CFindPath::NODE::_Free                        0x0040E6C0 0000002D R... B..
+CMemoryPool_CFindPath::NODE::_FreeAll                     0x0040E780 0000004B R... B..
+CMemoryPool_CSkill::_Alloc                                0x0048DC40 0000006A R......
+CMemoryPool_CSkill::_CPool::_CPool                        0x004020B0 00000010 R... B..
+CMemoryPool_CSkill::_Free                                 0x0048DCC0 0000000F R......
+CMemoryPool_CSkill::_FreeAll                              0x004020C0 0000004C R... B..
+CMemory::CInit::CInit                                     0x004356C0 0000005E R... B..
+CMemory::CMemory                                          0x00435720 0000002D R... B..
+CMemory::::sbh_alloc_block                                0x00435910 00000523 R... B..
+CMemory::::sbh_alloc_new_group                            0x00435F60 000001EF R... B..
+CMemory::::sbh_alloc_new_region                           0x00435E40 00000114 R... B..
+CMemory::::sbh_find_block                                 0x00436240 00000059 R... B..
+CMemory::::sbh_free_block                                 0x004362A0 000005C5 R... B..
+CMemory::::sbh_heap_init                                  0x004357B0 0000006B R... B..
+CMemory::::sbh_resize_block                               0x00436AB0 000005CB R... B..
+CMemory::_free                                            0x00436150 0000003E R... B..
+CMemory::_free_base                                       0x00436190 000000A3 R... B T.
+CMemory::_heap_alloc_base                                 0x00435890 00000078 R... B T.
+CMemory::_heap_init                                       0x00435750 0000005A R... B..
+CMemory::_malloc                                          0x00435820 00000063 R... B..
+CMemory::_mlock                                           0x004370A0 00000018 R... B..
+CMemory::_munlock                                         0x004370C0 00000018 R... B..
+CMemory::_realloc                                         0x00436870 00000084 R... B..
+CMemory::_realloc_base                                    0x00436900 000001A7 R... B T.
+CMeshChance::Apply                                        0x0048A4E0 00000038 R......
+CMeshChance::CMeshChance                                  0x0048F5E0 0000001F R... B..
+CMeshChance::CanExcute                                    0x0048A490 0000003A R......
+CMeshDefense::Apply                                       0x0048A7C0 00000028 R......
+CMeshDefense::CMeshDefense                                0x0048F6A0 0000001F R... B..
+CMeshDefense::CanSkillUp                                  0x0048A560 00000065 R... B..
+CMeshDex::CMeshDex                                        0x0048F640 0000001F R... B..
+CMeshHth::Apply                                           0x0048A600 00000076 R......
+CMeshHth::CMeshHth                                        0x0048F620 0000001F R... B..
+CMeshInt::CMeshInt                                        0x0048F660 0000001F R... B..
+CMeshSpeed::CMeshSpeed                                    0x0048F2B0 0000000F R......
+CMeshStr::CMeshStr                                        0x0048F600 0000001F R... B..
+CMeshStr::CanSkillUp                                      0x004838A0 00000013 R......
+CMeshWis::Apply                                           0x0048A720 0000004C R......
+CMeshWis::CMeshWis                                        0x0048F680 0000001F R... B..
+CMeshWis::CanSkillUp                                      0x0048A780 00000028 R......
+CMesmerization::Apply                                     0x004854C0 00000009 R......
+CMesmerization::CMesmerization                            0x0048E9A0 0000000F R......
+CMesmerization::SpendMPRage                               0x004855C0 00000010 R......
+CMock::CMock                                              0x0048E280 00000021 R... B..
+CMock::CanExcute                                          0x00482BA0 0000000D R......
+CMock::Excute                                             0x00482BF0 00000134 R......
+CMonsterBigBirdMaster::CMonsterBigBirdMaster              0x00444290 0000001F R... B..
+CMonsterBigBirdMaster::Create                             0x00443FD0 000002B9 R... B..
+CMonsterBigBirdMaster::Tick                               0x004442D0 0000028E R... B..
+CMonsterBigBirdMother::Attack                             0x00443B30 000003A9 R... B..
+CMonsterBigBirdMother::CMonsterBigBirdMother              0x00443060 0000002C R... B..
+CMonsterBigBirdMother::Create                             0x00443090 000002AE R... B..
+CMonsterBigBirdMother::Damage                             0x00443970 000001B9 R... B..
+CMonsterBigBirdMother::Move                               0x00443630 0000033B R... B..
+CMonsterBigBirdMother::OnSummon                           0x004435B0 00000079 R... B..
+CMonsterBigBirdMother::Summon                             0x004434F0 000000BE R... B..
+CMonsterBigBirdMother::Tick                               0x00443340 000001B0 R... B..
+CMonsterBlackBug::CMonsterBlackBug                        0x00439C00 00000054 R... B..
+CMonsterBlackBug::Damage                                  0x00442410 000001C7 R... B..
+CMonsterBlackBug::Summon                                  0x00442670 000000BE R... B..
+CMonsterBlackBug::Tick                                    0x004421F0 0000016F R... B..
+CMonsterBlackBug::UpdateChild                             0x004425E0 00000087 R... B..
+CMonsterCocoon::CMonsterCocoon                            0x00439CC0 0000005B R... B..
+CMonsterCocoon::Tick                                      0x00442A20 000000C1 R... B..
+CMonsterEgg::CMonsterEgg                                  0x00439C60 00000052 R... B..
+CMonsterEgg::OnSummon                                     0x004429A0 00000079 R... B..
+CMonsterEgg::Summon                                       0x004428D0 000000C6 R... B..
+CMonsterEgg::Tick                                         0x004427C0 00000102 R... B..
+CMonsterFireFlower::CMonsterFireFlower                    0x00439D80 0000005C R... B..
+CMonsterFireFlower::Move                                  0x00401130 0000000B R... B..
+CMonsterFireFlower::Tick                                  0x00443EE0 000000E8 R... B..
+CMonsterFireFlower::_CMonsterFireFlower                   0x004442B0 00000013 R... B..
+CMonsterGuildWar::CMonsterGuildWar                        0x00441230 00000074 R... B..
+CMonsterGuildWar::Create                                  0x004412B0 000002B3 R... B..
+CMonsterGuildWar::Damage                                  0x00441590 000001FB R... B..
+CMonsterGuildWar::GetGID                                  0x00439B10 00000014 R... B..
+CMonsterGuildWar::GetGuildName                            0x00439B30 00000013 R... B..
+CMonsterGuildWar::SetGuild                                0x004418A0 0000003E R... B..
+CMonsterGuildWar::SetProperty                             0x00441790 00000059 R... B..
+CMonsterGuildWar::Tick                                    0x004417F0 000000AF R... B..
+CMonsterInactive::Add                                     0x004411F0 00000035 R... B..
+CMonsterInactive::CMonsterInactive                        0x004399D0 00000025 R... B..
+CMonsterInactive::Damage                                  0x00441030 0000016C R... B..
+CMonsterInactive::SetProperty                             0x004411A0 00000045 R... B..
+CMonsterInactive::_CMonsterInactive                       0x00439AB0 00000013 R... B..
+CMonsterInvaderBoss::AI                                   0x004457F0 0000013B R... B..
+CMonsterInvaderBoss::CMonsterInvaderBoss                  0x00439F40 00000069 R... B..
+CMonsterInvaderBoss::Tick                                 0x00445950 000001CA R... B..
+CMonsterItem::Add                                         0x00441C70 0000006C R... B..
+CMonsterItem::CMonsterItem                                0x00439B50 00000025 R... B..
+CMonsterItem::Damage                                      0x00441920 000001F8 R... B..
+CMonsterItem::Remove                                      0x00441CE0 00000073 R... B..
+CMonsterItem::Tick                                        0x00441B20 00000142 R... B..
+CMonsterItem::_CMonsterItem                               0x00439BB0 0000001C R... B..
+CMonsterItem::_scalar_deleting_destructor_                0x00439B80 0000002C R... B..
+CMonsterMagic::Add                                        0x00442160 00000088 R... B..
+CMonsterMagic::CMonsterMagic                              0x00441D60 0000007C R... B..
+CMonsterMagic::Create                                     0x00441DE0 00000248 R... B..
+CMonsterMagic::SetProperty                                0x00442110 0000004F R... B..
+CMonsterMagic::Tick                                       0x00442030 000000D8 R... B..
+CMonsterMagic::_scalar_deleting_destructor_               0x00439A80 0000002C R... B..
+CMonsterMaguniMaster::AI                                  0x00440550 0000012E R... B..
+CMonsterMaguniMaster::CMonsterMaguniMaster                0x00442DF0 0000001F R... B..
+CMonsterMaguniMaster::Create                              0x00442AF0 000002FB R... B..
+CMonsterMaguniMaster::Die                                 0x00444560 0000016A R... B..
+CMonsterMaguniMaster::Tick                                0x00442E10 00000245 R... B..
+CMonsterMaguniWithSkillOnly::AI                           0x0043F4E0 000002EF R... B..
+CMonsterMaguniWithSkillOnly::CMonsterMaguniWithSkillOnly  0x00439910 00000025 R... B..
+CMonsterMaguniWithSkillOnly::SetTarget                    0x0043F490 00000048 R... B..
+CMonsterMaguniWithSkillOnly::Tick                         0x0043F7F0 000000EF R... B..
+CMonsterMaguniWithSkillOnly::_CMonsterMaguniWithSkillOnly 0x00439970 00000013 R... B..
+CMonsterMaguniWithSkillOnly::_scalar_deleting_destructor_ 0x00439940 0000002C R... B..
+CMonsterMaguniWithSkill::AI                               0x0043F8E0 000002F5 R... B..
+CMonsterMaguniWithSkill::Attack                           0x0043FD50 00000319 R... B..
+CMonsterMaguniWithSkill::CMonsterMaguniWithSkill          0x00439990 00000032 R... B..
+CMonsterMaguniWithSkill::Tick                             0x0043FBF0 0000015C R... B..
+CMonsterMaguni::CMonsterMaguni                            0x00439830 00000025 R... B..
+CMonsterMaguni::Damage                                    0x0043F260 0000016D R... B..
+CMonsterMaguni::Die                                       0x0043F3D0 000000C0 R... B..
+CMonsterNotReal::AddBuff                                  0x00440FF0 00000039 R... B..
+CMonsterNotReal::CMonsterNotReal                          0x00439AF0 0000001F R... B..
+CMonsterNotReal::_CMonsterNotReal                         0x00439A60 00000013 R... B..
+CMonsterNotReal::_scalar_deleting_destructor_             0x00439A30 0000002C R... B..
+CMonsterObject::CMonsterObject                            0x00438A00 0000005F R... B..
+CMonsterObject::Insert                                    0x00438CA0 00000032 R... B..
+CMonsterObject::OnTimer                                   0x00438AB0 0000018B R... B..
+CMonsterObject::Stop                                      0x00438D20 00000084 R... B..
+CMonsterObject::_scalar_deleting_destructor_              0x00438A80 0000002C R... B..
+CMonsterReal::AI                                          0x0043D060 000000CC R... B..
+CMonsterReal::Add                                         0x0043CFA0 00000040 R... B..
+CMonsterReal::AddGState                                   0x00449220 0000003D R... B..
+CMonsterReal::AddHostility                                0x0043D210 000001F1 R... B..
+CMonsterReal::AfterDamage                                 0x0043EB40 000000DC R... B..
+CMonsterReal::AllotExp                                    0x0043ECC0 000004DF R... B..
+CMonsterReal::AllotTransformExp                           0x0043EC20 0000009E R... B..
+CMonsterReal::ApplyDamage                                 0x0043E950 00000163 R... B..
+CMonsterReal::Attack                                      0x0043D510 00000355 R... B..
+CMonsterReal::CMonsterReal                                0x0043A8F0 0000010D R... B..
+CMonsterReal::Damage                                      0x0043ABB0 00000191 R... B..
+CMonsterReal::Defense                                     0x0043AEB0 0000004D R... B..
+CMonsterReal::Die                                         0x00442360 000000A2 R... B..
+CMonsterReal::GetAttackType                               0x00439860 0000001A R... B..
+CMonsterReal::GetChasePt                                  0x0043E470 000003C2 R... B..
+CMonsterReal::GetMSpeed                                   0x0043D480 00000083 R... B..
+CMonsterReal::GetRandomPt                                 0x0043E070 0000014F R... B..
+CMonsterReal::ManageBuff                                  0x0043E8F0 0000005B R... B..
+CMonsterReal::Move                                        0x0043DBC0 000004AE R... B..
+CMonsterReal::OnDelete                                    0x0043AA00 000000BF R... B..
+CMonsterReal::Remove                                      0x0043CFE0 0000007E R... B..
+CMonsterReal::RemoveHostility                             0x0043D410 0000006A R... B..
+CMonsterReal::ResetHostility                              0x0043F1C0 0000009F R... B..
+CMonsterReal::ResetNextMove                               0x00439880 00000025 R... B..
+CMonsterReal::ReviseProperty                              0x0043AF00 0000008A R... B..
+CMonsterReal::ScanSight                                   0x0043E8C0 00000030 R... B..
+CMonsterReal::SendCreate                                  0x0043AAC0 000000EF R... B..
+CMonsterReal::SetProperty                                 0x0043CEA0 000000C4 R... B..
+CMonsterReal::SetTarget                                   0x0043AFD0 0000005C R... B..
+CMonsterReal::Tick                                        0x0043D140 000000CF R... B..
+CMonsterReal::UpdateProperty                              0x0043B030 000000F7 R... B..
+CMonsterReal::UpdatePrtyPer                               0x0043BF60 00000E50 R... B..
+CMonsterReal::UpdatePrtyPt                                0x0043B130 00000CBB R... B..
+CMonsterReal::_CMonsterReal                               0x004398B0 0000003D R... B..
+CMonsterReal::_scalar_deleting_destructor_                0x0043A8C0 0000002C R... B..
+CMonsterSiegeGunBall::AI                                  0x004453B0 000000F0 R... B..
+CMonsterSiegeGunBall::CMonsterSiegeGunBall                0x00444F90 0000009E R... B..
+CMonsterSiegeGunBall::Create                              0x00445030 00000271 R... B..
+CMonsterSiegeGunBall::Damage                              0x0040ABD0 0000000F R... B..
+CMonsterSiegeGunBall::Tick                                0x004452B0 000000F5 R... B..
+CMonsterSiegeGunRuins::AI                                 0x00442730 00000081 R... B..
+CMonsterSiegeGunRuins::CMonsterSiegeGunRuins              0x00439EF0 0000001F R... B..
+CMonsterSiegeGunRuins::Tick                               0x004454A0 00000070 R... B..
+CMonsterSiegeGun::AI                                      0x00444A10 000000FF R... B..
+CMonsterSiegeGun::CMonsterSiegeGun                        0x004446D0 0000008E R... B..
+CMonsterSiegeGun::Create                                  0x00444760 000002AE R... B..
+CMonsterSiegeGun::Damage                                  0x00444E30 0000015A R... B..
+CMonsterSiegeGun::Die                                     0x00444C00 00000123 R... B..
+CMonsterSiegeGun::GetGuildName                            0x00439E80 00000013 R... B..
+CMonsterSiegeGun::SetFire                                 0x00444D30 00000041 R... B..
+CMonsterSiegeGun::SetOperator                             0x00444DD0 00000051 R... B..
+CMonsterSiegeGun::Summon                                  0x00444D80 00000041 R... B..
+CMonsterSiegeGun::Tick                                    0x00444B10 000000F0 R... B..
+CMonsterSiegeGun::_scalar_deleting_destructor_            0x00439EC0 0000002C R... B..
+CMonsterSkill::CMonsterSkill                              0x00480BF0 00000055 R......
+CMonsterSkill::Close                                      0x00480CD0 0000001F R... B..
+CMonsterSkill::ExcuteSkill                                0x00481010 00000030 R......
+CMonsterSkill::ExcuteSkillWithoutResetSkill               0x004810B0 00000099 R......
+CMonsterSkill::LoadSkill                                  0x00480E40 00000038 R... B..
+CMonsterSkill::PreSkill                                   0x00480F30 0000004E R......
+CMonsterSkill::ResetCurSkill                              0x00481090 00000020 R......
+CMonsterSkill::SetCurSkill                                0x00480D30 00000012 R......
+CMonsterSkill::SetCurSkillDefault                         0x00480DC0 0000004B R......
+CMonsterTowerBoss::Attack                                 0x00440A30 00000355 R... B..
+CMonsterTowerBoss::CMonsterTowerBoss                      0x004400F0 000000A3 R... B..
+CMonsterTowerBoss::Create                                 0x004401A0 0000028F R... B..
+CMonsterTowerBoss::Defense                                0x00440500 00000041 R... B..
+CMonsterTowerBoss::IsIgnore                               0x004400D0 00000018 R... B..
+CMonsterTowerBoss::OnDelete                               0x00440430 000000CA R... B..
+CMonsterTowerBoss::OnSummon                               0x00440F70 00000079 R... B..
+CMonsterTowerBoss::Reaction                               0x00440EE0 0000008A R... B..
+CMonsterTowerBoss::Summon                                 0x00440E20 000000BE R... B..
+CMonsterTowerBoss::Tick                                   0x004406A0 00000383 R... B..
+CMonsterTowerBoss::UpdateChild                            0x00440D90 00000087 R... B..
+CMonsterWithSkillOnly::Attack                             0x00445610 000001D3 R... B..
+CMonsterWithSkillOnly::CMonsterWithSkillOnly              0x00439F10 00000025 R... B..
+CMonsterWithSkillOnly::Tick                               0x00445510 000000F6 R... B..
+CMonster::AI                                              0x0043A620 00000013 R... B..
+CMonster::Add                                             0x0043A640 0000006C R... B..
+CMonster::CMonster                                        0x00438FC0 000000F9 R... B..
+CMonster::CanAttack                                       0x0043A770 0000005F R... B..
+CMonster::Create                                          0x00439FB0 00000247 R... B..
+CMonster::FindMonster                                     0x0043A240 00000078 R... B..
+CMonster::GetGID                                          0x00438E90 00000014 R... B..
+CMonster::GetGuildName                                    0x00438EB0 00000010 R... B..
+CMonster::GetMonsterList                                  0x0043A2C0 00000089 R... B..
+CMonster::GetOperatorName                                 0x0043A720 00000050 R... B..
+CMonster::IsRemoved                                       0x00449450 00000036 R... B..
+CMonster::NewMonster                                      0x00439200 000005CE R... B..
+CMonster::OnDelete                                        0x0043A3F0 000000A8 R... B..
+CMonster::Remove                                          0x0043A6B0 00000038 R... B..
+CMonster::ResetNextMove                                   0x004021B0 0000000D R... B..
+CMonster::ScanMonster                                     0x0043A350 00000097 R... B..
+CMonster::SendCreate                                      0x0043A4D0 000000B5 R... B..
+CMonster::SendDelete                                      0x0043A4A0 00000027 R... B..
+CMonster::SetProperty                                     0x0043A5E0 0000003B R... B..
+CMonster::SetTarget                                       0x0043A590 00000043 R... B..
+CMonster::Size                                            0x004391F0 0000000A R... B..
+CMonster::Start                                           0x004390C0 00000061 R... B..
+CMonster::Stop                                            0x00439130 000000C0 R... B..
+CMonster::Summon                                          0x00438EC0 0000000D R... B..
+CMonster::_CMonster                                       0x00438F00 0000002A R... B..
+CMonster::_scalar_deleting_destructor_                    0x00438ED0 0000002C R... B..
+CMysticArrow::CMysticArrow                                0x0048E6F0 0000000F R......
+CMysticArrow::CanSkillUp                                  0x00483300 00000003 R......
+CNPCDoor::CNPCDoor                                        0x00448E10 00000050 R... B..
+CNPCDoor::Process                                         0x00449C80 000000FA R... B..
+CNPCDoor::Tick                                            0x00449BF0 00000090 R... B..
+CNPCInformant::_scalar_deleting_destructor_               0x00448D30 0000002C R... B..
+CNPCMerchant::CNPCMerchant                                0x00448D00 00000025 R... B..
+CNPCObject::CNPCObject                                    0x00448530 0000005F R... B..
+CNPCObject::Insert                                        0x00448740 0000003D R... B..
+CNPCObject::OnTimer                                       0x004485C0 00000174 R... B..
+CNPCObject::_CNPCObject                                   0x00448590 00000028 R... B..
+CNPCQuest::CNPCQuest                                      0x00448D60 00000025 R... B..
+CNPCQuest::CanReply                                       0x00448D90 0000002D R... B..
+CNPCQuest::Reply                                          0x00449680 00000023 R... B..
+CNPCScenario::CNPCScenario                                0x00448DC0 00000050 R... B..
+CNPCScenario::InitScenario                                0x004498F0 0000004A R... B..
+CNPCScenario::MirrorGState                                0x004496B0 000000B2 R... B..
+CNPCScenario::Process                                     0x00449940 00000198 R... B..
+CNPCScenario::ResetBossTower                              0x004497D0 00000054 R... B..
+CNPCScenario::ThroneGState                                0x00449770 0000005D R... B..
+CNPCScenario::Tick                                        0x00449830 000000C0 R... B..
+CNPCScenario::_CNPCScenario                               0x00448CE0 00000013 R... B..
+CNPCSiegeGunStone::CNPCSiegeGunStone                      0x00448E60 00000095 R... B..
+CNPCSiegeGunStone::Reply                                  0x00449D80 00000042 R... B..
+CNPCSiegeGunStone::SendCreate                             0x0044ACB0 00000077 R... B..
+CNPCSiegeGunStone::SetOperator                            0x0044AD30 00000049 R... B..
+CNPCSiegeGunStone::SetSiegeGun                            0x0044AD80 0000003C R... B..
+CNPCSiegeGunStone::Show                                   0x0044ABC0 000000E4 R... B..
+CNPCSiegeGunStone::SiegeGunSet                            0x0044A530 0000040C R... B..
+CNPCSiegeGunStone::SiegeGunUnSet                          0x0044A960 0000025C R... B..
+CNPCSiegeGunStone::Tick                                   0x00449DD0 00000706 R... B..
+CNPCTeleport::CNPCTeleport                                0x00448C80 00000052 R... B..
+CNPCTeleport::Process                                     0x00449AE0 00000104 R... B..
+CNPC::Add                                                 0x00449390 0000006A R... B..
+CNPC::CNPC                                                0x00448780 0000009F R... B..
+CNPC::CanReply                                            0x00449010 00000083 R... B..
+CNPC::Create                                              0x00448930 0000032C R... B..
+CNPC::FindNPC                                             0x00448FA0 0000006E R... B..
+CNPC::GetNPCList                                          0x004495D0 000000A2 R... B..
+CNPC::OnDelete                                            0x00449130 00000046 R... B..
+CNPC::Remove                                              0x00449400 00000043 R... B..
+CNPC::Reply                                               0x00449260 00000036 R... B..
+CNPC::SendCreate                                          0x004491B0 0000006F R... B..
+CNPC::SendDelete                                          0x00449180 00000027 R... B..
+CNPC::SetProperty                                         0x00449490 0000005C R... B..
+CNPC::Show                                                0x004494F0 000000D8 R... B..
+CNPC::Size                                                0x00448F00 0000000A R... B..
+CNPC::Start                                               0x00448F10 0000006D R... B..
+CNPC::Stop                                                0x00448F80 00000019 R... B..
+CNPC::WarRelationShow                                     0x004492A0 000000E6 R... B..
+CNPC::_CNPC                                               0x00448910 0000001C R... B..
+CNPC::_scalar_deleting_destructor_                        0x004488E0 0000002C R... B..
+CNegative::CNegative                                      0x0048E340 0000000F R......
+CNegative::GetAttack                                      0x0048E360 0000000F R......
+CNegative::GetHostility                                   0x0048E370 0000001F R... B..
+CNegative::GetSpendMP                                     0x0048E390 0000001F R... B..
+CNoMemoryObject::operator_new                             0x00437080 00000011 R... B T.
+CObjectDB::CObjectDB                                      0x00425C20 00000016 R... B..
+CObjectDB::CanReload                                      0x0044C960 0000000A R... B..
+CObjectDB::Close                                          0x0044C8D0 00000083 R... B..
+CObjectDB::FindSymbol                                     0x0044C550 00000049 R... B..
+CObjectDB::Load                                           0x0044C5A0 000002B1 R... B..
+CObjectDB::Open                                           0x0044C300 0000021F R... B..
+CObjectDB::_CObjectDB                                     0x00425C40 00000013 R... B..
+CParty::Accept                                            0x0044D550 000000C8 R... B..
+CParty::Add                                               0x0044D7F0 00000051 R... B..
+CParty::AllotExp                                          0x0044E020 00000489 R... B..
+CParty::AllotTransformExp                                 0x0044F000 00000108 R... B..
+CParty::Broadcast                                         0x0044E700 00000033 R... B..
+CParty::CParty                                            0x0044D3C0 000000B0 R... B..
+CParty::Chant                                             0x0044F290 000000F6 R... B..
+CParty::Delete                                            0x0044DDA0 0000001D R... B..
+CParty::DistributeItem                                    0x0044E9A0 00000660 R... B..
+CParty::Exile                                             0x0044DDC0 00000252 R... B..
+CParty::ExistOnPK                                         0x0041FDA0 00000095 R... B..
+CParty::FindParty                                         0x0044D4E0 0000006E R... B..
+CParty::FindTopLevel                                      0x0044D950 00000078 R... B..
+CParty::GetLuckySize                                      0x0044F440 0000013E R... B..
+CParty::GetPlayerList                                     0x0044F390 00000031 R... B..
+CParty::GetRandomPlayer                                   0x0044E7C0 00000068 R... B..
+CParty::GetSize                                           0x00412ED0 00000016 R... B..
+CParty::Healing                                           0x0044F110 0000017C R... B..
+CParty::IsHead                                            0x0044D890 0000004A R... B..
+CParty::IsMember                                          0x0044D8E0 00000067 R... B..
+CParty::Join                                              0x0044D9D0 00000146 R... B..
+CParty::Leave                                             0x0044DB20 00000280 R... B..
+CParty::OnFree                                            0x0044D640 0000005A R... B..
+CParty::OnTimer                                           0x0044D6A0 0000014E R... B..
+CParty::Remove                                            0x0044D850 00000038 R... B..
+CParty::SendPartyInfo                                     0x0044E4B0 0000015C R... B..
+CParty::StoreItem                                         0x0044E940 00000060 R... B..
+CParty::Teleport                                          0x0044E830 0000010C R... B..
+CParty::UpdateMemberHP                                    0x0044E610 00000063 R... B..
+CParty::UpdateMemberLevel                                 0x0044E680 00000075 R... B..
+CParty::_Broadcast                                        0x0044E740 00000078 R... B..
+CParty::_CParty                                           0x0044D4A0 00000032 R... B..
+CParty::_GetPlayerList                                    0x0044F3D0 0000006D R... B..
+CParty::_scalar_deleting_destructor_                      0x0044D470 0000002C R... B..
+CPerfectDeath::ExcuteM                                    0x0048CD10 00000021 R......
+CPlayerObject::OnTimer                                    0x0044FDD0 0000014F R... B..
+CPlayerSkill::CheatSkill                                  0x0047FE20 000000DD R......
+CPlayerSkill::Close                                       0x0047F990 000000CE R......
+CPlayerSkill::ExcuteSkill                                 0x0047FF70 0000016E R......
+CPlayerSkill::IsSkill                                     0x0044A940 00000017 R... B..
+CPlayerSkill::IsSpendSUPointSkill                         0x00480130 0000010A R......
+CPlayerSkill::LevelUpAutoLearnSkill                       0x004802C0 0000000C R......
+CPlayerSkill::Redis2ndJobSkill                            0x004807A0 00000083 R......
+CPlayerSkill::RedistributeAll                             0x00480690 00000012 R... B..
+CPlayerSkill::SkillUp                                     0x0047FD30 00000031 R......
+CPlayerSkill::UpperChanceStone                            0x00480900 0000000F R... B..
+CPlayerSkill::_CPlayerSkill                               0x0047F890 0000007E R......
+CPlayer::AI                                               0x004514F0 00000034 R... B..
+CPlayer::Add                                              0x00452360 0000022F R... B..
+CPlayer::AddBState                                        0x00451DE0 0000008B R... B..
+CPlayer::AddBuff                                          0x0046B390 0000008D R... B..
+CPlayer::AddEState                                        0x00409AF0 00000022 R... B..
+CPlayer::AddMState                                        0x0043CE00 00000048 R... B..
+CPlayer::AddMStateEx                                      0x00451DA0 00000036 R... B..
+CPlayer::AddWState                                        0x00427BB0 00000029 R... B..
+CPlayer::AskParty                                         0x0045FA90 000001C3 R... B..
+CPlayer::AskPvP                                           0x00460300 0000018E R... B..
+CPlayer::AskTrade                                         0x0045E170 00000171 R... B..
+CPlayer::Attack                                           0x0045C740 000004BB R... B..
+CPlayer::Bless                                            0x0046BDC0 00000197 R... B..
+CPlayer::BreakStandard                                    0x0046BBF0 00000047 R... B..
+CPlayer::BuyItemAtStall                                   0x0045F660 00000333 R... B..
+CPlayer::BuyItemEx                                        0x0045D2F0 0000033A R... B..
+CPlayer::CPlayer                                          0x0044FF20 00000537 R... B..
+CPlayer::CanAttack                                        0x0046AE50 00000263 R... B..
+CPlayer::CanMove                                          0x0046CD70 000000A6 R... B..
+CPlayer::CancelTrade                                      0x0045E3B0 00000055 R... B..
+CPlayer::ChangeGuildName                                  0x0046D100 00000152 R... B T.
+CPlayer::ChangePlayerName                                 0x0046CEA0 00000111 R... B T.
+CPlayer::ChatCommand                                      0x00461080 0000322F R... B T.
+CPlayer::CheckBlock                                       0x00452130 000001DA R... B..
+CPlayer::CheckQuestClear                                  0x00460180 00000088 R... B..
+CPlayer::CheckQuestFlag                                   0x004600D0 000000A5 R... B..
+CPlayer::Cooking                                          0x0046A020 00000AAF R... B..
+CPlayer::CountWarrelationPlayer                           0x0046E0D0 000000D8 R... B..
+CPlayer::CutdownExp                                       0x004643A0 000001AA R... B..
+CPlayer::Damage                                           0x00451530 000007B9 R... B..
+CPlayer::DropItem                                         0x0045D7E0 000001D4 R... B..
+CPlayer::DropItemONPKDie                                  0x0046B890 00000198 R... B..
+CPlayer::EnchantItem                                      0x0045DF90 0000010C R... B..
+CPlayer::EndPvP                                           0x00460940 0000010C R... B..
+CPlayer::EnforceItem                                      0x0046E1B0 00000CD9 R... B..
+CPlayer::EventBuff                                        0x0046B770 0000011F R... B..
+CPlayer::EventInsert                                      0x004655B0 00000028 R... B..
+CPlayer::EventIsMoraTime                                  0x00465630 000000A2 R... B..
+CPlayer::EventProcessNPC                                  0x0046D340 0000014C R... B..
+CPlayer::EventRemoveAll                                   0x004655E0 00000048 R... B..
+CPlayer::EventSaveDB                                      0x004658E0 00000104 R... B..
+CPlayer::EventSetMora                                     0x004656E0 000001E5 R... B..
+CPlayer::ExchahgeItem                                     0x00456AD0 000000E9 R... B..
+CPlayer::ExchangeBoddariToItem                            0x00456750 00000375 R... B..
+CPlayer::ExchangeDanjiToItem                              0x0046D570 0000033A R... B..
+CPlayer::ExileParty                                       0x0045FDC0 00000082 R... B..
+CPlayer::FRDProcess                                       0x004675B0 00000C39 R... B..
+CPlayer::FindItem                                         0x0045D190 00000041 R... B..
+CPlayer::FindPlayer                                       0x00450890 00000078 R... B..
+CPlayer::FreeTransform                                    0x0046BB90 00000056 R... B..
+CPlayer::GameRestart                                      0x004585B0 000000C1 R... B..
+CPlayer::GameStart                                        0x00458270 00000334 R... B..
+CPlayer::GetAttackType                                    0x00452110 0000001C R... B..
+CPlayer::GetAutoRefreshHP                                 0x00452C10 00000033 R... B..
+CPlayer::GetAutoRefreshMP                                 0x00452C50 00000033 R... B..
+CPlayer::GetDropItemMask                                  0x0046B310 00000072 R... B..
+CPlayer::GetFinalAbsorb                                   0x00451FC0 00000031 R... B..
+CPlayer::GetFinalDefense                                  0x00451F40 00000079 R... B..
+CPlayer::GetFinalResist                                   0x00452000 00000065 R... B..
+CPlayer::GetGID                                           0x0046AB90 0000002C R... B..
+CPlayer::GetGuild                                         0x0046AAD0 00000041 R... B..
+CPlayer::GetGuildClassTitle                               0x0046AD70 00000047 R... B..
+CPlayer::GetGuildName                                     0x0046ACD0 00000047 R... B..
+CPlayer::GetGuildStandard                                 0x0046AD20 00000048 R... B..
+CPlayer::GetInvenSize                                     0x00456720 00000022 R... B..
+CPlayer::GetMSpeed                                        0x00452070 0000009D R... B..
+CPlayer::GetNeedPoint                                     0x00456BC0 00000075 R... B..
+CPlayer::GetPalsyDamage                                   0x0046C9F0 00000377 R... B..
+CPlayer::GetPartySize                                     0x0045FE50 00000051 R... B..
+CPlayer::GetStallInfo                                     0x0045F3A0 00000198 R... B..
+CPlayer::InfoDie                                          0x00451CF0 00000028 R... B..
+CPlayer::InitGambleInfo                                   0x004504B0 00000050 R... B..
+CPlayer::InitStat                                         0x00465250 0000035B R... B..
+CPlayer::InsertItem                                       0x0045DDC0 00000041 R... B..
+CPlayer::InsertOwnItem                                    0x0046D4D0 00000098 R... B..
+CPlayer::IsCooking                                        0x00469D40 000002D2 R... B..
+CPlayer::IsDefenseSide                                    0x0046ADC0 0000008F R... B..
+CPlayer::IsEState                                         0x0044A510 00000019 R... B..
+CPlayer::IsPBit                                           0x00451330 0000001D R... B..
+CPlayer::IsPCBang                                         0x0046C040 0000002C R... B..
+CPlayer::IsRightSet                                       0x0046F170 0000010A R......
+CPlayer::IsState                                          0x0046D4B0 00000013 R... B..
+CPlayer::IsWState                                         0x00427BE0 00000020 R... B..
+CPlayer::IsWearBuffStandard                               0x0046BD80 0000003A R... B..
+CPlayer::LeaveParty                                       0x0045FD70 00000048 R... B..
+CPlayer::LevelUp                                          0x0045CC00 00000083 R... B..
+CPlayer::LogPlayerStatistic                               0x00450AD0 0000036F R... B..
+CPlayer::MAILProcess                                      0x00468890 000013BD R... B..
+CPlayer::MLMAccumFee                                      0x00467400 000000CF R... B..
+CPlayer::MLMDelete                                        0x00466CD0 00000039 R... B..
+CPlayer::MLMDeleteAll                                     0x00466DA0 000000C6 R... B..
+CPlayer::MLMLevelUp                                       0x004674D0 000000D7 R... B..
+CPlayer::MLMLoad                                          0x00466BA0 000000CB R... B..
+CPlayer::MLMPayMoney                                      0x00467080 00000379 R... B..
+CPlayer::MLMProcess                                       0x004659F0 0000109C R... B..
+CPlayer::MLMPupilNum                                      0x00467010 00000063 R... B..
+CPlayer::MLMUpdate                                        0x00466E70 000000AD R... B..
+CPlayer::MailSend                                         0x00468280 000002E7 R... B T.
+CPlayer::MailSendResult                                   0x00468570 0000031A R... B..
+CPlayer::NPCProcess                                       0x0046CE20 00000074 R... B..
+CPlayer::OnAskParty                                       0x0045FC60 00000107 R... B..
+CPlayer::OnAskPvP                                         0x004604C0 000002B0 R... B..
+CPlayer::OnAskTrade                                       0x0045E2F0 000000C0 R... B..
+CPlayer::OnChangeGuildName                                0x0046D260 000000D2 R... B..
+CPlayer::OnChangePlayerName                               0x0046CFC0 00000135 R... B..
+CPlayer::OnDelete                                         0x00450E60 000004C4 R... B..
+CPlayer::OnFree                                           0x00450E40 00000013 R... B..
+CPlayer::OnGetMyTelPt                                     0x0046C100 00000186 R... B..
+CPlayer::OnLoadPlayer                                     0x00456C40 000011E6 R... B..
+CPlayer::OnProcessEvent                                   0x00465120 0000012C R... B..
+CPlayer::OnPvP                                            0x00460770 000001C5 R... B..
+CPlayer::OnSetMyTelPt                                     0x0046C960 00000085 R... B..
+CPlayer::OnTeleport                                       0x0045CE50 00000279 R... B..
+CPlayer::PKBulletinInfoSend                               0x0046B420 00000104 R... B..
+CPlayer::PKBulletinLoad                                   0x0046B530 000000B8 R... B..
+CPlayer::PKKill                                           0x0046B0C0 000001F8 R... B..
+CPlayer::Process                                          0x00452ED0 0000367C R... B..
+CPlayer::ProcessEvent                                     0x00464B40 000005A6 R... B..
+CPlayer::ProcessMsg                                       0x00460A50 000005AB R... B..
+CPlayer::PutInStorage                                     0x0045ECA0 0000021A R... B..
+CPlayer::PutOffItem                                       0x0045DC50 000000A4 R... B..
+CPlayer::PutOnItem                                        0x0045DB40 00000103 R... B..
+CPlayer::PutOutStorage                                    0x0045EEC0 00000173 R... B..
+CPlayer::QuestGuide                                       0x00460210 000000EA R... B..
+CPlayer::RefreshStandardBuff                              0x0046BC40 00000139 R... B..
+CPlayer::Remove                                           0x00452590 00000089 R... B..
+CPlayer::RemoveItem                                       0x0045DA90 000000AB R... B..
+CPlayer::Rest                                             0x004642B0 000000ED R... B..
+CPlayer::ReturnToPoint                                    0x0046DF30 000001A0 R... B..
+CPlayer::ReviseProperty                                   0x00451D20 0000007A R... B..
+CPlayer::Revival                                          0x00464550 000001FD R... B..
+CPlayer::RevivalItem                                      0x00464950 000000FB R... B..
+CPlayer::RevivalSkill                                     0x00464750 000001FA R... B..
+CPlayer::SaveAllProperty                                  0x004586A0 0000015F R... B..
+CPlayer::SaveQuestFlag                                    0x0045FF20 000001AC R... B..
+CPlayer::SaveRevivalPt                                    0x00464A50 000000EE R... B..
+CPlayer::ScanONPKPlayer                                   0x0046B5F0 00000177 R... B..
+CPlayer::ScanPlayer                                       0x00450790 00000078 R... B..
+CPlayer::SellItem                                         0x0045D630 000001AC R... B..
+CPlayer::Send                                             0x00452E00 00000055 R... B..
+CPlayer::SendCreate                                       0x00451390 00000151 R... B..
+CPlayer::SendDelete                                       0x00451350 00000033 R... B..
+CPlayer::SendMove                                         0x00450480 00000021 R... B..
+CPlayer::SendPacket                                       0x00450460 00000019 R... B..
+CPlayer::SetEventCode                                     0x0046BFD0 0000006E R... B..
+CPlayer::SetGID                                           0x0046ABC0 00000029 R... B..
+CPlayer::SetGuild                                         0x0046AB20 00000065 R... B..
+CPlayer::SetGuildClass                                    0x0046AC90 0000003E R... B..
+CPlayer::SetGuildLevel                                    0x0046ABF0 00000029 R... B..
+CPlayer::SetGuildName                                     0x0046AC20 00000033 R... B..
+CPlayer::SetGuildStandard                                 0x0046AC60 00000029 R... B..
+CPlayer::SetMyTelPt                                       0x0046C2F0 00000612 R... B..
+CPlayer::SetStallInfo                                     0x0045F040 000002BD R... B..
+CPlayer::SetSystemCode                                    0x0046BF60 0000006E R... B..
+CPlayer::Shortcut                                         0x0046C070 00000090 R... B..
+CPlayer::ShowOffItem                                      0x0045E460 00000252 R... B..
+CPlayer::SiegeGunControl                                  0x0046DC50 000001E4 R... B..
+CPlayer::SiegeGunProcess                                  0x0046D8B0 0000039A R... B..
+CPlayer::SiegeGunUnset                                    0x0046DE50 000000D9 R... B..
+CPlayer::Start                                            0x00450730 00000056 R... B..
+CPlayer::StorageInfo                                      0x0045EB90 0000010F R... B..
+CPlayer::SubBState                                        0x00451EB0 0000008F R... B..
+CPlayer::SubEState                                        0x0044A4E0 00000024 R... B..
+CPlayer::SubGState                                        0x004418E0 0000003D R... B..
+CPlayer::SubMState                                        0x0043CE50 00000048 R... B..
+CPlayer::SubMStateEx                                      0x00451E70 00000036 R... B..
+CPlayer::SubState                                         0x0046D490 0000001C R... B..
+CPlayer::SubWState                                        0x00428CD0 0000002B R... B..
+CPlayer::SwitchStall                                      0x0045F540 000000F5 R... B..
+CPlayer::Teleport                                         0x0045CC90 000000E9 R... B..
+CPlayer::Tick                                             0x00452620 000005E8 R... B..
+CPlayer::TradeAgreed                                      0x0045E720 00000055 R... B..
+CPlayer::Transform                                        0x0046BA30 00000155 R... B..
+CPlayer::TrashItem                                        0x0045D9C0 000000C8 R... B..
+CPlayer::UpdatePartyMember                                0x0045FEB0 0000006C R... B..
+CPlayer::UpdateProperty                                   0x00458800 00000FDC R... B..
+CPlayer::UpdatePrtyPer                                    0x0045B100 000015B5 R... B..
+CPlayer::UpdatePrtyPt                                     0x00459840 00001824 R... B..
+CPlayer::UpdateTransformExp                               0x00452310 0000004B R... B..
+CPlayer::UpgradeItem                                      0x0045E0A0 000000C5 R... B..
+CPlayer::UseItem                                          0x0045DD00 000000BA R... B..
+CPlayer::WarPortalAll                                     0x00452C90 0000016A R... B..
+CPlayer::Write                                            0x00452E60 0000006E R... B..
+CPlayer::WriteAll                                         0x00450910 000000D1 R... B..
+CPlayer::WriteInMap                                       0x004509F0 000000DF R... B..
+CPlayer::_CPlayer                                         0x00450530 00000118 R... B..
+CPlayer::_CheckTrade                                      0x0045E780 0000010F R... B..
+CPlayer::_Create                                          0x00457ED0 0000033A R... B..
+CPlayer::_EndTrade                                        0x0045E410 00000049 R... B..
+CPlayer::_FindItem                                        0x0045D1E0 00000083 R... B..
+CPlayer::_FindMergeItem                                   0x0045D270 00000080 R... B..
+CPlayer::_FindStorageItem                                 0x0045EAE0 000000AF R... B..
+CPlayer::_InsertItem                                      0x0045DE10 0000017F R... B..
+CPlayer::_IntoInven                                       0x0045D0D0 00000064 R... B..
+CPlayer::_MLMDelete                                       0x00466D10 00000085 R... B..
+CPlayer::_MLMFind                                         0x00466F20 0000005C R... B..
+CPlayer::_MLMGet                                          0x00466F80 00000089 R... B..
+CPlayer::_MLMInsert                                       0x00466C70 00000059 R... B..
+CPlayer::_OutofInven                                      0x0045D140 0000004B R... B..
+CPlayer::_StorageIn                                       0x0045EA00 000000AD R... B..
+CPlayer::_StorageOut                                      0x0045EAB0 00000025 R... B..
+CPlayer::_TradeItem                                       0x0045E890 0000016E R... B..
+CPlayer::_scalar_deleting_destructor_                     0x00450500 0000002C R... B..
+CPoisonArrow::CPoisonArrow                                0x0048F030 0000001F R... B..
+CPoisonCloud::CPoisonCloud                                0x0048EB10 0000001F R... B..
+CPortal::CPortal                                          0x0040EA00 0000003C R... B..
+CPortal::OnLoad                                           0x0040EC10 0000005A R... B..
+CPortal::OpenPortal                                       0x0040EC70 000000AD R... B..
+CPortal::Set                                              0x0040EA90 00000175 R... B..
+CPortal::_CPortal                                         0x0040EA70 0000001C R... B..
+CPortal::_scalar_deleting_destructor_                     0x0040EA40 0000002C R... B..
+CPrefix::ApplySpec                                        0x0041FA60 0000006B R... B..
+CPrefix::CPrefix                                          0x0041F0D0 00000048 R... B..
+CPrefix::Copy                                             0x0041F1E0 00000037 R... B..
+CPrefix::FreeSpec                                         0x0041FAD0 0000006C R... B..
+CPrefix::OnLoad                                           0x0041FA40 00000017 R... B..
+CPrefix::Set                                              0x0041F220 00000783 R... B..
+CPrefix::_CPrefix                                         0x0041F150 00000083 R... B..
+CPrefix::_scalar_deleting_destructor_                     0x0041F120 0000002C R... B..
+CProtectRange::CProtectRange                              0x0048F0F0 0000001C R... B..
+CProtectRange::Excute                                     0x004882B0 0000001A R......
+CProtect::CProtect                                        0x0048F070 0000001F R... B..
+CProtect::CanExcute                                       0x00487CC0 0000002A R......
+CProtect::CanSkillUp                                      0x00487EA0 00000047 R......
+CProtect::GetSpendMP                                      0x0048F090 0000001F R... B..
+CPullSwing::CPullSwing                                    0x0048E130 0000001D R... B..
+CPullSwing::CanSkillUp                                    0x00482240 00000019 R......
+CPullSwing::GetSpendMP                                    0x0048E170 0000001F R... B..
+CPurgatorialFlame::AddMagicMonster                        0x0048D1A0 0000002A R... B..
+CPurge::CPurge                                            0x0048F310 0000000F R......
+CPurge::Excute                                            0x00489450 000000F6 R......
+CQuest::CQuest                                            0x0044CE00 00000048 R... B..
+CQuest::Close                                             0x0047CE10 0000004D R......
+CQuest::FindQuest                                         0x0047CE80 00000031 R......
+CQuest::OnLoad                                            0x0047D220 0000001E R......
+CQuest::Process                                           0x0047D280 00000033 R......
+CQuest::Set                                               0x0047CF40 00000018 R......
+CQuest::SetCase                                           0x0047D130 00000052 R......
+CQuest::_CQuest                                           0x0047CD40 00000021 R... B..
+CQuest::_scalar_deleting_destructor_                      0x0044CE50 0000002C R... B..
+CRWLock::CRWLock                                          0x0047E100 00000060 R......
+CRWLock::Enter                                            0x0047E3F0 0000002A R......
+CRWLock::Leave                                            0x0047E420 00000052 R......
+CRWLock::WriteUnlock                                      0x0047E580 00000039 R......
+CRWLock::_CRWLock                                         0x0047E160 00000059 R......
+CRainforceDefense::CRainforceDefense                      0x0048F1F0 0000000F R... B..
+CRainforceDefense::Excute                                 0x00488560 00000031 R......
+CRainforceDefense::GetSpendMP                             0x0048F410 0000000F R......
+CReincarnate::Apply                                       0x00486F20 00000090 R......
+CReincarnate::CReincarnate                                0x0048EE90 0000001F R... B..
+CReincarnate::GetSpendMP                                  0x0048EEB0 0000001C R... B..
+CResistCurse::Apply                                       0x0048ABF0 00000021 R......
+CResistCurse::CResistCurse                                0x0048F7E0 0000001F R... B..
+CResistFire::Apply                                        0x0048ABB0 00000007 R......
+CResistFire::CResistFire                                  0x0048F7C0 0000001F R... B..
+CResistIce::Apply                                         0x0048AB70 00000011 R......
+CResistIce::CResistIce                                    0x0048F7A0 0000001C R... B..
+CResistLightning::CResistLightning                        0x0048F780 00000018 R... B..
+CResistPalsy::Apply                                       0x0048AC30 00000016 R......
+CResistPalsy::CResistPalsy                                0x0048F820 0000001F R... B..
+CResistPalsy::CanSkillUp                                  0x0048A2E0 0000001F R......
+CResistPalsy::GetSpendMP                                  0x0048F800 0000001F R... B..
+CRest::CRest                                              0x0048ECD0 0000001C R... B..
+CRest::CanSkillUp                                         0x00486470 00000040 R......
+CRest::ExcutePassive                                      0x00486410 00000009 R......
+CRestoration::CRestoration                                0x0048EC10 0000000F R......
+CRestoration::GetIncHP                                    0x00486250 0000000E R......
+CRestoration::GetSpendMP                                  0x0048EC30 0000000C R......
+CResurrection::Apply                                      0x00486EA0 00000020 R......
+CResurrection::CResurrection                              0x0048EE50 0000001F R... B..
+CResurrection::GetSpendMP                                 0x0048EE70 0000001C R... B..
+CReturn::CReturn                                          0x0048E070 00000010 R... B..
+CReturn::Excute                                           0x0048D500 0000016C R......
+CRevival::Apply                                           0x00486E10 00000006 R......
+CRevival::CRevival                                        0x0048EE30 0000001F R... B..
+CRevival::CanExcute                                       0x00486C20 00000037 R......
+CSMap::FindSMap                                           0x00491440 00000020 R......
+CSMap::FreeSMap                                           0x00491400 00000002 R......
+CSMap::GetCellMapRect                                     0x004928D0 00000AB7 R......
+CSMap::GetPlayerListInRect                                0x004938B0 0000041A R......
+CSMap::IsMoveTile                                         0x0043E1C0 00000152 R... B..
+CSMap::IsOnTile                                           0x0045CD80 00000067 R... B..
+CSMap::IsValidTile                                        0x00438130 00000082 R... B..
+CSMap::ReadLock                                           0x00491460 00000160 R... B..
+CSMap::ReadWriteLock                                      0x004915C0 000001E0 R......
+CSMap::RemoveFromMap                                      0x004917A0 00000C9A R......
+CSMap::SendPacketInRect                                   0x00493800 00000093 R......
+CSMap::_CSMap                                             0x004911C0 00000032 R......
+CSMap::_GetCellMap                                        0x00438250 0000007D R... B..
+CSMap::_scalar_deleting_destructor_                       0x004913D0 00000010 R......
+CSacrifice::CSacrifice                                    0x0048F390 0000000F R......
+CSacrifice::CanSkillUp                                    0x00489210 0000010F R......
+CSacrifice::Excute                                        0x004897B0 0000003A R......
+CScreen::Add                                              0x0047E6E0 0000001D R......
+CScreen::AddString                                        0x0047E790 0000006E R......
+CScreen::CScreen                                          0x0047E5E0 00000004 R......
+CScreen::_CScreen                                         0x0047E630 0000007F R......
+CServer::CreateSocket                                     0x0047ED00 00000003 R......
+CServer::FindSocket                                       0x0047EBC0 00000003 R......
+CServer::Relogin                                          0x0047EC40 00000035 R......
+CServer::Remove                                           0x0047EA70 0000000C R......
+CServer::SendAlive                                        0x0047EB40 0000001A R... B..
+CServer::Size                                             0x0047EAC0 00000048 R......
+CServer::Start                                            0x0047E9B0 00000031 R......
+CShieldAttack::Apply                                      0x004829D0 00000024 R......
+CShieldAttack::CShieldAttack                              0x0048E5D0 0000000F R......
+CShieldAttack::CanExcute                                  0x00482930 0000002A R......
+CShieldAttack::GetAttack                                  0x00482AD0 00000043 R......
+CShieldResilience::CShieldResilience                      0x0048F3D0 0000000F R......
+CShieldSmash::CShieldSmash                                0x0048F0B0 0000001C R... B..
+CShieldSmash::Excute                                      0x00487FB0 0000005F R......
+CShock::CShock                                            0x0048E860 0000000F R......
+CShock::GetMagic                                          0x00483F10 00000039 R... B..
+CShootingFire::CShootingFire                              0x0048FE70 00000020 R......
+CShot::CShot                                              0x0048E1F0 0000001F R... B..
+CShot::GetHostility                                       0x0048E210 0000001F R... B..
+CSilenceArrow::CSilenceArrow                              0x0048F0D0 0000001F R... B..
+CSilenceArrow::CanExcute                                  0x004880B0 00000015 R......
+CSilenceArrow::Excute                                     0x00488170 00000026 R......
+CSilenceShot::CSilenceShot                                0x0048F3F0 0000000F R......
+CSilenceShot::Excute                                      0x00489C50 0000008C R......
+CSkillBuff::CSkillBuff                                    0x0048F450 0000000C R......
+CSkillBuff::CanExcute                                     0x00489DD0 00000039 R... B..
+CSkillBuff::Excute                                        0x00489EF0 00000028 R......
+CSkillBuff::PreExcute                                     0x00489E60 00000039 R... B..
+CSkillSelfBuff::CSkillSelfBuff                            0x0048F740 0000001F R... B..
+CSkillSelfBuff::Excute                                    0x0048A990 00000005 R......
+CSkill_MonsterMagic::CSkill_MonsterMagic                  0x0048FC50 00000010 R... B..
+CSkill_MonsterMagic::CanExcuteM                           0x0048FC70 0000000F R......
+CSkill_MonsterMagic::ExcuteM                              0x0048C0C0 0000004A R......
+CSkill::CanExcute                                         0x00481240 000000EB R......
+CSkill::CanExcuteM                                        0x00406970 00000012 R... B..
+CSkill::CanSkillUp                                        0x004813C0 00000123 R......
+CSkill::GetDelay                                          0x004811D0 00000007 R......
+CSkill::GetHostility                                      0x0048E960 0000000F R......
+CSkill::Init                                              0x0047FB40 0000006F R......
+CSnowField::Apply                                         0x004855F0 00000015 R......
+CSnowField::CSnowField                                    0x0048E9C0 0000000F R......
+CSnowField::CanSkillUp                                    0x00485660 0000006F R......
+CSocket::CloseSocket                                      0x00494B20 0000014C R......
+CSocket::Id                                               0x00458680 00000014 R... B..
+CSocket::IsSBit                                           0x0040DC60 0000001D R... B..
+CSocket::LoadPlayer                                       0x004960F0 00000054 R......
+CSocket::Lock                                             0x004327C0 00000016 R... B..
+CSocket::OnCheckCopy                                      0x00496350 00000094 R......
+CSocket::OnClose                                          0x00494AC0 00000060 R......
+CSocket::OnCopyPlayer                                     0x00496510 0000000A R......
+CSocket::OnDelPlayer                                      0x00495E50 00000136 R... B..
+CSocket::OnFreeAccount                                    0x00496080 00000070 R......
+CSocket::OnKickOut                                        0x00495FE0 0000004B R......
+CSocket::OnLoadPlayer                                     0x00496210 000000C3 R......
+CSocket::OnLogin                                          0x00495CB0 00000004 R......
+CSocket::OnRequestCopy                                    0x004963F0 000000B8 R......
+CSocket::OnUserAllCount                                   0x00495D70 000000DE R......
+CSocket::Process                                          0x00494CF0 00000A48 R......
+CSocket::Unlock                                           0x004327E0 00000016 R... B..
+CSocket::_CSocket                                         0x004947F0 000000D0 R... B..
+CSocket::_scalar_deleting_destructor_                     0x004947C0 0000002A R... B..
+CSpark::CSpark                                            0x0048E880 0000000A R......
+CSpark::GetMagic                                          0x00484030 00000083 R......
+CSpark::GetSpendMP                                        0x0048E8A0 0000000F R......
+CSpark::Redistribute                                      0x00484170 00000024 R......
+CSpecBuff::CSpecBuff                                      0x0041ED00 00000037 R... B..
+CSpecBuff::Use                                            0x0041FF40 00000051 R... B..
+CSpecChangePrefix::CSpecChangePrefix                      0x0041EC80 00000049 R... B..
+CSpecChangePrefix::Enchant                                0x0041FEE0 00000034 R... B..
+CSpecCharming::CSpecCharming                              0x0041EC20 00000025 R... B..
+CSpecCharming::Enchant                                    0x0041FE90 00000026 R... B..
+CSpecGState::ApplySpec                                    0x0041FC20 0000001C R... B..
+CSpecGState::CSpecGState                                  0x0041EB90 00000025 R... B..
+CSpecGState::FreeSpec                                     0x0041FC40 0000001C R... B..
+CSpecProtect::CSpecProtect                                0x0041ECD0 00000021 R... B..
+CSpecProtect::Enchant                                     0x0041FF20 0000001F R... B..
+CSpecPrty::ApplySpec                                      0x0041FB40 00000064 R... B..
+CSpecPrty::CSpecPrty                                      0x0041EB20 0000003C R... B..
+CSpecPrty::FreeSpec                                       0x0041FBB0 00000064 R... B..
+CSpecRefresh::CSpecRefresh                                0x0041EBF0 00000029 R... B..
+CSpecRefresh::Use                                         0x0041FE40 00000041 R... B..
+CSpecRepair::CSpecRepair                                  0x0041EC50 00000025 R... B..
+CSpecRepair::Enchant                                      0x0041FEC0 0000001F R... B..
+CSpecRevival::CSpecRevival                                0x0041ED40 00000025 R... B..
+CSpecRevival::Use                                         0x0041FFA0 0000001C R... B..
+CSpecTeleport::CSpecTeleport                              0x0041EBC0 00000029 R... B..
+CSpecTeleport::Use                                        0x0041FC60 0000013F R... B..
+CSpec::CSpec                                              0x0041EB60 0000002B R... B..
+CSpiritBlast::CSpiritBlast                                0x0048E710 0000001F R... B..
+CStatus::Update                                           0x00496570 0000003E R......
+CStoneShield::CStoneShield                                0x0048EF10 0000001F R... B..
+CStrenUpDex::Apply                                        0x0048A220 0000001F R......
+CStrenUpDex::CStrenUpDex                                  0x0048F4D0 0000000F R......
+CStrenUpDex::GetSpendMP                                   0x0048F4F0 0000000F R......
+CStrenUpFatal::CStrenUpFatal                              0x0048F550 0000000F R......
+CStrenUpFatal::CanExcute                                  0x0048A1D0 00000008 R......
+CStrenUpFatal::GetSpendMP                                 0x0048F570 0000000F R......
+CStrenUpHth::CStrenUpHth                                  0x0048F490 0000000F R......
+CStrenUpHth::GetSpendMP                                   0x0048F4B0 0000000F R......
+CStrenUpInt::Apply                                        0x0048A2A0 00000040 R... B..
+CStrenUpInt::CStrenUpInt                                  0x0048F510 0000000F R......
+CStrenUpInt::GetSpendMP                                   0x0048F530 0000000F R......
+CStrenUpStr::Apply                                        0x0048A150 00000044 R......
+CStrenUpStr::CStrenUpStr                                  0x0048F430 0000000F R......
+CStrenUpStr::GetSpendMP                                   0x0048F470 0000000F R......
+CStunArrow::Apply                                         0x00482DC0 00000023 R......
+CStunArrow::CStunArrow                                    0x0048E5F0 0000000F R......
+CStunArrow::GetAttack                                     0x00482D70 00000050 R......
+CStunArrow::GetDelay                                      0x0048E240 0000000F R......
+CStunArrow::GetHit                                        0x0048E260 0000000F R......
+CSuffering::CSuffering                                    0x0048F1B0 0000001C R... B..
+CSuffering::Excute                                        0x00488960 00000083 R... B..
+CSwing1::CSwing1                                          0x0048FD90 00000030 R......
+CSwing1::GetMagicM                                        0x0048CE30 00000030 R... B..
+CSwing2::CSwing2                                          0x0048FDC0 00000015 R......
+CTDemolition::CTDemolition                                0x0048F9E0 0000000F R......
+CTDiamondClow::CTDiamondClow                              0x0048FA60 00000010 R... B..
+CTDiamondClow::Excute                                     0x0048B800 00000055 R... B..
+CTFatalBlow::CTFatalBlow                                  0x0048F9C0 0000000F R......
+CTFury::CTFury                                            0x0048FA00 0000001F R... B..
+CTFury::CanExcute                                         0x0048B1C0 00000065 R......
+CTFury::Excute                                            0x0048B4A0 00000003 R......
+CTGroundSplinter::CTGroundSplinter                        0x0048FA20 00000010 R... B..
+CTGroundSplinter::GetAttack                               0x0048B530 00000014 R......
+CTLitningBlast::CTLitningBlast                            0x0048F960 00000010 R... B..
+CTLitningBlast::CanExcute                                 0x0048B560 00000024 R......
+CTLitningBlast::GetMagic                                  0x0048B190 00000007 R......
+CTPhoenix::CTPhoenix                                      0x0048F9A0 0000000F R......
+CTPhoenix::SpendMPRage                                    0x0048B350 000000F0 R......
+CTShadowFang::CTShadowFang                                0x0048FA40 0000000F R......
+CTShadowFang::Excute                                      0x0048B5F0 00000034 R......
+CTTempest::CTTempest                                      0x0048F980 0000000F R......
+CTables::CTables                                          0x004966C0 00000032 R... B..
+CThunderLitning::CThunderLitning                          0x0048E8E0 0000000C R......
+CThunderStorm::AddMagicMonster                            0x00485A90 00000012 R......
+CThunderStorm::CThunderStorm                              0x0048EA80 0000000F R......
+CThunder::GetHit                                          0x0048E1D0 0000001F R... B..
+CThunder::Redistribute                                    0x004822F0 0000004F R......
+CTile::CTile                                              0x00496870 0000000B R......
+CTile::RemoveBase                                         0x00496910 0000007B R......
+CTile::_CTile                                             0x004968A0 0000004D R......
+CTile::_vector_deleting_destructor_                       0x004901A0 0000007E R......
+CTrade::CTrade                                            0x00496A00 00000080 R......
+CTrade::Cancel                                            0x00496CB0 0000001D R......
+CTrade::CreateTrade                                       0x00496AC0 00000005 R......
+CTrade::GetOther                                          0x0045E6E0 00000031 R... B..
+CTrade::IsEnd                                             0x0045E6C0 00000014 R... B..
+CTrade::OnDelete                                          0x00496C40 00000030 R......
+CTrade::TradeAgreed                                       0x00496D50 00000120 R......
+CTrade::_CTrade                                           0x00496A80 00000036 R......
+CTranscendental::CTranscendental                          0x0048E3F0 0000001F R... B..
+CTranscendental::GetAttack                                0x0048E410 00000022 R... B..
+CTranscendental::Redistribute                             0x00482390 00000030 R......
+CUpAttackRange::CUpAttackRange                            0x0048F170 0000001C R... B..
+CUpBlockShield::CUpBlockShield                            0x0048EDF0 0000001F R... B..
+CUpBow::CUpBow                                            0x0048E0F0 0000001C R... B..
+CUpBow::ExcutePassive                                     0x004819F0 0000048C R... B..
+CUpConCen::CUpConCen                                      0x0048E110 0000001F R... B..
+CUpEvade::CUpEvade                                        0x0048EED0 0000001F R... B..
+CUpEvade::ExcutePassive                                   0x00486FB0 00000045 R......
+CUpFatal2::CUpFatal2                                      0x0048ED10 0000001F R... B..
+CUpFatal2::ExcutePassive                                  0x004866B0 0000001C R......
+CUpFatal3::CUpFatal3                                      0x0048ED30 0000001F R... B..
+CUpFatal3::ExcutePassive                                  0x00486710 00000043 R......
+CUpFatal::CUpFatal                                        0x0048ECF0 0000001F R... B..
+CUpFatal::ExcutePassive                                   0x004864B0 0000004A R......
+CUpFire::CUpFire                                          0x0048EDB0 0000001F R... B..
+CUpIce::CUpIce                                            0x0048ED90 00000013 R......
+CUpRFEvade::CUpRFEvade                                    0x0048EEF0 0000001F R... B..
+CUpRFEvade::ExcutePassive                                 0x00487050 00000139 R......
+CUpReinforceVitality::CUpReinforceVitality                0x0048F110 0000001F R... B..
+CUpReinforceVitality::CanLearn                            0x0048F130 0000001C R... B..
+CUpReinforceVitality::ExcutePassiveV                      0x00488490 000000AD R......
+CUpWeapon::ExcutePassive                                  0x004818B0 000000BE R......
+CUpperSlash::CUpperSlash                                  0x0048E440 0000001F R... B..
+CUpperSlash::GetAttack                                    0x0048E460 0000001F R... B..
+CUpperSlash::GetHostility                                 0x0048E4A0 0000001F R... B..
+CUpperSlash::GetSpendMP                                   0x0048E2C0 0000000F R......
+CUpperSmash::CUpperSmash                                  0x0048E590 0000000F R......
+CUpperSmash::CanSkillUp                                   0x00482730 0000003A R......
+CUpperSmash::GetAttack                                    0x00482700 0000000C R......
+CUpperSmash::GetHit                                       0x0048FE90 00000005 R......
+CUpperSmash::GetSpendMP                                   0x0048EBB0 0000001F R... B..
+CVanishConfi::Apply                                       0x0048A840 00000028 R......
+CVanishConfi::CVanishConfi                                0x0048F6C0 0000001F R... B..
+CVitalityDrain::CVitalityDrain                            0x0048F190 0000001F R... B..
+CVitalityDrain::CanSkillUp                                0x00488900 00000051 R......
+CVitalityDrain::Excute                                    0x004886F0 000000BA R......
+CWar::ADD                                                 0x0041C670 00000034 R... B..
+CWar::CWar                                                0x0041C380 0000006D R... B..
+CWar::Clear                                               0x0041C6B0 00000051 R... B..
+CWar::Load                                                0x0041C490 000001B3 R... B..
+CWar::OnDelete                                            0x0041C650 0000001D R... B..
+CWar::SetGuild                                            0x00419710 00000038 R... B..
+CWar::Start                                               0x0041C440 00000042 R... B..
+CWar::_CWar                                               0x0041C420 0000001C R... B..
+CWar::_scalar_deleting_destructor_                        0x0041C3F0 0000002C R... B..
+CWildAccuracy::CWildAccuracy                              0x0048F010 0000001F R... B..
