@@ -5,26 +5,42 @@
 
 class Lock
 {
-	private:
-		CRITICAL_SECTION _CriticalSection;
-		volatile bool Locked;
+private:
+    CRITICAL_SECTION _CriticalSection;
+    volatile bool Locked;
 
-	public:
-		Lock() { this->Locked = false; InitializeCriticalSection(&this->_CriticalSection); }
-		virtual ~Lock() { DeleteCriticalSection(&this->_CriticalSection); }
+public:
+    Lock() {
+        this->Locked = false;
+        InitializeCriticalSection(&this->_CriticalSection);
+    }
 
-		void Enter() { EnterCriticalSection(&this->_CriticalSection); this->Locked = true; }
-		bool TryEnter()
-		{
-			if (TryEnterCriticalSection(&this->_CriticalSection))
-			{
-				this->Locked = true;
-				return true;
-			}
-			else return false;
-		}
-		void Leave() { this->Locked = false; LeaveCriticalSection(&this->_CriticalSection); }
+    virtual ~Lock() {
+        DeleteCriticalSection(&this->_CriticalSection);
+    }
 
-		bool IsLocked() { return this->Locked; }
+    void Enter() {
+        EnterCriticalSection(&this->_CriticalSection);
+        this->Locked = true;
+    }
+
+    bool TryEnter()
+    {
+        if (TryEnterCriticalSection(&this->_CriticalSection))
+        {
+            this->Locked = true;
+            return true;
+        }
+        else return false;
+    }
+
+    void Leave() {
+        this->Locked = false;
+        LeaveCriticalSection(&this->_CriticalSection);
+    }
+
+    bool IsLocked() {
+        return this->Locked;
+    }
 };
 #endif

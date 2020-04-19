@@ -3,12 +3,12 @@
 
 namespace Deflection
 {
-	enum
-	{
-		CSocketProcess,
-		CPlayerWrite,
-		MonsterBlob,
-	};
+enum
+{
+    CSocketProcess,
+    CPlayerWrite,
+    MonsterBlob,
+};
 }
 
 #endif
