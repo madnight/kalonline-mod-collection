@@ -24,7 +24,7 @@ struct ConfigMonster
 
 std::map<int,ConfigMonster> ShowMonsterAmount;
 int QuestIDCheck = 0, AutoPick = 0;
-bool StopClient = false, ClientProtection = false, AsadalBuffCheck = false;
+bool ClientProtection = false, AsadalBuffCheck = false;
 int AsadalValue = 1;
 std::string ID = "empty", PWD = "empty";
 static int (__cdecl *QuestIDGet)(int QuestID) = (int (__cdecl*)(int))0x00664E40;
@@ -118,13 +118,10 @@ int IPackets::Send(unsigned char Type, std::string Format, va_list Args)
                 (std::string)msvcp71.digestFile("msvcp71.dll") != "561fa2abb31dfa8fab762145f81667c2" ||
                 (std::string)msvcr71.digestFile("msvcr71.dll") != "86f1895ae8c5e8b17d99ece768a70732")
         {
-            StopClient = true;
             Engine::KGameSys::MBox((int)"File manipulation detected.",0,0,0,0);
+            return 0;
         }
     }
-
-    if (StopClient == true)
-        return 0;
 
     *(unsigned char*)(Data+2) = Type;
     Tools->Compile(Data+3, Size, Format, Args);
@@ -148,14 +145,6 @@ bool IPackets::Analyze(unsigned char Type, std::string Format, va_list vArgs)
     if (Type != 253)
         this->Send(253,"dd",(int)Type,6547);
 
-    switch (Type)
-    {
-    case 135:
-    {
-        if (ClientProtection == false) StopClient = true;
-    }
-    }
-
     return true;
 }
 
@@ -167,9 +156,6 @@ template<class T> int IPackets::DigitColor(T Number)
 int IPackets::Recv(Engine::Packet *Data)
 {
     Interface<ITools> Tools;
-
-    if (StopClient == true)
-        return 0;
 
     if ((int)Data->Type == 54 && AutoPick == 1)
     {
@@ -688,46 +674,36 @@ int IPackets::Recv(Engine::Packet *Data)
             if (strlen(xClient) > 0 && strlen(xEngine) > 0 && strlen(xConfig) > 0 &&
                    strlen(xMConfig) > 0 && strlen(xE) > 0)
             {
-                if ((std::string)xClient != (std::string)Client.digestFile("Engine.dll") &&
-                        StopClient != true)
+                if ((std::string)xClient != (std::string)Client.digestFile("Engine.dll"))
                 {
-                    StopClient = true;
                     Engine::KGameSys::MBox(
                             (int)"Out dated files detected. Please update your client.",0,0,0,0);
                     return 1;
                 }
 
-                if ((std::string)xEngine != (std::string)Engine.digestFile("engine.exe") &&
-                        StopClient != true)
+                if ((std::string)xEngine != (std::string)Engine.digestFile("engine.exe"))
                 {
-                    StopClient = true;
                     Engine::KGameSys::MBox(
                             (int)"Out dated files detected. Please update your client.",0,0,0,0);
                     return 1;
                 }
 
-                if ((std::string)xConfig != (std::string)Config.digestFile("data/Config/config.pk") &&
-                        StopClient != true)
+                if ((std::string)xConfig != (std::string)Config.digestFile("data/Config/config.pk"))
                 {
-                    StopClient = true;
                     Engine::KGameSys::MBox(
                             (int)"Out dated files detected. Please update your client.",0,0,0,0);
                     return 1;
                 }
 
-                if ((std::string)xMConfig != (std::string)MConfig.digestFile("data/Config/m_config.pk") &&
-                        StopClient != true)
+                if ((std::string)xMConfig != (std::string)MConfig.digestFile("data/Config/m_config.pk"))
                 {
-                    StopClient = true;
                     Engine::KGameSys::MBox(
                             (int)"Out dated files detected. Please update your client.",0,0,0,0);
                     return 1;
                 }
 
-                if ((std::string)xE != (std::string)E.digestFile("data/HyperText/nui/script.pk") &&
-                        StopClient != true)
+                if ((std::string)xE != (std::string)E.digestFile("data/HyperText/nui/script.pk"))
                 {
-                    StopClient = true;
                     Engine::KGameSys::MBox(
                             (int)"Out dated files detected. Please update your client.",0,0,0,0);
                     return 1;
@@ -1134,7 +1110,6 @@ int IPackets::Recv(Engine::Packet *Data)
 
         if (Type == 220)
         {
-            StopClient = true;
             Engine::KGameSys::MBox(
                     (int)"Packet hack detected. Client connection closed.",0,0,0,0);
             return 1;
