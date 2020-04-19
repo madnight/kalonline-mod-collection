@@ -2,19 +2,19 @@ class ISkill
 {
 
 public:
-	void *Offset;
+    void *Offset;
 
 public:
-	ISkill()
-	{
-	}
+    ISkill()
+    {
+    }
 
-	ISkill(void *Packet);
-	virtual ~ISkill();
+    ISkill(void *Packet);
+    virtual ~ISkill();
 
-	void *GetOffset();
-	int GetIndex();
-	int GetGrade();
-	int DecreaseMana();
-	void *GetPlayer();
+    void *GetOffset();
+    int GetIndex();
+    int GetGrade();
+    int DecreaseMana();
+    void *GetPlayer();
 };

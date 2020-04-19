@@ -1,39 +1,43 @@
 void __fastcall DestroyingArmor(IChar IPlayer)
 {
-	int pSkill = IPlayer.GetSkillPointer(93);
-	
-	if (IPlayer.IsValid() && pSkill)
-	{
-		ISkill xSkill((void*)pSkill);
-		int nSkillGrade = xSkill.GetGrade();
-		int nMana = 180 + (1.25 * (nSkillGrade * (IPlayer.GetLevel() + nSkillGrade)));
+    int pSkill = IPlayer.GetSkillPointer(93);
 
-		if (IPlayer.GetCurMp() < nMana)
-			return;
+    if (IPlayer.IsValid() && pSkill)
+    {
+        ISkill xSkill((void*)pSkill);
+        int nSkillGrade = xSkill.GetGrade();
+        int nMana = 180 + (1.25 * (nSkillGrade * (IPlayer.GetLevel() + nSkillGrade)));
 
-		if (IPlayer.IsValid())
-		{
-			int Around = IPlayer.GetObjectListAround(3);
+        if (IPlayer.GetCurMp() < nMana)
+            return;
 
-			while(Around)
-			{
-				IChar Object((void*)*(DWORD*)Around);
+        if (IPlayer.IsValid())
+        {
+            int Around = IPlayer.GetObjectListAround(3);
 
-				if (Object.IsValid() && IPlayer.IsValid() && (*(int (__thiscall **)(int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
-				{
-					int nDmg = (IPlayer.GetAttack() * NDAMul) + (nSkillGrade * CTools::Rate(NDAMin,NDAMax));
+            while(Around)
+            {
+                IChar Object((void*)*(DWORD*)Around);
 
-					if (Object.GetType() == 0)
-						nDmg = (nDmg * NDAReduce) / 100;
+                if (Object.IsValid() && IPlayer.IsValid() &&
+                        (*(int (__thiscall **)(int, int, DWORD))
+                         (*(DWORD *)IPlayer.GetOffset() + 176))
+                        ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
+                {
+                    int nDmg = (IPlayer.GetAttack() * NDAMul) +
+                        (nSkillGrade * CTools::Rate(NDAMin,NDAMax));
 
-					IPlayer.OktayDamageArea(Object,nDmg,93);
-				}
+                    if (Object.GetType() == 0)
+                        nDmg = (nDmg * NDAReduce) / 100;
 
-				Around = CBaseList::Pop((void*)Around);
-			}
+                    IPlayer.OktayDamageArea(Object,nDmg,93);
+                }
 
-			IPlayer._ShowBattleAnimation(IPlayer, 93);
-			IPlayer.DecreaseMana(nMana);
-		}
-	}
+                Around = CBaseList::Pop((void*)Around);
+            }
+
+            IPlayer._ShowBattleAnimation(IPlayer, 93);
+            IPlayer.DecreaseMana(nMana);
+        }
+    }
 }

@@ -19,9 +19,13 @@ typedef unsigned char byte_t;
 static const size_t k_digest_size = 32;
 
 namespace detail {
-inline byte_t mask_8bit(byte_t x) { return x & 0xff; }
+inline byte_t mask_8bit(byte_t x) {
+    return x & 0xff;
+}
 
-inline word_t mask_32bit(word_t x) { return x & 0xffffffff; }
+inline word_t mask_32bit(word_t x) {
+    return x & 0xffffffff;
+}
 
 const word_t add_constant[64] = {
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1,
@@ -34,13 +38,17 @@ const word_t add_constant[64] = {
     0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
     0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a,
     0x5b9cca4f, 0x682e6ff3, 0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
-    0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2};
+    0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+};
 
 const word_t initial_message_digest[8] = {0x6a09e667, 0xbb67ae85, 0x3c6ef372,
                                           0xa54ff53a, 0x510e527f, 0x9b05688c,
-                                          0x1f83d9ab, 0x5be0cd19};
+                                          0x1f83d9ab, 0x5be0cd19
+                                         };
 
-inline word_t ch(word_t x, word_t y, word_t z) { return (x & y) ^ ((~x) & z); }
+inline word_t ch(word_t x, word_t y, word_t z) {
+    return (x & y) ^ ((~x) & z);
+}
 
 inline word_t maj(word_t x, word_t y, word_t z) {
     return (x & y) ^ (x & z) ^ (y & z);
@@ -51,18 +59,26 @@ inline word_t rotr(word_t x, std::size_t n) {
     return mask_32bit((x >> n) | (x << (32 - n)));
 }
 
-inline word_t bsig0(word_t x) { return rotr(x, 2) ^ rotr(x, 13) ^ rotr(x, 22); }
+inline word_t bsig0(word_t x) {
+    return rotr(x, 2) ^ rotr(x, 13) ^ rotr(x, 22);
+}
 
-inline word_t bsig1(word_t x) { return rotr(x, 6) ^ rotr(x, 11) ^ rotr(x, 25); }
+inline word_t bsig1(word_t x) {
+    return rotr(x, 6) ^ rotr(x, 11) ^ rotr(x, 25);
+}
 
 inline word_t shr(word_t x, std::size_t n) {
     assert(n < 32);
     return x >> n;
 }
 
-inline word_t ssig0(word_t x) { return rotr(x, 7) ^ rotr(x, 18) ^ shr(x, 3); }
+inline word_t ssig0(word_t x) {
+    return rotr(x, 7) ^ rotr(x, 18) ^ shr(x, 3);
+}
 
-inline word_t ssig1(word_t x) { return rotr(x, 17) ^ rotr(x, 19) ^ shr(x, 10); }
+inline word_t ssig1(word_t x) {
+    return rotr(x, 17) ^ rotr(x, 19) ^ shr(x, 10);
+}
 
 template <typename RaIter1, typename RaIter2>
 void hash256_block(RaIter1 message_digest, RaIter2 first, RaIter2 last) {
@@ -156,8 +172,10 @@ std::string bytes_to_hex_string(const InContainer& bytes) {
 }
 
 class hash256_one_by_one {
-   public:
-    hash256_one_by_one() { init(); }
+public:
+    hash256_one_by_one() {
+        init();
+    }
 
     void init() {
         buffer_.clear();
@@ -202,12 +220,12 @@ class hash256_one_by_one {
         for (const word_t* iter = h_; iter != h_ + 8; ++iter) {
             for (std::size_t i = 0; i < 4 && first != last; ++i) {
                 *(first++) = detail::mask_8bit(
-                    static_cast<byte_t>((*iter >> (24 - 8 * i))));
+                                 static_cast<byte_t>((*iter >> (24 - 8 * i))));
             }
         }
     }
 
-   private:
+private:
     void add_to_data_length(word_t n) {
         word_t carry = 0;
         data_length_digits_[0] += n;

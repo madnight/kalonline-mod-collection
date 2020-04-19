@@ -1,17 +1,17 @@
 class IQuest
 {
-	public:
-		void *Offset;
+public:
+    void *Offset;
 
-	public:
-		IQuest()
-		{
-		}
-        
+public:
+    IQuest()
+    {
+    }
+
     IQuest(void *Object);
     virtual ~IQuest();
-    
+
     void *GetOffset();
     int GetIndex();
-	int GetFlag();
+    int GetFlag();
 };

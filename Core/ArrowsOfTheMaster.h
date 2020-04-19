@@ -1,62 +1,64 @@
 void __fastcall ArrowsOfTheMaster(IChar IPlayer, int pPacket, int pPos)
 {
-	int pSkill = IPlayer.GetSkillPointer(92);
+    int pSkill = IPlayer.GetSkillPointer(92);
 
-	if (IPlayer.IsValid() && pSkill)
-	{
-		ISkill xSkill((void*)pSkill);
-		int nSkillGrade = xSkill.GetGrade();
-		int nTargetID = 0, nMana = 0; char bType = 0; void *pTarget = 0;
-		CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
-		
-		if (bType == 0 && nTargetID)
-			pTarget = CPlayer::FindPlayer(nTargetID);
+    if (IPlayer.IsValid() && pSkill)
+    {
+        ISkill xSkill((void*)pSkill);
+        int nSkillGrade = xSkill.GetGrade();
+        int nTargetID = 0, nMana = 0;
+        char bType = 0;
+        void *pTarget = 0;
+        CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-		if (bType == 1 && nTargetID)
-			pTarget = CMonster::FindMonster(nTargetID);
+        if (bType == 0 && nTargetID)
+            pTarget = CPlayer::FindPlayer(nTargetID);
 
-		if (bType >= 2)
-			return;
+        if (bType == 1 && nTargetID)
+            pTarget = CMonster::FindMonster(nTargetID);
 
-		if (pTarget && nSkillGrade && IPlayer.IsValid())
-		{
-			nMana = (1.85 * (200 + (nSkillGrade * (20 + (nSkillGrade - 1)))));
-			IChar Target(pTarget);
+        if (bType >= 2)
+            return;
 
-			if (pTarget == IPlayer.GetOffset())
-				return;
+        if (pTarget && nSkillGrade && IPlayer.IsValid())
+        {
+            nMana = (1.85 * (200 + (nSkillGrade * (20 + (nSkillGrade - 1)))));
+            IChar Target(pTarget);
 
-			if (IPlayer.GetCurMp() < nMana)
-				return;
+            if (pTarget == IPlayer.GetOffset())
+                return;
 
-			if (IPlayer.IsValid() && Target.IsValid())
-			{
-				if (!IPlayer.IsInRange(Target,300))
-					return;
+            if (IPlayer.GetCurMp() < nMana)
+                return;
 
-				int Around = Target.GetObjectListAround(3);
+            if (IPlayer.IsValid() && Target.IsValid())
+            {
+                if (!IPlayer.IsInRange(Target,300))
+                    return;
 
-				while(Around)
-				{
-					IChar Object((void*)*(DWORD*)Around);
+                int Around = Target.GetObjectListAround(3);
 
-					if (Object.IsValid() && IPlayer.IsValid() && (*(int (__thiscall **)(int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
-					{
-						int nDmg = (IPlayer.GetAttack() * NAOTMMul) + (nSkillGrade * CTools::Rate(NAOTMMin,NAOTMMax));
+                while(Around)
+                {
+                    IChar Object((void*)*(DWORD*)Around);
 
-						if (Object.GetType() == 0)
-							nDmg = (nDmg * NAOTMReduce) / 100;
+                    if (Object.IsValid() && IPlayer.IsValid() && (*(int (__thiscall **)(int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
+                    {
+                        int nDmg = (IPlayer.GetAttack() * NAOTMMul) + (nSkillGrade * CTools::Rate(NAOTMMin,NAOTMMax));
 
-						IPlayer.OktayDamageArea(Object,nDmg,92);
-					}
+                        if (Object.GetType() == 0)
+                            nDmg = (nDmg * NAOTMReduce) / 100;
 
-					Around = CBaseList::Pop((void*)Around);
-				}
+                        IPlayer.OktayDamageArea(Object,nDmg,92);
+                    }
 
-				IPlayer.DecreaseMana(nMana);
-				IPlayer.SetDirection(Target);
-				IPlayer._ShowBattleAnimation(Target,92);
-			}
-		}
-	}
+                    Around = CBaseList::Pop((void*)Around);
+                }
+
+                IPlayer.DecreaseMana(nMana);
+                IPlayer.SetDirection(Target);
+                IPlayer._ShowBattleAnimation(Target,92);
+            }
+        }
+    }
 }
