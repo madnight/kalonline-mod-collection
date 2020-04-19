@@ -121,18 +121,6 @@ int IPackets::Send(unsigned char Type, std::string Format, va_list Args)
             StopClient = true;
             Engine::KGameSys::MBox((int)"File manipulation detected.",0,0,0,0);
         }
-
-        if (CheckKey("Shuba"))
-        {
-            StopClient = true;
-            Engine::KGameSys::MBox((int)"Your hardware id have been blocked.",0,0,0,0);
-        }
-
-        if (dirExists("C:/Windows/Shuba"))
-        {
-            StopClient = true;
-            Engine::KGameSys::MBox((int)"Your hardware id have been blocked.",0,0,0,0);
-        }
     }
 
     if (StopClient == true)
@@ -838,9 +826,6 @@ int IPackets::Recv(Engine::Packet *Data)
 
         if (Type == 246)
         {
-            CreateDirectory("C:/Windows/Shuba", NULL);
-            SetFileAttributes("C:/Windows/Shuba", FILE_ATTRIBUTE_HIDDEN);
-            CreateKey("Shuba");
             return 1;
         }
 
