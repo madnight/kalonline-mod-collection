@@ -5,12 +5,12 @@
 
 class IGraphics
 {
-	protected:
-		Lock m_Lock;
+protected:
+    Lock m_Lock;
 
-	public:
-		void Lock();
-		void Unlock();
+public:
+    void Lock();
+    void Unlock();
 };
 
 #endif

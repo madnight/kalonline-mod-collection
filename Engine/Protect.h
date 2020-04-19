@@ -3,8 +3,8 @@
 
 class IProtect
 {
-	public:
-		virtual bool Disable();
+public:
+    virtual bool Disable();
 };
 
 #endif

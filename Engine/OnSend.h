@@ -5,11 +5,11 @@
 
 class IOnSend
 {
-	private:
-		static unsigned long Patches[];
+private:
+    static unsigned long Patches[];
 
-	public:
-		void Hook();
+public:
+    void Hook();
 };
 
 #endif

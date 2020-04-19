@@ -1,6 +1,6 @@
 class IBuff
 {
-	public:
-		IBuff();
-		void HookBuff();
+public:
+    IBuff();
+    void HookBuff();
 };
