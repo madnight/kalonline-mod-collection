@@ -3,10 +3,10 @@
 
 class ICore
 {
-	public:
-		ICore(void);
-		~ICore(void);
-		void Boot(HMODULE hModule);
+public:
+    ICore(void);
+    ~ICore(void);
+    void Boot(HMODULE hModule);
 };
 
 #endif

@@ -3,16 +3,16 @@
 
 class IExports
 {
-	public:
-		IExports();
-		~IExports();
+public:
+    IExports();
+    ~IExports();
 
-		static FARPROC p[3];
-		static unsigned long _p;
+    static FARPROC p[3];
+    static unsigned long _p;
 
-	private:
-		virtual void Initialize();
-		HINSTANCE hL;
+private:
+    virtual void Initialize();
+    HINSTANCE hL;
 };
 
 #endif

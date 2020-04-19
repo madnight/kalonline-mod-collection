@@ -6,31 +6,31 @@
 
 class Module
 {
-	private:
-		std::string m_Name, m_Description, m_Author, m_Version;
-		HMODULE m_hModule;
-		unsigned long m_PluginID;
+private:
+    std::string m_Name, m_Description, m_Author, m_Version;
+    HMODULE m_hModule;
+    unsigned long m_PluginID;
 
-	public:
-		Module(std::wstring Name);
-		~Module();
+public:
+    Module(std::wstring Name);
+    ~Module();
 
-		void Install();
-		void Uninstall();
-		void ReloadConfig();
+    void Install();
+    void Uninstall();
+    void ReloadConfig();
 
-		HMODULE GetModule();
+    HMODULE GetModule();
 };
 
 class IPlugins
 {
-	private:
-		std::vector<Module*> m_Plugins;
+private:
+    std::vector<Module*> m_Plugins;
 
-	public:
-		IPlugins();
+public:
+    IPlugins();
 
-		void Load();
+    void Load();
 };
 
 #endif
