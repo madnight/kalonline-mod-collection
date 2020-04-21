@@ -32,7 +32,6 @@ void __fastcall Start(int Start, void *edx, u_short hostshort)
     CIOServer::Start(Start,hostshort);
     Interface<IMemory> Memory;
     Memory->Hook(0x0043DEE1, RealBlob, 0xe8, 6);
-    LicenseSerialCheck = true;
 
     if (strlen(CWTCC) > 0 && (std::string)CWTCC == "true")
     {
@@ -41,7 +40,6 @@ void __fastcall Start(int Start, void *edx, u_short hostshort)
         Memory->Copy((void*)0x00411931, &CWTCEH, 1);
     }
 
-    Lisans = 1;
     _beginthread(ContinuesSkill, 0, 0);
 }
 

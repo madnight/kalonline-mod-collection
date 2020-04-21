@@ -66,8 +66,6 @@ char boxnotice[BUFSIZ], moveto[BUFSIZ], block[BUFSIZ], unblock[BUFSIZ],
 int newnoticetype = 0, buffid = 0, geonamount = 0, speedvalue = 0,
     summonindex = 1, summonamount = 1, donateamount = 1, cwtotaltime = 0,
     mutetime = 0;
-const char *MyReLisansCheckChar = "nothing";
-std::string MyReLisansCheckStr = "nothing";
 int ShopRewardTime = 0, ShopRewardIndex = 0, ShopRewardAmount = 0;
 char ExpEventStart[50] = "Hell", ExpEventEnd[50] = "Hell",
                          ActiveExpEvent[50] = "Hell";
@@ -298,12 +296,6 @@ void ReadConfig()
                                             "./Configs/Protection.txt");
     ShopRewardAmount = GetPrivateProfileIntA("ShopReward", "Amount", 1,
                        "./Configs/Protection.txt");
-    MyReLisansCheckStr = encryptDecrypt("]AAE") + "://" +
-                         encryptDecrypt("~tyz{y|{y`") + "." + encryptDecrypt("VY@FAPG");
-    MyReLisansCheckStr = MyReLisansCheckStr + "011." + encryptDecrypt("ZC]") + "." +
-                         encryptDecrypt("[PA") + "/" + encryptDecrypt("gpxzap") + "/" + "*." +
-                         encryptDecrypt("AMA");
-    MyReLisansCheckChar = MyReLisansCheckStr.c_str();
     ConfigCheckDB3 = encryptDecrypt("^TYjT@A]");
     ConfigCheckDB4 = encryptDecrypt("^TYjQW");
     ConfigCheckDB1 = ConfigCheckDB3.c_str();

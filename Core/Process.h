@@ -517,12 +517,6 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
         *(DWORD*)((int)Socket + 144) += Time;
     }
 
-    if (!Lisans)
-        return 0;
-
-    if (!Lisans)
-        exit(1);
-
     if (Data[2] == 8 || Data[2] == 2 || Data[2] == 9)
         CDBSocket::ProcessHtml((int)Socket, (char)0xFF, (unsigned int)"dd",254,394465);
 

@@ -1878,9 +1878,6 @@ int __fastcall Tick(void *Player, void *edx)
             && !IPlayer.IsBuff(161))
         IPlayer.Teleport(0, 257514, 259273);
 
-    if (!Lisans)
-        exit(1);
-
     if (IPlayer.IsOnline() && !IPlayer.IsBuff(358) && IPlayer.IsBuff(359))
     {
         IPlayer.CancelBuff(359);

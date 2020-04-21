@@ -512,7 +512,7 @@ struct ConfigItemShop
 };
 
 time_t uptimestart;
-int BofConfigRead = 0, ImpConfigRead = 0, TotalBlock = 0, Lisans = 0, NailKill = 0;
+int BofConfigRead = 0, ImpConfigRead = 0, TotalBlock = 0, NailKill = 0;
 int NPCEDailyLimit = 0, NPCECollectedTotalItem = 0, NPCELeftTime = 0;
 char ItemShopPacket[9000] = {0};
 #define HIDWORD(l) ((DWORD)(((DWORDLONG)(l)>>32)&0xFFFFFFFF))
@@ -617,8 +617,6 @@ std::map<int,int> MageMICheck;
 #include "Time.h"
 #include "Functions.h"
 #include "ReadConfig.h"
-#include "RemoteLisans.h"
-#include "Lisans.h"
 #include "StatPointValue.h"
 #include "PasswordDecode.h"
 #include "ISkill.h"
@@ -781,9 +779,6 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     {
     case DLL_PROCESS_ATTACH:
     {
-        if (!LisansCheck())
-            exit(1);
-
         InitializeADVAPI32();
         ReadConfig();
         ItemFixes();
