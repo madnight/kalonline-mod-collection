@@ -68,7 +68,7 @@ int newnoticetype = 0, buffid = 0, geonamount = 0, speedvalue = 0,
     mutetime = 0;
 int ShopRewardTime = 0, ShopRewardIndex = 0, ShopRewardAmount = 0;
 char ExpEventStart[50] = "Hell", ExpEventEnd[50] = "Hell",
-                         ActiveExpEvent[50] = "Hell";
+        ActiveExpEvent[50] = "Hell";
 int LMSLimit = 0, LMSQuest = 0, LMSMap = 0, LMSX = 0, LMSY = 0;
 int PLQuest = 0, PLMap = 0, PLRNPC = 0, PLBNPC = 0;
 int NWOEMul = 0, NWOEMin = 0, NWOEMax = 0, NWOEReduce = 0;
@@ -87,7 +87,7 @@ char HGST[50] = "";
 int HGXC = 0, HGYC = 0, HGMapI = 0, HGMobI = 0, HGDM = 0, HGDTu = 0, HGEA = 0;
 int HGDW = 0, HGDTh = 0, HGDF = 0, HGDSa = 0, HGDSu = 0;
 char HGNM[50] = "", HGNTu[50] = "", HGNW[50] = "", HGNTh[50] = "",
-                                HGNF[50] = "", HGNSa[50] = "", HGNSu[50] = "";
+                HGNF[50] = "", HGNSa[50] = "", HGNSu[50] = "";
 char CWTCC[50] = "";
 int CWTCD = 0, CWTCSH = 0, CWTCEH = 0;
 int ShopJewelIndex = 0, ShopGoldIndex = 0, ShopSilverIndex = 0;
@@ -98,71 +98,71 @@ int SHMME = 0, SHMC = 0, SHMSS = 0, SHMES = 0, SHMSW = 0, SHMD = 0, SHMRK = 0;
 void ReadConfig()
 {
     SHMRK = GetPrivateProfileIntA("4thRisingKing", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMD = GetPrivateProfileIntA("Doggebi", "PVPReduce", 1, "./Skills/Shaman.txt");
     SHMSW = GetPrivateProfileIntA("SpiritWave", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMES = GetPrivateProfileIntA("ExplodingSpirit", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMSS = GetPrivateProfileIntA("SixSouls", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMC = GetPrivateProfileIntA("Collapse", "PVPReduce", 1, "./Skills/Shaman.txt");
     SHMME = GetPrivateProfileIntA("MentalBreakdown", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMDB = GetPrivateProfileIntA("DrainBlood", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMSP = GetPrivateProfileIntA("SoulBlow", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMSOP = GetPrivateProfileIntA("SpearOfPain", "PVPReduce", 1,
-                                   "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMWOE = GetPrivateProfileIntA("WaveOfEmperor", "PVPReduce", 1,
-                                   "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMAOB = GetPrivateProfileIntA("AmplificationOfBlood", "PVPReduce", 1,
-                                   "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMTSP = GetPrivateProfileIntA("TheSoulsPenance", "PVPReduce", 1,
-                                   "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMED = GetPrivateProfileIntA("ExecutiveDirector", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMGW = GetPrivateProfileIntA("GhostWindow", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMW = GetPrivateProfileIntA("Wave", "PVPReduce", 1, "./Skills/Shaman.txt");
     SHMGF = GetPrivateProfileIntA("GhostFlash", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     SHMGK = GetPrivateProfileIntA("GhostKnife", "PVPReduce", 1,
-                                  "./Skills/Shaman.txt");
+            "./Skills/Shaman.txt");
     GetPrivateProfileStringA("License", "Serial", "UNKNOWN", LicenseSerial, 75,
-                             "./Core.ini");
+        "./Core.ini");
     ShopJewelIndex = GetPrivateProfileIntA("ItemShopIndex", "Jewel", 0,
-                                           "./Configs/ItemShop.txt");
+            "./Configs/ItemShop.txt");
     ShopGoldIndex = GetPrivateProfileIntA("ItemShopIndex", "GoldKC", 0,
-                                          "./Configs/ItemShop.txt");
+            "./Configs/ItemShop.txt");
     ShopSilverIndex = GetPrivateProfileIntA("ItemShopIndex", "SilverKC", 0,
-                                            "./Configs/ItemShop.txt");
+            "./Configs/ItemShop.txt");
     ConfigPVPMaxDmg = GetPrivateProfileIntA("PVPMaxDamage", "Damage", 100000,
-                                            "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     CWTCEH = GetPrivateProfileIntA("CastleWar", "EndHour", 0,
-                                   "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     CWTCSH = GetPrivateProfileIntA("CastleWar", "StartHour", 0,
-                                   "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     CWTCD = GetPrivateProfileIntA("CastleWar", "Day", 0,
-                                  "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     GetPrivateProfileStringA("CastleWar", "Enable", "false", CWTCC, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     HGEA = GetPrivateProfileIntA("Exp", "Amount", 0, "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameMonday", "true", HGNM, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameTuesday", "true", HGNTu, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameWednesday", "true", HGNW, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameThursday", "true", HGNTh, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameFriday", "true", HGNF, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameSaturday", "true", HGNSa, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Guild", "NameSunday", "true", HGNSu, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     HGDM = GetPrivateProfileIntA("Guild", "Monday", 0, "./Systems/Hunting.txt");
     HGDTu = GetPrivateProfileIntA("Guild", "Tuesday", 0, "./Systems/Hunting.txt");
     HGDW = GetPrivateProfileIntA("Guild", "Wednesday", 0, "./Systems/Hunting.txt");
@@ -175,127 +175,127 @@ void ReadConfig()
     HGXC = GetPrivateProfileIntA("Summon", "X", 0, "./Systems/Hunting.txt");
     HGYC = GetPrivateProfileIntA("Summon", "Y", 0, "./Systems/Hunting.txt");
     GetPrivateProfileStringA("Start", "Time", "true", HGST, 50,
-                             "./Systems/Hunting.txt");
+        "./Systems/Hunting.txt");
     PLQuest = GetPrivateProfileIntA("Quest", "Index", 100,
-                                    "./Systems/ProtectLeader.txt");
+            "./Systems/ProtectLeader.txt");
     PLMap = GetPrivateProfileIntA("Map", "Index", 1, "./Systems/ProtectLeader.txt");
     PLRNPC = GetPrivateProfileIntA("NPCRed", "Index", 1,
-                                   "./Systems/ProtectLeader.txt");
+            "./Systems/ProtectLeader.txt");
     PLBNPC = GetPrivateProfileIntA("NPCBlue", "Index", 1,
-                                   "./Systems/ProtectLeader.txt");
+            "./Systems/ProtectLeader.txt");
     ENPCQ = GetPrivateProfileIntA("Quest", "Index", 0, "./Configs/EventNPC.txt");
     ENPCRQ = GetPrivateProfileIntA("ReplyQuest", "Index", 0,
-                                   "./Configs/EventNPC.txt");
+            "./Configs/EventNPC.txt");
     ENPCDL = GetPrivateProfileIntA("Daily", "Limit", 0, "./Configs/EventNPC.txt");
     ENPCII = GetPrivateProfileIntA("EventItem", "Index", 0,
-                                   "./Configs/EventNPC.txt");
+            "./Configs/EventNPC.txt");
     ENPCIA = GetPrivateProfileIntA("Item", "Amount", 0, "./Configs/EventNPC.txt");
     ENPCDU = GetPrivateProfileIntA("Duration", "Seconds", 0,
-                                   "./Configs/EventNPC.txt");
+            "./Configs/EventNPC.txt");
     ENPCDD = GetPrivateProfileIntA("Delay", "Seconds", 0, "./Configs/EventNPC.txt");
     NBOMMul = GetPrivateProfileIntA("Bombing", "Multiply", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NBOMMin = GetPrivateProfileIntA("Bombing", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NBOMMax = GetPrivateProfileIntA("Bombing", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NBOMReduce = GetPrivateProfileIntA("Bombing", "PVPReduce", 1,
-                                       "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NSOGMul = GetPrivateProfileIntA("StrikeOfGod", "Multiply", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NSOGMin = GetPrivateProfileIntA("StrikeOfGod", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NSOGMax = GetPrivateProfileIntA("StrikeOfGod", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NSOGReduce = GetPrivateProfileIntA("StrikeOfGod", "PVPReduce", 1,
-                                       "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NDAMul = GetPrivateProfileIntA("DestroyingArmor", "Multiply", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NDAMin = GetPrivateProfileIntA("DestroyingArmor", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NDAMax = GetPrivateProfileIntA("DestroyingArmor", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NDAReduce = GetPrivateProfileIntA("DestroyingArmor", "PVPReduce", 1,
-                                      "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NCSMul = GetPrivateProfileIntA("CriticalStrike", "Multiply", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NCSMin = GetPrivateProfileIntA("CriticalStrike", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NCSMax = GetPrivateProfileIntA("CriticalStrike", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NCSReduce = GetPrivateProfileIntA("CriticalStrike", "PVPReduce", 1,
-                                      "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMPMul = GetPrivateProfileIntA("Punishment", "Multiply", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMPMin = GetPrivateProfileIntA("Punishment", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMPMax = GetPrivateProfileIntA("Punishment", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMPReduce = GetPrivateProfileIntA("Punishment", "PVPReduce", 1,
-                                      "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NSOTAMul = GetPrivateProfileIntA("SpiritOfTheArrows", "Multiply", 1,
-                                     "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NSOTAMin = GetPrivateProfileIntA("SpiritOfTheArrows", "GradeDamageIncreaseMin",
-                                     1, "./Skills/Nirvana.txt");
+            1, "./Skills/Nirvana.txt");
     NSOTAMax = GetPrivateProfileIntA("SpiritOfTheArrows", "GradeDamageIncreaseMax",
-                                     1, "./Skills/Nirvana.txt");
+            1, "./Skills/Nirvana.txt");
     NSOTAReduce = GetPrivateProfileIntA("SpiritOfTheArrows", "PVPReduce", 1,
-                                        "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMFMul = GetPrivateProfileIntA("MassiveFire", "Multiply", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMFMin = GetPrivateProfileIntA("MassiveFire", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMFMax = GetPrivateProfileIntA("MassiveFire", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NMFReduce = GetPrivateProfileIntA("MassiveFire", "PVPReduce", 1,
-                                      "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NAOTMMul = GetPrivateProfileIntA("ArrowsOfTheMaster", "Multiply", 1,
-                                     "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NAOTMMin = GetPrivateProfileIntA("ArrowsOfTheMaster", "GradeDamageIncreaseMin",
-                                     1, "./Skills/Nirvana.txt");
+            1, "./Skills/Nirvana.txt");
     NAOTMMax = GetPrivateProfileIntA("ArrowsOfTheMaster", "GradeDamageIncreaseMax",
-                                     1, "./Skills/Nirvana.txt");
+            1, "./Skills/Nirvana.txt");
     NAOTMReduce = GetPrivateProfileIntA("ArrowsOfTheMaster", "PVPReduce", 1,
-                                        "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NOHSMul = GetPrivateProfileIntA("OneHitStrike", "Multiply", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NOHSMin = GetPrivateProfileIntA("OneHitStrike", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NOHSMax = GetPrivateProfileIntA("OneHitStrike", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NOHSReduce = GetPrivateProfileIntA("OneHitStrike", "PVPReduce", 1,
-                                       "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NWOEMul = GetPrivateProfileIntA("TheWaveOfEarth", "Multiply", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NWOEMin = GetPrivateProfileIntA("TheWaveOfEarth", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NWOEMax = GetPrivateProfileIntA("TheWaveOfEarth", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     NWOEReduce = GetPrivateProfileIntA("TheWaveOfEarth", "PVPReduce", 1,
-                                       "./Skills/Nirvana.txt");
+            "./Skills/Nirvana.txt");
     LMSLimit = GetPrivateProfileIntA("Limit", "Level", 100,
-                                     "./Systems/LastManStand.txt");
+            "./Systems/LastManStand.txt");
     LMSQuest = GetPrivateProfileIntA("Quest", "Index", 1,
-                                     "./Systems/LastManStand.txt");
+            "./Systems/LastManStand.txt");
     LMSMap = GetPrivateProfileIntA("Map", "Index", 1, "./Systems/LastManStand.txt");
     LMSX = GetPrivateProfileIntA("Teleport", "X", 1, "./Systems/LastManStand.txt");
     LMSY = GetPrivateProfileIntA("Teleport", "Y", 1, "./Systems/LastManStand.txt");
     GetPrivateProfileStringA("ExpEvent", "Active", "true", ActiveExpEvent, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     GetPrivateProfileStringA("ExpEvent", "Start", "true", ExpEventStart, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     GetPrivateProfileStringA("ExpEvent", "End", "true", ExpEventEnd, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     DTQuest = GetPrivateProfileIntA("Quest", "Index", 0, "./Systems/Duel.txt");
     DTLimit = GetPrivateProfileIntA("Limit", "Level", 1, "./Systems/Duel.txt");
     GetPrivateProfileStringA("ShopReward", "Active", "false", ShopRewardCheck, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     ShopRewardTime = GetPrivateProfileIntA("ShopReward", "Time", 3600,
-                                           "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ShopRewardIndex = GetPrivateProfileIntA("ShopReward", "Index", 1,
-                                            "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ShopRewardAmount = GetPrivateProfileIntA("ShopReward", "Amount", 1,
-                       "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ConfigCheckDB3 = encryptDecrypt("^TYjT@A]");
     ConfigCheckDB4 = encryptDecrypt("^TYjQW");
     ConfigCheckDB1 = ConfigCheckDB3.c_str();
@@ -311,13 +311,13 @@ void ReadConfig()
     Door7 = encryptDecrypt("[ZXZGPXPGVL");
     Door8 = encryptDecrypt("P[TWYP");
     MageFakeDamage = GetPrivateProfileIntA("FakeDamage", "Damage", 1,
-                                           "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     HellSummonY = GetPrivateProfileIntA("Spawn", "Y", 0, "./Systems/Hell.txt");
     HellSummonX = GetPrivateProfileIntA("Spawn", "X", 0, "./Systems/Hell.txt");
     HellReturnY = GetPrivateProfileIntA("TeleportBack", "Y", 0,
-                                        "./Systems/Hell.txt");
+            "./Systems/Hell.txt");
     HellReturnX = GetPrivateProfileIntA("TeleportBack", "X", 0,
-                                        "./Systems/Hell.txt");
+            "./Systems/Hell.txt");
     HellY = GetPrivateProfileIntA("Teleport", "Y", 0, "./Systems/Hell.txt");
     HellX = GetPrivateProfileIntA("Teleport", "X", 0, "./Systems/Hell.txt");
     HellMap = GetPrivateProfileIntA("Map", "Index", 0, "./Systems/Hell.txt");
@@ -325,394 +325,399 @@ void ReadConfig()
     F10Exp = GetPrivateProfileIntA("Exp", "Amount", 1, "./Systems/F10.txt");
     F10Quest = GetPrivateProfileIntA("Quest", "Index", 0, "./Systems/F10.txt");
     DonationCoin = GetPrivateProfileIntA("DonationCoin", "Index", 48,
-                                         "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ScenarioTime = GetPrivateProfileIntA("Time", "Time", 3600,
-                                         "./Systems/Destructing.txt");
+            "./Systems/Destructing.txt");
     ScenarioMap = GetPrivateProfileIntA("Map", "Index", 100,
-                                        "./Systems/Destructing.txt");
+            "./Systems/Destructing.txt");
     ScenarioQuest = GetPrivateProfileIntA("Quest", "Index", 0,
-                                          "./Systems/Destructing.txt");
+            "./Systems/Destructing.txt");
     BFTime = GetPrivateProfileIntA("Time", "Time", 3600,
-                                   "./Systems/Battlefield.txt");
+            "./Systems/Battlefield.txt");
     BFMap = GetPrivateProfileIntA("Map", "Index", 100, "./Systems/Battlefield.txt");
     BFQuest = GetPrivateProfileIntA("Quest", "Index", 0,
-                                    "./Systems/Battlefield.txt");
+            "./Systems/Battlefield.txt");
     TStunReduce = GetPrivateProfileIntA("Stun", "PVPReduce", 1,
-                                        "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TStunMul = GetPrivateProfileIntA("Stun", "Multiply", 1, "./Skills/Thief.txt");
     TStunMin = GetPrivateProfileIntA("Stun", "GradeDamageIncreaseMin", 1,
-                                     "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TStunMax = GetPrivateProfileIntA("Stun", "GradeDamageIncreaseMax", 1,
-                                     "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TStranReduce = GetPrivateProfileIntA("Strangle", "PVPReduce", 1,
-                                         "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TStranMul = GetPrivateProfileIntA("Strangle", "Multiply", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TStranMin = GetPrivateProfileIntA("Strangle", "GradeDamageIncreaseMin", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TStranMax = GetPrivateProfileIntA("Strangle", "GradeDamageIncreaseMax", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TRupReduce = GetPrivateProfileIntA("Rupture", "PVPReduce", 1,
-                                       "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TRupMul = GetPrivateProfileIntA("Rupture", "Multiply", 1, "./Skills/Thief.txt");
     TRupMin = GetPrivateProfileIntA("Rupture", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TRupMax = GetPrivateProfileIntA("Rupture", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFWReduce = GetPrivateProfileIntA("FatalWound", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFWMul = GetPrivateProfileIntA("FatalWound", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFWMin = GetPrivateProfileIntA("FatalWound", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFWMax = GetPrivateProfileIntA("FatalWound", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TVSReduce = GetPrivateProfileIntA("VitalStrike", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TVSMul = GetPrivateProfileIntA("VitalStrike", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TVSMin = GetPrivateProfileIntA("VitalStrike", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TVSMax = GetPrivateProfileIntA("VitalStrike", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TAssReduce = GetPrivateProfileIntA("Assault", "PVPReduce", 1,
-                                       "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TAssMul = GetPrivateProfileIntA("Assault", "Multiply", 1, "./Skills/Thief.txt");
     TAssMin = GetPrivateProfileIntA("Assault", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TAssMax = GetPrivateProfileIntA("Assault", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSuBReduce = GetPrivateProfileIntA("SuicidalBlow", "PVPReduce", 1,
-                                       "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSuBMul = GetPrivateProfileIntA("SuicidalBlow", "Multiply", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSuBMin = GetPrivateProfileIntA("SuicidalBlow", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSuBMax = GetPrivateProfileIntA("SuicidalBlow", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFBReduce = GetPrivateProfileIntA("FinalBlow", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFBMul = GetPrivateProfileIntA("FinalBlow", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFBMin = GetPrivateProfileIntA("FinalBlow", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TFBMax = GetPrivateProfileIntA("FinalBlow", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSAReduce = GetPrivateProfileIntA("SpinAttack", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSAMul = GetPrivateProfileIntA("SpinAttack", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSAMin = GetPrivateProfileIntA("SpinAttack", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSAMax = GetPrivateProfileIntA("SpinAttack", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TTBSReduce = GetPrivateProfileIntA("TwinBladeStrike", "PVPReduce", 1,
-                                       "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TTBSMul = GetPrivateProfileIntA("TwinBladeStrike", "Multiply", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TTBSMin = GetPrivateProfileIntA("TwinBladeStrike", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TTBSMax = GetPrivateProfileIntA("TwinBladeStrike", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TCAReduce = GetPrivateProfileIntA("CounterAttack", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TCAMin = GetPrivateProfileIntA("CounterAttack", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TCAMax = GetPrivateProfileIntA("CounterAttack", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TCOReduce = GetPrivateProfileIntA("CounterOffensive", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TCOMin = GetPrivateProfileIntA("CounterOffensive", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TCOMax = GetPrivateProfileIntA("CounterOffensive", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TDOKReduce = GetPrivateProfileIntA("DanceOfKilling", "PVPReduce", 1,
-                                       "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TDOKMul = GetPrivateProfileIntA("DanceOfKilling", "Multiply", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TDOKMin = GetPrivateProfileIntA("DanceOfKilling", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TDOKMax = GetPrivateProfileIntA("DanceOfKilling", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TLSReduce = GetPrivateProfileIntA("LightningSlash", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TLSMul = GetPrivateProfileIntA("LightningSlash", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TLSMin = GetPrivateProfileIntA("LightningSlash", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TLSMax = GetPrivateProfileIntA("LightningSlash", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSSReduce = GetPrivateProfileIntA("ShadowSlash", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSSMul = GetPrivateProfileIntA("ShadowSlash", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSSMin = GetPrivateProfileIntA("ShadowSlash", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSSMax = GetPrivateProfileIntA("ShadowSlash", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TWOHReduce = GetPrivateProfileIntA("WrathOfHeaven", "PVPReduce", 1,
-                                       "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TWOHMul = GetPrivateProfileIntA("WrathOfHeaven", "Multiply", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TWOHMin = GetPrivateProfileIntA("WrathOfHeaven", "GradeDamageIncreaseMin", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TWOHMax = GetPrivateProfileIntA("WrathOfHeaven", "GradeDamageIncreaseMax", 1,
-                                    "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSBReduce = GetPrivateProfileIntA("SpinBlade", "PVPReduce", 1,
-                                      "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSBMul = GetPrivateProfileIntA("SpinBlade", "Multiply", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSBMin = GetPrivateProfileIntA("SpinBlade", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TSBMax = GetPrivateProfileIntA("SpinBlade", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Thief.txt");
+            "./Skills/Thief.txt");
     TEZilReduce = GetPrivateProfileIntA("ZilPoong", "PVPReduce", 1,
-                                        "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     TEZilMul = GetPrivateProfileIntA("ZilPoong", "Multiply", 1, "./Skills/Egg.txt");
     TEWhirReduce = GetPrivateProfileIntA("WhirlwindFeather", "PVPReduce", 1,
-                                         "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     TEWhirMul = GetPrivateProfileIntA("WhirlwindFeather", "Multiply", 1,
-                                      "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     TEShinReduce = GetPrivateProfileIntA("ShinRhoe", "PVPReduce", 1,
-                                         "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     TEShinMul = GetPrivateProfileIntA("ShinRhoe", "Multiply", 1,
-                                      "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     MMIReduce = GetPrivateProfileIntA("MagicIntensification", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MMIMul = GetPrivateProfileIntA("MagicIntensification", "Multiply", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MMIMin = GetPrivateProfileIntA("MagicIntensification", "GradeDamageIncreaseMin",
-                                   1, "./Skills/Mage.txt");
+            1, "./Skills/Mage.txt");
     MMIMax = GetPrivateProfileIntA("MagicIntensification", "GradeDamageIncreaseMax",
-                                   1, "./Skills/Mage.txt");
+            1, "./Skills/Mage.txt");
     MFIReduce = GetPrivateProfileIntA("FlameInjection", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MFIMul = GetPrivateProfileIntA("FlameInjection", "Multiply", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MFIMin = GetPrivateProfileIntA("FlameInjection", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MFIMax = GetPrivateProfileIntA("FlameInjection", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MLAReduce = GetPrivateProfileIntA("LightningArrow", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MLAMul = GetPrivateProfileIntA("LightningArrow", "Multiply", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MLAMin = GetPrivateProfileIntA("LightningArrow", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MLAMax = GetPrivateProfileIntA("LightningArrow", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     ACSReduce = GetPrivateProfileIntA("CombativeSpirit", "PVPReduce", 1,
-                                      "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     ACSMul = GetPrivateProfileIntA("CombativeSpirit", "Multiply", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     ACSMin = GetPrivateProfileIntA("CombativeSpirit", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     ACSMax = GetPrivateProfileIntA("CombativeSpirit", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     ALAReduce = GetPrivateProfileIntA("LifeAbsorption", "PVPReduce", 1,
-                                      "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     ALAMul = GetPrivateProfileIntA("LifeAbsorption", "Multiply", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     ETBReduce = GetPrivateProfileIntA("Thunderbolt", "PVPReduce", 1,
-                                      "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     ETBMul = GetPrivateProfileIntA("Thunderbolt", "Multiply", 1,
-                                   "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     ERAReduce = GetPrivateProfileIntA("RevolveAttack", "PVPReduce", 1,
-                                      "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     ERAMul = GetPrivateProfileIntA("RevolveAttack", "Multiply", 1,
-                                   "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     EBSReduce = GetPrivateProfileIntA("BloodSuction", "PVPReduce", 1,
-                                      "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     EBSMul = GetPrivateProfileIntA("BloodSuction", "Multiply", 1,
-                                   "./Skills/Egg.txt");
+            "./Skills/Egg.txt");
     AARReduce = GetPrivateProfileIntA("ArrowRain", "PVPReduce", 1,
-                                      "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AARMul = GetPrivateProfileIntA("ArrowRain", "Multiply", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AARMin = GetPrivateProfileIntA("ArrowRain", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AARMax = GetPrivateProfileIntA("ArrowRain", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AAEReduce = GetPrivateProfileIntA("ArrowExplosion", "PVPReduce", 1,
-                                      "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AAEMul = GetPrivateProfileIntA("ArrowExplosion", "Multiply", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AAEMin = GetPrivateProfileIntA("ArrowExplosion", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AAEMax = GetPrivateProfileIntA("ArrowExplosion", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AVAReduce = GetPrivateProfileIntA("VirulentArrow", "PVPReduce", 1,
-                                      "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AVAMul = GetPrivateProfileIntA("VirulentArrow", "Multiply", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AVAMin = GetPrivateProfileIntA("VirulentArrow", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     AVAMax = GetPrivateProfileIntA("VirulentArrow", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     MTBReduce = GetPrivateProfileIntA("Thunderbolt", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MTBMul = GetPrivateProfileIntA("Thunderbolt", "Multiply", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MTBMin = GetPrivateProfileIntA("Thunderbolt", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MTBMax = GetPrivateProfileIntA("Thunderbolt", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIcicleReduce = GetPrivateProfileIntA("Icicle", "PVPReduce", 1,
-                                          "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIcicleMul = GetPrivateProfileIntA("Icicle", "Multiply", 1,
-                                       "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIcicleMin = GetPrivateProfileIntA("Icicle", "GradeDamageIncreaseMin", 1,
-                                       "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIcicleMax = GetPrivateProfileIntA("Icicle", "GradeDamageIncreaseMax", 1,
-                                       "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIAReduce = GetPrivateProfileIntA("IceArrow", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIAMul = GetPrivateProfileIntA("IceArrow", "Multiply", 1, "./Skills/Mage.txt");
     MIAMin = GetPrivateProfileIntA("IceArrow", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MIAMax = GetPrivateProfileIntA("IceArrow", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MFBReduce = GetPrivateProfileIntA("Fireball", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MFBMul = GetPrivateProfileIntA("Fireball", "Multiply", 1, "./Skills/Mage.txt");
     MFBMin = GetPrivateProfileIntA("Fireball", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MFBMax = GetPrivateProfileIntA("Fireball", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     ArcherManaCirculation = GetPrivateProfileIntA("ManaCirculation", "Increase", 1,
-                            "./Skills/Archer.txt");
+            "./Skills/Archer.txt");
     MSDReduce = GetPrivateProfileIntA("SoulDestruction", "PVPReduce", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MSDMul = GetPrivateProfileIntA("SoulDestruction", "Multiply", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MSDMin = GetPrivateProfileIntA("SoulDestruction", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MSDMax = GetPrivateProfileIntA("SoulDestruction", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MageManaCirculation = GetPrivateProfileIntA("ManaCirculation", "Increase", 1,
-                          "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     MRIAmount = GetPrivateProfileIntA("HealRage", "Increase", 1,
-                                      "./Skills/Mage.txt");
+            "./Skills/Mage.txt");
     KSDReduce = GetPrivateProfileIntA("SwordDance", "PVPReduce", 1,
-                                      "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSDMul = GetPrivateProfileIntA("SwordDance", "Multiply", 1,
-                                   "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSDMin = GetPrivateProfileIntA("SwordDance", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSDMax = GetPrivateProfileIntA("SwordDance", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSSReduce = GetPrivateProfileIntA("SpinSlash", "PVPReduce", 1,
-                                      "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSSMul = GetPrivateProfileIntA("SpinSlash", "Multiply", 1,
-                                   "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSSMin = GetPrivateProfileIntA("SpinSlash", "GradeDamageIncreaseMin", 1,
-                                   "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSSMax = GetPrivateProfileIntA("SpinSlash", "GradeDamageIncreaseMax", 1,
-                                   "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSSDBMin = GetPrivateProfileIntA("SpinSlash", "DeathBlowDamageIncreaseMin", 1,
-                                     "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KSSDBMax = GetPrivateProfileIntA("SpinSlash", "DeathBlowDamageIncreaseMax", 1,
-                                     "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KPOBReduce = GetPrivateProfileIntA("ProvocationOfBlow", "PVPReduce", 1,
-                                       "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KPOBMul = GetPrivateProfileIntA("ProvocationOfBlow", "Multiply", 1,
-                                    "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KPOBMin = GetPrivateProfileIntA("ProvocationOfBlow", "GradeDamageIncreaseMin",
-                                    1, "./Skills/Knight.txt");
+            1, "./Skills/Knight.txt");
     KPOBMax = GetPrivateProfileIntA("ProvocationOfBlow", "GradeDamageIncreaseMax",
-                                    1, "./Skills/Knight.txt");
+            1, "./Skills/Knight.txt");
     KPWWReduce = GetPrivateProfileIntA("PowerfulWideningWound", "PVPReduce", 1,
-                                       "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KPWWMul = GetPrivateProfileIntA("PowerfulWideningWound", "Multiply", 1,
-                                    "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     KPWWMin = GetPrivateProfileIntA("PowerfulWideningWound",
-                                    "GradeDamageIncreaseMin", 1, "./Skills/Knight.txt");
+            "GradeDamageIncreaseMin", 1, "./Skills/Knight.txt");
     KPWWMax = GetPrivateProfileIntA("PowerfulWideningWound",
-                                    "GradeDamageIncreaseMax", 1, "./Skills/Knight.txt");
+            "GradeDamageIncreaseMax", 1, "./Skills/Knight.txt");
     KnightManaCirculation = GetPrivateProfileIntA("ManaCirculation", "Increase", 1,
-                            "./Skills/Knight.txt");
+            "./Skills/Knight.txt");
     FishHardest = GetPrivateProfileIntA("Rate", "Hardest", 1,
-                                        "./Configs/Fishing.txt");
+            "./Configs/Fishing.txt");
     FishHard = GetPrivateProfileIntA("Rate", "Hard", 1, "./Configs/Fishing.txt");
     FishNormal = GetPrivateProfileIntA("Rate", "Normal", 1,
-                                       "./Configs/Fishing.txt");
+            "./Configs/Fishing.txt");
     FishLow = GetPrivateProfileIntA("Rate", "Low", 1, "./Configs/Fishing.txt");
     FishLowest = GetPrivateProfileIntA("Rate", "Lowest", 1,
-                                       "./Configs/Fishing.txt");
+            "./Configs/Fishing.txt");
     MysteryResetItem = GetPrivateProfileIntA("ResetItem", "Index", 1,
-                       "./Skills/Mystery.txt");
+            "./Skills/Mystery.txt");
     MysteryQuest = GetPrivateProfileIntA("Quest", "Index", 1,
-                                         "./Skills/Mystery.txt");
+            "./Skills/Mystery.txt");
     EmokCert = GetPrivateProfileIntA("Certificate", "Index", 1,
-                                     "./Configs/Emok.txt");
+            "./Configs/Emok.txt");
     EmokX = GetPrivateProfileIntA("Teleport", "X", 1, "./Configs/Emok.txt");
     EmokY = GetPrivateProfileIntA("Teleport", "Y", 1, "./Configs/Emok.txt");
     EmokMap = GetPrivateProfileIntA("Map", "Index", 1, "./Configs/Emok.txt");
     EmokQuestIndex = GetPrivateProfileIntA("Quest", "Index", 1,
-                                           "./Configs/Emok.txt");
+            "./Configs/Emok.txt");
     ConfigMaxDamage = GetPrivateProfileIntA("Protection", "MaxDamage", 1,
-                                            "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ConfigMaxMagAtk = GetPrivateProfileIntA("Protection", "MaxMagAtk", 1,
-                                            "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ConfigMaxPhyAtk = GetPrivateProfileIntA("Protection", "MaxPhyAtk", 1,
-                                            "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     EggExpTime = GetPrivateProfileIntA("EggExp", "ByTime", 1,
-                                       "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     EggExpKill = GetPrivateProfileIntA("EggExp", "ByKill", 1,
-                                       "./Configs/Protection.txt");
+            "./Configs/Protection.txt");
     ConfigMix = GetPrivateProfileIntA("Mix", "Rate", 1, "./Configs/Mix.txt");
     ConfigImp = GetPrivateProfileIntA("Imp", "Rate", 1, "./Configs/Mix.txt");
     GetPrivateProfileStringA("2ndPwd", "Active", "true", Active2ndPwd, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     GetPrivateProfileStringA("Thief", "Active", "true", ThiefActiveCheck, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     GetPrivateProfileStringA("Player", "Drop", NULL, PlayerCheck, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     GetPrivateProfileStringA("Assassin", "Drop", NULL, SinCheck, 50,
-                             "./Configs/Protection.txt");
+        "./Configs/Protection.txt");
     GetPrivateProfileStringA("MD5", "check", NULL, ConfigCheck, 50,
-                             "./Configs/MD5.txt");
+        "./Configs/MD5.txt");
     GetPrivateProfileStringA("MD5", "Engine.dll", NULL, ConfigClient, 50,
-                             "./Configs/MD5.txt");
+        "./Configs/MD5.txt");
     GetPrivateProfileStringA("MD5", "engine.exe", NULL, ConfigEngine, 50,
-                             "./Configs/MD5.txt");
+        "./Configs/MD5.txt");
     GetPrivateProfileStringA("MD5", "config.pk", NULL, ConfigConfig, 50,
-                             "./Configs/MD5.txt");
+        "./Configs/MD5.txt");
     GetPrivateProfileStringA("MD5", "m_config.pk", NULL, ConfigMConfig, 50,
-                             "./Configs/MD5.txt");
+        "./Configs/MD5.txt");
     GetPrivateProfileStringA("MD5", "e.pk", NULL, ConfigEpk, 50,
-                             "./Configs/MD5.txt");
+        "./Configs/MD5.txt");
 
     FILE *file = fopen("./Configs/Pet.txt", "r");
+
     if (file != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, file) != NULL)
         {
             int PetIndex = 0, GetPetTime = 0, Heal = 0, AutoPick = 0;
 
             if (sscanf(line, "(pet (index %d)(time %d)(heal %d)(autopick %d))", &PetIndex,
-                       &GetPetTime, &Heal, &AutoPick) == 4)
+                    &GetPetTime, &Heal, &AutoPick) == 4)
             {
                 PetTime[PetIndex].Time = GetPetTime;
                 PetTime[PetIndex].Heal = Heal;
                 PetTime[PetIndex].Pick = AutoPick;
             }
         }
+
         fclose(file);
     }
 
     FILE *fileq = fopen("./Configs/Buff.txt", "r");
+
     if (fileq != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, fileq) != NULL)
         {
             int Index = 0, IRemove = 0, ILevel = 0, IGrade = 0, Quest = 0, QGrade = 0,
                 QRemove = 0, QLimit = 0;
 
             if (sscanf(line, "(buff (index %d)(grade %d)(remove %d)(level %d))", &Index,
-                       &IGrade, &IRemove, &ILevel) == 4)
+                    &IGrade, &IRemove, &ILevel) == 4)
             {
                 BufferCheck[Index].Index = Index;
                 BufferCheck[Index].Grade = IGrade;
@@ -721,7 +726,7 @@ void ReadConfig()
             }
 
             if (sscanf(line, "(buff (quest %d)(grade %d)(remove %d)(level %d))", &Quest,
-                       &QGrade, &QRemove, &QLimit) == 4)
+                    &QGrade, &QRemove, &QLimit) == 4)
             {
                 BufferCheck[Quest].Index = Quest;
                 BufferCheck[Quest].Grade = QGrade;
@@ -729,34 +734,42 @@ void ReadConfig()
                 BufferCheck[Quest].Limit = QLimit;
             }
         }
+
         fclose(fileq);
     }
 
     FILE *filex = fopen("./Configs/UnBlob.txt", "r");
+
     if (filex != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filex) != NULL)
         {
             int CheckMobIndex = 0;
+
             if (sscanf(line, "(unblob (index %d))", &CheckMobIndex) == 1)
             {
                 UnBlob[CheckMobIndex] = 1;
             }
         }
+
         fclose(filex);
     }
 
     FILE *filey = fopen("./Configs/SkillBook.txt", "r");
+
     if (filey != NULL)
     {
         char line[BUFSIZ];
-        while ( fgets(line, sizeof line, filey) != NULL )
+
+        while (fgets(line, sizeof line, filey) != NULL)
         {
             int Class = 0, Index = 0, SkillID = 0, UpgradeAmount = 0, MaxGrade = 0;
+
             if (sscanf(line,
-                       "(skillbook (class %d)(index %d)(action %d)(upgradeamount %d)(maxgrade %d))",
-                       &Class, &Index, &SkillID, &UpgradeAmount, &MaxGrade) == 5)
+                    "(skillbook (class %d)(index %d)(action %d)(upgradeamount %d)(maxgrade %d))",
+                    &Class, &Index, &SkillID, &UpgradeAmount, &MaxGrade) == 5)
             {
                 SkillBook[Index].Index = 1;
                 SkillBook[Index].Class = Class;
@@ -765,62 +778,74 @@ void ReadConfig()
                 SkillBook[Index].UpgradeMax = MaxGrade;
             }
         }
+
         fclose(filey);
     }
 
     FILE *filez = fopen("./Configs/Cooldown.txt", "r");
+
     if (filez != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filez) != NULL)
         {
             int GetClass = 0, GetSkillID = 0, GetDelay = 0, GetCooldown = 0,
                 GetSkillIDx = 0, GetDelayx = 0, GetCooldownx = 0;
+
             if (sscanf(line, "(eggskill (action %d)(delay %d)(cooldown %d))", &GetSkillIDx,
-                       &GetDelayx, &GetCooldownx) == 3)
+                    &GetDelayx, &GetCooldownx) == 3)
             {
                 CheckEggCooldownConfig[GetSkillIDx].EggCooldownConfig = GetCooldownx;
                 CheckEggCooldownConfig[GetSkillIDx].EggDelayConfig = GetDelayx;
             }
 
             if (sscanf(line, "(skill (class %d)(action %d)(delay %d)(cooldown %d))",
-                       &GetClass, &GetSkillID, &GetDelay, &GetCooldown) == 4)
+                    &GetClass, &GetSkillID, &GetDelay, &GetCooldown) == 4)
             {
                 CheckCooldownConfig[GetSkillID + (GetClass * 100)].CooldownConfig = GetCooldown;
                 CheckCooldownConfig[GetSkillID + (GetClass * 100)].DelayConfig = GetDelay;
             }
         }
+
         fclose(filez);
     }
 
     FILE *filew = fopen("./Configs/OldSkillDamage.txt", "r");
+
     if (filew != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filew) != NULL)
         {
             int Class = 0, SkillID = 0, Rate = 0;
+
             if (sscanf(line, "(updatedamage (class %d)(action %d)(rate %d))", &Class,
-                       &SkillID, &Rate) == 3)
+                    &SkillID, &Rate) == 3)
             {
                 ConfigCalculations[(Class * 100) + SkillID].Class = Class;
                 ConfigCalculations[(Class * 100) + SkillID].Rate = Rate;
             }
         }
+
         fclose(filew);
     }
 
     FILE *filen = fopen("./Configs/RealTime.txt", "r");
+
     if (filen != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filen) != NULL)
         {
             int ArmorGetPrefix = 0, ArmorGetDef = 0, BofPrefix = 0, ImpPrefix = 0, GetA = 0,
                 GetM = 0, GetTOA = 0, GetUpg = 0, GetPrefix = 0, MixPrefix = 0, MixInfo = 0;
             char mixnotice[BUFSIZ];
+
             if (sscanf(line, "(armorpimp (prefix %d)(defense %d))", &ArmorGetPrefix,
-                       &ArmorGetDef) == 2)
+                    &ArmorGetDef) == 2)
             {
                 ArmorPimpConfig[ArmorGetPrefix] = ArmorGetDef;
             }
@@ -836,7 +861,7 @@ void ReadConfig()
             }
 
             if (sscanf(line, "(pimp (prefix %d)(attack %d)(magic %d)(toa %d)(upgrade %d))",
-                       &GetPrefix, &GetA, &GetM, &GetTOA, &GetUpg) == 5)
+                    &GetPrefix, &GetA, &GetM, &GetTOA, &GetUpg) == 5)
             {
                 CheckPimp[GetPrefix].Prefix = 1;
                 CheckPimp[GetPrefix].GetA = GetA;
@@ -846,82 +871,98 @@ void ReadConfig()
             }
 
             if (sscanf(line,
-                       "(mix (prefix %d)(info %d)(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
-                       &MixPrefix, &MixInfo, &mixnotice) == 3)
+                    "(mix (prefix %d)(info %d)(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
+                    &MixPrefix, &MixInfo, &mixnotice) == 3)
             {
                 MixConfigPrefix[MixPrefix] = 1;
                 MixConfigInfo[MixPrefix] = MixInfo;
                 MixConfigMsg[MixPrefix] = mixnotice;
             }
         }
+
         fclose(filen);
     }
 
     FILE *filem = fopen("./Configs/Notice.txt", "r");
+
     if (filem != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filem) != NULL)
         {
-            char day[BUFSIZ],time[BUFSIZ],notice[BUFSIZ];
+            char day[BUFSIZ], time[BUFSIZ], notice[BUFSIZ];
+
             if (sscanf(line,
-                       "(notice (day '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(time '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
-                       &day, &time, &notice) == 3)
+                    "(notice (day '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(time '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
+                    &day, &time, &notice) == 3)
             {
                 AutoNoticeDay[time] = day;
                 AutoNoticeMsg[time] = notice;
             }
         }
+
         fclose(filem);
     }
 
     FILE *fileo = fopen("./Configs/Gap.txt", "r");
+
     if (fileo != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, fileo) != NULL)
         {
             int gaplevel = 0, gaprate =0;
+
             if (sscanf(line, "(gap (level %d)(rate %d))", &gaplevel, &gaprate) == 2)
             {
                 LevelGap[gaplevel] = gaprate;
             }
         }
+
         fclose(fileo);
     }
 
     FILE *filep = fopen("./Configs/HonorShop.txt", "r");
+
     if (filep != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filep) != NULL)
         {
             int honorquest = 0, honorreward = 0, honorindex = 0, honorindexreward;
+
             if (sscanf(line, "(honorshop (quest %d)(reward %d))", &honorquest,
-                       &honorreward) == 2)
+                    &honorreward) == 2)
             {
                 HonorShop[honorquest] = honorreward;
             }
 
             if (sscanf(line, "(honorshop (index %d)(reward %d))", &honorindex,
-                       &honorindexreward) == 2)
+                    &honorindexreward) == 2)
             {
                 HonorIndex[honorindex] = honorindexreward;
             }
         }
+
         fclose(filep);
     }
 
     FILE *filer = fopen("./Configs/ItemReplace.txt", "r");
+
     if (filer != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filer) != NULL)
         {
             int wrprefix = 0, wrindex = 0, wrnewindex = 0, arprefix = 0, arindex = 0,
                 arnewindex = 0, orprefix = 0, orindex = 0, ornewindex = 0;
+
             if (sscanf(line, "(weapon (prefix %d)(index %d)(newindex %d))", &wrprefix,
-                       &wrindex, &wrnewindex) == 3)
+                    &wrindex, &wrnewindex) == 3)
             {
                 WeaponReplacePrefix[wrprefix] = 1;
                 WeaponReplace[wrindex] = wrprefix;
@@ -929,7 +970,7 @@ void ReadConfig()
             }
 
             if (sscanf(line, "(armor (prefix %d)(index %d)(newindex %d))", &arprefix,
-                       &arindex, &arnewindex) == 3)
+                    &arindex, &arnewindex) == 3)
             {
                 WeaponReplacePrefix[arprefix] = 1;
                 WeaponReplace[arindex] = arprefix;
@@ -937,28 +978,32 @@ void ReadConfig()
             }
 
             if (sscanf(line, "(ornament (prefix %d)(index %d)(newindex %d))", &orprefix,
-                       &orindex, &ornewindex) == 3)
+                    &orindex, &ornewindex) == 3)
             {
                 WeaponReplacePrefix[orprefix] = 1;
                 WeaponReplace[orindex] = orprefix;
                 WeaponReplaceIndex[orindex] = ornewindex;
             }
         }
+
         fclose(filer);
     }
 
     FILE *files = fopen("./Configs/Summon.txt", "r");
+
     if (files != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, files) != NULL)
         {
-            char day[BUFSIZ],time[BUFSIZ],notice[BUFSIZ];
+            char day[BUFSIZ], time[BUFSIZ], notice[BUFSIZ];
             int MobIndex = 0, MobAmount = 0, MobMap = 0, MobX = 0, MobY = 0, MobDis = 0;
+
             if (sscanf(line,
-                       "(summon (index %d)(amount %d)(map %d)(x %d)(y %d)(disappear %d)(day '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(time '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
-                       &MobIndex, &MobAmount, &MobMap, &MobX, &MobY, &MobDis, &day, &time,
-                       &notice) == 9)
+                    "(summon (index %d)(amount %d)(map %d)(x %d)(y %d)(disappear %d)(day '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(time '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]')(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
+                    &MobIndex, &MobAmount, &MobMap, &MobX, &MobY, &MobDis, &day, &time,
+                    &notice) == 9)
             {
                 SummonTimer[time].Index = MobIndex;
                 SummonTimer[time].Amount = MobAmount;
@@ -970,21 +1015,25 @@ void ReadConfig()
                 SummonTimer[time].Msg = notice;
             }
         }
+
         fclose(files);
     }
 
     FILE *filet = fopen("./Configs/Rent.txt", "r");
+
     if (filet != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, filet) != NULL)
         {
             int RAQuest = 0, RAIndex = 0, RAPrefix = 0, RADef = 0, RAEva = 0, RABof = 0,
                 RADss = 0, RACoin = 0, RATime = 0;
+
             if (sscanf(line,
-                       "(rentarmor (quest %d)(index %d)(prefix %d)(defense %d)(evasion %d)(bof %d)(dss %d)(coin %d)(time %d))",
-                       &RAQuest, &RAIndex, &RAPrefix, &RADef, &RAEva, &RABof, &RADss, &RACoin,
-                       &RATime) == 9)
+                    "(rentarmor (quest %d)(index %d)(prefix %d)(defense %d)(evasion %d)(bof %d)(dss %d)(coin %d)(time %d))",
+                    &RAQuest, &RAIndex, &RAPrefix, &RADef, &RAEva, &RABof, &RADss, &RACoin,
+                    &RATime) == 9)
             {
                 RentArmor[RAQuest].Quest = RAQuest;
                 RentArmor[RAQuest].Index = RAIndex;
@@ -999,10 +1048,11 @@ void ReadConfig()
 
             int RWQuest = 0, RWIndex = 0, RWPrefix = 0, RWAttack = 0, RWMagic = 0,
                 RWToa = 0, RWUpgrade = 0, RWMix = 0, RWDss = 0, RWCoin = 0, RWTime = 0;
+
             if (sscanf(line,
-                       "(rentweapon (quest %d)(index %d)(prefix %d)(attack %d)(magic %d)(toa %d)(upgrade %d)(mix %d)(dss %d)(coin %d)(time %d))",
-                       &RWQuest, &RWIndex, &RWPrefix, &RWAttack, &RWMagic, &RWToa, &RWUpgrade, &RWMix,
-                       &RWDss, &RWCoin, &RWTime) == 11)
+                    "(rentweapon (quest %d)(index %d)(prefix %d)(attack %d)(magic %d)(toa %d)(upgrade %d)(mix %d)(dss %d)(coin %d)(time %d))",
+                    &RWQuest, &RWIndex, &RWPrefix, &RWAttack, &RWMagic, &RWToa, &RWUpgrade, &RWMix,
+                    &RWDss, &RWCoin, &RWTime) == 11)
             {
                 RentWeapon[RWQuest].Quest = RWQuest;
                 RentWeapon[RWQuest].Index = RWIndex;
@@ -1017,31 +1067,39 @@ void ReadConfig()
                 RentWeapon[RWQuest].Time = RWTime;
             }
         }
+
         fclose(filet);
     }
 
     FILE *Summon = fopen("./Configs/MonsterSummon.txt", "r");
+
     if (Summon != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, Summon) != NULL)
         {
-            char *t = strtok(line," )(itemindexamountdisappear");
+            char *t = strtok(line, " )(itemindexamountdisappear");
+
             while (t != NULL)
             {
-                if (std::atoi(t))
+                if (std::atoi(t)) {
                     MSS.push_back(std::atoi(t));
+                }
 
                 t = std::strtok(NULL, " )(itemindexamountdisappear");
             }
         }
+
         fclose(Summon);
     }
 
     FILE *LReward = fopen("./Configs/LevelReward.txt", "r");
+
     if (LReward != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, LReward) != NULL)
         {
             int Class = 0, Level = 0, Index = 0, Prefix = 0, Amount = 0, Info = 0,
@@ -1050,9 +1108,9 @@ void ReadConfig()
             char rewardnotice[BUFSIZ];
 
             if (sscanf(line,
-                       "(reward (level %d)(class %d)(index %d)(prefix %d)(amount %d)(info %d)(attack %d)(magic %d)(toa %d)(upgrade %d)(defense %d)(evasion %d)(endurance %d)(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
-                       &Level, &Class, &Index, &Prefix, &Amount, &Info, &Attack, &Magic, &Toa,
-                       &Upgrade, &Defense, &Evasion, &Endurance, &rewardnotice) == 14)
+                    "(reward (level %d)(class %d)(index %d)(prefix %d)(amount %d)(info %d)(attack %d)(magic %d)(toa %d)(upgrade %d)(defense %d)(evasion %d)(endurance %d)(msg '%[a-z | A-Z | 0-9/<>|.,~*;`:!^+%&=?_-£#$€]'))",
+                    &Level, &Class, &Index, &Prefix, &Amount, &Info, &Attack, &Magic, &Toa,
+                    &Upgrade, &Defense, &Evasion, &Endurance, &rewardnotice) == 14)
             {
                 LevelReward[Level].Class = Class;
                 LevelReward[Level].Index = Index;
@@ -1069,22 +1127,25 @@ void ReadConfig()
                 LevelReward[Level].Msg = rewardnotice;
             }
         }
+
         fclose(LReward);
     }
 
     FILE *DailyQuestx = fopen("./Configs/DailyQuest.txt", "r");
+
     if (DailyQuestx != NULL)
     {
         char line[BUFSIZ];
+
         while (fgets(line, sizeof line, DailyQuestx) != NULL)
         {
             int DailyQuesty = 0, DailyLevel = 0, DailyMonster = 0, DailyAmount = 0,
                 DailyRepeat = 0, DailyTime = 0, DailyItem = 0, DailyIAmount = 0, DailyExp = 0;
 
             if (sscanf(line,
-                       "(dailyquest (quest %d)(level %d)(monster %d)(amount %d)(maxrepeat %d)(timelimit %d)(item %d)(amount %d)(exp %d))",
-                       &DailyQuesty, &DailyLevel, &DailyMonster, &DailyAmount, &DailyRepeat,
-                       &DailyTime, &DailyItem, &DailyIAmount, &DailyExp) == 9)
+                    "(dailyquest (quest %d)(level %d)(monster %d)(amount %d)(maxrepeat %d)(timelimit %d)(item %d)(amount %d)(exp %d))",
+                    &DailyQuesty, &DailyLevel, &DailyMonster, &DailyAmount, &DailyRepeat,
+                    &DailyTime, &DailyItem, &DailyIAmount, &DailyExp) == 9)
             {
                 CheckDailyQuest[DailyQuesty] = DailyRepeat;
                 LevelDailyQuest[DailyQuesty] = DailyLevel;
@@ -1097,26 +1158,31 @@ void ReadConfig()
                 DailyQuest[DailyMonster].Exp = DailyExp;
             }
         }
+
         fclose(DailyQuestx);
     }
 
     FILE *oItemShop = fopen("./Configs/ItemShop.txt", "r");
+
     if (oItemShop != NULL)
     {
         char line[BUFSIZ];
         int count = 0;
+
         while (fgets(line, sizeof line, oItemShop) != NULL)
         {
             __int16 BillCode = 0;
             char Type = 0, Priority = 0, Discount = 0;
             int Price = 0, ItemIndex = 0, Amount = 0;
+
             if (sscanf(line,
-                       "(itemshop (billcode %d)(priority %d)(type %d)(price %d)(discount %d)(itemindex %d)(amount %d))",
-                       &BillCode, &Priority, &Type, &Price, &Discount, &ItemIndex, &Amount) == 7)
+                    "(itemshop (billcode %d)(priority %d)(type %d)(price %d)(discount %d)(itemindex %d)(amount %d))",
+                    &BillCode, &Priority, &Type, &Price, &Discount, &ItemIndex, &Amount) == 7)
             {
                 Interface<ITools> Tools;
-                Tools->Compile(ItemShopPacket+(count*12),"wbbbbbdb",BillCode,Priority,0,0,0,
-                               Type,Price,Discount);
+                Tools->Compile(ItemShopPacket+(count*12), "wbbbbbdb", BillCode, Priority, 0, 0,
+                    0,
+                    Type, Price, Discount);
                 ItemShopCheck[BillCode].Type = Type;
                 ItemShopCheck[BillCode].Priority = Priority;
                 ItemShopCheck[BillCode].Price = Price;
@@ -1126,6 +1192,7 @@ void ReadConfig()
                 count++;
             }
         }
+
         fclose(oItemShop);
     }
 }
@@ -1191,8 +1258,10 @@ int DBCheck()
     SQLFreeConnect(hdbcx);
     SQLFreeEnv(henvx);
 
-    if (!x || !y)
+    if (!x || !y) {
         return 0;
-    else
+    }
+    else {
         return 1;
+    }
 }

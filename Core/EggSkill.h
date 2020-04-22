@@ -1,4 +1,6 @@
-void __fastcall ExecuteTransformSkill(void *pSkill, void* edx, signed int SkillID, int pPacket, int pPos)
+void __fastcall ExecuteTransformSkill(void *pSkill, void* edx,
+    signed int SkillID, int pPacket,
+    int pPos)
 {
     ISkill Skill(pSkill);
     IChar IPlayer(Skill.GetPlayer());
@@ -10,21 +12,25 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx, signed int SkillI
         DelayTime = CheckEggCooldownConfig.find(SkillID)->second.EggDelayConfig;
     }
 
-    if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(),512))
+    if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(), 512))
     {
-        if (EggCooldownTable.count(IPlayer.GetPID()+4000000000+(SkillID*1000000)))
-            CooldownCheck = EggCooldownTable.find(IPlayer.GetPID()+4000000000+(SkillID*1000000))->second;
+        if (EggCooldownTable.count(IPlayer.GetPID()+4000000000+(SkillID*1000000))) {
+            CooldownCheck = EggCooldownTable.find(IPlayer.GetPID()+4000000000+
+                    (SkillID*1000000))->second;
+        }
 
         int nTargetID = 0;
         char bType = 0;
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         void* pTarget = 0;
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
         IChar Target(pTarget);
 
@@ -39,15 +45,18 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx, signed int SkillI
             IPlayer.SystemMessage("Invalid egg skill time detected!", TEXTCOLOR_RED);
             return;
         } else {
-            EggCooldownTable[IPlayer.GetPID()+4000000000+(SkillID*1000000)] = GetTickCount()+CdTime+DelayTime;
+            EggCooldownTable[IPlayer.GetPID()+4000000000+(SkillID*1000000)] = GetTickCount()
+                +CdTime+DelayTime;
         }
 
-        if (IPlayer.IsBuff(327))
+        if (IPlayer.IsBuff(327)) {
             IPlayer.CancelBuff(327);
+        }
 
         if (CheckContinueSkill.count(IPlayer.GetPID()) &&
-                CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillID)
+            CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillID) {
             ResetContinueSkill(IPlayer);
+        }
 
         if (IPlayer.GetTransformGrade() == 1 && Target.IsValid())
         {
@@ -77,7 +86,7 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx, signed int SkillI
             {
                 SkillID -= 37;
                 IPlayer._ShowBattleAnimation(Target, SkillID + 37);
-            } else if(SkillID == 106)
+            } else if (SkillID == 106)
             {
                 SkillID -= 37;
                 IPlayer._ShowBattleAnimation(IPlayer, SkillID + 37);
@@ -211,7 +220,7 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx, signed int SkillI
                 IPlayer._ShowBattleAnimation(IPlayer, SkillID + 37);
             } else if (SkillID == 115)
             {
-                BloodSuction(IPlayer,pPacket,pPos);
+                BloodSuction(IPlayer, pPacket, pPos);
                 return;
             } else {
                 return;
@@ -313,8 +322,9 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx, signed int SkillI
         }
 
         if (IPlayer.GetMap() != 21 && SkillID == 101 &&
-                IPlayer.GetTransformGrade() >= 97 && IPlayer.GetTransformGrade() <= 100)
+            IPlayer.GetTransformGrade() >= 97 && IPlayer.GetTransformGrade() <= 100) {
             ActivateShiny(IPlayer, pPacket, pPos);
+        }
 
         CSkill::ExecuteTransformSkill(pSkill, SkillID, pPacket, pPos);
     }

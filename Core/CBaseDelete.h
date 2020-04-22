@@ -10,38 +10,42 @@ void __fastcall CBaseDelete(void *Object, void *edx)
     int Type = 2, IID = 0, PID = 0, Erase = (int)Object;
     std::string DeleteIP = "error";
 
-    if (Check.IsOnline())
+    if (Check.IsOnline()) {
         Type = Check.GetType();
+    }
 
     if (Type == 0 && Check.IsOnline())
     {
         PID = Check.GetPID();
 
-        if (LastManStand::Active == true && Check.IsBuff(378))
+        if (LastManStand::Active == true && Check.IsBuff(378)) {
             LastManStand::RegisterAmount--;
+        }
 
         if (Protect32::Active == true && Protect32::Prayer == 1 && Check.GetGID() ==
-                Check.GetPID() && Check.GetGID() == Protect32::GuildFirst)
+            Check.GetPID() && Check.GetGID() == Protect32::GuildFirst)
         {
             Protect32::Prayer = 0;
             Protect32::BluePrayerTime = 0;
         }
 
         if (Protect32::Active == true && Protect32::Prayer == 2 && Check.GetGID() ==
-                Check.GetPID() && Check.GetGID() == Protect32::GuildSecond)
+            Check.GetPID() && Check.GetGID() == Protect32::GuildSecond)
         {
             Protect32::Prayer = 0;
             Protect32::RedPrayerTime = 0;
         }
 
         if (MiningLimit.count(Check.GetIP()) && MiningLimit.find(Check.GetIP())->second
-                &&
-                Check.IsBuff(296))
+            &&
+            Check.IsBuff(296)) {
             DeleteIP = Check.GetIP();
+        }
 
         if (ShopLimit.count(Check.GetIP()) && ShopLimit.find(Check.GetIP())->second &&
-                Check.IsBuff(297))
+            Check.IsBuff(297)) {
             DeleteIP = Check.GetIP();
+        }
     }
 
     if (Type == 1 && Check.IsOnline())
@@ -51,53 +55,53 @@ void __fastcall CBaseDelete(void *Object, void *edx)
             IChar EAPlayer((void*)Check.GetMobTanker());
 
             if (Check.IsValid() && EAPlayer.IsOnline() &&
-                    DailyQuest.count(Check.GetMobIndex()))
+                DailyQuest.count(Check.GetMobIndex()))
             {
                 if (EAPlayer.IsParty())
                 {
                     void *Party = (void *)CParty::FindParty(EAPlayer.GetPartyID());
 
                     for (int i = CParty::GetPlayerList(Party); i;
-                            i = CBaseList::Pop((void*)i))
+                        i = CBaseList::Pop((void*)i))
                     {
                         IChar IMembers((void*)*(DWORD*)((void*)i));
 
                         if (IMembers.IsOnline()
-                                && CChar::GetRange((int)IMembers.GetOffset() + 332,
-                                                   *(DWORD*)((void*)i) + 332) <= 300
-                                && PQ.count((DQF * BN) + GPID)
-                                && PQ.find((DQF * BN) + GPID)->second.Active == 1)
+                            && CChar::GetRange((int)IMembers.GetOffset() + 332,
+                                *(DWORD*)((void*)i) + 332) <= 300
+                            && PQ.count((DQF * BN) + GPID)
+                            && PQ.find((DQF * BN) + GPID)->second.Active == 1)
                         {
                             PQ[(DQF * BN) + GPID].MobAmount = PQ.find(
-                                        (DQF * BN) + GPID)->second.MobAmount + 1;
-                            CPlayer::Write(IMembers.GetOffset(),255,"dddd",222, GPID, DQF,
-                                    PQ.find((DQF * BN) + GPID)->second.MobAmount);
+                                    (DQF * BN) + GPID)->second.MobAmount + 1;
+                            CPlayer::Write(IMembers.GetOffset(), 255, "dddd", 222, GPID, DQF,
+                                PQ.find((DQF * BN) + GPID)->second.MobAmount);
 
                             if (PQ.find((DQF * BN) + GPID)->second.MobAmount >= DailyQuest.find(
-                                        Check.GetMobIndex())->second.MobAmount)
+                                    Check.GetMobIndex())->second.MobAmount)
                             {
                                 PQ[(DQF * BN) + GPID].Active = 0;
                                 PQ[(DQF * BN) + GPID].MobAmount = 0;
                                 PQ[(DQF * BN) + GPID].Repeat = PQ.find(
                                         (DQF * BN) + GPID)->second.Repeat + 1;
                                 PQ[(DQF * BN) + GPID].Time = (int)time(0) + DailyQuest.find(
-                                                    Check.GetMobIndex())->second.Time;
+                                        Check.GetMobIndex())->second.Time;
                                 IMembers.DailyQuestUpdate(DQF, PQ.find(
-                                            (DQF * BN) + GPID)->second.Repeat, 0,
-                                        PQ.find((DQF * BN) + GPID)->second.Time);
+                                        (DQF * BN) + GPID)->second.Repeat, 0,
+                                    PQ.find((DQF * BN) + GPID)->second.Time);
                                 IMembers.EndQuest(DQF);
-                                CPlayer::Write(IMembers.GetOffset(),255,"dddd",222,GPID, DQF,0);
+                                CPlayer::Write(IMembers.GetOffset(), 255, "dddd", 222, GPID, DQF, 0);
                                 (*(int (__cdecl **)(int, signed int, signed int,
-                                                    unsigned __int64, unsigned __int64))
-                                 (*(DWORD *)IMembers.GetOffset() + 88))
-                                    ((int)IMembers.GetOffset(), 25, 1, (unsigned __int64)DailyQuest.find(
+                                            unsigned __int64, unsigned __int64))
+                                    (*(DWORD *)IMembers.GetOffset() + 88))
+                                ((int)IMembers.GetOffset(), 25, 1, (unsigned __int64)DailyQuest.find(
                                         Check.GetMobIndex())->second.Exp, HIDWORD(
                                         DailyQuest.find(Check.GetMobIndex())->second.Exp));
 
                                 if (DailyQuest.find(Check.GetMobIndex())->second.Item)
-                                    CItem::InsertItem((int)IMembers.GetOffset(),27,
-                                            DailyQuest.find(Check.GetMobIndex())->second.Item,0,
-                                            DailyQuest.find(Check.GetMobIndex())->second.ItemAmount,-1);
+                                    CItem::InsertItem((int)IMembers.GetOffset(), 27,
+                                        DailyQuest.find(Check.GetMobIndex())->second.Item, 0,
+                                        DailyQuest.find(Check.GetMobIndex())->second.ItemAmount, -1);
                             } else {
                                 IMembers.DailyQuestUpdate(DQF,
                                     PQ.find((DQF * BN) + GPID)->second.Repeat,
@@ -108,40 +112,41 @@ void __fastcall CBaseDelete(void *Object, void *edx)
                     }
                 } else {
                     if (EAPlayer.IsOnline() && PQ.count((DQF * BN) + EAPlayer.GetPID()) &&
-                            PQ.find((DQF * BN) + EAPlayer.GetPID())->second.Active == 1)
+                        PQ.find((DQF * BN) + EAPlayer.GetPID())->second.Active == 1)
                     {
                         PQ[(DQF * BN) + EAPlayer.GetPID()].MobAmount = PQ.find(
                                 (DailyQuest.find(Check.GetMobIndex())->second.Quest * BN) +
-                                            EAPlayer.GetPID())->second.MobAmount + 1;
-                        CPlayer::Write(EAPlayer.GetOffset(),255,"dddd",222,EAPlayer.GetPID(),
-                                       DQF, PQ.find((DQF * BN) + EAPlayer.GetPID())->second.MobAmount);
+                                EAPlayer.GetPID())->second.MobAmount + 1;
+                        CPlayer::Write(EAPlayer.GetOffset(), 255, "dddd", 222, EAPlayer.GetPID(),
+                            DQF, PQ.find((DQF * BN) + EAPlayer.GetPID())->second.MobAmount);
 
                         if (PQ.find((DQF * BN) +
-                                    EAPlayer.GetPID())->second.MobAmount >= DailyQuest.find(
-                                    Check.GetMobIndex())->second.MobAmount)
+                                EAPlayer.GetPID())->second.MobAmount >= DailyQuest.find(
+                                Check.GetMobIndex())->second.MobAmount)
                         {
                             PQ[(DQF * BN) + EAPlayer.GetPID()].Active = 0;
                             PQ[(DQF * BN) + EAPlayer.GetPID()].MobAmount = 0;
                             PQ[(DQF * BN) + EAPlayer.GetPID()].Repeat = PQ.find((DailyQuest.find(
-                                                    Check.GetMobIndex())->second.Quest * BN) +
-                                                EAPlayer.GetPID())->second.Repeat + 1;
+                                            Check.GetMobIndex())->second.Quest * BN) +
+                                    EAPlayer.GetPID())->second.Repeat + 1;
                             PQ[(DQF * BN) + EAPlayer.GetPID()].Time = (int)time(0) + DailyQuest.find(
-                                                Check.GetMobIndex())->second.Time;
+                                    Check.GetMobIndex())->second.Time;
                             EAPlayer.DailyQuestUpdate(DQF,
-                                PQ.find((DQF * BN) + EAPlayer.GetPID())->second.Repeat,0,
+                                PQ.find((DQF * BN) + EAPlayer.GetPID())->second.Repeat, 0,
                                 PQ.find((DQF * BN) + EAPlayer.GetPID())->second.Time);
                             EAPlayer.EndQuest(DQF);
-                            CPlayer::Write(EAPlayer.GetOffset(),255,"dddd",222,EAPlayer.GetPID(), DQF,0);
+                            CPlayer::Write(EAPlayer.GetOffset(), 255, "dddd", 222, EAPlayer.GetPID(), DQF,
+                                0);
                             (*(int (__cdecl **)(int, signed int, signed int, unsigned __int64,
-                                                unsigned __int64))(*(DWORD *)EAPlayer.GetOffset() + 88))((
-                                                            int)EAPlayer.GetOffset(), 25, 1,
+                                        unsigned __int64))(*(DWORD *)EAPlayer.GetOffset() + 88))((
+                                                int)EAPlayer.GetOffset(), 25, 1,
                                             (unsigned __int64)DailyQuest.find(Check.GetMobIndex())->second.Exp,
                                             HIDWORD(DailyQuest.find(Check.GetMobIndex())->second.Exp));
 
                             if (DailyQuest.find(Check.GetMobIndex())->second.Item)
-                                CItem::InsertItem((int)EAPlayer.GetOffset(),27,
-                                                  DailyQuest.find(Check.GetMobIndex())->second.Item,0,
-                                                  DailyQuest.find(Check.GetMobIndex())->second.ItemAmount,-1);
+                                CItem::InsertItem((int)EAPlayer.GetOffset(), 27,
+                                    DailyQuest.find(Check.GetMobIndex())->second.Item, 0,
+                                    DailyQuest.find(Check.GetMobIndex())->second.ItemAmount, -1);
                         } else {
                             EAPlayer.DailyQuestUpdate(DQF,
                                 PQ.find((DQF * BN) + EAPlayer.GetPID())->second.Repeat,
@@ -153,35 +158,37 @@ void __fastcall CBaseDelete(void *Object, void *edx)
             }
 
             if (Check.IsValid() && EAPlayer.IsValid()
-                    && CheckContinueSkill.count(EAPlayer.GetPID())
-                    && CheckContinueSkill.find(EAPlayer.GetPID())->second.PlayerSkillID == 49)
+                && CheckContinueSkill.count(EAPlayer.GetPID())
+                && CheckContinueSkill.find(EAPlayer.GetPID())->second.PlayerSkillID == 49)
             {
                 EAPlayer.CancelBuff(300);
 
                 if (CheckContinueSkill.find(EAPlayer.GetPID())->second.PlayerTarget ==
-                        Check.GetOffset())
+                    Check.GetOffset())
                 {
-                    if (EAPlayer.IsInRange(Check,300))
+                    if (EAPlayer.IsInRange(Check, 300))
                     {
                         int Around = Check.GetObjectListAround(3);
 
-                        while(Around)
+                        while (Around)
                         {
                             IChar Object((void*)*(DWORD*)Around);
 
                             if (Object.IsValid() && EAPlayer.IsValid()
-                                    && (*(int (__thiscall **)
-                                            (int, int, DWORD))(*(DWORD *)EAPlayer.GetOffset() + 176))
-                                    ((int)EAPlayer.GetOffset(), (int)Object.GetOffset(), 0))
+                                && (*(int (__thiscall **)
+                                        (int, int, DWORD))(*(DWORD *)EAPlayer.GetOffset() + 176))
+                                ((int)EAPlayer.GetOffset(), (int)Object.GetOffset(), 0))
                             {
                                 int nDmg = (EAPlayer.GetAttack() * AAEMul) + (CheckContinueSkill.find(
-                                               EAPlayer.GetPID())->second.PlayerSkillGrade * CTools::Rate(AAEMin,AAEMax));
+                                            EAPlayer.GetPID())->second.PlayerSkillGrade * CTools::Rate(AAEMin, AAEMax));
 
-                                if (Object.GetType() == 0)
+                                if (Object.GetType() == 0) {
                                     nDmg = (nDmg * AAEReduce) / 100;
+                                }
 
-                                if (Object.GetOffset() != (void*)Erase)
-                                    EAPlayer.OktayDamageArea(Object,nDmg,49);
+                                if (Object.GetOffset() != (void*)Erase) {
+                                    EAPlayer.OktayDamageArea(Object, nDmg, 49);
+                                }
                             }
 
                             Around = CBaseList::Pop((void*)Around);

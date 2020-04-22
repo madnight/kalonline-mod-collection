@@ -77,7 +77,8 @@ public:
     void RemoveEva(int amount);
     void AddDef(int amount);
     void RemoveDef(int amount);
-    void AddFxToTarget(std::string effectName, bool AutoRemove, bool Continues, bool nForced);
+    void AddFxToTarget(std::string effectName, bool AutoRemove, bool Continues,
+        bool nForced);
     void AddParticle(int Bone, const char *ParticleName);
     int GetSpecialty();
     int IsMobMoving();
@@ -90,12 +91,12 @@ public:
     void MobDelete();
     void Blob();
     void UpdateHonor(int HP, int HK, int HD, int DKPT, int DKPW, int PLT, int PLW,
-            int SVT, int SVW, int RP);
+        int SVT, int SVW, int RP);
     void ShowHonor(int HP, int HK, int HD, int DKPT, int DKPW, int PLT, int PLW,
-            int SVT, int SVW, int RP);
+        int SVT, int SVW, int RP);
     int IsWarRelated();
-    void SetBuffIcon(int Time,int Type,int nMsg,int Key);
-    void RemoveBuffIcon(int Time,int Type,int nMsg,int Key);
+    void SetBuffIcon(int Time, int Type, int nMsg, int Key);
+    void RemoveBuffIcon(int Time, int Type, int nMsg, int Key);
     int GetBuffRemain(int BuffID);
     int GetSkillPoint();
     void RemoveSkillPoint(int amount);
@@ -141,11 +142,11 @@ public:
     int IsMoved(int x, int y);
     DWORD UnAttack(DWORD amount);
     DWORD Delay(DWORD amount);
-    void MonsterSummonWrite(int SafeZoneCheck,int Monster,int CellMapCoordinate);
+    void MonsterSummonWrite(int SafeZoneCheck, int Monster, int CellMapCoordinate);
     int GetMobTanker();
     int GetMaxHp();
     void OpenHTML(int html);
-    void OpenWindow(std::string WindowName,int Type,int Time);
+    void OpenWindow(std::string WindowName, int Type, int Time);
     void CloseWindow(std::string WindowName);
     void Revive();
     void SetBlue();
@@ -160,11 +161,12 @@ public:
     void NewAnnouncement(std::string msg);
     void ScreenTime(int Time);
     void CloseScreenTime();
-    void Scenario3Score(int Time,int RedScore,int BlueScore);
+    void Scenario3Score(int Time, int RedScore, int BlueScore);
     void CloseScenario3Score();
-    void Scenario3_3Score(int Time,int RedScore,int BlueScore);
+    void Scenario3_3Score(int Time, int RedScore, int BlueScore);
     void CloseScenario3_3Score();
-    void SpScore(int Time,int Type,int RedScore,int BlueScore,int RedWin,int BlueWin);
+    void SpScore(int Time, int Type, int RedScore, int BlueScore, int RedWin,
+        int BlueWin);
     void CloseSpScore();
     void SetRebirthTalisman(int Amount);
     void CloseRebirthTalisman();
@@ -181,7 +183,7 @@ public:
     void DisableRiding();
     std::string GetIP();
     void GiveReward(int Index, int Prefix, int Amount, int Info, int xAtk, int xMag,
-            int TOA, int Upgr, int Def, int Eva, int Endurance, const char *msg);
+        int TOA, int Upgr, int Def, int Eva, int Endurance, const char *msg);
     void StartQuest(int QuestID);
     void EndQuest(int QuestID);
     void QuitQuest(int QuestID);

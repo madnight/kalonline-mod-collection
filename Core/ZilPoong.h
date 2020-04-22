@@ -1,10 +1,11 @@
 void __fastcall ContinueZilPoong(IChar IPlayer)
 {
-    if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(),512))
+    if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(), 512))
     {
         void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
 
-        if (pTarget && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
+        if (pTarget &&
+            CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
         {
             IChar Target(pTarget);
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
@@ -21,20 +22,23 @@ void __fastcall ContinueZilPoong(IChar IPlayer)
                 {
                     int nDmg = (IPlayer.GetAttack() * TEZilMul);
 
-                    if(Target.GetType() == 0)
+                    if (Target.GetType() == 0) {
                         nDmg = nDmg * TEZilReduce / 100;
+                    }
 
-                    IPlayer.OktayDamageSingle(Target,nDmg,6);
+                    IPlayer.OktayDamageSingle(Target, nDmg, 6);
                 } else {
                     IPlayer._ShowBattleMiss(Target, 6);
                 }
 
-                if (IPlayer.IsOnline())
+                if (IPlayer.IsOnline()) {
                     CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 800;
+                }
 
                 if (IPlayer.IsOnline() &&
-                        CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                    CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                     ResetContinueSkill(IPlayer);
+                }
 
                 return;
             }
@@ -54,26 +58,31 @@ void __fastcall ZilPoong(IChar IPlayer, int pPacket, int pPos)
         void *pTarget = 0;
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 IPlayer.DecreaseRage(4000);
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 111;

@@ -34,10 +34,12 @@ int IItem::Prefix()
 
 int IItem::PrefixID()
 {
-    if(this->Prefix())
+    if (this->Prefix()) {
         return *(DWORD*)(*(DWORD*)((int)this->Offset + 44) + 32);
-    else
+    }
+    else {
         return 0;
+    }
 }
 
 int IItem::GetEndurance()
@@ -142,8 +144,10 @@ int IItem::GetItemPointerFromIID(void *Player,int IID)
     if (IPlayer.IsOnline())
     {
         int CheckValue = 0, Checkx = 0, Recheckx = 0, IID = this->GetIID(), MyItem = 0;
-        Undefined::CreateMonsterValue((char*)IPlayer.GetOffset() + 1068, (int)&CheckValue, (int)&IID);
-        Checkx = Undefined::Check((int)((char*)IPlayer.GetOffset() + 1068), (int)&Recheckx);
+        Undefined::CreateMonsterValue((char*)IPlayer.GetOffset() + 1068,
+            (int)&CheckValue, (int)&IID);
+        Checkx = Undefined::Check((int)((char*)IPlayer.GetOffset() + 1068),
+                (int)&Recheckx);
 
         if (Undefined::CheckValues(&CheckValue, Checkx))
         {

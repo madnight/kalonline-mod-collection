@@ -1,5 +1,5 @@
 void __fastcall RefiningWeapon(void *pSkill, void *edx, int pPlayer,
-                               void *pPacket, int pPos)
+    void *pPacket, int pPos)
 {
     IChar IPlayer((void*)pPlayer);
     ISkill ISkill(pSkill);
@@ -8,24 +8,28 @@ void __fastcall RefiningWeapon(void *pSkill, void *edx, int pPlayer,
     void *pTarget = 0;
     CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-    if (bType == 0 && nTargetID)
+    if (bType == 0 && nTargetID) {
         pTarget = CPlayer::FindPlayer(nTargetID);
-    else
+    }
+    else {
         return;
+    }
 
     if (pTarget && IPlayer.IsValid())
     {
         if ((**(int (__thiscall ***)(DWORD, DWORD, DWORD))pSkill)((int)pSkill,
-                    pPlayer, (int)pTarget))
+                pPlayer, (int)pTarget))
         {
             IChar ITarget(pTarget);
 
             if (ITarget.IsValid() && IPlayer.IsValid())
             {
-                if (IPlayer.GetCurMp() < ISkill.DecreaseMana())
+                if (IPlayer.GetCurMp() < ISkill.DecreaseMana()) {
                     return;
-                else
+                }
+                else {
                     IPlayer.DecreaseMana(ISkill.DecreaseMana());
+                }
 
                 if (ITarget.IsParty())
                 {
@@ -46,7 +50,7 @@ void __fastcall RefiningWeapon(void *pSkill, void *edx, int pPlayer,
                                     int AddBuff = CBuff::CreateBuff(36, 1800,
                                             8 * *(DWORD*)((int)pSkill + 8) + 16, (int)pSkill);
                                     (*(int (__thiscall **)(int, int))(*(DWORD*)Members + 180))(Members, AddBuff);
-                                    IPlayer._ShowBattleAnimation(IMembers,ISkill.GetIndex());
+                                    IPlayer._ShowBattleAnimation(IMembers, ISkill.GetIndex());
                                 }
                             }
                         }
@@ -56,8 +60,8 @@ void __fastcall RefiningWeapon(void *pSkill, void *edx, int pPlayer,
                     int AddBuff = CBuff::CreateBuff(36, 1800,
                             8 * *(DWORD*)((int)pSkill + 8) + 16, (int)pSkill);
                     (*(int (__thiscall **)(int, int))
-                     (*(DWORD*)(int)ITarget.GetOffset() + 180))((int)ITarget.GetOffset(), AddBuff);
-                    IPlayer._ShowBattleAnimation(ITarget,ISkill.GetIndex());
+                        (*(DWORD*)(int)ITarget.GetOffset() + 180))((int)ITarget.GetOffset(), AddBuff);
+                    IPlayer._ShowBattleAnimation(ITarget, ISkill.GetIndex());
                 }
             }
         }

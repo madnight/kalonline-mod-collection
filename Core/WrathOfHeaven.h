@@ -12,39 +12,46 @@ void __fastcall WrathOfHeaven(IChar IPlayer, int pPacket, int pPos)
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = (IPlayer.GetLevel() + nSkillGrade) * 3 + 50;
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 if (IPlayer.CheckHit(Target, 30))
                 {
                     int nDmg = (IPlayer.GetAttack() * TWOHMul) +
-                        (nSkillGrade * CTools::Rate(TWOHMin,TWOHMax));
+                        (nSkillGrade * CTools::Rate(TWOHMin, TWOHMax));
 
-                    if (Target.GetType() == 0)
+                    if (Target.GetType() == 0) {
                         nDmg = nDmg * TWOHReduce / 100;
+                    }
 
-                    IPlayer.OktayDamageSingle(Target,nDmg,33);
+                    IPlayer.OktayDamageSingle(Target, nDmg, 33);
                 } else {
                     IPlayer._ShowBattleMiss(Target, 33);
                 }

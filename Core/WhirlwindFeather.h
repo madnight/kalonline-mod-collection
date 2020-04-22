@@ -1,10 +1,11 @@
 void __fastcall ContinueWhirlwindFeather(IChar IPlayer)
 {
-    if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(),512))
+    if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(), 512))
     {
         void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
 
-        if (pTarget && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
+        if (pTarget &&
+            CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
         {
             IChar Target(pTarget);
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
@@ -17,30 +18,34 @@ void __fastcall ContinueWhirlwindFeather(IChar IPlayer)
 
             int Around = Target.GetObjectListAround(2);
 
-            while(Around)
+            while (Around)
             {
                 IChar Object((void*)*(DWORD*)Around);
 
                 if (Object.IsValid() && Target.IsValid() && IPlayer.IsValid() &&
-                        (*(int (__thiscall **)(int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))
-                        ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
+                    (*(int (__thiscall **)(int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))
+                    ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
                 {
                     int nDmg = (IPlayer.GetAttack() * TEWhirMul);
 
-                    if (Object.GetType() == 0)
+                    if (Object.GetType() == 0) {
                         nDmg = nDmg * TEWhirReduce / 100;
+                    }
 
-                    IPlayer.OktayDamageArea(Object,nDmg,114);
+                    IPlayer.OktayDamageArea(Object, nDmg, 114);
                 }
 
                 Around = CBaseList::Pop((void*)Around);
             }
 
-            if (IPlayer.IsOnline())
+            if (IPlayer.IsOnline()) {
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 1500;
+            }
 
-            if (IPlayer.IsOnline() && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+            if (IPlayer.IsOnline() &&
+                CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                 ResetContinueSkill(IPlayer);
+            }
 
             return;
         }
@@ -58,7 +63,9 @@ void __fastcall WhirlwindFeather(IChar IPlayer)
         int *GetSetXY = new int[1];
         GetSetXY[0] = IPlayer.GetX();
         GetSetXY[1] = IPlayer.GetY();
-        int check = CMonsterMagic::Create(568,IPlayer.GetMap(),(int)GetSetXY,1,(int)IPlayer.GetOffset(),0,8000);
+        int check = CMonsterMagic::Create(568, IPlayer.GetMap(), (int)GetSetXY, 1,
+                (int)IPlayer.GetOffset(),
+                0, 8000);
         delete[] GetSetXY;
         CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 114;
         CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = 0;

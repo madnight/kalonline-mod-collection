@@ -17,16 +17,20 @@ void *IQuest::GetOffset()
 
 int IQuest::GetIndex()
 {
-    if (this->GetOffset())
+    if (this->GetOffset()) {
         return *(DWORD *)((int)this->Offset + 34);
-    else
+    }
+    else {
         return 0;
+    }
 }
 
 int IQuest::GetFlag()
 {
-    if (this->GetOffset())
+    if (this->GetOffset()) {
         return *(DWORD *)((int)this->Offset + 32);
-    else
+    }
+    else {
         return 0;
+    }
 }

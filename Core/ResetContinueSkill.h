@@ -2,8 +2,9 @@ void __fastcall ResetContinueSkill(IChar IPlayer)
 {
     if (IPlayer.IsOnline())
     {
-        if (IPlayer.IsValid() && IPlayer.IsBuff(300))
+        if (IPlayer.IsValid() && IPlayer.IsBuff(300)) {
             return;
+        }
 
         if (CheckContinueSkill.count(IPlayer.GetPID()))
         {

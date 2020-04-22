@@ -12,40 +12,47 @@ void __fastcall CriticalStrike(IChar IPlayer, int pPacket, int pPos)
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = (50 + (3 * (IPlayer.GetLevel() + nSkillGrade)));
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
             IChar Target(pTarget);
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (pTarget == IPlayer.GetOffset())
+                if (pTarget == IPlayer.GetOffset()) {
                     return;
+                }
 
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 int nDmg = (IPlayer.GetAttack() * NCSMul) +
-                    (nSkillGrade * CTools::Rate(NCSMin,NCSMax));
+                    (nSkillGrade * CTools::Rate(NCSMin, NCSMax));
 
-                if (Target.GetType() == 0)
+                if (Target.GetType() == 0) {
                     nDmg = nDmg * NCSReduce / 100;
+                }
 
-                IPlayer.OktayDamageSingle(Target,nDmg,90);
+                IPlayer.OktayDamageSingle(Target, nDmg, 90);
                 IPlayer.SetDirection(Target);
                 IPlayer.DecreaseMana(nMana);
-                IPlayer.OktayDamageSingle(Target,nDmg,90);
+                IPlayer.OktayDamageSingle(Target, nDmg, 90);
             }
         } else {
             IPlayer.CouldntExecuteSkill();

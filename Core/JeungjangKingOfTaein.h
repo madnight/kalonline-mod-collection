@@ -16,13 +16,14 @@ void __fastcall JeungjangKingOfTaein(IChar IPlayer, int pPacket, int pPos)
             ExtraTime = 10 * xSkillx.GetGrade();
         }
 
-        if (IPlayer.GetCurMp() <= Mana)
+        if (IPlayer.GetCurMp() <= Mana) {
             return;
+        }
 
         IPlayer.DecreaseMana(Mana);
         IPlayer._ShowBattleAnimation(IPlayer, 51);
 
-        if(IPlayer.IsValid())
+        if (IPlayer.IsValid())
         {
             if (IPlayer.IsParty())
             {
@@ -38,13 +39,13 @@ void __fastcall JeungjangKingOfTaein(IChar IPlayer, int pPacket, int pPos)
                         if (CChar::IsNormal(Members) && IPlayer.IsValid())
                         {
                             if (CChar::GetRange((int)IPlayer.GetOffset() + 332, Members + 332) <= 300 &&
-                                    !IMembers.IsBuff(408))
+                                !IMembers.IsBuff(408))
                             {
                                 IMembers.SetBuffIcon(1000*((nSkillGrade*60)+ExtraTime), 0, 9108, 1017);
                                 IMembers.AddMaxAttack(50*nSkillGrade);
                                 IMembers.AddMinAttack(50*nSkillGrade);
-                                IMembers.Buff(407,(nSkillGrade*60)+ExtraTime,0);
-                                IMembers.Buff(408,nSkillGrade*100,50*nSkillGrade);
+                                IMembers.Buff(407, (nSkillGrade*60)+ExtraTime, 0);
+                                IMembers.Buff(408, nSkillGrade*100, 50*nSkillGrade);
                             }
                         }
                     }
@@ -55,8 +56,8 @@ void __fastcall JeungjangKingOfTaein(IChar IPlayer, int pPacket, int pPos)
                     IPlayer.SetBuffIcon(1000*((nSkillGrade*60)+ExtraTime), 0, 9108, 1017);
                     IPlayer.AddMaxAttack(50*nSkillGrade);
                     IPlayer.AddMinAttack(50*nSkillGrade);
-                    IPlayer.Buff(407,(nSkillGrade*60)+ExtraTime,0);
-                    IPlayer.Buff(408,nSkillGrade*100,50*nSkillGrade);
+                    IPlayer.Buff(407, (nSkillGrade*60)+ExtraTime, 0);
+                    IPlayer.Buff(408, nSkillGrade*100, 50*nSkillGrade);
                 }
             }
         }

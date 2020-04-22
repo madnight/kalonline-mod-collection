@@ -3,7 +3,7 @@ void __fastcall ContinueSwordDance(IChar IPlayer)
     if (IPlayer.IsValid())
     {
         int nSkillGrade = CheckContinueSkill.find(
-                              IPlayer.GetPID())->second.PlayerSkillGrade;
+                IPlayer.GetPID())->second.PlayerSkillGrade;
         void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
 
         if (nSkillGrade && pTarget && IPlayer.IsValid())
@@ -39,28 +39,33 @@ void __fastcall ContinueSwordDance(IChar IPlayer)
                         int nDmg = (IPlayer.GetAttack() * KSDMul) +
                             (nSkillGrade * CTools::Rate(KSDMin, KSDMax));
 
-                        if(Target.GetType() == 0)
+                        if (Target.GetType() == 0) {
                             nDmg = nDmg * KSDReduce / 100;
+                        }
 
-                        IPlayer.OktayDamageSingle(Target,nDmg,43);
+                        IPlayer.OktayDamageSingle(Target, nDmg, 43);
 
-                        if (IPlayer.IsOnline())
+                        if (IPlayer.IsOnline()) {
                             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 800;
+                        }
 
                         if (IPlayer.IsOnline()
-                                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                            && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                             ResetContinueSkill(IPlayer);
+                        }
 
                         return;
                     } else {
-                        if (IPlayer.IsOnline())
+                        if (IPlayer.IsOnline()) {
                             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 800;
+                        }
 
                         IPlayer._ShowBattleMiss(Target, 43);
 
                         if (IPlayer.IsOnline()
-                                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                            && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                             ResetContinueSkill(IPlayer);
+                        }
 
                         return;
                     }
@@ -86,35 +91,45 @@ void __fastcall SwordDance(IChar IPlayer, int pPacket, int pPos)
         nSkillGrade = xSkill.GetGrade();
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-        if (nSkillGrade <= 1)
+        if (nSkillGrade <= 1) {
             nMana = 245;
-        else if (nSkillGrade == 2)
+        }
+        else if (nSkillGrade == 2) {
             nMana = 283;
-        else if (nSkillGrade == 3)
+        }
+        else if (nSkillGrade == 3) {
             nMana = 325;
-        else if (nSkillGrade == 4)
+        }
+        else if (nSkillGrade == 4) {
             nMana = 371;
-        else if (nSkillGrade >= 5)
+        }
+        else if (nSkillGrade >= 5) {
             nMana = 420;
+        }
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {

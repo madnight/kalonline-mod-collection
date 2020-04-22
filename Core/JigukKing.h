@@ -16,13 +16,14 @@ void __fastcall JigukKing(IChar IPlayer, int pPacket, int pPos)
             ExtraTime = 10 * xSkillx.GetGrade();
         }
 
-        if (IPlayer.GetCurMp() <= Mana)
+        if (IPlayer.GetCurMp() <= Mana) {
             return;
+        }
 
         IPlayer.DecreaseMana(Mana);
         IPlayer._ShowBattleAnimation(IPlayer, 50);
 
-        if(IPlayer.IsValid())
+        if (IPlayer.IsValid())
         {
             if (IPlayer.IsParty())
             {
@@ -38,12 +39,12 @@ void __fastcall JigukKing(IChar IPlayer, int pPacket, int pPos)
                         if (CChar::IsNormal(Members) && IPlayer.IsValid())
                         {
                             if (CChar::GetRange((int)IPlayer.GetOffset() + 332, Members + 332) <= 300 &&
-                                    !IMembers.IsBuff(402))
+                                !IMembers.IsBuff(402))
                             {
                                 IMembers.SetBuffIcon(1000*((nSkillGrade*60)+ExtraTime), 0, 9104, 1013);
                                 IMembers.IncreaseMaxHp(150*nSkillGrade);
-                                IMembers.Buff(401,(nSkillGrade*60)+ExtraTime,0);
-                                IMembers.Buff(402,nSkillGrade*100,150*nSkillGrade);
+                                IMembers.Buff(401, (nSkillGrade*60)+ExtraTime, 0);
+                                IMembers.Buff(402, nSkillGrade*100, 150*nSkillGrade);
                             }
                         }
                     }
@@ -53,8 +54,8 @@ void __fastcall JigukKing(IChar IPlayer, int pPacket, int pPos)
                 {
                     IPlayer.SetBuffIcon(1000*((nSkillGrade*60)+ExtraTime), 0, 9104, 1013);
                     IPlayer.IncreaseMaxHp(150*nSkillGrade);
-                    IPlayer.Buff(401,(nSkillGrade*60)+ExtraTime,0);
-                    IPlayer.Buff(402,nSkillGrade*100,150*nSkillGrade);
+                    IPlayer.Buff(401, (nSkillGrade*60)+ExtraTime, 0);
+                    IPlayer.Buff(402, nSkillGrade*100, 150*nSkillGrade);
                 }
             }
         }

@@ -1,5 +1,5 @@
 void __fastcall SpeedUp(void *pSkill, void *edx, int pPlayer, void *pPacket,
-                        int pPos)
+    int pPos)
 {
     IChar IPlayer((void*)pPlayer);
     ISkill ISkill(pSkill);
@@ -8,10 +8,12 @@ void __fastcall SpeedUp(void *pSkill, void *edx, int pPlayer, void *pPacket,
     void *pTarget = 0;
     CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-    if (bType == 0 && nTargetID)
+    if (bType == 0 && nTargetID) {
         pTarget = CPlayer::FindPlayer(nTargetID);
-    else
+    }
+    else {
         return;
+    }
 
     if (pTarget && IPlayer.IsValid())
     {
@@ -22,10 +24,12 @@ void __fastcall SpeedUp(void *pSkill, void *edx, int pPlayer, void *pPacket,
 
             if (ITarget.IsValid() && IPlayer.IsValid())
             {
-                if (IPlayer.GetCurMp() < ISkill.DecreaseMana())
+                if (IPlayer.GetCurMp() < ISkill.DecreaseMana()) {
                     return;
-                else
+                }
+                else {
                     IPlayer.DecreaseMana(ISkill.DecreaseMana());
+                }
 
                 if (ITarget.IsParty())
                 {
@@ -44,7 +48,7 @@ void __fastcall SpeedUp(void *pSkill, void *edx, int pPlayer, void *pPacket,
                                 {
                                     IMembers.Buff(12, 600 * ISkill.GetGrade(), 15 * ISkill.GetGrade());
                                     CChar::WriteInSight(IPlayer.GetOffset(), 63, "bddbb", ISkill.GetIndex(),
-                                                        IPlayer.GetID(), IMembers.GetID(), 0, ISkill.GetGrade());
+                                        IPlayer.GetID(), IMembers.GetID(), 0, ISkill.GetGrade());
                                 }
                             }
                         }
@@ -52,7 +56,7 @@ void __fastcall SpeedUp(void *pSkill, void *edx, int pPlayer, void *pPacket,
                 } else {
                     ITarget.Buff(12, 600 * ISkill.GetGrade(), 15 * ISkill.GetGrade());
                     CChar::WriteInSight(IPlayer.GetOffset(), 63, "bddbb", ISkill.GetIndex(),
-                                        IPlayer.GetID(), ITarget.GetID(), 0, ISkill.GetGrade());
+                        IPlayer.GetID(), ITarget.GetID(), 0, ISkill.GetGrade());
                 }
             }
         }

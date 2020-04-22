@@ -1,4 +1,4 @@
-int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
+int __fastcall SkillUpgradeCheck(void *Player, int SkillID, int PointerCheck)
 {
     IChar IPlayer(Player);
     int SkillPointer = 0;
@@ -8,11 +8,12 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
         if (IPlayer.GetClass() == 4)
         {
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 70 && SkillID == 49
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 72 && SkillID == 49
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 69) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -21,21 +22,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 70 && SkillID == 48
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 72 && SkillID == 48
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 69) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -44,21 +49,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 74 && SkillID == 47
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 76 && SkillID == 47
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 73) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -67,21 +76,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 73 && SkillID == 46
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 75 && SkillID == 46
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 72) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -90,21 +103,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 72 && SkillID == 45
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 74 && SkillID == 45
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 71) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -113,21 +130,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 70 && SkillID == 44
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 72 && SkillID == 44
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 69) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -136,21 +157,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 70 && SkillID == 50
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 72 && SkillID == 50
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 69) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -159,21 +184,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 72 && SkillID == 51
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 74 && SkillID == 51
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 71) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -182,21 +211,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 73 && SkillID == 52
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 75 && SkillID == 52
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 72) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -205,21 +238,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 70 && SkillID == 53
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 72 && SkillID == 53
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 69) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -228,21 +265,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 60 && SkillID == 54 && !PointerCheck)
+                && IPlayer.GetLevel() >= 60 && SkillID == 54 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 61 && SkillID == 54 && PointerCheck)
+                && IPlayer.GetLevel() >= 61 && SkillID == 54 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 59;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -251,21 +292,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 58 && SkillID == 29 && !PointerCheck)
+                && IPlayer.GetLevel() >= 58 && SkillID == 29 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 59 && SkillID == 29 && PointerCheck)
+                && IPlayer.GetLevel() >= 59 && SkillID == 29 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 57;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -274,21 +319,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 60 && SkillID == 28 && !PointerCheck)
+                && IPlayer.GetLevel() >= 60 && SkillID == 28 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 61 && SkillID == 28 && PointerCheck)
+                && IPlayer.GetLevel() >= 61 && SkillID == 28 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 59;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -297,21 +346,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 55 && SkillID == 27 && !PointerCheck)
+                && IPlayer.GetLevel() >= 55 && SkillID == 27 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 56 && SkillID == 27 && PointerCheck)
+                && IPlayer.GetLevel() >= 56 && SkillID == 27 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 54;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -320,21 +373,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 50 && SkillID == 32 && !PointerCheck)
+                && IPlayer.GetLevel() >= 50 && SkillID == 32 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 32 && PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 32 && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 49) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -343,21 +400,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 50 && SkillID == 31 && !PointerCheck)
+                && IPlayer.GetLevel() >= 50 && SkillID == 31 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 31 && PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 31 && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 49) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -366,21 +427,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 26 && !PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 26 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 53 && SkillID == 26 && PointerCheck)
+                && IPlayer.GetLevel() >= 53 && SkillID == 26 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 51;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -389,22 +454,26 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 50 && SkillID == 25 && !PointerCheck
-                    && IPlayer.GetSkillPointer(22))
+                && IPlayer.GetLevel() >= 50 && SkillID == 25 && !PointerCheck
+                && IPlayer.GetSkillPointer(22)) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 25 && PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 25 && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 49) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -413,21 +482,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 5)
+                    if (Skill.GetGrade() >= 5) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 50 && SkillID == 41 && !PointerCheck)
+                && IPlayer.GetLevel() >= 50 && SkillID == 41 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 41 && PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 41 && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 49) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -436,21 +509,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 3)
+                    if (Skill.GetGrade() >= 3) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 50 && SkillID == 40 && !PointerCheck)
+                && IPlayer.GetLevel() >= 50 && SkillID == 40 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 40 && PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 40 && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 49) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -459,22 +536,26 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 60 && SkillID == 39 && !PointerCheck
-                    && IPlayer.GetSkillPointer(37))
+                && IPlayer.GetLevel() >= 60 && SkillID == 39 && !PointerCheck
+                && IPlayer.GetSkillPointer(37)) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 61 && SkillID == 39 && PointerCheck)
+                && IPlayer.GetLevel() >= 61 && SkillID == 39 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 59;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -483,22 +564,26 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 53 && SkillID == 38 && !PointerCheck
-                    && IPlayer.GetSkillPointer(36))
+                && IPlayer.GetLevel() >= 53 && SkillID == 38 && !PointerCheck
+                && IPlayer.GetSkillPointer(36)) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 54 && SkillID == 38 && PointerCheck)
+                && IPlayer.GetLevel() >= 54 && SkillID == 38 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 52;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -507,29 +592,35 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 7 && IPlayer.GetLevel() >= 50 && SkillID == 34
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 7 && IPlayer.GetLevel() >= 50 && SkillID == 42
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 50 && SkillID == 36 && !PointerCheck)
+                && IPlayer.GetLevel() >= 50 && SkillID == 36 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 51 && SkillID == 36 && PointerCheck)
+                && IPlayer.GetLevel() >= 51 && SkillID == 36 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 49;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -538,21 +629,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 52 && SkillID == 37 && !PointerCheck)
+                && IPlayer.GetLevel() >= 52 && SkillID == 37 && !PointerCheck) {
                 return 1;
+            }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && IPlayer.GetLevel() >= 53 && SkillID == 37 && PointerCheck)
+                && IPlayer.GetLevel() >= 53 && SkillID == 37 && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 51;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -561,21 +656,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 30 && SkillID == 24
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 32 && SkillID == 24
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 29) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -584,24 +683,27 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 30 && SkillID == 23
-                    && !PointerCheck)
+                && !PointerCheck)
             {
                 IPlayer.AddInt(2);
                 return 1;
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 32 && SkillID == 23
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = ((IPlayer.GetLevel() - 29) / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -624,11 +726,12 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 41 && SkillID == 22
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 42 && SkillID == 22
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 40;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -637,21 +740,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 40 && SkillID == 21
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 41 && SkillID == 21
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 39;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -660,21 +767,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 35 && SkillID == 20
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 36 && SkillID == 20
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 34;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -683,21 +794,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 35 && SkillID == 19
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 36 && SkillID == 19
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 34;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -706,21 +821,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 30 && SkillID == 18
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 31 && SkillID == 18
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 29;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -729,24 +848,27 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 1 && SkillID == 17
-                    && !PointerCheck)
+                && !PointerCheck)
             {
                 IPlayer.IncreaseMaxMp(30);
                 return 1;
             }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 3 && SkillID == 17
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = (IPlayer.GetLevel() / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -769,11 +891,12 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
             }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 1 && SkillID == 16
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 3 && SkillID == 16
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = (IPlayer.GetLevel() / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -782,21 +905,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 11 && SkillID == 15
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 13 && SkillID == 15
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = (IPlayer.GetLevel() / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -805,21 +932,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 6 && SkillID == 14
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 8 && SkillID == 14
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = (IPlayer.GetLevel() / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -828,21 +959,25 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 1 && SkillID == 13
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 1 && IPlayer.GetLevel() >= 3 && SkillID == 13
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = (IPlayer.GetLevel() / 2) + 1;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -851,12 +986,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 10)
+                    if (Skill.GetGrade() >= 10) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
         }
@@ -877,28 +1015,34 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 return 1;
             }
 
-            if (IPlayer.GetLevel() >= 19 && SkillID == 7 && !PointerCheck)
+            if (IPlayer.GetLevel() >= 19 && SkillID == 7 && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 30 && SkillID == 8
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 30 && SkillID == 9
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 35 && SkillID == 10
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 40 && SkillID == 12
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && IPlayer.GetLevel() >= 30 && SkillID == 25
-                    && !PointerCheck)
+                && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetSpecialty() >= 3 && PointerCheck)
             {
@@ -911,12 +1055,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 3)
+                        if (Skill.GetGrade() >= 3) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -929,12 +1076,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 3)
+                        if (Skill.GetGrade() >= 3) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -947,12 +1097,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -965,12 +1118,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -983,12 +1139,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
@@ -1048,17 +1207,20 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 5)
+                    if (Skill.GetGrade() >= 5) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && PointerCheck)
+                && PointerCheck)
             {
                 if (IPlayer.GetLevel() >= 54 && SkillID == 14)
                 {
@@ -1069,12 +1231,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 3)
+                        if (Skill.GetGrade() >= 3) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1087,12 +1252,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 3)
+                        if (Skill.GetGrade() >= 3) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1105,12 +1273,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 3)
+                        if (Skill.GetGrade() >= 3) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1123,12 +1294,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1141,12 +1315,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 2)
+                        if (Skill.GetGrade() >= 2) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1159,40 +1336,49 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 7 || IPlayer.GetSpecialty() == 23)
-                    && !PointerCheck)
+                && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 53 && SkillID == 14)
+                if (IPlayer.GetLevel() >= 53 && SkillID == 14) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 54 && SkillID == 15)
+                if (IPlayer.GetLevel() >= 54 && SkillID == 15) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 56 && SkillID == 16)
+                if (IPlayer.GetLevel() >= 56 && SkillID == 16) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 58 && SkillID == 17)
+                if (IPlayer.GetLevel() >= 58 && SkillID == 17) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 60 && SkillID == 18)
+                if (IPlayer.GetLevel() >= 60 && SkillID == 18) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 56 && SkillID == 21)
+                if (IPlayer.GetLevel() >= 56 && SkillID == 21) {
                     return 1;
+                }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && PointerCheck)
+                && PointerCheck)
             {
                 if (IPlayer.GetLevel() >= 51 && SkillID == 13)
                 {
@@ -1203,12 +1389,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 2)
+                        if (Skill.GetGrade() >= 2) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1221,12 +1410,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 3)
+                        if (Skill.GetGrade() >= 3) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1239,12 +1431,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1257,12 +1452,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1275,48 +1473,60 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && !PointerCheck)
+                && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 50 && SkillID == 13)
+                if (IPlayer.GetLevel() >= 50 && SkillID == 13) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 50 && SkillID == 19)
+                if (IPlayer.GetLevel() >= 50 && SkillID == 19) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 53 && SkillID == 20)
+                if (IPlayer.GetLevel() >= 53 && SkillID == 20) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 54 && SkillID == 22)
+                if (IPlayer.GetLevel() >= 54 && SkillID == 22) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 60 && SkillID == 23)
+                if (IPlayer.GetLevel() >= 60 && SkillID == 23) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 63 && SkillID == 63)
+                if (IPlayer.GetLevel() >= 63 && SkillID == 63) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 43 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 26)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 26) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 70 && SkillID == 28)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 28) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 32)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 32) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 43 && PointerCheck)
@@ -1330,12 +1540,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1348,26 +1561,32 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 27)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 27) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 70 && SkillID == 33)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 33) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 36)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 36) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 23 && PointerCheck)
@@ -1381,12 +1600,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1399,21 +1621,26 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
 
-            if (IPlayer.GetLevel() >= 25 && SkillID == 24 && !PointerCheck)
+            if (IPlayer.GetLevel() >= 25 && SkillID == 24 && !PointerCheck) {
                 return 1;
+            }
 
-            if (IPlayer.GetLevel() >= 15 && SkillID == 6 && !PointerCheck)
+            if (IPlayer.GetLevel() >= 15 && SkillID == 6 && !PointerCheck) {
                 return 1;
+            }
 
             if (IPlayer.GetLevel() >= 1 && SkillID == 2 && !PointerCheck)
             {
@@ -1482,12 +1709,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 3)
+                    if (Skill.GetGrade() >= 3) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
         }
@@ -1496,24 +1726,28 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
         {
             if (IPlayer.GetSpecialty() == 23 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 47)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 47) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 51)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 51) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 43 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 49)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 49) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 50)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 50) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 70 && SkillID == 47
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 69;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -1522,17 +1756,20 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 6)
+                    if (Skill.GetGrade() >= 6) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && IPlayer.GetLevel() >= 70 && SkillID == 51
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 74;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -1541,17 +1778,20 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 5)
+                    if (Skill.GetGrade() >= 5) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 70 && SkillID == 49
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 69;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -1560,17 +1800,20 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 6)
+                    if (Skill.GetGrade() >= 6) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && IPlayer.GetLevel() >= 70 && SkillID == 50
-                    && PointerCheck)
+                && PointerCheck)
             {
                 int CheckGrade = IPlayer.GetLevel() - 74;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
@@ -1579,12 +1822,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                 {
                     ISkill Skill((void*)SkillPointer);
 
-                    if (Skill.GetGrade() >= 5)
+                    if (Skill.GetGrade() >= 5) {
                         return 0;
-                    else if (Skill.GetGrade() + 1 <= CheckGrade)
+                    }
+                    else if (Skill.GetGrade() + 1 <= CheckGrade) {
                         return 1;
-                    else
+                    }
+                    else {
                         return 0;
+                    }
                 }
             }
         }
@@ -1593,43 +1839,52 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
         {
             if (IPlayer.GetSpecialty() == 43 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 69)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 69) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 72)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 72) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 23 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 65)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 65) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 70 && SkillID == 66)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 66) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 70 && SkillID == 67)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 67) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 73)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 73) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 74)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 74) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 75)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 75) {
                     return 1;
+                }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && !PointerCheck)
+                && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 50 && SkillID == 76)
+                if (IPlayer.GetLevel() >= 50 && SkillID == 76) {
                     return 1;
+                }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && PointerCheck)
+                && PointerCheck)
             {
                 if (IPlayer.GetLevel() >= 55 && SkillID == 76)
                 {
@@ -1640,12 +1895,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (CheckGrade > Skill.GetGrade())
+                        }
+                        else if (CheckGrade > Skill.GetGrade()) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
@@ -1661,12 +1919,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1679,12 +1940,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
@@ -1700,12 +1964,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1718,12 +1985,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1736,12 +2006,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1754,12 +2027,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1772,12 +2048,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1790,12 +2069,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
@@ -1804,14 +2086,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
         if (IPlayer.GetClass() == 0)
         {
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && !PointerCheck)
+                && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 56 && SkillID == 41)
+                if (IPlayer.GetLevel() >= 56 && SkillID == 41) {
                     return 1;
+                }
             }
 
             if ((IPlayer.GetSpecialty() == 11 || IPlayer.GetSpecialty() == 43)
-                    && PointerCheck)
+                && PointerCheck)
             {
                 if (IPlayer.GetLevel() >= 56 && SkillID == 41)
                 {
@@ -1822,23 +2105,28 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 23 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 38)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 38) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 43)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 43) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 23 && PointerCheck)
@@ -1852,12 +2140,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1870,23 +2161,28 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }
 
             if (IPlayer.GetSpecialty() == 43 && !PointerCheck)
             {
-                if (IPlayer.GetLevel() >= 70 && SkillID == 40)
+                if (IPlayer.GetLevel() >= 70 && SkillID == 40) {
                     return 1;
+                }
 
-                if (IPlayer.GetLevel() >= 75 && SkillID == 42)
+                if (IPlayer.GetLevel() >= 75 && SkillID == 42) {
                     return 1;
+                }
             }
 
             if (IPlayer.GetSpecialty() == 43 && PointerCheck)
@@ -1900,12 +2196,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 6)
+                        if (Skill.GetGrade() >= 6) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
 
@@ -1918,12 +2217,15 @@ int __fastcall SkillUpgradeCheck(void *Player,int SkillID, int PointerCheck)
                     {
                         ISkill Skill((void*)SkillPointer);
 
-                        if (Skill.GetGrade() >= 5)
+                        if (Skill.GetGrade() >= 5) {
                             return 0;
-                        else if (Skill.GetGrade() + 1 <= CheckGrade)
+                        }
+                        else if (Skill.GetGrade() + 1 <= CheckGrade) {
                             return 1;
-                        else
+                        }
+                        else {
                             return 0;
+                        }
                     }
                 }
             }

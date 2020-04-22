@@ -12,32 +12,38 @@ void __fastcall SuicidalBlow(IChar IPlayer, int pPacket, int pPos)
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = 40 * nSkillGrade + 45;
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 int nDmg = (IPlayer.GetAttack() * TSuBMul) +
-                    (nSkillGrade * CTools::Rate(TSuBMin,TSuBMax));
+                    (nSkillGrade * CTools::Rate(TSuBMin, TSuBMax));
                 int Additional = 0;
 
                 if (IPlayer.GetCurHp() >= 100)
@@ -51,13 +57,16 @@ void __fastcall SuicidalBlow(IChar IPlayer, int pPacket, int pPos)
                     }
                 }
 
-                if (Target.GetType() == 0)
+                if (Target.GetType() == 0) {
                     nDmg = nDmg * TSuBReduce / 100;
+                }
 
-                if (IPlayer.CheckHit(Target, 110))
-                    IPlayer.OktayDamageSingle(Target,nDmg,21);
-                else
+                if (IPlayer.CheckHit(Target, 110)) {
+                    IPlayer.OktayDamageSingle(Target, nDmg, 21);
+                }
+                else {
                     IPlayer._ShowBattleMiss(Target, 21);
+                }
 
                 IPlayer.SetDirection(Target);
                 IPlayer.DecreaseMana(nMana);

@@ -29,7 +29,7 @@ void __fastcall RealBlob(int Monster, void *edx)
 
 void __fastcall Start(int Start, void *edx, u_short hostshort)
 {
-    CIOServer::Start(Start,hostshort);
+    CIOServer::Start(Start, hostshort);
     Interface<IMemory> Memory;
     Memory->Hook(0x0043DEE1, RealBlob, 0xe8, 6);
 
@@ -47,27 +47,34 @@ int __cdecl Black(char *Msg, ...)
 {
     std::string GetMsg = std::string(Msg);
 
-    if ( GetMsg.substr(0,2) == "##" || GetMsg.substr(0,2) == "$$" || GetMsg.substr(0,2) == "@@" )
+    if (GetMsg.substr(0, 2) == "##" || GetMsg.substr(0, 2) == "$$" ||
+        GetMsg.substr(0, 2) == "@@") {
         return 0;
+    }
 
-    if ( GetMsg.substr(0,11) == "[SpeedHack]" )
+    if (GetMsg.substr(0, 11) == "[SpeedHack]") {
         return 0;
+    }
 
-    if ( GetMsg.substr(0,20) == "invalid monster move" )
+    if (GetMsg.substr(0, 20) == "invalid monster move") {
         return 0;
+    }
 
-    if ( GetMsg.substr(0,9) == "move hack" )
+    if (GetMsg.substr(0, 9) == "move hack") {
         return 0;
+    }
 
-    if ( GetMsg.substr(0,41) == "Invalid state at CSocket::Process() Type(" )
+    if (GetMsg.substr(0, 41) == "Invalid state at CSocket::Process() Type(") {
         return 0;
+    }
 
-    if ( GetMsg.substr(0,20) == "close pending socket" )
+    if (GetMsg.substr(0, 20) == "close pending socket") {
         return 0;
+    }
 
     va_list va;
-    va_start(va,Msg);
-    int Check = CLog::AddV(1,Msg,va);
+    va_start(va, Msg);
+    int Check = CLog::AddV(1, Msg, va);
     va_end(va);
     return Check;
 }
@@ -76,15 +83,17 @@ int __cdecl Blue(char *Msg, ...)
 {
     std::string GetMsg = std::string(Msg);
 
-    if ( GetMsg.substr(0,22) == "new connection in_addr" )
+    if (GetMsg.substr(0, 22) == "new connection in_addr") {
         return 0;
+    }
 
-    if ( GetMsg.substr(0,20) == "close pending socket" )
+    if (GetMsg.substr(0, 20) == "close pending socket") {
         return 0;
+    }
 
     va_list va;
-    va_start(va,Msg);
-    int Check = CLog::AddV(0,Msg,va);
+    va_start(va, Msg);
+    int Check = CLog::AddV(0, Msg, va);
     va_end(va);
     return Check;
 }

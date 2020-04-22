@@ -20,7 +20,8 @@ void __fastcall TradeAgreed(void *Player, void *edx)
     }
 }
 
-void __fastcall ShowOffItem(void *Player, void *edx, int Amount, void *pPacket, int pPos)
+void __fastcall ShowOffItem(void *Player, void *edx, int Amount, void *pPacket,
+    int pPos)
 {
     IChar IPlayer(Player);
 
@@ -28,11 +29,12 @@ void __fastcall ShowOffItem(void *Player, void *edx, int Amount, void *pPacket, 
     {
         if (IPlayer.IsBuff(257))
         {
-            IPlayer.SystemMessage("You only can upload once on the trading list.",TEXTCOLOR_RED);
+            IPlayer.SystemMessage("You only can upload once on the trading list.",
+                TEXTCOLOR_RED);
             return;
         }
 
-        CPlayer::ShowOffItem(Player,Amount,pPacket,pPos);
-        IPlayer.Buff(257,604800,0);
+        CPlayer::ShowOffItem(Player, Amount, pPacket, pPos);
+        IPlayer.Buff(257, 604800, 0);
     }
 }

@@ -20,12 +20,14 @@ public:
 
     virtual size_t GenerateSize(std::string Format, va_list vArgs);
     virtual size_t GenerateSize(std::string Format, ...);
-    virtual void Compile(char* Destination, int Size, std::string Format, va_list vArgs);
+    virtual void Compile(char* Destination, int Size, std::string Format,
+        va_list vArgs);
     virtual void Compile(char* Destination, int Size, std::string Format, ...);
     virtual char* Compile(char* Destination, std::string Format, va_list vArgs);
     virtual char* Compile(char* Destination, std::string Format, ...);
     virtual char* ParseData(char* Data, char* Format, ...);
-    virtual std::vector<std::string> Explode(std::string String, std::string Separator);
+    virtual std::vector<std::string> Explode(std::string String,
+        std::string Separator);
     virtual std::string GetExecutableFromPath(std::string Path);
     virtual unsigned long __declspec(noinline) GetCaller(size_t Depth = 1);
     virtual PIMAGE_NT_HEADERS GetModuleInfo(HMODULE Module);
@@ -33,10 +35,14 @@ public:
     virtual void* MemcpyExS(void *Dest, void* Source, size_t Size);
     virtual void* MemcpyExD(void *Dest, void* Source, size_t Size);
     virtual void FillMemoryEx(void* Destination, unsigned char Fill, size_t Size);
-    virtual void FillMemoryEx(unsigned long Destination, unsigned char Fill, size_t Size);
+    virtual void FillMemoryEx(unsigned long Destination, unsigned char Fill,
+        size_t Size);
     virtual void SetMemoryEx(void* Destination, const char* Data, size_t Size);
-    virtual void SetMemoryEx(unsigned long Destination, const char* Data, size_t Size);
-    virtual unsigned long Intercept(unsigned char instruction, void* source, void* destination, size_t length);
+    virtual void SetMemoryEx(unsigned long Destination, const char* Data,
+        size_t Size);
+    virtual unsigned long Intercept(unsigned char instruction, void* source,
+        void* destination,
+        size_t length);
 };
 
 #endif

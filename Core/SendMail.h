@@ -1,11 +1,11 @@
 void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
-                            int pPos)
+    int pPos)
 {
     IChar IPlayer(Player);
 
     if (IPlayer.IsOnline() && Type == 7 && !IPlayer.IsBuff(343))
     {
-        IPlayer.Buff(343,1,0);
+        IPlayer.Buff(343, 1, 0);
         Interface<ITools> Tools;
         char Packet[63] = {0};
         int Check, nMID=0, nIID=0;
@@ -42,6 +42,7 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
         std::string runquery = query.str();
         const char *sql =  runquery.c_str();
         rc = SQLExecDirect(hstmt, (unsigned char*)sql, SQL_NTS);
+
         if ((rc != SQL_SUCCESS) && (rc != SQL_SUCCESS_WITH_INFO))
         {
             SQLFreeStmt(hstmt, SQL_DROP);
@@ -74,11 +75,16 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
         SQLDisconnect(hdbc);
         SQLFreeConnect(hdbc);
         SQLFreeEnv(henv);
-        unsigned char x=0,y=0,z=0,dsstype=0,eva=0,otp=0,hpinc=0,mpinc=0,str=0,hp=0,
-                      intel=0,wis=0,agi=0,a=0,dg1stat=0,dg1type=0,dg2stat=0,dg2type=0,PerfShotCheck=0;
-        unsigned long remaintime=0,QigongGrade=0;
-        unsigned short phyatk=0,magatk=0,def=0,absorb=0;
-        if (ItemStat) GetItemStat[nIID] = ItemStat;
+        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
+                      hp=0,
+                      intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0, dg2type=0,
+                      PerfShotCheck=0;
+        unsigned long remaintime=0, QigongGrade=0;
+        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+
+        if (ItemStat) {
+            GetItemStat[nIID] = ItemStat;
+        }
 
         if (Index > 0)
         {
@@ -89,7 +95,7 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                 IItem IItem((void*)MakeItem);
 
                 if (IItem.GetType() == -2 || IItem.GetType() == 19 || IItem.GetType() == 0
-                        || IItem.GetType() == -3 || IItem.GetType() == -1)
+                    || IItem.GetType() == -3 || IItem.GetType() == -1)
                 {
                     if (SetGem == 240)
                     {
@@ -99,8 +105,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 8;
                         hpinc = 250;
                         mpinc = 200;
-                        if (IItem.GetType() == -1) eva = 18;
-                        else otp = 18;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 18;
+                        }
+                        else {
+                            otp = 18;
+                        }
                     } else if (SetGem == 239)
                     {
                         dsstype = 1;
@@ -109,8 +120,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 8;
                         hpinc = 250;
                         mpinc = 200;
-                        if (IItem.GetType() == -1) eva = 18;
-                        else otp = 18;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 18;
+                        }
+                        else {
+                            otp = 18;
+                        }
                     } else if (SetGem == 238)
                     {
                         dsstype = 1;
@@ -119,8 +135,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 8;
                         hpinc = 250;
                         mpinc = 200;
-                        if (IItem.GetType() == -1) eva = 18;
-                        else otp = 18;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 18;
+                        }
+                        else {
+                            otp = 18;
+                        }
                     } else if (SetGem == 237)
                     {
                         dsstype = 1;
@@ -129,8 +150,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 8;
                         hpinc = 250;
                         mpinc = 200;
-                        if (IItem.GetType() == -1) eva = 18;
-                        else otp = 18;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 18;
+                        }
+                        else {
+                            otp = 18;
+                        }
                     } else if (SetGem == 236)
                     {
                         dsstype = 1;
@@ -139,8 +165,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 8;
                         hpinc = 250;
                         mpinc = 200;
-                        if (IItem.GetType() == -1) eva = 18;
-                        else otp = 18;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 18;
+                        }
+                        else {
+                            otp = 18;
+                        }
                     } else if (SetGem == 235)
                     {
                         dsstype = 2;
@@ -149,8 +180,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 5;
                         hpinc = 200;
                         mpinc = 150;
-                        if (IItem.GetType() == -1) eva = 15;
-                        else otp = 15;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 15;
+                        }
+                        else {
+                            otp = 15;
+                        }
                     } else if (SetGem == 234)
                     {
                         dsstype = 2;
@@ -159,8 +195,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 5;
                         hpinc = 200;
                         mpinc = 150;
-                        if (IItem.GetType() == -1) eva = 15;
-                        else otp = 15;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 15;
+                        }
+                        else {
+                            otp = 15;
+                        }
                     } else if (SetGem == 233)
                     {
                         dsstype = 2;
@@ -169,8 +210,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 5;
                         hpinc = 200;
                         mpinc = 150;
-                        if (IItem.GetType() == -1) eva = 15;
-                        else otp = 15;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 15;
+                        }
+                        else {
+                            otp = 15;
+                        }
                     } else if (SetGem == 232)
                     {
                         dsstype = 2;
@@ -179,8 +225,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 5;
                         hpinc = 200;
                         mpinc = 150;
-                        if (IItem.GetType() == -1) eva = 15;
-                        else otp = 15;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 15;
+                        }
+                        else {
+                            otp = 15;
+                        }
                     } else if (SetGem == 231)
                     {
                         dsstype = 2;
@@ -189,8 +240,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 5;
                         hpinc = 200;
                         mpinc = 150;
-                        if (IItem.GetType() == -1) eva = 15;
-                        else otp = 15;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 15;
+                        }
+                        else {
+                            otp = 15;
+                        }
                     } else if (SetGem == 230)
                     {
                         dsstype = 3;
@@ -199,8 +255,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 3;
                         hpinc = 130;
                         mpinc = 110;
-                        if (IItem.GetType() == -1) eva = 12;
-                        else otp = 12;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 12;
+                        }
+                        else {
+                            otp = 12;
+                        }
                     } else if (SetGem == 229)
                     {
                         dsstype = 3;
@@ -209,8 +270,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 3;
                         hpinc = 130;
                         mpinc = 110;
-                        if (IItem.GetType() == -1) eva = 12;
-                        else otp = 12;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 12;
+                        }
+                        else {
+                            otp = 12;
+                        }
                     } else if (SetGem == 228)
                     {
                         dsstype = 3;
@@ -219,8 +285,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 3;
                         hpinc = 130;
                         mpinc = 110;
-                        if (IItem.GetType() == -1) eva = 12;
-                        else otp = 12;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 12;
+                        }
+                        else {
+                            otp = 12;
+                        }
                     } else if (SetGem == 227)
                     {
                         dsstype = 3;
@@ -229,8 +300,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 3;
                         hpinc = 130;
                         mpinc = 110;
-                        if (IItem.GetType() == -1) eva = 12;
-                        else otp = 12;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 12;
+                        }
+                        else {
+                            otp = 12;
+                        }
                     } else if (SetGem == 226)
                     {
                         dsstype = 3;
@@ -239,8 +315,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 3;
                         hpinc = 130;
                         mpinc = 110;
-                        if (IItem.GetType() == -1) eva = 12;
-                        else otp = 12;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 12;
+                        }
+                        else {
+                            otp = 12;
+                        }
                     } else if (SetGem == 225)
                     {
                         dsstype = 4;
@@ -249,8 +330,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 3;
                         hpinc = 110;
                         mpinc = 90;
-                        if (IItem.GetType() == -1) eva = 10;
-                        else otp = 10;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 10;
+                        }
+                        else {
+                            otp = 10;
+                        }
                     } else if (SetGem == 224)
                     {
                         dsstype = 4;
@@ -259,8 +345,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 3;
                         hpinc = 110;
                         mpinc = 90;
-                        if (IItem.GetType() == -1) eva = 10;
-                        else otp = 10;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 10;
+                        }
+                        else {
+                            otp = 10;
+                        }
                     } else if (SetGem == 223)
                     {
                         dsstype = 4;
@@ -269,8 +360,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 3;
                         hpinc = 110;
                         mpinc = 90;
-                        if (IItem.GetType() == -1) eva = 10;
-                        else otp = 10;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 10;
+                        }
+                        else {
+                            otp = 10;
+                        }
                     } else if (SetGem == 222)
                     {
                         dsstype = 4;
@@ -279,8 +375,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 3;
                         hpinc = 110;
                         mpinc = 90;
-                        if (IItem.GetType() == -1) eva = 10;
-                        else otp = 10;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 10;
+                        }
+                        else {
+                            otp = 10;
+                        }
                     } else if (SetGem == 221)
                     {
                         dsstype = 4;
@@ -289,8 +390,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 3;
                         hpinc = 110;
                         mpinc = 90;
-                        if (IItem.GetType() == -1) eva = 10;
-                        else otp = 10;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 10;
+                        }
+                        else {
+                            otp = 10;
+                        }
                     } else if (SetGem == 220)
                     {
                         dsstype = 5;
@@ -299,8 +405,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 2;
                         hpinc = 90;
                         mpinc = 70;
-                        if (IItem.GetType() == -1) eva = 8;
-                        else otp = 8;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 8;
+                        }
+                        else {
+                            otp = 8;
+                        }
                     } else if (SetGem == 219)
                     {
                         dsstype = 5;
@@ -309,8 +420,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 2;
                         hpinc = 90;
                         mpinc = 70;
-                        if (IItem.GetType() == -1) eva = 8;
-                        else otp = 8;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 8;
+                        }
+                        else {
+                            otp = 8;
+                        }
                     } else if (SetGem == 218)
                     {
                         dsstype = 5;
@@ -319,8 +435,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 2;
                         hpinc = 90;
                         mpinc = 70;
-                        if (IItem.GetType() == -1) eva = 8;
-                        else otp = 8;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 8;
+                        }
+                        else {
+                            otp = 8;
+                        }
                     } else if (SetGem == 217)
                     {
                         dsstype = 5;
@@ -329,8 +450,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 2;
                         hpinc = 90;
                         mpinc = 70;
-                        if (IItem.GetType() == -1) eva = 8;
-                        else otp = 8;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 8;
+                        }
+                        else {
+                            otp = 8;
+                        }
                     } else if (SetGem == 216)
                     {
                         dsstype = 5;
@@ -339,8 +465,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 2;
                         hpinc = 90;
                         mpinc = 70;
-                        if (IItem.GetType() == -1) eva = 8;
-                        else otp = 8;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 8;
+                        }
+                        else {
+                            otp = 8;
+                        }
                     } else if (SetGem == 215)
                     {
                         dsstype = 6;
@@ -349,8 +480,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 2;
                         hpinc = 70;
                         mpinc = 50;
-                        if (IItem.GetType() == -1) eva = 6;
-                        else otp = 6;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 6;
+                        }
+                        else {
+                            otp = 6;
+                        }
                     } else if (SetGem == 214)
                     {
                         dsstype = 6;
@@ -359,8 +495,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 2;
                         hpinc = 70;
                         mpinc = 50;
-                        if (IItem.GetType() == -1) eva = 6;
-                        else otp = 6;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 6;
+                        }
+                        else {
+                            otp = 6;
+                        }
                     } else if (SetGem == 213)
                     {
                         dsstype = 6;
@@ -369,8 +510,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 2;
                         hpinc = 70;
                         mpinc = 50;
-                        if (IItem.GetType() == -1) eva = 6;
-                        else otp = 6;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 6;
+                        }
+                        else {
+                            otp = 6;
+                        }
                     } else if (SetGem == 212)
                     {
                         dsstype = 6;
@@ -379,8 +525,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 2;
                         hpinc = 70;
                         mpinc = 50;
-                        if (IItem.GetType() == -1) eva = 6;
-                        else otp = 6;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 6;
+                        }
+                        else {
+                            otp = 6;
+                        }
                     } else if (SetGem == 211)
                     {
                         dsstype = 6;
@@ -389,8 +540,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 2;
                         hpinc = 70;
                         mpinc = 50;
-                        if (IItem.GetType() == -1) eva = 6;
-                        else otp = 6;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 6;
+                        }
+                        else {
+                            otp = 6;
+                        }
                     } else if (SetGem == 210)
                     {
                         dsstype = 7;
@@ -399,8 +555,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 1;
                         hpinc = 50;
                         mpinc = 30;
-                        if (IItem.GetType() == -1) eva = 4;
-                        else otp = 4;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 4;
+                        }
+                        else {
+                            otp = 4;
+                        }
                     } else if (SetGem == 209)
                     {
                         dsstype = 7;
@@ -409,8 +570,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 1;
                         hpinc = 50;
                         mpinc = 30;
-                        if (IItem.GetType() == -1) eva = 4;
-                        else otp = 4;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 4;
+                        }
+                        else {
+                            otp = 4;
+                        }
                     } else if (SetGem == 208)
                     {
                         dsstype = 7;
@@ -419,8 +585,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 1;
                         hpinc = 50;
                         mpinc = 30;
-                        if (IItem.GetType() == -1) eva = 4;
-                        else otp = 4;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 4;
+                        }
+                        else {
+                            otp = 4;
+                        }
                     } else if (SetGem == 207)
                     {
                         dsstype = 7;
@@ -429,8 +600,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 1;
                         hpinc = 50;
                         mpinc = 30;
-                        if (IItem.GetType() == -1) eva = 4;
-                        else otp = 4;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 4;
+                        }
+                        else {
+                            otp = 4;
+                        }
                     } else if (SetGem == 206)
                     {
                         dsstype = 7;
@@ -439,8 +615,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 1;
                         hpinc = 50;
                         mpinc = 30;
-                        if (IItem.GetType() == -1) eva = 4;
-                        else otp = 4;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 4;
+                        }
+                        else {
+                            otp = 4;
+                        }
                     } else if (SetGem == 205)
                     {
                         dsstype = 8;
@@ -449,8 +630,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         agi = 1;
                         hpinc = 30;
                         mpinc = 10;
-                        if (IItem.GetType() == -1) eva = 2;
-                        else otp = 2;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 2;
+                        }
+                        else {
+                            otp = 2;
+                        }
                     } else if (SetGem == 204)
                     {
                         dsstype = 8;
@@ -459,8 +645,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         wis = 1;
                         hpinc = 30;
                         mpinc = 10;
-                        if (IItem.GetType() == -1) eva = 2;
-                        else otp = 2;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 2;
+                        }
+                        else {
+                            otp = 2;
+                        }
                     } else if (SetGem == 203)
                     {
                         dsstype = 8;
@@ -469,8 +660,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         intel = 1;
                         hpinc = 30;
                         mpinc = 10;
-                        if (IItem.GetType() == -1) eva = 2;
-                        else otp = 2;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 2;
+                        }
+                        else {
+                            otp = 2;
+                        }
                     } else if (SetGem == 202)
                     {
                         dsstype = 8;
@@ -479,8 +675,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         hp = 1;
                         hpinc = 30;
                         mpinc = 10;
-                        if (IItem.GetType() == -1) eva = 2;
-                        else otp = 2;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 2;
+                        }
+                        else {
+                            otp = 2;
+                        }
                     } else if (SetGem == 201)
                     {
                         dsstype = 8;
@@ -489,8 +690,13 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
                         str = 1;
                         hpinc = 30;
                         mpinc = 10;
-                        if (IItem.GetType() == -1) eva = 2;
-                        else otp = 2;
+
+                        if (IItem.GetType() == -1) {
+                            eva = 2;
+                        }
+                        else {
+                            otp = 2;
+                        }
                     }
                 }
 
@@ -712,30 +918,52 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
         if (ItemStat)
         {
             int dg1typecheck = ItemStat / 10000000;
-            if (dg1typecheck) dg1stat = 1;
-            if (dg1typecheck > 0) dg1type = (dg1typecheck - 1);
+
+            if (dg1typecheck) {
+                dg1stat = 1;
+            }
+
+            if (dg1typecheck > 0) {
+                dg1type = (dg1typecheck - 1);
+            }
+
             ItemStat -= (10000000 * dg1typecheck);
         }
 
         if (ItemStat)
         {
             int dg1statcheck = ItemStat / 1000000;
-            if (dg1statcheck > 0) dg1stat = (dg1statcheck + 1);
+
+            if (dg1statcheck > 0) {
+                dg1stat = (dg1statcheck + 1);
+            }
+
             ItemStat -= (1000000 * dg1statcheck);
         }
 
         if (ItemStat)
         {
             int dg2typecheck = ItemStat / 100000;
-            if (dg2typecheck) dg2stat = 1;
-            if (dg2typecheck > 0) dg2type = (dg2typecheck - 1);
+
+            if (dg2typecheck) {
+                dg2stat = 1;
+            }
+
+            if (dg2typecheck > 0) {
+                dg2type = (dg2typecheck - 1);
+            }
+
             ItemStat -= (100000 * dg2typecheck);
         }
 
         if (ItemStat)
         {
             int dg2statcheck = ItemStat / 10000;
-            if (dg2statcheck > 0) dg2stat = (dg2statcheck + 1);
+
+            if (dg2statcheck > 0) {
+                dg2stat = (dg2statcheck + 1);
+            }
+
             ItemStat -= (10000 * dg2statcheck);
         }
 
@@ -746,37 +974,43 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
             ItemStat -= (100 * yinyanggrade);
         }
 
-        if (ItemStat)
+        if (ItemStat) {
             QigongGrade = ItemStat % 100;
+        }
 
-        if (Index >= 3199 && Index <= 3201 && Prefix == 0)
+        if (Index >= 3199 && Index <= 3201 && Prefix == 0) {
             Prefix = 1;
+        }
 
-        if (Index >= 2986 && Index <= 3009 && Prefix == 0)
+        if (Index >= 2986 && Index <= 3009 && Prefix == 0) {
             Prefix = 1;
+        }
 
-        if (Index >= 3018 && Index <= 3020)
+        if (Index >= 3018 && Index <= 3020) {
             Prefix = GetItemStat.find(nIID)->second / 1000;
+        }
 
         if (Index)
         {
-            Tools->Compile(Packet,"wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb",Index,nIID,
-                           Prefix,Info,Num,MaxEnd,CurEnd,SetGem,XAttack,XMagic,XDefense,XHit,XDodge,
-                           Protect,UpgrLevel,UpgrLevel, x, y, z, remaintime, dsstype, phyatk, magatk, def,
-                           absorb, eva, otp, hpinc, mpinc, str, hp, intel, wis, agi, PerfShotCheck,
-                           QigongGrade, dg1stat, dg1type, a, dg2stat, dg2type);
+            Tools->Compile(Packet, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb", Index, nIID,
+                Prefix, Info, Num, MaxEnd, CurEnd, SetGem, XAttack, XMagic, XDefense, XHit,
+                XDodge,
+                Protect, UpgrLevel, UpgrLevel, x, y, z, remaintime, dsstype, phyatk, magatk,
+                def,
+                absorb, eva, otp, hpinc, mpinc, str, hp, intel, wis, agi, PerfShotCheck,
+                QigongGrade, dg1stat, dg1type, a, dg2stat, dg2type);
             CPlayer::Write(Player, 19, "bdbdwmm", 2, nMID, byMType, nIID, wLen, &Msg, wLen,
-                           Packet, 63);
+                Packet, 63);
             return;
         }
     }
 
-    CPlayer::MAILProcess(Player,Type,pPacket,pPos);
+    CPlayer::MAILProcess(Player, Type, pPacket, pPos);
 }
 
 int __fastcall SendMail(void* Player, void *edx, int a1, int a2,
-                        char* ReceiverName, const char *Text, int a5, int a6, int Index, int a8, int a9,
-                        int Price)
+    char* ReceiverName, const char *Text, int a5, int a6, int Index, int a8, int a9,
+    int Price)
 {
     IChar IPlayer(Player);
 
@@ -790,5 +1024,5 @@ int __fastcall SendMail(void* Player, void *edx, int a1, int a2,
     }
 
     return CPlayer::SendMail(Player, a1, a2, ReceiverName, Text, a5, a6, Index, a8,
-                             a9, Price);
+            a9, Price);
 }

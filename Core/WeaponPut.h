@@ -9,14 +9,19 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
         CItemWeapon::ApplySpec(Item, Player);
         int check = IPlayer.GetMaxPhyAttack() -
             (atk + (*(DWORD*)(Item + 100) * (2 * *(DWORD*)(Item + 100) + 7) / 9));
-        int FirstDemonGongType = 0, SecondDemonGongType = 0, FirstDemonGongStat = 0, SecondDemonGongStat = 0;
+        int FirstDemonGongType = 0, SecondDemonGongType = 0, FirstDemonGongStat = 0,
+            SecondDemonGongStat = 0;
 
         if (GetItemStat.count(IItem.GetIID()))
         {
-            FirstDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 100000000) / 10000000;
-            SecondDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 1000000) / 100000;
-            FirstDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 10000000) / 1000000;
-            SecondDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 100000) / 10000;
+            FirstDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 100000000) /
+                10000000;
+            SecondDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 1000000) /
+                100000;
+            FirstDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 10000000) /
+                1000000;
+            SecondDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 100000) /
+                10000;
         }
 
         if (FirstDemonGongType)
@@ -78,24 +83,32 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
                 IPlayer.IncreaseMaxHp(QigongWeapon[QigongType-1][2]);
                 IPlayer.IncreaseMaxMp(QigongWeapon[QigongType-1][3]);
 
-                if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+                if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                        IPlayer.GetClass() == 4)) {
                     IPlayer.AddEva(QigongWeapon[QigongType-1][4]);
-                else
+                }
+                else {
                     IPlayer.AddOTP(QigongWeapon[QigongType-1][4]);
+                }
 
                 int Type = QigongWeapon[QigongType-1][5];
                 int Stat = QigongWeapon[QigongType-1][6];
 
-                if (Type == 0)
+                if (Type == 0) {
                     IPlayer.AddStr(Stat);
-                else if (Type == 1)
+                }
+                else if (Type == 1) {
                     IPlayer.AddHp(Stat);
-                else if (Type == 2)
+                }
+                else if (Type == 2) {
                     IPlayer.AddInt(Stat);
-                else if (Type == 3)
+                }
+                else if (Type == 3) {
                     IPlayer.AddWis(Stat);
-                else if (Type == 4)
+                }
+                else if (Type == 4) {
                     IPlayer.AddAgi(Stat);
+                }
             }
         }
 
@@ -105,10 +118,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*17/100);
             IPlayer.AddAgi(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(18);
-            else
+            }
+            else {
                 IPlayer.AddOTP(18);
+            }
 
             IPlayer.IncreaseMaxHp(250);
             IPlayer.IncreaseMaxMp(200);
@@ -118,10 +134,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*17/100);
             IPlayer.AddWis(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(18);
-            else
+            }
+            else {
                 IPlayer.AddOTP(18);
+            }
 
             IPlayer.IncreaseMaxHp(250);
             IPlayer.IncreaseMaxMp(200);
@@ -131,10 +150,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*17/100);
             IPlayer.AddInt(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(18);
-            else
+            }
+            else {
                 IPlayer.AddOTP(18);
+            }
 
             IPlayer.IncreaseMaxHp(250);
             IPlayer.IncreaseMaxMp(200);
@@ -144,10 +166,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*17/100);
             IPlayer.AddHp(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(18);
-            else
+            }
+            else {
                 IPlayer.AddOTP(18);
+            }
 
             IPlayer.IncreaseMaxHp(250);
             IPlayer.IncreaseMaxMp(200);
@@ -157,10 +182,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*17/100);
             IPlayer.AddStr(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(18);
-            else
+            }
+            else {
                 IPlayer.AddOTP(18);
+            }
 
             IPlayer.IncreaseMaxHp(250);
             IPlayer.IncreaseMaxMp(200);
@@ -170,10 +198,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*14/100);
             IPlayer.AddAgi(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(15);
-            else
+            }
+            else {
                 IPlayer.AddOTP(15);
+            }
 
             IPlayer.IncreaseMaxHp(200);
             IPlayer.IncreaseMaxMp(150);
@@ -183,10 +214,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*14/100);
             IPlayer.AddWis(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(15);
-            else
+            }
+            else {
                 IPlayer.AddOTP(15);
+            }
 
             IPlayer.IncreaseMaxHp(200);
             IPlayer.IncreaseMaxMp(150);
@@ -196,10 +230,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*14/100);
             IPlayer.AddInt(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(15);
-            else
+            }
+            else {
                 IPlayer.AddOTP(15);
+            }
 
             IPlayer.IncreaseMaxHp(200);
             IPlayer.IncreaseMaxMp(150);
@@ -209,10 +246,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*14/100);
             IPlayer.AddHp(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(15);
-            else
+            }
+            else {
                 IPlayer.AddOTP(15);
+            }
 
             IPlayer.IncreaseMaxHp(200);
             IPlayer.IncreaseMaxMp(150);
@@ -222,10 +262,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*14/100);
             IPlayer.AddStr(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(15);
-            else
+            }
+            else {
                 IPlayer.AddOTP(15);
+            }
 
             IPlayer.IncreaseMaxHp(200);
             IPlayer.IncreaseMaxMp(150);
@@ -235,10 +278,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*12/100);
             IPlayer.AddAgi(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(12);
-            else
+            }
+            else {
                 IPlayer.AddOTP(12);
+            }
 
             IPlayer.IncreaseMaxHp(130);
             IPlayer.IncreaseMaxMp(110);
@@ -248,10 +294,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*12/100);
             IPlayer.AddWis(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(12);
-            else
+            }
+            else {
                 IPlayer.AddOTP(12);
+            }
 
             IPlayer.IncreaseMaxHp(130);
             IPlayer.IncreaseMaxMp(110);
@@ -261,10 +310,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*12/100);
             IPlayer.AddInt(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(12);
-            else
+            }
+            else {
                 IPlayer.AddOTP(12);
+            }
 
             IPlayer.IncreaseMaxHp(130);
             IPlayer.IncreaseMaxMp(110);
@@ -274,10 +326,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*12/100);
             IPlayer.AddHp(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(12);
-            else
+            }
+            else {
                 IPlayer.AddOTP(12);
+            }
 
             IPlayer.IncreaseMaxHp(130);
             IPlayer.IncreaseMaxMp(110);
@@ -287,10 +342,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*12/100);
             IPlayer.AddStr(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(12);
-            else
+            }
+            else {
                 IPlayer.AddOTP(12);
+            }
 
             IPlayer.IncreaseMaxHp(130);
             IPlayer.IncreaseMaxMp(110);
@@ -300,10 +358,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*10/100);
             IPlayer.AddAgi(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(10);
-            else
+            }
+            else {
                 IPlayer.AddOTP(10);
+            }
 
             IPlayer.IncreaseMaxHp(110);
             IPlayer.IncreaseMaxMp(90);
@@ -313,10 +374,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*10/100);
             IPlayer.AddWis(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(10);
-            else
+            }
+            else {
                 IPlayer.AddOTP(10);
+            }
 
             IPlayer.IncreaseMaxHp(110);
             IPlayer.IncreaseMaxMp(90);
@@ -326,10 +390,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*10/100);
             IPlayer.AddInt(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(10);
-            else
+            }
+            else {
                 IPlayer.AddOTP(10);
+            }
 
             IPlayer.IncreaseMaxHp(110);
             IPlayer.IncreaseMaxMp(90);
@@ -339,10 +406,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*10/100);
             IPlayer.AddHp(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(10);
-            else
+            }
+            else {
                 IPlayer.AddOTP(10);
+            }
 
             IPlayer.IncreaseMaxHp(110);
             IPlayer.IncreaseMaxMp(90);
@@ -352,10 +422,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*10/100);
             IPlayer.AddStr(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(10);
-            else
+            }
+            else {
                 IPlayer.AddOTP(10);
+            }
 
             IPlayer.IncreaseMaxHp(110);
             IPlayer.IncreaseMaxMp(90);
@@ -365,10 +438,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*8/100);
             IPlayer.AddAgi(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(8);
-            else
+            }
+            else {
                 IPlayer.AddOTP(8);
+            }
 
             IPlayer.IncreaseMaxHp(90);
             IPlayer.IncreaseMaxMp(70);
@@ -378,10 +454,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*8/100);
             IPlayer.AddWis(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(8);
-            else
+            }
+            else {
                 IPlayer.AddOTP(8);
+            }
 
             IPlayer.IncreaseMaxHp(90);
             IPlayer.IncreaseMaxMp(70);
@@ -391,10 +470,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*8/100);
             IPlayer.AddInt(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(8);
-            else
+            }
+            else {
                 IPlayer.AddOTP(8);
+            }
 
             IPlayer.IncreaseMaxHp(90);
             IPlayer.IncreaseMaxMp(70);
@@ -404,10 +486,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*8/100);
             IPlayer.AddHp(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(8);
-            else
+            }
+            else {
                 IPlayer.AddOTP(8);
+            }
 
             IPlayer.IncreaseMaxHp(90);
             IPlayer.IncreaseMaxMp(70);
@@ -417,10 +502,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*8/100);
             IPlayer.AddStr(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(8);
-            else
+            }
+            else {
                 IPlayer.AddOTP(8);
+            }
 
             IPlayer.IncreaseMaxHp(90);
             IPlayer.IncreaseMaxMp(70);
@@ -430,10 +518,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*6/100);
             IPlayer.AddAgi(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(6);
-            else
+            }
+            else {
                 IPlayer.AddOTP(6);
+            }
 
             IPlayer.IncreaseMaxHp(70);
             IPlayer.IncreaseMaxMp(50);
@@ -443,10 +534,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*6/100);
             IPlayer.AddWis(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(6);
-            else
+            }
+            else {
                 IPlayer.AddOTP(6);
+            }
 
             IPlayer.IncreaseMaxHp(70);
             IPlayer.IncreaseMaxMp(50);
@@ -456,10 +550,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*6/100);
             IPlayer.AddInt(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(6);
-            else
+            }
+            else {
                 IPlayer.AddOTP(6);
+            }
 
             IPlayer.IncreaseMaxHp(70);
             IPlayer.IncreaseMaxMp(50);
@@ -469,10 +566,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*6/100);
             IPlayer.AddHp(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(6);
-            else
+            }
+            else {
                 IPlayer.AddOTP(6);
+            }
 
             IPlayer.IncreaseMaxHp(70);
             IPlayer.IncreaseMaxMp(50);
@@ -482,10 +582,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*6/100);
             IPlayer.AddStr(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(6);
-            else
+            }
+            else {
                 IPlayer.AddOTP(6);
+            }
 
             IPlayer.IncreaseMaxHp(70);
             IPlayer.IncreaseMaxMp(50);
@@ -495,10 +598,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*4/100);
             IPlayer.AddAgi(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(4);
-            else
+            }
+            else {
                 IPlayer.AddOTP(4);
+            }
 
             IPlayer.IncreaseMaxHp(50);
             IPlayer.IncreaseMaxMp(30);
@@ -508,10 +614,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*4/100);
             IPlayer.AddWis(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(4);
-            else
+            }
+            else {
                 IPlayer.AddOTP(4);
+            }
 
             IPlayer.IncreaseMaxHp(50);
             IPlayer.IncreaseMaxMp(30);
@@ -521,10 +630,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*4/100);
             IPlayer.AddInt(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(4);
-            else
+            }
+            else {
                 IPlayer.AddOTP(4);
+            }
 
             IPlayer.IncreaseMaxHp(50);
             IPlayer.IncreaseMaxMp(30);
@@ -534,10 +646,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*4/100);
             IPlayer.AddHp(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(4);
-            else
+            }
+            else {
                 IPlayer.AddOTP(4);
+            }
 
             IPlayer.IncreaseMaxHp(50);
             IPlayer.IncreaseMaxMp(30);
@@ -547,10 +662,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*4/100);
             IPlayer.AddStr(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(4);
-            else
+            }
+            else {
                 IPlayer.AddOTP(4);
+            }
 
             IPlayer.IncreaseMaxHp(50);
             IPlayer.IncreaseMaxMp(30);
@@ -560,10 +678,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*2/100);
             IPlayer.AddAgi(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(2);
-            else
+            }
+            else {
                 IPlayer.AddOTP(2);
+            }
 
             IPlayer.IncreaseMaxHp(30);
             IPlayer.IncreaseMaxMp(10);
@@ -573,10 +694,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*2/100);
             IPlayer.AddWis(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(2);
-            else
+            }
+            else {
                 IPlayer.AddOTP(2);
+            }
 
             IPlayer.IncreaseMaxHp(30);
             IPlayer.IncreaseMaxMp(10);
@@ -586,10 +710,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*2/100);
             IPlayer.AddInt(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(2);
-            else
+            }
+            else {
                 IPlayer.AddOTP(2);
+            }
 
             IPlayer.IncreaseMaxHp(30);
             IPlayer.IncreaseMaxMp(10);
@@ -599,10 +726,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*2/100);
             IPlayer.AddHp(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(2);
-            else
+            }
+            else {
                 IPlayer.AddOTP(2);
+            }
 
             IPlayer.IncreaseMaxHp(30);
             IPlayer.IncreaseMaxMp(10);
@@ -612,10 +742,13 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.AddMinAttack(check*2/100);
             IPlayer.AddStr(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.AddEva(2);
-            else
+            }
+            else {
                 IPlayer.AddOTP(2);
+            }
 
             IPlayer.IncreaseMaxHp(30);
             IPlayer.IncreaseMaxMp(10);
@@ -623,27 +756,35 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
     }
 }
 
-void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
+void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
 {
     IChar IPlayer((void*)Player);
     IItem IItem((void*)Item);
 
     if (IPlayer.IsBuff(256))
     {
-        IPlayer.SystemMessage("You need to wait 3 seconds to put off your weapon.", TEXTCOLOR_INFOMSG);
+        IPlayer.SystemMessage("You need to wait 3 seconds to put off your weapon.",
+            TEXTCOLOR_INFOMSG);
     } else {
-        IPlayer.Buff(256,2,0);
+        IPlayer.Buff(256, 2, 0);
         int atk = IPlayer.GetMaxPhyAttack();
         CItemWeapon::PutOff(Item, Player);
-        int check = atk - (IPlayer.GetMaxPhyAttack() + (*(DWORD*)((int)Item + 100) * (2 * *(DWORD*)((int)Item + 100) + 7) / 9));
-        int FirstDemonGongType = 0, SecondDemonGongType = 0, FirstDemonGongStat = 0, SecondDemonGongStat = 0;
+        int check = atk - (IPlayer.GetMaxPhyAttack() + (*(DWORD*)((int)Item + 100) *
+                    (2 * *(DWORD*)((
+                                int)Item + 100) + 7) / 9));
+        int FirstDemonGongType = 0, SecondDemonGongType = 0, FirstDemonGongStat = 0,
+            SecondDemonGongStat = 0;
 
         if (GetItemStat.count(IItem.GetIID()))
         {
-            FirstDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 100000000) / 10000000;
-            SecondDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 1000000) / 100000;
-            FirstDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 10000000) / 1000000;
-            SecondDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 100000) / 10000;
+            FirstDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 100000000) /
+                10000000;
+            SecondDemonGongType = (GetItemStat.find(IItem.GetIID())->second % 1000000) /
+                100000;
+            FirstDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 10000000) /
+                1000000;
+            SecondDemonGongStat = (GetItemStat.find(IItem.GetIID())->second % 100000) /
+                10000;
         }
 
         if (FirstDemonGongType)
@@ -705,24 +846,32 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
                 IPlayer.DecreaseMaxHp(QigongWeapon[QigongType-1][2]);
                 IPlayer.DecreaseMaxMp(QigongWeapon[QigongType-1][3]);
 
-                if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+                if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                        IPlayer.GetClass() == 4)) {
                     IPlayer.RemoveEva(QigongWeapon[QigongType-1][4]);
-                else
+                }
+                else {
                     IPlayer.RemoveOTP(QigongWeapon[QigongType-1][4]);
+                }
 
                 int Type = QigongWeapon[QigongType-1][5];
                 int Stat = QigongWeapon[QigongType-1][6];
 
-                if (Type == 0)
+                if (Type == 0) {
                     IPlayer.RemoveStr(Stat);
-                else if (Type == 1)
+                }
+                else if (Type == 1) {
                     IPlayer.RemoveHp(Stat);
-                else if (Type == 2)
+                }
+                else if (Type == 2) {
                     IPlayer.RemoveInt(Stat);
-                else if (Type == 3)
+                }
+                else if (Type == 3) {
                     IPlayer.RemoveWis(Stat);
-                else if (Type == 4)
+                }
+                else if (Type == 4) {
                     IPlayer.RemoveAgi(Stat);
+                }
             }
         }
 
@@ -732,10 +881,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*17/100);
             IPlayer.RemoveAgi(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(18);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(18);
+            }
 
             IPlayer.DecreaseMaxHp(250);
             IPlayer.DecreaseMaxMp(200);
@@ -745,10 +897,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*17/100);
             IPlayer.RemoveWis(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(18);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(18);
+            }
 
             IPlayer.DecreaseMaxHp(250);
             IPlayer.DecreaseMaxMp(200);
@@ -758,10 +913,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*17/100);
             IPlayer.RemoveInt(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(18);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(18);
+            }
 
             IPlayer.DecreaseMaxHp(250);
             IPlayer.DecreaseMaxMp(200);
@@ -771,10 +929,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*17/100);
             IPlayer.RemoveHp(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(18);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(18);
+            }
 
             IPlayer.DecreaseMaxHp(250);
             IPlayer.DecreaseMaxMp(200);
@@ -784,10 +945,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*17/100);
             IPlayer.RemoveStr(8);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(18);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(18);
+            }
 
             IPlayer.DecreaseMaxHp(250);
             IPlayer.DecreaseMaxMp(200);
@@ -797,10 +961,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*14/100);
             IPlayer.RemoveAgi(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(15);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(15);
+            }
 
             IPlayer.DecreaseMaxHp(200);
             IPlayer.DecreaseMaxMp(150);
@@ -810,10 +977,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*14/100);
             IPlayer.RemoveWis(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(15);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(15);
+            }
 
             IPlayer.DecreaseMaxHp(200);
             IPlayer.DecreaseMaxMp(150);
@@ -823,10 +993,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*14/100);
             IPlayer.RemoveInt(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(15);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(15);
+            }
 
             IPlayer.DecreaseMaxHp(200);
             IPlayer.DecreaseMaxMp(150);
@@ -836,10 +1009,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*14/100);
             IPlayer.RemoveHp(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(15);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(15);
+            }
 
             IPlayer.DecreaseMaxHp(200);
             IPlayer.DecreaseMaxMp(150);
@@ -849,10 +1025,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*14/100);
             IPlayer.RemoveStr(5);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(15);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(15);
+            }
 
             IPlayer.DecreaseMaxHp(200);
             IPlayer.DecreaseMaxMp(150);
@@ -862,10 +1041,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*12/100);
             IPlayer.RemoveAgi(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(12);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(12);
+            }
 
             IPlayer.DecreaseMaxHp(130);
             IPlayer.DecreaseMaxMp(110);
@@ -875,10 +1057,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*12/100);
             IPlayer.RemoveWis(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(12);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(12);
+            }
 
             IPlayer.DecreaseMaxHp(130);
             IPlayer.DecreaseMaxMp(110);
@@ -888,10 +1073,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*12/100);
             IPlayer.RemoveInt(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(12);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(12);
+            }
 
             IPlayer.DecreaseMaxHp(130);
             IPlayer.DecreaseMaxMp(110);
@@ -901,10 +1089,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*12/100);
             IPlayer.RemoveHp(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(12);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(12);
+            }
 
             IPlayer.DecreaseMaxHp(130);
             IPlayer.DecreaseMaxMp(110);
@@ -914,10 +1105,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*12/100);
             IPlayer.RemoveStr(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(12);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(12);
+            }
 
             IPlayer.DecreaseMaxHp(130);
             IPlayer.DecreaseMaxMp(110);
@@ -927,10 +1121,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*10/100);
             IPlayer.RemoveAgi(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(10);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(10);
+            }
 
             IPlayer.DecreaseMaxHp(110);
             IPlayer.DecreaseMaxMp(90);
@@ -940,10 +1137,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*10/100);
             IPlayer.RemoveWis(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(10);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(10);
+            }
 
             IPlayer.DecreaseMaxHp(110);
             IPlayer.DecreaseMaxMp(90);
@@ -953,10 +1153,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*10/100);
             IPlayer.RemoveInt(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(10);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(10);
+            }
 
             IPlayer.DecreaseMaxHp(110);
             IPlayer.DecreaseMaxMp(90);
@@ -966,10 +1169,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*10/100);
             IPlayer.RemoveHp(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(10);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(10);
+            }
 
             IPlayer.DecreaseMaxHp(110);
             IPlayer.DecreaseMaxMp(90);
@@ -979,10 +1185,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*10/100);
             IPlayer.RemoveStr(3);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(10);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(10);
+            }
 
             IPlayer.DecreaseMaxHp(110);
             IPlayer.DecreaseMaxMp(90);
@@ -992,10 +1201,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*8/100);
             IPlayer.RemoveAgi(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(8);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(8);
+            }
 
             IPlayer.DecreaseMaxHp(90);
             IPlayer.DecreaseMaxMp(70);
@@ -1005,10 +1217,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*8/100);
             IPlayer.RemoveWis(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(8);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(8);
+            }
 
             IPlayer.DecreaseMaxHp(90);
             IPlayer.DecreaseMaxMp(70);
@@ -1018,10 +1233,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*8/100);
             IPlayer.RemoveInt(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(8);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(8);
+            }
 
             IPlayer.DecreaseMaxHp(90);
             IPlayer.DecreaseMaxMp(70);
@@ -1031,10 +1249,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*8/100);
             IPlayer.RemoveHp(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(8);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(8);
+            }
 
             IPlayer.DecreaseMaxHp(90);
             IPlayer.DecreaseMaxMp(70);
@@ -1044,10 +1265,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*8/100);
             IPlayer.RemoveStr(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(8);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(8);
+            }
 
             IPlayer.DecreaseMaxHp(90);
             IPlayer.DecreaseMaxMp(70);
@@ -1057,10 +1281,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*6/100);
             IPlayer.RemoveAgi(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(6);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(6);
+            }
 
             IPlayer.DecreaseMaxHp(70);
             IPlayer.DecreaseMaxMp(50);
@@ -1070,10 +1297,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*6/100);
             IPlayer.RemoveWis(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(6);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(6);
+            }
 
             IPlayer.DecreaseMaxHp(70);
             IPlayer.DecreaseMaxMp(50);
@@ -1083,10 +1313,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*6/100);
             IPlayer.RemoveInt(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(6);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(6);
+            }
 
             IPlayer.DecreaseMaxHp(70);
             IPlayer.DecreaseMaxMp(50);
@@ -1096,10 +1329,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*6/100);
             IPlayer.RemoveHp(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(6);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(6);
+            }
 
             IPlayer.DecreaseMaxHp(70);
             IPlayer.DecreaseMaxMp(50);
@@ -1109,10 +1345,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*6/100);
             IPlayer.RemoveStr(2);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(6);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(6);
+            }
 
             IPlayer.DecreaseMaxHp(70);
             IPlayer.DecreaseMaxMp(50);
@@ -1122,10 +1361,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*4/100);
             IPlayer.RemoveAgi(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(4);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(4);
+            }
 
             IPlayer.DecreaseMaxHp(50);
             IPlayer.DecreaseMaxMp(30);
@@ -1135,10 +1377,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*4/100);
             IPlayer.RemoveWis(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(4);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(4);
+            }
 
             IPlayer.DecreaseMaxHp(50);
             IPlayer.DecreaseMaxMp(30);
@@ -1148,10 +1393,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*4/100);
             IPlayer.RemoveInt(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(4);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(4);
+            }
 
             IPlayer.DecreaseMaxHp(50);
             IPlayer.DecreaseMaxMp(30);
@@ -1161,10 +1409,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*4/100);
             IPlayer.RemoveHp(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(4);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(4);
+            }
 
             IPlayer.DecreaseMaxHp(50);
             IPlayer.DecreaseMaxMp(30);
@@ -1174,10 +1425,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*4/100);
             IPlayer.RemoveStr(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(4);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(4);
+            }
 
             IPlayer.DecreaseMaxHp(50);
             IPlayer.DecreaseMaxMp(30);
@@ -1187,10 +1441,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*2/100);
             IPlayer.RemoveAgi(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(2);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(2);
+            }
 
             IPlayer.DecreaseMaxHp(30);
             IPlayer.DecreaseMaxMp(10);
@@ -1200,10 +1457,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*2/100);
             IPlayer.RemoveWis(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(2);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(2);
+            }
 
             IPlayer.DecreaseMaxHp(30);
             IPlayer.DecreaseMaxMp(10);
@@ -1213,10 +1473,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*2/100);
             IPlayer.RemoveInt(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(2);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(2);
+            }
 
             IPlayer.DecreaseMaxHp(30);
             IPlayer.DecreaseMaxMp(10);
@@ -1226,10 +1489,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*2/100);
             IPlayer.RemoveHp(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(2);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(2);
+            }
 
             IPlayer.DecreaseMaxHp(30);
             IPlayer.DecreaseMaxMp(10);
@@ -1239,10 +1505,13 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
             IPlayer.RemoveMinAttack(check*2/100);
             IPlayer.RemoveStr(1);
 
-            if (IItem.GetType() == -1 || (IItem.GetType() == -3 && IPlayer.GetClass() == 4))
+            if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
+                    IPlayer.GetClass() == 4)) {
                 IPlayer.RemoveEva(2);
-            else
+            }
+            else {
                 IPlayer.RemoveOTP(2);
+            }
 
             IPlayer.DecreaseMaxHp(30);
             IPlayer.DecreaseMaxMp(10);
@@ -1251,29 +1520,32 @@ void __fastcall WeaponPutOff(void *Item,void *edx,int Player)
 }
 
 
-void __fastcall WeaponPutOn(int Item,void *edx,int Player)
+void __fastcall WeaponPutOn(int Item, void *edx, int Player)
 {
     IChar IPlayer((void*)Player);
     IItem IItem((void*)Item);
 
     if (IPlayer.IsBuff(256))
     {
-        IPlayer.SystemMessage("You need to wait 3 seconds to put on your weapon.", TEXTCOLOR_INFOMSG);
+        IPlayer.SystemMessage("You need to wait 3 seconds to put on your weapon.",
+            TEXTCOLOR_INFOMSG);
     } else {
-        IPlayer.Buff(256,2,0);
+        IPlayer.Buff(256, 2, 0);
 
         if (IPlayer.IsValid() && IPlayer.IsBuff(120))
         {
-            if (IItem.LevelLimit() > 5)
+            if (IItem.LevelLimit() > 5) {
                 IItem.SetLevelLimit(IItem.LevelLimit()-5);
+            }
         }
 
         CItemWeapon::PutOn(Item, Player);
 
         if (IPlayer.IsValid() && IPlayer.IsBuff(120))
         {
-            if (IItem.LevelLimit() > 5)
+            if (IItem.LevelLimit() > 5) {
                 IItem.SetLevelLimit(IItem.LevelLimit()+5);
+            }
         }
     }
 }

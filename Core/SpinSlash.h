@@ -7,30 +7,32 @@ void __fastcall SpinSlash(IChar IPlayer)
         ISkill xSkill((void*)pSkill);
         int nMana = (xSkill.GetGrade() == 1) ? 209 : (200 + (xSkill.GetGrade() * 20));
 
-        if (IPlayer.GetCurMp() < nMana)
+        if (IPlayer.GetCurMp() < nMana) {
             return;
+        }
 
-        if (IPlayer.IsValid() && CPlayer::IsWState((int)IPlayer.GetOffset(),12))
+        if (IPlayer.IsValid() && CPlayer::IsWState((int)IPlayer.GetOffset(), 12))
         {
             int Around = IPlayer.GetObjectListAround(3);
 
-            while(Around)
+            while (Around)
             {
                 IChar Object((void*)*(DWORD*)Around);
 
                 if (Object.IsValid() && IPlayer.IsValid()
-                        && (*(int (__thiscall **)(int, int, DWORD))
-                            (*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(),
-                                (int)Object.GetOffset(), 0))
+                    && (*(int (__thiscall **)(int, int, DWORD))
+                        (*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(),
+                        (int)Object.GetOffset(), 0))
                 {
                     int nDmg = (IPlayer.GetAttack() * KSSMul) +
-                        (xSkill.GetGrade() * CTools::Rate( KSSMin,KSSMax) +
-                         (IPlayer.GetDeathBlow() * CTools::Rate(KSSDBMin,KSSDBMax)));
+                        (xSkill.GetGrade() * CTools::Rate(KSSMin, KSSMax) +
+                            (IPlayer.GetDeathBlow() * CTools::Rate(KSSDBMin, KSSDBMax)));
 
-                    if (Object.GetType() == 0)
+                    if (Object.GetType() == 0) {
                         nDmg = (nDmg * KSSReduce) / 100;
+                    }
 
-                    IPlayer.OktayDamageArea(Object,nDmg,38);
+                    IPlayer.OktayDamageArea(Object, nDmg, 38);
                 }
 
                 Around = CBaseList::Pop((void*)Around);

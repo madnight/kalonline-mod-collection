@@ -5,10 +5,12 @@ void __fastcall DropItemONPKDie(void *Player, void *edx)
     if (IPlayer.IsOnline())
     {
         if (strlen(SinCheck) &&
-                ((std::string)SinCheck == "disable" ||
-                 (std::string)SinCheck == "Disable"))
+            ((std::string)SinCheck == "disable" ||
+                (std::string)SinCheck == "Disable")) {
             return;
-        else
+        }
+        else {
             CPlayer::DropItemONPKDie(Player);
+        }
     }
 }

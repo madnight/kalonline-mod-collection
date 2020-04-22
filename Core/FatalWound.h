@@ -2,10 +2,13 @@ void __fastcall ContinueFatalWound(IChar IPlayer)
 {
     if (IPlayer.IsValid())
     {
-        int nSkillGrade = CheckFarContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillGrade;
-        void *pTarget = CheckFarContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
+        int nSkillGrade = CheckFarContinueSkill.find(
+                IPlayer.GetPID())->second.PlayerSkillGrade;
+        void *pTarget = CheckFarContinueSkill.find(
+                IPlayer.GetPID())->second.PlayerTarget;
 
-        if (nSkillGrade && pTarget && CheckFarContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
+        if (nSkillGrade && pTarget &&
+            CheckFarContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
         {
             IChar Target(pTarget);
             CheckFarContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
@@ -16,7 +19,7 @@ void __fastcall ContinueFatalWound(IChar IPlayer)
                 return;
             }
 
-            if (!IPlayer.IsInRange(Target,300))
+            if (!IPlayer.IsInRange(Target, 300))
             {
                 ResetFarContinueSkill(IPlayer);
                 return;
@@ -24,19 +27,25 @@ void __fastcall ContinueFatalWound(IChar IPlayer)
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                int nDmg = (IPlayer.GetAttack() * TFWMul) + (nSkillGrade * CTools::Rate(TFWMin,TFWMax));
+                int nDmg = (IPlayer.GetAttack() * TFWMul) + (nSkillGrade * CTools::Rate(TFWMin,
+                            TFWMax));
 
-                if (Target.GetType() == 0)
+                if (Target.GetType() == 0) {
                     nDmg = (nDmg * TFWReduce) / 100;
+                }
 
-                IPlayer.OktayDamageArea(Target,nDmg,14);
+                IPlayer.OktayDamageArea(Target, nDmg, 14);
             }
 
-            if (IPlayer.IsOnline())
-                CheckFarContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 2000;
+            if (IPlayer.IsOnline()) {
+                CheckFarContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() +
+                    2000;
+            }
 
-            if (IPlayer.IsOnline() && CheckFarContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+            if (IPlayer.IsOnline() &&
+                CheckFarContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                 ResetFarContinueSkill(IPlayer);
+            }
 
             return;
         }
@@ -60,29 +69,35 @@ void __fastcall FatalWound(IChar IPlayer, int pPacket, int pPos)
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = (int)(30 * nSkillGrade + 15);
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 if (!Target.IsBuff(348))
                 {

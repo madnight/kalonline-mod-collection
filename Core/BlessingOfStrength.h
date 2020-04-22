@@ -1,4 +1,5 @@
-void __fastcall BlessingOfStrength(int Packet, void *edx, int Player, int Target, int a3)
+void __fastcall BlessingOfStrength(int Packet, void *edx, int Player,
+    int Target, int a3)
 {
     IChar IPlayer((void*)Player);
     IChar ITarget((void*)Target);
@@ -21,15 +22,15 @@ void __fastcall BlessingOfStrength(int Packet, void *edx, int Player, int Target
                     {
                         if (CChar::GetRange((int)IPlayer.GetOffset() + 332, Members + 332) <= 300)
                         {
-                            IMembers.Buff(46,1800,8*ISkill.GetGrade()+3);
-                            IPlayer._ShowBattleAnimation(IMembers,ISkill.GetIndex());
+                            IMembers.Buff(46, 1800, 8*ISkill.GetGrade()+3);
+                            IPlayer._ShowBattleAnimation(IMembers, ISkill.GetIndex());
                         }
                     }
                 }
             }
         } else {
-            ITarget.Buff(46,1800,8*ISkill.GetGrade()+3);
-            IPlayer._ShowBattleAnimation(ITarget,ISkill.GetIndex());
+            ITarget.Buff(46, 1800, 8*ISkill.GetGrade()+3);
+            IPlayer._ShowBattleAnimation(ITarget, ISkill.GetIndex());
         }
     }
 }

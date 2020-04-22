@@ -1,4 +1,5 @@
-void __fastcall DefenseImprovement(void *pSkill, void *edx, int pPlayer, void *pPacket, int pPos)
+void __fastcall DefenseImprovement(void *pSkill, void *edx, int pPlayer,
+    void *pPacket, int pPos)
 {
     IChar IPlayer((void*)pPlayer);
     ISkill ISkill(pSkill);
@@ -7,24 +8,28 @@ void __fastcall DefenseImprovement(void *pSkill, void *edx, int pPlayer, void *p
     void *pTarget = 0;
     CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-    if (bType == 0 && nTargetID)
+    if (bType == 0 && nTargetID) {
         pTarget = CPlayer::FindPlayer(nTargetID);
-    else
+    }
+    else {
         return;
+    }
 
     if (pTarget && IPlayer.IsValid())
     {
         if ((**(int (__thiscall ***)(DWORD, DWORD, DWORD))pSkill)
-                ((int)pSkill, pPlayer, (int)pTarget))
+            ((int)pSkill, pPlayer, (int)pTarget))
         {
             IChar ITarget(pTarget);
 
             if (ITarget.IsValid() && IPlayer.IsValid())
             {
-                if (IPlayer.GetCurMp() <= ISkill.DecreaseMana())
+                if (IPlayer.GetCurMp() <= ISkill.DecreaseMana()) {
                     return;
-                else
+                }
+                else {
                     IPlayer.DecreaseMana(ISkill.DecreaseMana());
+                }
 
                 if (ITarget.IsParty())
                 {
@@ -46,8 +51,8 @@ void __fastcall DefenseImprovement(void *pSkill, void *edx, int pPlayer, void *p
                                             37, 1800, 30 * *((DWORD *)pSkill + 2) + 5,
                                             20 * *((DWORD *)pSkill + 2) + 5);
                                     (*(int (__thiscall **)(int, int))(*(DWORD *)Members + 180))
-                                        (Members, AddBuff);
-                                    IPlayer._ShowBattleAnimation(IMembers,ISkill.GetIndex());
+                                    (Members, AddBuff);
+                                    IPlayer._ShowBattleAnimation(IMembers, ISkill.GetIndex());
                                 }
                             }
                         }
@@ -58,8 +63,8 @@ void __fastcall DefenseImprovement(void *pSkill, void *edx, int pPlayer, void *p
                             37, 1800, 30 * *((DWORD *)pSkill + 2) + 5,
                             20 * *((DWORD *)pSkill + 2) + 5);
                     (*(int (__thiscall **)(int, int))(*(DWORD *)(int)ITarget.GetOffset() + 180))
-                        ((int)ITarget.GetOffset(), AddBuff);
-                    IPlayer._ShowBattleAnimation(ITarget,ISkill.GetIndex());
+                    ((int)ITarget.GetOffset(), AddBuff);
+                    IPlayer._ShowBattleAnimation(ITarget, ISkill.GetIndex());
                 }
             }
         }

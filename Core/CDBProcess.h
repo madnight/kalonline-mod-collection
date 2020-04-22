@@ -6,7 +6,7 @@ int __cdecl CDBProcess(char *Data)
         char Type = 0, xType = 0, Status = 0;
         const char *Name = "nopwd";
         CPacket::xRead((void*)(Data + 3), "dbdbbdsd", &PID, &Type, &MID, &xType,
-                       &Status, &RPID, &Name, &IID);
+            &Status, &RPID, &Name, &IID);
 
         if (PID == -1 && Type == 1 && MID > 0 && RPID > 0 && IID)
         {
@@ -18,7 +18,7 @@ int __cdecl CDBProcess(char *Data)
 
                 if (IPlayer.IsOnline())
                 {
-                    CDBSocket::Write(30,"dbddbbddwdd",MID,1,0,MID,0,1,RPID,IID,0,0,0);
+                    CDBSocket::Write(30, "dbddbbddwdd", MID, 1, 0, MID, 0, 1, RPID, IID, 0, 0, 0);
                     CPlayer::Write(IPlayer.GetOffset(), 68, "bbs", 85, 0, "Kal Online");
                     return 0;
                 }
@@ -31,7 +31,7 @@ int __cdecl CDBProcess(char *Data)
         int PID = 0, HP = 0, HK = 0, HD = 0, DKPT = 0, DKPW = 0, PLT = 0, PLW = 0,
             SVT = 0, SVW = 0, RP = 0;
         CPacket::xRead((void*)(Data + 3), "ddddddddddd", &PID, &HP, &HK, &HD, &DKPT,
-                       &DKPW, &PLT, &PLW, &SVT, &SVW, &RP);
+            &DKPW, &PLT, &PLW, &SVT, &SVW, &RP);
 
         if (PID)
         {
@@ -118,8 +118,9 @@ int __cdecl CDBProcess(char *Data)
         int Remain = 0, Type = 0, PID = 0;
         CPacket::xRead((void*)(Data + 3), "ddd", &PID, &Type, &Remain);
 
-        if (PID && Type && Remain)
-            SetBuffx.insert(std::pair<int,int>(PID+4000000000+(Type*1000000),Remain));
+        if (PID && Type && Remain) {
+            SetBuffx.insert(std::pair<int, int>(PID+4000000000+(Type*1000000), Remain));
+        }
 
         return 0;
     }
@@ -133,11 +134,13 @@ int __cdecl CDBProcess(char *Data)
 
         if (IID)
         {
-            if (strlen(Lock) && Lock != check && IID)
-                ItemLockCheck.insert(std::pair<int,std::string>(IID,Lock));
+            if (strlen(Lock) && Lock != check && IID) {
+                ItemLockCheck.insert(std::pair<int, std::string>(IID, Lock));
+            }
 
-            if (PetLife && IID)
+            if (PetLife && IID) {
                 PetLifeCheck[IID].Time = PetLife;
+            }
         }
 
         return 0;
@@ -156,9 +159,9 @@ int __cdecl CDBProcess(char *Data)
             {
                 int CheckValue = 0, Checkx = 0, Recheckx = 0, MyItem = 0;
                 Undefined::CreateMonsterValue((char*)IPlayer.GetOffset() + 1068,
-                                              (int)&CheckValue, (int)&IID);
+                    (int)&CheckValue, (int)&IID);
                 Checkx = Undefined::Check((int)((char*)IPlayer.GetOffset() + 1068),
-                                          (int)&Recheckx);
+                        (int)&Recheckx);
 
                 if (Undefined::CheckValues(&CheckValue, Checkx))
                 {
@@ -169,14 +172,15 @@ int __cdecl CDBProcess(char *Data)
                         xIndex = *(DWORD *)(*(DWORD *)(MyItem + 40) + 64);
                         PetLifeCheck[IID].Player = Player;
 
-                        if (PetTime.count(xIndex) && PetTime.find(xIndex)->second.Time > 0)
+                        if (PetTime.count(xIndex) && PetTime.find(xIndex)->second.Time > 0) {
                             GetPetTime = PetTime.find(xIndex)->second.Time;
+                        }
 
                         *(DWORD*)(MyItem+68) = GetTickCount() + (2000*GetPetTime);
                         *(DWORD*)(MyItem+72) = 0;
-                        CItem::OnTimer(MyItem,0);
-                        CPlayer::Write(IPlayer.GetOffset(),0xFF,"ddd",230,IID,
-                                       (PetLifeCheck.find(IID)->second.Time-(int)time(0))*1000);
+                        CItem::OnTimer(MyItem, 0);
+                        CPlayer::Write(IPlayer.GetOffset(), 0xFF, "ddd", 230, IID,
+                            (PetLifeCheck.find(IID)->second.Time-(int)time(0))*1000);
                     }
                 }
             }
@@ -191,8 +195,9 @@ int __cdecl CDBProcess(char *Data)
         Interface<ITools> Tools;
         Tools->ParseData((char*)(void*)(Data + 3), "dd", &IID, &ItemStat);
 
-        if (IID && !GetItemStat.count(IID) && ItemStat)
-            GetItemStat.insert(std::pair<int,int>(IID,ItemStat));
+        if (IID && !GetItemStat.count(IID) && ItemStat) {
+            GetItemStat.insert(std::pair<int, int>(IID, ItemStat));
+        }
 
         return 0;
     }
@@ -202,22 +207,26 @@ int __cdecl CDBProcess(char *Data)
         int PID = 0, QuestID = 0, Clear = 0, QuestTime = 0, QuestRepeat = 0,
             MonsterCount = 0;
         CPacket::xRead((void*)(Data + 3), "dddddd", &PID, &QuestID, &Clear, &QuestTime,
-                       &QuestRepeat, &MonsterCount);
+            &QuestRepeat, &MonsterCount);
 
         if (PID && QuestID && QuestTime)
         {
-            if (!Clear)
+            if (!Clear) {
                 PlayerQuest[(QuestID * 1000000000000) + PID].Active = 1;
-            else
+            }
+            else {
                 PlayerQuest[(QuestID * 1000000000000) + PID].Active = 0;
+            }
 
             PlayerQuest[(QuestID * 1000000000000) + PID].MobAmount = MonsterCount;
             PlayerQuest[(QuestID * 1000000000000) + PID].Repeat = QuestRepeat;
             PlayerQuest[(QuestID * 1000000000000) + PID].Time = QuestTime;
             int Player = CPlayer::ScanPlayer(PID);
             IChar IPlayer((void*)Player);
-            if (Player && IPlayer.IsOnline())
-                CPlayer::Write((void*)Player,255,"dddd",222,PID,QuestID, MonsterCount);
+
+            if (Player && IPlayer.IsOnline()) {
+                CPlayer::Write((void*)Player, 255, "dddd", 222, PID, QuestID, MonsterCount);
+            }
         }
 
         return 0;

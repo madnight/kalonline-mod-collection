@@ -17,7 +17,7 @@ void IMemory::Copy(void *Destination, void *Source, size_t Size)
 }
 
 void IMemory::Fill(void *Destination, unsigned char Fill, size_t Size,
-                   bool Recoverable)
+    bool Recoverable)
 {
     unsigned char *Data = new unsigned char[Size];
     FillMemory(Data, Size, Fill);
@@ -26,38 +26,38 @@ void IMemory::Fill(void *Destination, unsigned char Fill, size_t Size,
 }
 
 void IMemory::Fill(unsigned long Destination, unsigned char Fill, size_t Size,
-                   bool Recoverable)
+    bool Recoverable)
 {
     this->Fill((void*)Destination, Fill, Size, Recoverable);
 }
 
 void IMemory::Set(void *Destination, const char *Data, size_t Size,
-                  bool Recoverable)
+    bool Recoverable)
 {
     this->m_Patches[Destination] = new Patch(Destination,
-            (unsigned char*)const_cast<char*>(Data), Size, Recoverable);
+        (unsigned char*)const_cast<char*>(Data), Size, Recoverable);
 }
 
 void IMemory::Set(unsigned long Destination, const char *Data, size_t Size,
-                  bool Recoverable)
+    bool Recoverable)
 {
     this->Set((void*)Destination, Data, Size, Recoverable);
 }
 
 void IMemory::Set(void *Destination, unsigned char *Data, size_t Size,
-                  bool Recoverable)
+    bool Recoverable)
 {
     this->Set(Destination, (const char*)Data, Size, Recoverable);
 }
 
 void IMemory::Set(unsigned long Destination, unsigned char *Data, size_t Size,
-                  bool Recoverable)
+    bool Recoverable)
 {
     this->Set((void*)Destination, Data, Size, Recoverable);
 }
 
 void IMemory::Hook(void *Address, void *Destination, unsigned char Instruction,
-                   size_t Size, bool Recoverable)
+    size_t Size, bool Recoverable)
 {
     unsigned char *Data = new unsigned char[Size];
     FillMemory(Data, Size, IMemory::_I_NOP);
@@ -69,37 +69,38 @@ void IMemory::Hook(void *Address, void *Destination, unsigned char Instruction,
 }
 
 void IMemory::Hook(unsigned long Address, void *Destination,
-                   unsigned char Instruction, size_t Size, bool Recoverable)
+    unsigned char Instruction, size_t Size, bool Recoverable)
 {
     this->Hook((void*)Address, Destination, Instruction, Size, Recoverable);
 }
 
 void IMemory::Hook(unsigned long Address[], size_t Count, void *Destination,
-                   unsigned char Instruction, size_t Size, bool Recoverable)
+    unsigned char Instruction, size_t Size, bool Recoverable)
 {
-    for(size_t i=0; i < Count; i++)
+    for (size_t i=0; i < Count; i++) {
         this->Hook((void*)Address[i], Destination, Instruction, Size, Recoverable);
+    }
 }
 
 void IMemory::Hook(void *Address, unsigned long Destination,
-                   unsigned char Instruction, size_t Size, bool Recoverable)
+    unsigned char Instruction, size_t Size, bool Recoverable)
 {
     this->Hook(Address, (void*)Destination, Instruction, Size, Recoverable);
 }
 
 void IMemory::Hook(unsigned long Address, unsigned long Destination,
-                   unsigned char Instruction, size_t Size, bool Recoverable)
+    unsigned char Instruction, size_t Size, bool Recoverable)
 {
     this->Hook((void*)Address, (void*)Destination, Instruction, Size, Recoverable);
 }
 
 void IMemory::Hook(unsigned long Address[], size_t Count,
-                   unsigned long Destination, unsigned char Instruction, size_t Size,
-                   bool Recoverable)
+    unsigned long Destination, unsigned char Instruction, size_t Size,
+    bool Recoverable)
 {
-    for(size_t i=0; i < Count; i++)
+    for (size_t i=0; i < Count; i++)
         this->Hook((void*)Address[i], (void*)Destination, Instruction, Size,
-                   Recoverable);
+            Recoverable);
 }
 
 void IMemory::Restore(void *Address)
@@ -118,8 +119,9 @@ void IMemory::Restore(unsigned long Address)
 
 void IMemory::Restore(unsigned long Address[], size_t Count)
 {
-    for(size_t i=0; i < Count; i++)
+    for (size_t i=0; i < Count; i++) {
         this->Restore((void*)Address);
+    }
 }
 
 void IMemory::Restore(unsigned long Address, void *Destination)
@@ -156,11 +158,13 @@ void IMemory::HookAPI(unsigned long Address, void *Destination)
 Patch::Patch(void *Address, unsigned char *Data, size_t Size, bool Recoverable)
 {
     Interface<IMemory> Memory;
+
     if (Recoverable)
     {
         this->m_Original = new unsigned char[Size];
         Memory->Copy(this->m_Original, Address, Size);
     }
+
     this->m_Address = Address;
     this->m_Size = Size;
     this->m_Recoverable = Recoverable;
@@ -170,6 +174,7 @@ Patch::Patch(void *Address, unsigned char *Data, size_t Size, bool Recoverable)
 Patch::~Patch()
 {
     Interface<IMemory> Memory;
+
     if (this->m_Recoverable)
     {
         Memory->Copy(this->m_Address, this->m_Original, this->m_Size);

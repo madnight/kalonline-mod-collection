@@ -12,36 +12,46 @@ void __fastcall Wave(IChar IPlayer, int pPacket, int pPos)
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = (35 + (nSkillGrade * 2));
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
-            if(IPlayer.IsValid() && Target.IsValid())
+            if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 int nDmg = (IPlayer.GetMaxMagAttack() + (((IPlayer.GetMaxMagAttack() / 9) +
                                 (CChar::GetInt((int)IPlayer.GetOffset()) / 9)) +
                             ((CChar::GetWis((int)IPlayer.GetOffset()) / 9) +
-                             (nSkillGrade * 250)))) + (IPlayer.GetLevel() * 6);
-                if(Target.GetType() == 0) nDmg = (nDmg * SHMW) / 100;
-                IPlayer.OktayDamageSingle(Target,nDmg,18);
+                                (nSkillGrade * 250)))) + (IPlayer.GetLevel() * 6);
+
+                if (Target.GetType() == 0) {
+                    nDmg = (nDmg * SHMW) / 100;
+                }
+
+                IPlayer.OktayDamageSingle(Target, nDmg, 18);
                 IPlayer.SetDirection(Target);
                 IPlayer.DecreaseMana(nMana);
             }

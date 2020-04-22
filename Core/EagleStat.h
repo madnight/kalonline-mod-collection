@@ -3,8 +3,9 @@ void __fastcall TransformApplySpec(void *Item, void *edx, int Player)
     IChar IPlayer((void*)Player);
     IItem IItem(Item);
 
-    if (!IPlayer.IsOnline())
+    if (!IPlayer.IsOnline()) {
         return;
+    }
 
     if (IItem.CheckIndex() == 1596)
     {
@@ -13,7 +14,7 @@ void __fastcall TransformApplySpec(void *Item, void *edx, int Player)
         IPlayer.AddWis((EggGrade / 4) + 1);
         IPlayer.AddAgi((EggGrade / 6) + 1);
     } else {
-        CItemTransform::ApplySpec(Item,Player);
+        CItemTransform::ApplySpec(Item, Player);
     }
 }
 
@@ -22,8 +23,9 @@ void __fastcall TransformFreeSpec(void *Item, void *edx, int Player)
     IChar IPlayer((void*)Player);
     IItem IItem(Item);
 
-    if (!IPlayer.IsOnline())
+    if (!IPlayer.IsOnline()) {
         return;
+    }
 
     if (IItem.CheckIndex() == 1596)
     {
@@ -32,6 +34,6 @@ void __fastcall TransformFreeSpec(void *Item, void *edx, int Player)
         IPlayer.RemoveWis((EggGrade / 4) + 1);
         IPlayer.RemoveAgi((EggGrade / 6) + 1);
     } else {
-        CItemTransform::FreeSpec(Item,Player);
+        CItemTransform::FreeSpec(Item, Player);
     }
 }

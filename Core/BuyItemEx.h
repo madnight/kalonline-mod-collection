@@ -1,32 +1,33 @@
-signed int __fastcall PlayerRemoveItem(void *Player, void *edx, int Value, int Index, int Amount)
+signed int __fastcall PlayerRemoveItem(void *Player, void *edx, int Value,
+    int Index, int Amount)
 {
     IChar IPlayer(Player);
 
     if (IPlayer.IsOnline() && (Index == 509 || Index == 510))
     {
         if (IPlayer.GetMap() == BFMap || IPlayer.GetMap() == ScenarioMap ||
-                IPlayer.GetMap() == LMSMap || IPlayer.GetMap() == HellMap ||
-                IPlayer.GetMap() == PLMap)
+            IPlayer.GetMap() == LMSMap || IPlayer.GetMap() == HellMap ||
+            IPlayer.GetMap() == PLMap)
         {
             IPlayer.BoxMsg("Saving location is not allowed during the battle.");
             return 0;
         }
     }
 
-    return CPlayer::RemoveItem(Player,Value,Index,Amount);
+    return CPlayer::RemoveItem(Player, Value, Index, Amount);
 }
 
 int __fastcall NPCTick(void *NPC, void *edx)
 {
     if (Protect32::Active == true && Protect32::Time == 1200 &&
-            *(DWORD*)((int)NPC + 448) == PLRNPC && !*(DWORD *)((int)NPC + 480))
+        *(DWORD*)((int)NPC + 448) == PLRNPC && !*(DWORD *)((int)NPC + 480))
     {
         (*(void (__thiscall **)(DWORD, DWORD))(*(DWORD*)(int)NPC + 100))((int)NPC, 16);
         *(DWORD *)((int)NPC + 480) = 1197000 + GetTickCount();
     }
 
     if (Protect32::Active == true && Protect32::Time == 1200 &&
-            *(DWORD*)((int)NPC + 448) == PLBNPC && !*(DWORD *)((int)NPC + 480))
+        *(DWORD*)((int)NPC + 448) == PLBNPC && !*(DWORD *)((int)NPC + 480))
     {
         (*(void (__thiscall **)(DWORD, DWORD))(*(DWORD*)(int)NPC + 100))((int)NPC, 16);
         *(DWORD *)((int)NPC + 480) = 1197000 + GetTickCount();
@@ -35,7 +36,9 @@ int __fastcall NPCTick(void *NPC, void *edx)
     return CNPCDoor::Tick(NPC);
 }
 
-void __fastcall BuyItemEx(void *Player, void *edx, char Npc, int Tax, int ItemSize, int pPacket, int pPos)
+void __fastcall BuyItemEx(void *Player, void *edx, char Npc, int Tax,
+    int ItemSize, int pPacket,
+    int pPos)
 {
     IChar IPlayer(Player);
 
@@ -44,11 +47,13 @@ void __fastcall BuyItemEx(void *Player, void *edx, char Npc, int Tax, int ItemSi
         int Check = pPacket, Amount = 0, Index = 0, Item = 0, Price = 0;
         unsigned __int16 ItemIndex = 0, ItemAmount = 0;
 
-        if (ItemSize <= 0)
+        if (ItemSize <= 0) {
             return;
+        }
 
-        if (ItemSize > 100)
+        if (ItemSize > 100) {
             return;
+        }
 
         for (int i = 0; *((DWORD*)Player + 274) && i < ItemSize; i++)
         {

@@ -1,4 +1,5 @@
-signed int __fastcall CItemGeneralStorageIn(int Item, void *edx, int Player, int Argument)
+signed int __fastcall CItemGeneralStorageIn(int Item, void *edx, int Player,
+    int Argument)
 {
     IItem IItem((void*)Item);
     IChar IPlayer((void*)Player);
@@ -14,14 +15,15 @@ signed int __fastcall CItemGeneralStorageIn(int Item, void *edx, int Player, int
             IPlayer.SystemMessage("Locked items can not be check in.", TEXTCOLOR_RED);
             return 0;
         } else {
-            return CItemGeneral::StorageIn(Item,Player,Argument);
+            return CItemGeneral::StorageIn(Item, Player, Argument);
         }
     } else {
         return 0;
     }
 }
 
-signed int __fastcall CItemWeaponStorageIn(void *Item, void *edx, int Player, int Argument)
+signed int __fastcall CItemWeaponStorageIn(void *Item, void *edx, int Player,
+    int Argument)
 {
     IItem IItem(Item);
     IChar IPlayer((void*)Player);
@@ -37,14 +39,15 @@ signed int __fastcall CItemWeaponStorageIn(void *Item, void *edx, int Player, in
             IPlayer.SystemMessage("Locked weapons can not be check in.", TEXTCOLOR_RED);
             return 0;
         } else {
-            return CItemWeapon::StorageIn(Item,Player,Argument);
+            return CItemWeapon::StorageIn(Item, Player, Argument);
         }
     } else {
         return 0;
     }
 }
 
-signed int __fastcall CItemDefenseStorageIn(void *Item, void *edx, int Player, int Argument)
+signed int __fastcall CItemDefenseStorageIn(void *Item, void *edx, int Player,
+    int Argument)
 {
     IItem IItem(Item);
     IChar IPlayer((void*)Player);
@@ -60,14 +63,15 @@ signed int __fastcall CItemDefenseStorageIn(void *Item, void *edx, int Player, i
             IPlayer.SystemMessage("Locked armors can not be check in.", TEXTCOLOR_RED);
             return 0;
         } else {
-            return CItemDefense::StorageIn(Item,Player,Argument);
+            return CItemDefense::StorageIn(Item, Player, Argument);
         }
     } else {
         return 0;
     }
 }
 
-signed int __fastcall CItemOrnamentStorageIn(int Item, void *edx, int Player, int Argument)
+signed int __fastcall CItemOrnamentStorageIn(int Item, void *edx, int Player,
+    int Argument)
 {
     IItem IItem((void*)Item);
     IChar IPlayer((void*)Player);
@@ -83,7 +87,7 @@ signed int __fastcall CItemOrnamentStorageIn(int Item, void *edx, int Player, in
             IPlayer.SystemMessage("Locked ornaments can not be check in.", TEXTCOLOR_RED);
             return 0;
         } else {
-            return CItemOrnament::StorageIn(Item,Player,Argument);
+            return CItemOrnament::StorageIn(Item, Player, Argument);
         }
     } else {
         return 0;

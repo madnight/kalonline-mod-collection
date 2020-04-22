@@ -8,8 +8,9 @@ void DuelTournamentSelection(void *Pack)
         DuelTournamentList.erase(DuelTournamentList.begin());
         IChar DuelPlayer((void*)CPlayer::FindPlayerByName((char)check));
 
-        if (DuelPlayer.IsValid())
+        if (DuelPlayer.IsValid()) {
             DuelTournamentList.push_back(DuelPlayer.GetName());
+        }
     }
 
     if (DuelTournamentList.size() > 32)
@@ -24,7 +25,7 @@ void DuelTournamentSelection(void *Pack)
 
 void __fastcall OnTimer(void *Value, void *edx, int Argument)
 {
-    CCalendar::OnTimer(Value,Argument);
+    CCalendar::OnTimer(Value, Argument);
     time_t MyTime = time(0);
     tm *DuelTime = localtime(&MyTime);
 
@@ -74,19 +75,23 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
         }
     }
 
-    if (F10::ShowTime > 0)
+    if (F10::ShowTime > 0) {
         F10::ShowTime--;
+    }
 
-    if (Protect32::Time > 0)
+    if (Protect32::Time > 0) {
         Protect32::Time--;
+    }
 
     if (Protect32::Active == true && Protect32::Time == 0)
     {
-        if (Protect32::RedScore > Protect32::BlueScore)
+        if (Protect32::RedScore > Protect32::BlueScore) {
             Protect32::RedWin += 1;
+        }
 
-        if (Protect32::BlueScore > Protect32::RedScore)
+        if (Protect32::BlueScore > Protect32::RedScore) {
             Protect32::BlueWin += 1;
+        }
 
         if (Protect32::RedWin < 2 && Protect32::BlueWin < 2)
         {
@@ -95,8 +100,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             Protect32::RedScore = 0;
             Protect32::BlueScore = 0;
 
-            if (Protect32::Round < 4)
+            if (Protect32::Round < 4) {
                 Protect32::Time = 1260;
+            }
         }
 
         if (Protect32::Active == true && Protect32::RedWin >= 2)
@@ -137,30 +143,33 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             {
                 Protect32::Winner = 0;
                 std::string msg = "Protecting Leader between " +
-                                  Protect32::FirstGuild + " guild and " + Protect32::SecondGuild +
-                                  " guild ended in draw.";
+                    Protect32::FirstGuild + " guild and " + Protect32::SecondGuild +
+                    " guild ended in draw.";
                 CPlayer::WriteAll(0xFF, "dsd", 247, msg.c_str(), 2);
                 Protect32::Active = false;
             }
         }
     }
 
-    if (LastManStand::Time > 0)
+    if (LastManStand::Time > 0) {
         LastManStand::Time--;
+    }
 
-    if (NPCELeftTime > 0)
+    if (NPCELeftTime > 0) {
         NPCELeftTime--;
+    }
 
     if (NPCELeftTime == 1 || NPCELeftTime == 2)
     {
         CPlayer::WriteAll(0xFF, "ds", 234,
-                          "[Exp Event NPC] Event duration has been over!");
+            "[Exp Event NPC] Event duration has been over!");
         NPCELeftTime = 0;
-        CPlayer::SetEventCode(0,0);
+        CPlayer::SetEventCode(0, 0);
     }
 
-    if (Time::GetTime() == "00:00:01" && NPCEDailyLimit > 0)
+    if (Time::GetTime() == "00:00:01" && NPCEDailyLimit > 0) {
         NPCEDailyLimit = 0;
+    }
 
     if (Scenario::RedScore > 999)
     {
@@ -174,59 +183,66 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
         Scenario::Time = 0;
     }
 
-    if (DuelTournament::RedScore > 9999999)
+    if (DuelTournament::RedScore > 9999999) {
         DuelTournament::RedScore = 9999999;
+    }
 
-    if (DuelTournament::BlueScore > 9999999)
+    if (DuelTournament::BlueScore > 9999999) {
         DuelTournament::BlueScore = 9999999;
+    }
 
-    if (Hell::Active == true && Hell::Time > 0)
+    if (Hell::Active == true && Hell::Time > 0) {
         Hell::Time -= 1;
+    }
 
-    if (Hell::Active == true && Hell::Delay > 0)
+    if (Hell::Active == true && Hell::Delay > 0) {
         Hell::Delay -= 1;
+    }
 
-    if (Scenario::Active == true && Scenario::Time > 0)
+    if (Scenario::Active == true && Scenario::Time > 0) {
         Scenario::Time -= 1;
+    }
 
     if (AutoNoticeDay.count(Time::GetTime())
-            && AutoNoticeMsg.count(Time::GetTime()))
+        && AutoNoticeMsg.count(Time::GetTime()))
     {
         if (AutoNoticeDay.find(Time::GetTime())->second == Time::GetDayName()
-                || AutoNoticeDay.find(Time::GetTime())->second == "Daily")
+            || AutoNoticeDay.find(Time::GetTime())->second == "Daily")
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              AutoNoticeMsg.find(Time::GetTime())->second.c_str(), 2);
+                AutoNoticeMsg.find(Time::GetTime())->second.c_str(), 2);
     }
 
     if (SummonTimer.count(Time::GetTime()))
     {
         if (strlen(SummonTimer.find(Time::GetTime())->second.Day.c_str())
-                && SummonTimer.find(Time::GetTime())->second.Day == Time::GetDayName()
-                || SummonTimer.find(Time::GetTime())->second.Day == "Daily")
+            && SummonTimer.find(Time::GetTime())->second.Day == Time::GetDayName()
+            || SummonTimer.find(Time::GetTime())->second.Day == "Daily")
         {
             if (strlen(SummonTimer.find(Time::GetTime())->second.Msg.c_str()))
                 CPlayer::WriteAll(0xFF, "dsd", 247,
-                                  SummonTimer.find(Time::GetTime())->second.Msg.c_str(), 2);
+                    SummonTimer.find(Time::GetTime())->second.Msg.c_str(), 2);
 
             for (int i = 0; i < SummonTimer.find(Time::GetTime())->second.Amount; i++)
             {
-                Summon(0,SummonTimer.find(Time::GetTime())->second.Map,
-                       SummonTimer.find(Time::GetTime())->second.X,
-                       SummonTimer.find(Time::GetTime())->second.Y,
-                       SummonTimer.find(Time::GetTime())->second.Index,1,1,0,
-                       SummonTimer.find(Time::GetTime())->second.Disappear*1000,0);
+                Summon(0, SummonTimer.find(Time::GetTime())->second.Map,
+                    SummonTimer.find(Time::GetTime())->second.X,
+                    SummonTimer.find(Time::GetTime())->second.Y,
+                    SummonTimer.find(Time::GetTime())->second.Index, 1, 1, 0,
+                    SummonTimer.find(Time::GetTime())->second.Disappear*1000, 0);
             }
         }
     }
 
-    if (DuelTournament::Active == true && DuelTournament::RoundTime > 0)
+    if (DuelTournament::Active == true && DuelTournament::RoundTime > 0) {
         DuelTournament::RoundTime -= 1;
+    }
 
-    if (DuelTournament::Active == true && DuelTournament::Delay > 0)
+    if (DuelTournament::Active == true && DuelTournament::Delay > 0) {
         DuelTournament::Delay -= 1;
+    }
 
     if (DuelTournament::Active == true && DuelTournament::SelectPlayers == false
-            && DuelTournament::FirstPlayer && DuelTournament::SecondPlayer)
+        && DuelTournament::FirstPlayer && DuelTournament::SecondPlayer)
     {
         IChar FirstPlayerCheck((void*)DuelTournament::FirstPlayer);
         IChar SecondPlayerCheck((void*)DuelTournament::SecondPlayer);
@@ -263,7 +279,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
                 if (SecondPlayerCheck.IsOnline() && FirstPlayerCheck.IsOnline())
                 {
                     std::string msg = "Duel between " + (std::string)FirstPlayerCheck.GetName() +
-                                      " and " + (std::string)SecondPlayerCheck.GetName() + " ended in a draw.";
+                        " and " + (std::string)SecondPlayerCheck.GetName() + " ended in a draw.";
                     CPlayer::WriteAll(0xFF, "ds", 234, msg.c_str());
                     DuelTournamentList.push_back(FirstPlayerCheck.GetName());
                     DuelTournamentList.push_back(SecondPlayerCheck.GetName());
@@ -317,7 +333,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             }
 
             if (FirstPlayerCheck.IsOnline() && SecondPlayerCheck.IsOnline()
-                    && DuelTournament::RoundTime <= 170)
+                && DuelTournament::RoundTime <= 170)
             {
                 if (FirstPlayerCheck.GetRectX() < 6703 || FirstPlayerCheck.GetRectX() > 6721)
                 {
@@ -353,8 +369,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
     }
 
     if (DuelTournament::Active == true && DuelTournament::SelectPlayers == true
-            && DuelTournament::Delay == 0  && !DuelTournament::FirstPlayer
-            && !DuelTournament::SecondPlayer)
+        && DuelTournament::Delay == 0  && !DuelTournament::FirstPlayer
+        && !DuelTournament::SecondPlayer)
     {
         if (DuelTournamentList.size() > 1)
         {
@@ -372,7 +388,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
                 DuelTournament::SelectPlayers = true;
                 DuelTournamentList.push_back(SecondPlayer.GetName());
                 std::string msg = (std::string)secondplayer +
-                                  " won the duel becouse opponent is not avalible to fight.";
+                    " won the duel becouse opponent is not avalible to fight.";
                 CPlayer::WriteAll(0xFF, "ds", 234, msg.c_str());
             } else if (!SecondPlayer.IsValid() && FirstPlayer.IsValid())
             {
@@ -380,21 +396,21 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
                 DuelTournament::SelectPlayers = true;
                 DuelTournamentList.push_back(FirstPlayer.GetName());
                 std::string msg = (std::string)firstplayer +
-                                  " won the duel becouse opponent is not avalible to fight.";
+                    " won the duel becouse opponent is not avalible to fight.";
                 CPlayer::WriteAll(0xFF, "ds", 234, msg.c_str());
             } else if (FirstPlayer.IsValid() && SecondPlayer.IsValid())
             {
                 std::string msg = "Duel between " + (std::string)firstplayer + " and " +
-                                  (std::string)secondplayer + " started.";
+                    (std::string)secondplayer + " started.";
                 CPlayer::WriteAll(0xFF, "ds", 234, msg.c_str());
                 DuelTournament::RoundTime = 180;
                 DuelTournament::RedScore = 0;
                 DuelTournament::BlueScore = 0;
-                FirstPlayer.Buff(373,180,0);
-                FirstPlayer.Teleport(0,214928,280731);
+                FirstPlayer.Buff(373, 180, 0);
+                FirstPlayer.Teleport(0, 214928, 280731);
                 DuelTournament::FirstPlayer = (int)FirstPlayer.GetOffset();
-                SecondPlayer.Buff(374,180,0);
-                SecondPlayer.Teleport(0,214679,280862);
+                SecondPlayer.Buff(374, 180, 0);
+                SecondPlayer.Teleport(0, 214679, 280862);
                 DuelTournament::SecondPlayer = (int)SecondPlayer.GetOffset();
             } else {
                 DuelTournament::Delay = 10;
@@ -420,26 +436,28 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
                     WinnerPlayer.CancelBuff(373);
                     WinnerPlayer.CancelBuff(374);
                     std::string msg = (std::string)WinnerPlayer.GetName() +
-                                      " won the Duel Tournament.";
+                        " won the Duel Tournament.";
                     CPlayer::WriteAll(0xFF, "ds", 234, msg.c_str());
                     CheckHonor[WinnerPlayer.GetPID()].RPx += 5000;
                     CheckHonor[WinnerPlayer.GetPID()].HPx += 1000;
-                    WinnerPlayer.Buff(120,(21600+WinnerPlayer.GetBuffRemain(120)),0);
+                    WinnerPlayer.Buff(120, (21600+WinnerPlayer.GetBuffRemain(120)), 0);
                 }
             } else {
                 CPlayer::WriteAll(0xFF, "ds", 234,
-                                  "Duel Tournament ended. There is no winner.");
+                    "Duel Tournament ended. There is no winner.");
             }
         }
     }
 
     if (Time::GetTime() == ExpEventStart && ((std::string)ActiveExpEvent == "true"
-            || (std::string)ActiveExpEvent == "True"))
-        CPlayer::SetEventCode(0,1);
+            || (std::string)ActiveExpEvent == "True")) {
+        CPlayer::SetEventCode(0, 1);
+    }
 
     if (Time::GetTime() == ExpEventEnd && ((std::string)ActiveExpEvent == "true"
-                                           || (std::string)ActiveExpEvent == "True"))
-        CPlayer::SetEventCode(0,0);
+            || (std::string)ActiveExpEvent == "True")) {
+        CPlayer::SetEventCode(0, 0);
+    }
 
     if (LastManStand::Active == false && Time::GetTime() == "19:00:00")
     {
@@ -450,7 +468,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             LastManStand::Time = 3;
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Last Man Standing.", 2);
+                "Enough players did not registered for Last Man Standing.", 2);
         }
     }
 
@@ -471,15 +489,15 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             _beginthread(DuelTournamentSelection, 0, 0);
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Duel Tournament.", 2);
+                "Enough players did not registered for Duel Tournament.", 2);
         }
     }
 
     if (Protect32::Active == false && Time::GetDayName() == "Monday"
-            && Time::GetTime() == "22:30:00" || Protect32::Active == false
-            && Time::GetDayName() == "Wednesday" && Time::GetTime() == "22:30:00"
-            || Protect32::Active == false && Time::GetDayName() == "Friday"
-            && Time::GetTime() == "22:30:00")
+        && Time::GetTime() == "22:30:00" || Protect32::Active == false
+        && Time::GetDayName() == "Wednesday" && Time::GetTime() == "22:30:00"
+        || Protect32::Active == false && Time::GetDayName() == "Friday"
+        && Time::GetTime() == "22:30:00")
     {
         if (ProtectLeaderList.size() > 1)
         {
@@ -512,13 +530,13 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             Protect32::Active = true;
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough guilds did not registered for Protecting Leader.", 2);
+                "Enough guilds did not registered for Protecting Leader.", 2);
         }
     }
 
     if (Scenario::Active == false && Time::GetDayName() == "Tuesday"
-            && Time::GetTime() == "21:00:00" || Scenario::Active == false
-            && Time::GetDayName() == "Thursday" && Time::GetTime() == "21:00:00")
+        && Time::GetTime() == "21:00:00" || Scenario::Active == false
+        && Time::GetDayName() == "Thursday" && Time::GetTime() == "21:00:00")
     {
         if (Scenario::RegisterAmount > 1)
         {
@@ -575,7 +593,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             Summon(0, ScenarioMap, 287001, 351787, 358, 1, 0, 0, 0, 0);
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough guilds did not registered for Destructing Key Points.", 2);
+                "Enough guilds did not registered for Destructing Key Points.", 2);
         }
     }
 
@@ -598,12 +616,13 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
         Battlefield::Time = 0;
     }
 
-    if (Battlefield::Active == true && Battlefield::Time > 0)
+    if (Battlefield::Active == true && Battlefield::Time > 0) {
         Battlefield::Time -= 1;
+    }
 
     if (Battlefield::Active == false && Time::GetDayName() == "Wednesday"
-            && Time::GetTime() == "21:00:00" || Battlefield::Active == false
-            && Time::GetDayName() == "Friday" && Time::GetTime() == "21:00:00")
+        && Time::GetTime() == "21:00:00" || Battlefield::Active == false
+        && Time::GetDayName() == "Friday" && Time::GetTime() == "21:00:00")
     {
         if (Battlefield::RegisterAmount > 1)
         {
@@ -627,13 +646,13 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             Battlefield::RedStoneID[2] = m3.GetID();
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Battlefield.", 2);
+                "Enough players did not registered for Battlefield.", 2);
         }
     }
 
     if (Battlefield::Active == true && (Battlefield::Time == 3000
-                                        || Battlefield::Time == 2400 || Battlefield::Time == 1800
-                                        || Battlefield::Time == 1200 || Battlefield::Time == 600))
+            || Battlefield::Time == 2400 || Battlefield::Time == 1800
+            || Battlefield::Time == 1200 || Battlefield::Time == 600))
     {
         IChar M1((void*)CMonster::FindMonster(Battlefield::BlueStoneID[0]));
         IChar M2((void*)CMonster::FindMonster(Battlefield::BlueStoneID[1]));
@@ -679,7 +698,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
         }
 
         CPlayer::WriteInMap(BFMap, 0xFF, "dsd", 247,
-                            "Battlefield team stones have been re-spawned.", 2);
+            "Battlefield team stones have been re-spawned.", 2);
     }
 
     if (Battlefield::Active == true && Battlefield::Time == 0)
@@ -704,9 +723,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 21; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),841,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 841, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -721,8 +740,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 2)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -730,9 +750,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 14; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),842,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 842, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -747,8 +767,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 3)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -756,9 +777,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 16; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),843,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 843, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -773,8 +794,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 4)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -782,9 +804,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 12; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),845,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 845, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -799,8 +821,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 5)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -808,9 +831,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 13; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),846,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 846, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -825,8 +848,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 6)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -834,9 +858,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 18; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),847,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 847, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -851,8 +875,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 7)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -860,9 +885,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 15; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),849,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 849, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -877,8 +902,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 8)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -886,9 +912,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 17; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),850,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 850, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -903,8 +929,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 9)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -912,9 +939,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 12; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),852,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 852, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -929,8 +956,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 10)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
@@ -938,9 +966,9 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 18; i++)
             {
-                IChar xSummon((void*)Summon(0,HellMap,HellSummonX+CTools::Rate(1,20),
-                                            HellSummonY+CTools::Rate(1,20),851,1,1,0,0,0));
-                xSummon.Buff(168,3600,0);
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
+                        HellSummonY+CTools::Rate(1, 20), 851, 1, 1, 0, 0, 0));
+                xSummon.Buff(168, 3600, 0);
             }
         }
 
@@ -955,14 +983,16 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
     if (Hell::Active == true && Hell::Round == 11)
     {
-        if (Hell::Delay == 3)
+        if (Hell::Delay == 3) {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 87, 255, 255, 255);
+        }
 
         if (Hell::Delay == 1)
         {
             CPlayer::WriteInMap(HellMap, 0xFF, "ddddd", 242, 85, 255, 255, 255);
-            IChar xSummon((void*)Summon(0,HellMap,HellSummonX,HellSummonY,667,1,1,0,0,0));
-            xSummon.Buff(168,3600,0);
+            IChar xSummon((void*)Summon(0, HellMap, HellSummonX, HellSummonY, 667, 1, 1, 0,
+                    0, 0));
+            xSummon.Buff(168, 3600, 0);
         }
 
         if (Hell::KillCount == 1)
@@ -998,7 +1028,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
             Summon(0, 21, 117339, 36841, 573, 1, 0, 3700000, 3700000, 0);
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Ilyer Company System.", 2);
+                "Enough players did not registered for Ilyer Company System.", 2);
         }
     }
 }

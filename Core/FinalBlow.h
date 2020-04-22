@@ -12,38 +12,47 @@ void __fastcall FinalBlow(IChar IPlayer, int pPacket, int pPos)
         int nMana = 450;
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (CChar::GetRange((int)IPlayer.GetOffset() + 332, (int)pTarget + 332) > 300)
+                if (CChar::GetRange((int)IPlayer.GetOffset() + 332, (int)pTarget + 332) > 300) {
                     return;
+                }
 
-                if (IPlayer.CheckHit(Target, 20) && (Target.GetCurHp() <= (Target.GetMaxHp() / 2)))
+                if (IPlayer.CheckHit(Target, 20) &&
+                    (Target.GetCurHp() <= (Target.GetMaxHp() / 2)))
                 {
-                    int nDmg = (IPlayer.GetAttack() * TFBMul) + (nSkillGrade * CTools::Rate(TFBMin,TFBMax));
+                    int nDmg = (IPlayer.GetAttack() * TFBMul) + (nSkillGrade * CTools::Rate(TFBMin,
+                                TFBMax));
 
-                    if(Target.GetType() == 0)
+                    if (Target.GetType() == 0) {
                         nDmg = nDmg * TFBReduce / 100;
+                    }
 
-                    IPlayer.OktayDamageSingle(Target,nDmg,18);
+                    IPlayer.OktayDamageSingle(Target, nDmg, 18);
                 } else {
                     IPlayer._ShowBattleMiss(Target, 18);
                 }

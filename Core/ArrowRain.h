@@ -2,11 +2,12 @@ void __fastcall ContinueArrowRain(IChar IPlayer)
 {
     if (IPlayer.IsValid())
     {
-        int nSkillGrade = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillGrade;
+        int nSkillGrade = CheckContinueSkill.find(
+                IPlayer.GetPID())->second.PlayerSkillGrade;
         void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
 
         if (pTarget && nSkillGrade &&
-                CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
+            CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
         {
             IChar Target(pTarget);
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
@@ -18,7 +19,7 @@ void __fastcall ContinueArrowRain(IChar IPlayer)
             }
 
             if (IPlayer.IsMoved(CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerX,
-                        CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerY))
+                    CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerY))
             {
                 ResetContinueSkill(IPlayer);
                 return;
@@ -26,33 +27,36 @@ void __fastcall ContinueArrowRain(IChar IPlayer)
 
             int Around = Target.GetObjectListAround(3);
 
-            while(Around)
+            while (Around)
             {
                 IChar Object((void*)*(DWORD*)Around);
 
                 if (Object.IsValid() && IPlayer.IsValid() &&
-                        (*(int (__thiscall **)(int, int, DWORD))
-                         (*(DWORD *)IPlayer.GetOffset() + 176))
-                        ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
+                    (*(int (__thiscall **)(int, int, DWORD))
+                        (*(DWORD *)IPlayer.GetOffset() + 176))
+                    ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
                 {
                     int nDmg = (IPlayer.GetAttack() * AARMul) +
-                        (nSkillGrade * CTools::Rate(AARMin,AARMax));
+                        (nSkillGrade * CTools::Rate(AARMin, AARMax));
 
-                    if (Object.GetType() == 0)
+                    if (Object.GetType() == 0) {
                         nDmg = (nDmg * AARReduce) / 100;
+                    }
 
-                    IPlayer.OktayDamageArea(Object,nDmg,47);
+                    IPlayer.OktayDamageArea(Object, nDmg, 47);
                 }
 
                 Around = CBaseList::Pop((void*)Around);
             }
 
-            if (IPlayer.IsOnline())
+            if (IPlayer.IsOnline()) {
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 2000;
+            }
 
             if (IPlayer.IsOnline()
-                    && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                 ResetContinueSkill(IPlayer);
+            }
 
             return;
         }
@@ -74,21 +78,23 @@ void __fastcall ArrowRain(IChar IPlayer, int pPacket, int pPos)
         int nSkillGrade = xSkill.GetGrade();
         int nMana = 20 + (IPlayer.GetLevel() * 4);
 
-        if (x <= 0 || y <= 0)
+        if (x <= 0 || y <= 0) {
             return;
+        }
 
         if (nSkillGrade && IPlayer.IsValid())
         {
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
             IPlayer.DecreaseMana(nMana);
-            IPlayer._ShowBattleAnimation(IPlayer,47);
+            IPlayer._ShowBattleAnimation(IPlayer, 47);
             int *GetSetXY = new int[1];
             GetSetXY[0] = x;
             GetSetXY[1] = y;
-            int check = CMonsterMagic::Create(567,IPlayer.GetMap(),
-                    (int)GetSetXY,1,(int)IPlayer.GetOffset(),0,10000);
+            int check = CMonsterMagic::Create(567, IPlayer.GetMap(),
+                    (int)GetSetXY, 1, (int)IPlayer.GetOffset(), 0, 10000);
             delete[] GetSetXY;
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 47;
             CheckContinueSkill[IPlayer.GetPID()].PlayerTarget = (void*)check;

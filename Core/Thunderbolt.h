@@ -21,27 +21,30 @@ void __fastcall ContinueThunderbolt(IChar IPlayer)
                 return;
             }
 
-            if(!IPlayer.IsValid() || !Target.IsValid())
+            if (!IPlayer.IsValid() || !Target.IsValid())
             {
                 ResetContinueSkill(IPlayer);
                 return;
             }
 
             int nDmg = (IPlayer.GetMagic() * MTBMul) + (CheckContinueSkill.find(
-                           IPlayer.GetPID())->second.PlayerSkillGrade * CTools::Rate(MTBMin,MTBMax));
+                        IPlayer.GetPID())->second.PlayerSkillGrade * CTools::Rate(MTBMin, MTBMax));
 
-            if (Target.GetType() == 0)
+            if (Target.GetType() == 0) {
                 nDmg = nDmg * MTBReduce / 100;
+            }
 
-            IPlayer.OktayDamageSingle(Target,nDmg,75);
+            IPlayer.OktayDamageSingle(Target, nDmg, 75);
             IPlayer.SetDirection(Target);
 
-            if (IPlayer.IsOnline())
+            if (IPlayer.IsOnline()) {
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 200;
+            }
 
             if (IPlayer.IsOnline()
-                    && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                 ResetContinueSkill(IPlayer);
+            }
 
             return;
         }
@@ -63,26 +66,31 @@ void __fastcall Thunderbolt(IChar IPlayer, int pPacket, int pPos)
         void* pTarget = 0;
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = (int)(((((xSkill.GetGrade()-1)+45) * xSkill.GetGrade())+280) *
-                          0.75);
+                0.75);
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if (bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && xSkill.GetGrade() && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
             if (IPlayer.IsValid() && Target.IsValid())
             {

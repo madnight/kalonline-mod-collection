@@ -1,15 +1,19 @@
 void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
-                             int pPacket, int pPos)
+    int pPacket, int pPos)
 {
-    if (SkillID > 100)
+    if (SkillID > 100) {
         return;
+    }
 
-    if (SkillID == 88) SkillID = 95;
+    if (SkillID == 88) {
+        SkillID = 95;
+    }
+
     ISkill Skill(pSkill);
     IChar IPlayer(Skill.GetPlayer());
     int SkillPointerCheck = IPlayer.GetSkillPointer(SkillID);
     DWORD CdTime = 0, CooldownCheck = 0, DelayTime = 0;
-    IPlayer.Buff(313,3,0);
+    IPlayer.Buff(313, 3, 0);
 
     if (IPlayer.IsValid() && IPlayer.IsBuff(349))
     {
@@ -17,25 +21,28 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
         return;
     }
 
-    if (!SkillPointerCheck)
+    if (!SkillPointerCheck) {
         return;
+    }
 
     if (CheckCooldownConfig.count(SkillID + (IPlayer.GetClass() * 100)))
     {
         CdTime = CheckCooldownConfig.find(SkillID + (IPlayer.GetClass() *
-                                          100))->second.CooldownConfig;
+                    100))->second.CooldownConfig;
         DelayTime = CheckCooldownConfig.find(SkillID + (IPlayer.GetClass() *
-                                             100))->second.DelayConfig;
+                    100))->second.DelayConfig;
     }
 
-    if (IPlayer.IsValid() && !CChar::IsGState((int)IPlayer.GetOffset(),512))
+    if (IPlayer.IsValid() && !CChar::IsGState((int)IPlayer.GetOffset(), 512))
     {
-        if(IPlayer.GetClass() == 1 && IPlayer.GetMap() == 21 && (SkillID == 43
-                || SkillID == 45 || SkillID == 48))
+        if (IPlayer.GetClass() == 1 && IPlayer.GetMap() == 21 && (SkillID == 43
+                || SkillID == 45 || SkillID == 48)) {
             return;
+        }
 
-        if (SkillID == 0 && IPlayer.IsBuff(385))
+        if (SkillID == 0 && IPlayer.IsBuff(385)) {
             return;
+        }
 
         if (SkillID == 6 && IPlayer.IsBuff(329))
         {
@@ -46,7 +53,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (CooldownTable.count(IPlayer.GetPID()+4000000000+(SkillID*1000000)))
             CooldownCheck = CooldownTable.find(IPlayer.GetPID()+4000000000+
-                                               (SkillID*1000000))->second;
+                    (SkillID*1000000))->second;
 
         if (CooldownCheck > GetTickCount())
         {
@@ -54,24 +61,27 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
             return;
         } else {
             CooldownTable[IPlayer.GetPID()+4000000000+(SkillID*1000000)] = GetTickCount()
-                    +CdTime+DelayTime;
+                +CdTime+DelayTime;
         }
 
-        if (IPlayer.GetClass() == 1 && IPlayer.GetSpecialty() == 23)
+        if (IPlayer.GetClass() == 1 && IPlayer.GetSpecialty() == 23) {
             MageMICheck[IPlayer.GetPID()] = SkillID;
+        }
 
         if (SkillID != 0 && IPlayer.IsBuff(329))
         {
             IPlayer.CancelBuff(329);
             IPlayer.CancelBuff(40);
 
-            if (SkillID != 7 && SkillID != 8 && SkillID != 10 && SkillID != 33)
+            if (SkillID != 7 && SkillID != 8 && SkillID != 10 && SkillID != 33) {
                 return;
+            }
         }
 
         if (CheckContinueSkill.count(IPlayer.GetPID())
-                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillID)
+            && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillID) {
             ResetContinueSkill(IPlayer);
+        }
 
         if (IPlayer.GetClass() == 0 && SkillID == 38 && IPlayer.GetSpecialty() == 23)
         {
@@ -88,82 +98,83 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
         if (IPlayer.GetClass() == 0 && SkillID == 41 && (IPlayer.GetSpecialty() == 11
                 || IPlayer.GetSpecialty() == 43))
         {
-            PowerfulWideningWound(IPlayer,pPacket,pPos);
+            PowerfulWideningWound(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 0 && SkillID == 42 && IPlayer.GetSpecialty() == 43)
         {
-            ProvocationOfBlow(IPlayer,pPacket,pPos);
+            ProvocationOfBlow(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 0 && SkillID == 43 && IPlayer.GetSpecialty() == 23)
         {
-            SwordDance(IPlayer,pPacket,pPos);
+            SwordDance(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 0 && IPlayer.GetLevel() >= 81 && SkillID == 90
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
             ShoutOfDefense(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 0 && IPlayer.GetLevel() >= 81 && SkillID == 91
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             TheBoomOfEarth(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 0 && IPlayer.GetLevel() >= 81 && SkillID == 92
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
             ShoutOfFightingSpirit(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 0 && IPlayer.GetLevel() >= 81 && SkillID == 93
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             TheWaveOfEarth(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() >= 81 && SkillID == 90
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
-            OneHitStrike(IPlayer,pPacket,pPos);
+            OneHitStrike(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() >= 81 && SkillID == 92
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
-            ArrowsOfTheMaster(IPlayer,pPacket,pPos);
+            ArrowsOfTheMaster(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() >= 81 && SkillID == 91
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
-            MassiveFire(IPlayer,pPacket,pPos);
+            MassiveFire(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() >= 81 && SkillID == 93
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
-            SpiritOfTheArrows(IPlayer,pPacket,pPos);
+            SpiritOfTheArrows(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetLevel() >= 85 && SkillID == 95 && IPlayer.GetSpecialty() >= 23)
         {
-            if (CChar::IsMState((int)IPlayer.GetOffset(),1))
-                CChar::SubMState(IPlayer.GetOffset(),1,0);
+            if (CChar::IsMState((int)IPlayer.GetOffset(), 1)) {
+                CChar::SubMState(IPlayer.GetOffset(), 1, 0);
+            }
 
             WalkOnTheAir(IPlayer);
             return;
@@ -177,28 +188,28 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
         }
 
         if (IPlayer.GetClass() == 1 && IPlayer.GetLevel() >= 81 && SkillID == 90
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
-            Punishment(IPlayer,pPacket,pPos);
+            Punishment(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && IPlayer.GetLevel() >= 81 && SkillID == 91
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             Incapacitation(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && IPlayer.GetLevel() >= 81 && SkillID == 92
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
             ReleasingTheEnergy(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && IPlayer.GetLevel() >= 81 && SkillID == 93
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             Bombing(IPlayer);
             return;
@@ -206,7 +217,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (IPlayer.GetClass() == 1 && SkillID == 40)
         {
-            SoulDestruction((void*)SkillPointerCheck,IPlayer.GetOffset(),pPacket,pPos);
+            SoulDestruction((void*)SkillPointerCheck, IPlayer.GetOffset(), pPacket, pPos);
             return;
         }
 
@@ -222,19 +233,27 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                 void *pTarget = 0;
                 CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
 
-                if (bType == 0 && nTargetID)
+                if (bType == 0 && nTargetID) {
                     pTarget = CPlayer::FindPlayer(nTargetID);
-                else
+                }
+                else {
                     return;
+                }
 
                 if (pTarget && IPlayer.IsValid())
                 {
                     IChar Target(pTarget);
-                    if (IPlayer.GetCurMp() < xSkill.DecreaseMana()) return;
+
+                    if (IPlayer.GetCurMp() < xSkill.DecreaseMana()) {
+                        return;
+                    }
 
                     if (IPlayer.IsValid() && Target.IsValid())
                     {
-                        if (!IPlayer.IsInRange(Target,300)) return;
+                        if (!IPlayer.IsInRange(Target, 300)) {
+                            return;
+                        }
+
                         IPlayer.DecreaseMana(xSkill.DecreaseMana());
                         Target.IncreaseHp(Target.GetMaxHp());
                         IPlayer._ShowBattleAnimation(Target, 55);
@@ -253,17 +272,18 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
             {
                 ISkill xSkill((void*)pSkill);
 
-                if (IPlayer.IsBuff(286) || IPlayer.IsBuff(287))
+                if (IPlayer.IsBuff(286) || IPlayer.IsBuff(287)) {
                     return;
+                }
 
                 if (IPlayer.GetCurMp() >= 102)
                 {
                     IPlayer.DecreaseMana(102);
-                    IPlayer.Buff(286,900,0);
-                    IPlayer.Buff(287,905,0);
+                    IPlayer.Buff(286, 900, 0);
+                    IPlayer.Buff(287, 905, 0);
                     IPlayer.AddDef(100);
                     IPlayer.AddAbsorb(5);
-                    IPlayer.SetBuffIcon(900000,0,1414,147);
+                    IPlayer.SetBuffIcon(900000, 0, 1414, 147);
                     IPlayer._ShowBattleAnimation(IPlayer, 63);
                 }
             }
@@ -280,15 +300,17 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
             {
                 ISkill xSkill((void*)pSkill);
 
-                if(IPlayer.GetCurMp() < nMana)
+                if (IPlayer.GetCurMp() < nMana) {
                     return;
+                }
 
-                if (IPlayer.IsBuff(305) || IPlayer.IsBuff(306))
+                if (IPlayer.IsBuff(305) || IPlayer.IsBuff(306)) {
                     return;
+                }
 
                 IPlayer.DecreaseMana(nMana);
-                IPlayer.Buff(305,20+(xSkill.GetGrade()*5),0);
-                IPlayer.Buff(306,25+(xSkill.GetGrade()*5),0);
+                IPlayer.Buff(305, 20+(xSkill.GetGrade()*5), 0);
+                IPlayer.Buff(306, 25+(xSkill.GetGrade()*5), 0);
                 IPlayer.SetBuffIcon(20000 + (xSkill.GetGrade() * 5000), 0, 1794, 202);
                 IPlayer._ShowBattleAnimation(IPlayer, 64);
             }
@@ -298,7 +320,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (IPlayer.GetClass() == 1 && SkillID == 65 && IPlayer.GetSpecialty() == 23)
         {
-            FlameInjection(IPlayer,pPacket,pPos);
+            FlameInjection(IPlayer, pPacket, pPos);
             return;
         }
 
@@ -310,42 +332,43 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (IPlayer.GetClass() == 1 && SkillID == 67 && IPlayer.GetSpecialty() == 23)
         {
-            LightningArrow(IPlayer,pPacket,pPos);
+            LightningArrow(IPlayer, pPacket, pPos);
             return;
         }
 
-        if(IPlayer.GetClass() == 1 && IPlayer.GetMap() != 21 && (SkillID == 4
+        if (IPlayer.GetClass() == 1 && IPlayer.GetMap() != 21 && (SkillID == 4
                 || SkillID == 9 || SkillID == 23 || SkillID == 31 || SkillID == 41
-                || SkillID == 42 || SkillID == 75))
+                || SkillID == 42 || SkillID == 75)) {
             ActivateShiny(IPlayer, pPacket, pPos);
+        }
 
         if (IPlayer.GetClass() == 1 && SkillID == 69 && IPlayer.GetSpecialty() == 43)
         {
-            Blessing(IPlayer,pPacket,pPos);
+            Blessing(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && SkillID == 72 && IPlayer.GetSpecialty() == 43)
         {
-            TherapeuticTouch(IPlayer,pPacket,pPos);
+            TherapeuticTouch(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && SkillID == 73 && IPlayer.GetSpecialty() == 23)
         {
-            Fireball(IPlayer,pPacket,pPos);
+            Fireball(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && SkillID == 74 && IPlayer.GetSpecialty() == 23)
         {
-            IceArrow(IPlayer,pPacket,pPos);
+            IceArrow(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 1 && SkillID == 75 && IPlayer.GetSpecialty() == 23)
         {
-            Thunderbolt(IPlayer,pPacket,pPos);
+            Thunderbolt(IPlayer, pPacket, pPos);
             return;
         }
 
@@ -359,33 +382,36 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                 ISkill xSkill((void*)pSkill);
                 int nMana = (xSkill.GetGrade() * 10) + 590;
 
-                if(IPlayer.GetCurMp() < nMana)
+                if (IPlayer.GetCurMp() < nMana) {
                     return;
+                }
 
                 IPlayer.DecreaseMana(nMana);
-                IPlayer.Buff(309,(15 + (xSkill.GetGrade() * 5)),0);
-                IPlayer.Buff(310,(20 + (xSkill.GetGrade() * 5)),0);
-                IPlayer.SetBuffIcon((15 + (xSkill.GetGrade() * 5)) * 1000,0,2356,298);
-                IPlayer._ShowBattleAnimation(IPlayer,76);
+                IPlayer.Buff(309, (15 + (xSkill.GetGrade() * 5)), 0);
+                IPlayer.Buff(310, (20 + (xSkill.GetGrade() * 5)), 0);
+                IPlayer.SetBuffIcon((15 + (xSkill.GetGrade() * 5)) * 1000, 0, 2356, 298);
+                IPlayer._ShowBattleAnimation(IPlayer, 76);
             }
 
             return;
         }
 
         if (IPlayer.GetClass() == 2 && SkillID == 46 && IPlayer.GetSpecialty() == 23
-                && !IPlayer.IsBuff(289))
+            && !IPlayer.IsBuff(289))
         {
             int pSkill = *((DWORD*)((int)IPlayer.GetOffset() + 624) + 46 + 2);
-            IPlayer.SetBuffIcon(30000,0,2101,227);
-            IPlayer.Buff(40,30,90);
-            IPlayer.RemoveBuffIcon(0,0,798,54);
-            IPlayer.Buff(288,30,0);
-            IPlayer.Buff(289,60,0);
+            IPlayer.SetBuffIcon(30000, 0, 2101, 227);
+            IPlayer.Buff(40, 30, 90);
+            IPlayer.RemoveBuffIcon(0, 0, 798, 54);
+            IPlayer.Buff(288, 30, 0);
+            IPlayer.Buff(289, 60, 0);
 
-            if(IPlayer.GetCurMp() >= 50 && pSkill)
+            if (IPlayer.GetCurMp() >= 50 && pSkill) {
                 IPlayer.DecreaseMana(50);
-            else
+            }
+            else {
                 return;
+            }
 
             IPlayer._ShowBattleAnimation(IPlayer, 46);
             return;
@@ -393,37 +419,37 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (IPlayer.GetClass() == 2 && SkillID == 47 && IPlayer.GetSpecialty() == 23)
         {
-            ArrowRain(IPlayer,pPacket,pPos);
+            ArrowRain(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && SkillID == 49 && IPlayer.GetSpecialty() == 43)
         {
-            ArrowExplosion(IPlayer,pPacket,pPos);
+            ArrowExplosion(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && SkillID == 50 && IPlayer.GetSpecialty() == 43)
         {
-            VirulentArrow(IPlayer,pPacket,pPos);
+            VirulentArrow(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 2 && SkillID == 51 && IPlayer.GetSpecialty() == 23)
         {
-            CombativeSpirit(IPlayer,pPacket,pPos);
+            CombativeSpirit(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 3 && SkillID == 1)
         {
-            Behead(IPlayer,pPacket,pPos);
+            Behead(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 4 && SkillID == 1)
         {
-            Behead(IPlayer,pPacket,pPos);
+            Behead(IPlayer, pPacket, pPos);
             return;
         }
 
@@ -434,28 +460,28 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
         }
 
         if (IPlayer.GetClass() == 3 && IPlayer.GetLevel() >= 81 && SkillID == 90
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
-            CriticalStrike(IPlayer,pPacket,pPos);
+            CriticalStrike(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 3 && IPlayer.GetLevel() >= 81 && SkillID == 92
-                && IPlayer.GetSpecialty() == 23)
+            && IPlayer.GetSpecialty() == 23)
         {
             CriticalDiffusion(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 3 && IPlayer.GetLevel() >= 81 && SkillID == 91
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             StrikeOfGod(IPlayer);
             return;
         }
 
         if (IPlayer.GetClass() == 3 && IPlayer.GetLevel() >= 81 && SkillID == 93
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             DestroyingArmor(IPlayer);
             return;
@@ -463,7 +489,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (IPlayer.GetClass() == 3 && SkillID == 33 && IPlayer.GetSpecialty() == 23)
         {
-            WrathOfHeaven(IPlayer,pPacket,pPos);
+            WrathOfHeaven(IPlayer, pPacket, pPos);
             return;
         }
 
@@ -475,13 +501,13 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
         if (IPlayer.GetClass() == 3 && SkillID == 32 && IPlayer.GetSpecialty() == 43)
         {
-            ShadowSlash(IPlayer,pPacket,pPos);
+            ShadowSlash(IPlayer, pPacket, pPos);
             return;
         }
 
         if (IPlayer.GetClass() == 3 && SkillID == 28 && IPlayer.GetSpecialty() == 43)
         {
-            LightningSlash(IPlayer,pPacket,pPos);
+            LightningSlash(IPlayer, pPacket, pPos);
             return;
         }
 
@@ -567,12 +593,13 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
                 if (IPlayer.GetCurMp() >= nMana && nSkillGrade)
                 {
-                    if (!IPlayer.IsBuff(333))
+                    if (!IPlayer.IsBuff(333)) {
                         IPlayer.SendGStateEx(IPlayer.GetGStateEx() + 1024);
+                    }
 
                     IPlayer.Buff(333, nSkillGrade * 15, 0);
                     IPlayer.DecreaseMana(nMana);
-                    IPlayer._ShowBattleAnimation(IPlayer,13,nSkillGrade);
+                    IPlayer._ShowBattleAnimation(IPlayer, 13, nSkillGrade);
                 }
             }
 
@@ -617,7 +644,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                 int nSkillGrade = xSkill.GetGrade();
                 int nMana = nSkillGrade * 30 + 45;
 
-                if(IPlayer.GetCurMp() >= nMana && nSkillGrade)
+                if (IPlayer.GetCurMp() >= nMana && nSkillGrade)
                 {
                     IPlayer.Buff(335, 30, 0);
                     IPlayer.Buff(336, 35, 0);
@@ -642,7 +669,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                 int nSkillGrade = xSkill.GetGrade();
                 int nMana = nSkillGrade * 30 + 50;
 
-                if(IPlayer.GetCurMp() >= nMana && nSkillGrade)
+                if (IPlayer.GetCurMp() >= nMana && nSkillGrade)
                 {
                     IPlayer.Buff(337, 30, 0);
                     IPlayer.Buff(338, 35, 0);
@@ -711,7 +738,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
         }
 
         if (IPlayer.GetClass() == 4 && (IPlayer.GetSpecialty() == 7
-                                        || IPlayer.GetSpecialty() == 23))
+                || IPlayer.GetSpecialty() == 23))
         {
             if (SkillID == 25)
             {
@@ -735,13 +762,13 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                     int nSkillGrade = xSkill.GetGrade();
                     int nMana = (nSkillGrade * 2) + 300;
 
-                    if(IPlayer.IsValid() && IPlayer.GetCurMp() >= nMana && nSkillGrade)
+                    if (IPlayer.IsValid() && IPlayer.GetCurMp() >= nMana && nSkillGrade)
                     {
                         IPlayer._ShowBattleAnimation(IPlayer, 27);
                         IPlayer.DecreaseMana(nMana);
-                        IPlayer.SetBuffIcon(((nSkillGrade*60)+300)*1000,0,9103,1012);
-                        IPlayer.Buff(405,(nSkillGrade*60)+300,0);
-                        IPlayer.Buff(406,(nSkillGrade*100)+300,0);
+                        IPlayer.SetBuffIcon(((nSkillGrade*60)+300)*1000, 0, 9103, 1012);
+                        IPlayer.Buff(405, (nSkillGrade*60)+300, 0);
+                        IPlayer.Buff(406, (nSkillGrade*100)+300, 0);
                     }
                 }
 
@@ -768,7 +795,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
         }
 
         if (IPlayer.GetClass() == 4 && (IPlayer.GetSpecialty() == 11
-                                        || IPlayer.GetSpecialty() == 43))
+                || IPlayer.GetSpecialty() == 43))
         {
             if (SkillID == 36)
             {
@@ -805,8 +832,9 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
 
             if (SkillID == 45)
             {
-                if (!IPlayer.IsBuff(406))
+                if (!IPlayer.IsBuff(406)) {
                     return;
+                }
 
                 int pSkill = IPlayer.GetSkillPointer(45);
 
@@ -816,12 +844,12 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                     int nSkillGrade = xSkill.GetGrade();
                     int nMana = (nSkillGrade * 2) + 200;
 
-                    if(IPlayer.IsValid() && IPlayer.GetCurMp() >= nMana && nSkillGrade)
+                    if (IPlayer.IsValid() && IPlayer.GetCurMp() >= nMana && nSkillGrade)
                     {
                         IPlayer._ShowBattleAnimation(IPlayer, 45);
                         IPlayer.DecreaseMana(nMana);
-                        IPlayer.SetBuffIcon(-2,-1,9106,1015);
-                        IPlayer.Buff(412,1296000,15*nSkillGrade);
+                        IPlayer.SetBuffIcon(-2, -1, 9106, 1015);
+                        IPlayer.Buff(412, 1296000, 15*nSkillGrade);
                     }
                 }
 

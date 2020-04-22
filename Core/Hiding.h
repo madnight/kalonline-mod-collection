@@ -11,25 +11,31 @@ void __fastcall Hiding(IChar IPlayer)
         nMana = hide * 10 + 10;
         time = (hide * 5) + 15;
 
-        if (dbreath)
+        if (dbreath) {
             time += 10;
+        }
 
-        if (sstepcheck)
+        if (sstepcheck) {
             sstep = 1;
+        }
 
-        if (IPlayer.GetCurMp() < nMana)
+        if (IPlayer.GetCurMp() < nMana) {
             return;
+        }
 
-        if (!IPlayer.IsBuff(329))
+        if (!IPlayer.IsBuff(329)) {
             IPlayer.SendGStateEx(IPlayer.GetGStateEx() + 16);
+        }
 
-        if (sstep)
+        if (sstep) {
             IPlayer.Buff(40, time, -50 + 20);
-        else
+        }
+        else {
             IPlayer.Buff(40, time, -50);
+        }
 
         IPlayer.RemoveBuffIcon(0, 0, 0, 54);
-        IPlayer._ShowBattleAnimation(IPlayer,6,hide);
+        IPlayer._ShowBattleAnimation(IPlayer, 6, hide);
         IPlayer.Buff(329, time, 0);
         IPlayer.DecreaseMana(nMana);
     }

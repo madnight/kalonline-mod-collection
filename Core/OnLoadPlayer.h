@@ -4,54 +4,54 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
 
     if (IPlayer.IsOnline())
     {
-        CPlayer::Write(Player,0xFF,"dd",238,128);
-        CPlayer::Write(Player,0xFF,"dd",221,0);
+        CPlayer::Write(Player, 0xFF, "dd", 238, 128);
+        CPlayer::Write(Player, 0xFF, "dd", 221, 0);
     }
 
-    int Check = CPlayer::OnLoadPlayer(Player,Value);
+    int Check = CPlayer::OnLoadPlayer(Player, Value);
 
     if (IPlayer.IsOnline())
     {
-        CDBSocket::Write(92,"d",IPlayer.GetPID());
-        CDBSocket::Write(82,"d",IPlayer.GetPID());
-        CDBSocket::Write(84,"d",IPlayer.GetPID());
+        CDBSocket::Write(92, "d", IPlayer.GetPID());
+        CDBSocket::Write(82, "d", IPlayer.GetPID());
+        CDBSocket::Write(84, "d", IPlayer.GetPID());
 
         if (IPlayer.GetClass() == 3 && IPlayer.GetStr() < 14 && IPlayer.GetLevel() == 1)
         {
-            IPlayer.IncreaseStat(14,0);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),0,
-                             *(DWORD *)((int)Player + 4 * 0 + 64));
-            IPlayer.IncreaseStat(10,1);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),1,
-                             *(DWORD *)((int)Player + 4 * 1 + 64));
-            IPlayer.IncreaseStat(8,2);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),2,
-                             *(DWORD *)((int)Player + 4 * 2 + 64));
-            IPlayer.IncreaseStat(5,3);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),3,
-                             *(DWORD *)((int)Player + 4 * 3 + 64));
-            IPlayer.IncreaseStat(18,4);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),4,
-                             *(DWORD *)((int)Player + 4 * 4 + 64));
+            IPlayer.IncreaseStat(14, 0);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 0,
+                *(DWORD *)((int)Player + 4 * 0 + 64));
+            IPlayer.IncreaseStat(10, 1);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 1,
+                *(DWORD *)((int)Player + 4 * 1 + 64));
+            IPlayer.IncreaseStat(8, 2);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 2,
+                *(DWORD *)((int)Player + 4 * 2 + 64));
+            IPlayer.IncreaseStat(5, 3);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 3,
+                *(DWORD *)((int)Player + 4 * 3 + 64));
+            IPlayer.IncreaseStat(18, 4);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 4,
+                *(DWORD *)((int)Player + 4 * 4 + 64));
         }
 
         if (IPlayer.GetClass() == 4 && IPlayer.GetHth() < 10 && IPlayer.GetLevel() == 1)
         {
-            IPlayer.IncreaseStat(-52,0);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),0,
-                             *(DWORD *)((int)Player + 4 * 0 + 64));
-            IPlayer.IncreaseStat(10,1);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),1,
-                             *(DWORD *)((int)Player + 4 * 1 + 64));
-            IPlayer.IncreaseStat(-140,2);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),2,
-                             *(DWORD *)((int)Player + 4 * 2 + 64));
-            IPlayer.IncreaseStat(14,3);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),3,
-                             *(DWORD *)((int)Player + 4 * 3 + 64));
-            IPlayer.IncreaseStat(-64,4);
-            CDBSocket::Write(16,"dbwbb",IPlayer.GetPID(),23,IPlayer.GetStatPoint(),4,
-                             *(DWORD *)((int)Player + 4 * 4 + 64));
+            IPlayer.IncreaseStat(-52, 0);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 0,
+                *(DWORD *)((int)Player + 4 * 0 + 64));
+            IPlayer.IncreaseStat(10, 1);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 1,
+                *(DWORD *)((int)Player + 4 * 1 + 64));
+            IPlayer.IncreaseStat(-140, 2);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 2,
+                *(DWORD *)((int)Player + 4 * 2 + 64));
+            IPlayer.IncreaseStat(14, 3);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 3,
+                *(DWORD *)((int)Player + 4 * 3 + 64));
+            IPlayer.IncreaseStat(-64, 4);
+            CDBSocket::Write(16, "dbwbb", IPlayer.GetPID(), 23, IPlayer.GetStatPoint(), 4,
+                *(DWORD *)((int)Player + 4 * 4 + 64));
         }
 
         if (IPlayer.GetX() < 0 || IPlayer.GetY() < 0 || IPlayer.GetZ() < 0)
@@ -75,7 +75,7 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
         if ((IPlayer.GetClass() == 4 || IPlayer.GetClass() == 0
                 || IPlayer.GetClass() == 2 || IPlayer.GetClass() == 3
                 || (IPlayer.GetClass() == 1 && IPlayer.GetSpecialty() == 23))
-                && IPlayer.GetLevel() >= 70)
+            && IPlayer.GetLevel() >= 70)
         {
             int pSkill = IPlayer.GetSkillPointer(70);
 
@@ -83,9 +83,9 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
             {
                 ISkill xSkill((void*)pSkill);
                 IPlayer.AddMaxAttack((IPlayer.GetMaxPhyAttack() * (4 + (xSkill.GetGrade() *
-                                      4))) / 100);
+                                4))) / 100);
                 IPlayer.AddMinAttack((IPlayer.GetMaxPhyAttack() * (4 + (xSkill.GetGrade() *
-                                      4))) / 100);
+                                4))) / 100);
             }
 
             pSkill = IPlayer.GetSkillPointer(71);
@@ -94,14 +94,14 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
             {
                 ISkill xSkill((void*)pSkill);
                 IPlayer.AddMaxAttack((IPlayer.GetMaxPhyAttack() * (4 + (xSkill.GetGrade() *
-                                      4))) / 100);
+                                4))) / 100);
                 IPlayer.AddMinAttack((IPlayer.GetMaxPhyAttack() * (4 + (xSkill.GetGrade() *
-                                      4))) / 100);
+                                4))) / 100);
             }
         }
 
         if (IPlayer.GetClass() == 1 && IPlayer.GetLevel() >= 70
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43)
         {
             int pSkill = IPlayer.GetSkillPointer(71);
 
@@ -184,12 +184,14 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
         }
 
         if (IPlayer.GetClass() == 0 && IPlayer.GetLevel() < 100
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43) {
             IPlayer.AddDef(((IPlayer.GetLevel() - 65) * 5) - ((IPlayer.GetDef() * 2) / 50));
+        }
 
         if (IPlayer.GetClass() == 0 && IPlayer.GetLevel() >= 100
-                && IPlayer.GetSpecialty() == 43)
+            && IPlayer.GetSpecialty() == 43) {
             IPlayer.AddDef(((100 - 65) * 5) - ((IPlayer.GetDef() * 2) / 50));
+        }
 
         if (IPlayer.GetLevel() >= 81)
         {
@@ -294,13 +296,15 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
             IPlayer.IncreaseMaxMp((Value*18)+225);
         }
 
-        if(IPlayer.GetClass() == 2 && IPlayer.GetLevel() < 100
-                && IPlayer.GetSpecialty() == 43)
+        if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() < 100
+            && IPlayer.GetSpecialty() == 43) {
             IPlayer.AddEva((IPlayer.GetAgi() * (IPlayer.GetLevel() / 2) / 400));
+        }
 
-        if(IPlayer.GetClass() == 2 && IPlayer.GetLevel() >= 100
-                && IPlayer.GetSpecialty() == 43)
+        if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() >= 100
+            && IPlayer.GetSpecialty() == 43) {
             IPlayer.AddEva((IPlayer.GetAgi() * (100 / 2) / 400));
+        }
 
         if (IPlayer.GetClass() == 4)
         {

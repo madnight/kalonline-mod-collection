@@ -1,65 +1,71 @@
 void __fastcall ChatCommand(int Player, void *edx, const char *command)
 {
-    if (!strlen(command))
+    if (!strlen(command)) {
         return;
+    }
 
     std::string cmd = (std::string)command;
     IChar IPlayer((void*)Player);
 
-    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(),2)
-            && !CChar::IsGState((int)IPlayer.GetOffset(),256) && cmd.substr(0,5) == "/naro")
+    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(), 2)
+        && !CChar::IsGState((int)IPlayer.GetOffset(), 256) &&
+        cmd.substr(0, 5) == "/naro")
     {
-        IPlayer.Teleport(0,258042,259367);
+        IPlayer.Teleport(0, 258042, 259367);
         return;
     }
 
-    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(),2)
-            && !CChar::IsGState((int)IPlayer.GetOffset(),256)
-            && cmd.substr(0,6) == "/cargo")
+    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(), 2)
+        && !CChar::IsGState((int)IPlayer.GetOffset(), 256)
+        && cmd.substr(0, 6) == "/cargo")
     {
-        IPlayer.Teleport(0,265073,262622);
+        IPlayer.Teleport(0, 265073, 262622);
         return;
     }
 
-    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(),2)
-            && !CChar::IsGState((int)IPlayer.GetOffset(),256) && cmd.substr(0,5) == "/fort")
+    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(), 2)
+        && !CChar::IsGState((int)IPlayer.GetOffset(), 256) &&
+        cmd.substr(0, 5) == "/fort")
     {
-        IPlayer.Teleport(0,267586,242863);
+        IPlayer.Teleport(0, 267586, 242863);
         return;
     }
 
-    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(),2)
-            && !CChar::IsGState((int)IPlayer.GetOffset(),256) && cmd.substr(0,5) == "/mine")
+    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(), 2)
+        && !CChar::IsGState((int)IPlayer.GetOffset(), 256) &&
+        cmd.substr(0, 5) == "/mine")
     {
-        IPlayer.Teleport(0,266056,284973);
+        IPlayer.Teleport(0, 266056, 284973);
         return;
     }
 
-    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(),2)
-            && !CChar::IsGState((int)IPlayer.GetOffset(),256) && cmd.substr(0,5) == "/bird")
+    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(), 2)
+        && !CChar::IsGState((int)IPlayer.GetOffset(), 256) &&
+        cmd.substr(0, 5) == "/bird")
     {
-        IPlayer.Teleport(0,255764,288738);
+        IPlayer.Teleport(0, 255764, 288738);
         return;
     }
 
-    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(),2)
-            && !CChar::IsGState((int)IPlayer.GetOffset(),256) && cmd.substr(0,4) == "/cop")
+    if (IPlayer.IsOnline() && !CChar::IsGState((int)IPlayer.GetOffset(), 2)
+        && !CChar::IsGState((int)IPlayer.GetOffset(), 256) &&
+        cmd.substr(0, 4) == "/cop")
     {
-        IPlayer.Teleport(0,232922,294650);
+        IPlayer.Teleport(0, 232922, 294650);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && cmd.substr(0,8) == "/warinfo")
+        && cmd.substr(0, 8) == "/warinfo")
     {
         int war = CPlayer::CountWarrelationPlayer();
         std::string msg = "War Info: " + Int2String(war);
-        IPlayer.SystemMessage(msg,TEXTCOLOR_GREEN);
+        IPlayer.SystemMessage(msg, TEXTCOLOR_GREEN);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && cmd.substr(0,14) == "/protectleader")
+        && cmd.substr(0, 14) == "/protectleader")
     {
         if (Protect32::Active == false)
         {
@@ -94,32 +100,34 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
                 Protect32::Active = true;
             } else {
                 CPlayer::WriteAll(0xFF, "dsd", 247,
-                                  "Enough guilds did not registered for Protecting Leader.", 2);
+                    "Enough guilds did not registered for Protecting Leader.", 2);
             }
         }
 
         return;
     }
 
-    if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3 && cmd.substr(0,5) == "/ugog")
+    if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3 &&
+        cmd.substr(0, 5) == "/ugog")
     {
         int Around = IPlayer.GetObjectListAround(50);
 
-        while(Around)
+        while (Around)
         {
             IChar Object((void*)*(DWORD*)Around);
 
             if (Object.IsValid() && IPlayer.IsValid())
             {
-                if (Object.GetType() == 0 && Object.GetZ() != IPlayer.GetZ())
-                    IPlayer.SystemMessage(Object.GetName(),TEXTCOLOR_SHUTDOWN);
+                if (Object.GetType() == 0 && Object.GetZ() != IPlayer.GetZ()) {
+                    IPlayer.SystemMessage(Object.GetName(), TEXTCOLOR_SHUTDOWN);
+                }
             }
 
             Around = CBaseList::Pop((void*)Around);
         }
     }
 
-    if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8 && cmd.substr(0,4) == "/lms")
+    if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8 && cmd.substr(0, 4) == "/lms")
     {
         if (LastManStand::Active == false)
         {
@@ -130,7 +138,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
                 LastManStand::Time = 3;
             } else {
                 CPlayer::WriteAll(0xFF, "dsd", 247,
-                                  "Enough players did not registered for Last Man Standing.", 2);
+                    "Enough players did not registered for Last Man Standing.", 2);
             }
         }
 
@@ -138,7 +146,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && cmd.substr(0,10) == "/cwdeclare")
+        && cmd.substr(0, 10) == "/cwdeclare")
     {
         *(DWORD**)0x004E0964 = (DWORD*)1;
         CPlayer::WriteAll(0xFF, "dsd", 247, "Guilds can declare for castle war.", 2);
@@ -146,7 +154,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && cmd.substr(0,13) == "/endcwdeclare")
+        && cmd.substr(0, 13) == "/endcwdeclare")
     {
         *(DWORD**)0x004E0964 = (DWORD*)0;
         CPlayer::WriteAll(0xFF, "dsd", 247, "Declare for castle war ended.", 2);
@@ -154,7 +162,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && sscanf(command, "/cwstart %d", &cwtotaltime) == 1)
+        && sscanf(command, "/cwstart %d", &cwtotaltime) == 1)
     {
         time_t MyTime = time(0);
         struct tm *Time = localtime(&MyTime);
@@ -171,19 +179,20 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command,
-                      "/mute %d %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]", &mutetime,
-                      &mutename) == 2)
+        && sscanf(command,
+            "/mute %d %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]", &mutetime,
+            &mutename) == 2)
     {
-        if (!strlen(mutename))
+        if (!strlen(mutename)) {
             return;
+        }
 
         const char *PlayerName = mutename;
         IChar Target((void*)CPlayer::FindPlayerByName((char)PlayerName));
 
         if (Target.IsOnline() && mutetime)
         {
-            Target.Buff(164,mutetime,0);
+            Target.Buff(164, mutetime, 0);
             Mute[Target.GetPID()] = (mutetime*1000)+GetTickCount();
         }
 
@@ -191,35 +200,37 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 11
-            && sscanf(command,
-                      "/donate -a %d -n %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
-                      &donateamount, &donatename) == 2)
+        && sscanf(command,
+            "/donate -a %d -n %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
+            &donateamount, &donatename) == 2)
     {
-        if (!strlen(donatename))
+        if (!strlen(donatename)) {
             return;
+        }
 
-        int Item,ValidItem = 0;
+        int Item, ValidItem = 0;
         const char *PlayerName = donatename;
         IChar Target((void*)CPlayer::FindPlayerByName((char)PlayerName));
 
         if (Target.IsOnline() && donateamount)
         {
-            if (CPlayer::FindItem(Target.GetOffset(),DonationCoin,1))
+            if (CPlayer::FindItem(Target.GetOffset(), DonationCoin, 1))
             {
-                Item = CPlayer::FindItem(Target.GetOffset(),DonationCoin,1);
+                Item = CPlayer::FindItem(Target.GetOffset(), DonationCoin, 1);
 
                 if (Item)
                 {
                     (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
-                     (*(DWORD*)Item + 120))(Item,Target.GetOffset(),9,donateamount);
+                        (*(DWORD*)Item + 120))(Item, Target.GetOffset(), 9, donateamount);
                     Target.SystemMessage("You have received Donation Coin.", TEXTCOLOR_PINK);
                     IPlayer.SystemMessage("Donation Coin arrived to player successfully.",
-                                          TEXTCOLOR_PINK);
+                        TEXTCOLOR_PINK);
                 }
             } else {
                 if (CPlayer::GetInvenSize((int)Target.GetOffset()) < IPlayer.MaxInventorySize())
                 {
                     Item = CItem::CreateItem(DonationCoin, 0, donateamount, -1);
+
                     if (Item)
                     {
                         IItem IItem((void*)Item);
@@ -229,14 +240,14 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
                         {
                             Target.SystemMessage("You have received Donation Coin.", TEXTCOLOR_PINK);
                             IPlayer.SystemMessage("Donation Coin arrived to player successfully.",
-                                                  TEXTCOLOR_PINK);
+                                TEXTCOLOR_PINK);
                         } else {
                             IPlayer.SystemMessage("Donation Coin did not arrived.", TEXTCOLOR_PINK);
                         }
                     }
                 } else {
                     IPlayer.SystemMessage("Donation Coin did not arrived because player inventory is full.",
-                                          TEXTCOLOR_PINK);
+                        TEXTCOLOR_PINK);
                 }
             }
         } else {
@@ -247,13 +258,14 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && sscanf(command, "/summon -i %d -a %d", &summonindex, &summonamount) == 2)
+        && sscanf(command, "/summon -i %d -a %d", &summonindex, &summonamount) == 2)
     {
         if (summonindex && summonamount)
         {
             for (int i = 0; i < summonamount; i++)
             {
-                Summon(0,IPlayer.GetMap(),IPlayer.GetX(),IPlayer.GetY(),summonindex,1,1,0,0,0);
+                Summon(0, IPlayer.GetMap(), IPlayer.GetX(), IPlayer.GetY(), summonindex, 1, 1,
+                    0, 0, 0);
             }
         }
 
@@ -261,51 +273,58 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && sscanf(command, "/buff %d", &buffid) == 1)
+        && sscanf(command, "/buff %d", &buffid) == 1)
     {
         IPlayer.Buff(buffid, 3600, 50);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command, "/speed %d", &speedvalue) == 1)
+        && sscanf(command, "/speed %d", &speedvalue) == 1)
     {
         IPlayer.Buff(12, 1800, speedvalue);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 11
-            && sscanf(command, "/geons %d", &geonamount) == 1)
+        && sscanf(command, "/geons %d", &geonamount) == 1)
     {
-        if (geonamount)
+        if (geonamount) {
             CItem::InsertItem((int)IPlayer.Offset, 27, 31, 0, geonamount, -1);
+        }
 
         return;
     }
 
-    if (IPlayer.IsOnline() && cmd.substr(0,8) == "/suicide")
+    if (IPlayer.IsOnline() && cmd.substr(0, 8) == "/suicide")
     {
-        if (IPlayer.IsBuff(378))
+        if (IPlayer.IsBuff(378)) {
             return;
+        }
 
-        if (IPlayer.IsBuff(160) || IPlayer.IsBuff(161))
+        if (IPlayer.IsBuff(160) || IPlayer.IsBuff(161)) {
             return;
+        }
 
-        if (IPlayer.IsBuff(162) || IPlayer.IsBuff(163))
+        if (IPlayer.IsBuff(162) || IPlayer.IsBuff(163)) {
             return;
+        }
 
-        if (IPlayer.IsBuff(166))
+        if (IPlayer.IsBuff(166)) {
             return;
+        }
 
-        if (IPlayer.IsBuff(170) || IPlayer.IsBuff(171))
+        if (IPlayer.IsBuff(170) || IPlayer.IsBuff(171)) {
             return;
+        }
 
-        if (IPlayer.IsBuff(373) || IPlayer.IsBuff(374))
+        if (IPlayer.IsBuff(373) || IPlayer.IsBuff(374)) {
             return;
+        }
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && cmd.substr(0,15) == "/dueltournament" && DuelTournament::Active == false)
+        && cmd.substr(0, 15) == "/dueltournament" && DuelTournament::Active == false)
     {
         if (DuelTournamentList.size() > 1)
         {
@@ -322,12 +341,12 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             _beginthread(DuelTournamentSelection, 0, 0);
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Duel Tournament.", 2);
+                "Enough players did not registered for Duel Tournament.", 2);
         }
     }
 
-    if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8 && cmd.substr(0,4) == "/f10"
-            && F10::Active == false)
+    if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8 && cmd.substr(0, 4) == "/f10"
+        && F10::Active == false)
     {
         if (F10::RegisterAmount > 0)
         {
@@ -343,19 +362,19 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             return;
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Ilyer Company System.", 2);
+                "Enough players did not registered for Ilyer Company System.", 2);
             return;
         }
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && cmd.substr(0,12) == "/destructing" && Scenario::Active == false)
+        && cmd.substr(0, 12) == "/destructing" && Scenario::Active == false)
     {
-        if ( Scenario::RegisterAmount > 1 )
+        if (Scenario::RegisterAmount > 1)
         {
             int First = 0, Second = 0;
 
-            if ( Scenario::RegisterAmount <= 3 )
+            if (Scenario::RegisterAmount <= 3)
             {
                 First = Scenario::RegisterAmount / 2;
                 Second = Scenario::RegisterAmount / 1;
@@ -406,14 +425,14 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             Summon(0, ScenarioMap, 287001, 351787, 358, 1, 0, 0, 0, 0);
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough guilds did not registered for Destructing Key Points.", 2);
+                "Enough guilds did not registered for Destructing Key Points.", 2);
         }
 
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && cmd.substr(0,12) == "/battlefield" && Battlefield::Active == false)
+        && cmd.substr(0, 12) == "/battlefield" && Battlefield::Active == false)
     {
         if (Battlefield::RegisterAmount > 1)
         {
@@ -422,7 +441,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             Battlefield::RedScore = 0;
             Battlefield::BlueScore = 0;
             Battlefield::RegisterAmount = 0;
-            IPlayer.SystemMessage("Battlefield started.",TEXTCOLOR_GREEN);
+            IPlayer.SystemMessage("Battlefield started.", TEXTCOLOR_GREEN);
             Battlefield::Active = true;
             IChar M1((void*)Summon(0, BFMap, 274761, 212814, 445, 1, 0, 0, 0, 0));
             IChar M2((void*)Summon(0, BFMap, 278472, 209291, 445, 1, 0, 0, 0, 0));
@@ -439,78 +458,83 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             return;
         } else {
             CPlayer::WriteAll(0xFF, "dsd", 247,
-                              "Enough players did not registered for Battlefield.", 2);
+                "Enough players did not registered for Battlefield.", 2);
             return;
         }
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command,
-                      "/boxnotice %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
-                      &boxnotice) == 1)
+        && sscanf(command,
+            "/boxnotice %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
+            &boxnotice) == 1)
     {
-        if (strlen(boxnotice))
-            CPlayer::WriteAll(0xFF,"ds",249,boxnotice);
+        if (strlen(boxnotice)) {
+            CPlayer::WriteAll(0xFF, "ds", 249, boxnotice);
+        }
 
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 8
-            && cmd.substr(0,7) == "/reload")
+        && cmd.substr(0, 7) == "/reload")
     {
         ReadConfig();
-        IPlayer.SystemMessage("Configs reloaded successfully.",TEXTCOLOR_GREEN);
+        IPlayer.SystemMessage("Configs reloaded successfully.", TEXTCOLOR_GREEN);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && cmd.substr(0,7) == "/online")
+        && cmd.substr(0, 7) == "/online")
     {
         int number = 0;
         CIOCriticalSection::Enter((void*)0x4e2078);
         CIOCriticalSection::Enter((void*)0x4e2098);
-        CLink::MoveTo((void*)0x4e200c,(int)0x4e2004);
+        CLink::MoveTo((void*)0x4e200c, (int)0x4e2004);
         CIOCriticalSection::Leave((void*)0x4e2098);
-        for ( DWORD i = *(DWORD*)0x4E2004; i != 0x4E2004; i = *(DWORD*)i )
+
+        for (DWORD i = *(DWORD*)0x4E2004; i != 0x4E2004; i = *(DWORD*)i)
         {
-            if ((void*)(i - 428))
+            if ((void*)(i - 428)) {
                 number++;
+            }
         }
+
         CIOCriticalSection::Leave((void*)0x4e2078);
         std::stringstream onlineplayer;
         onlineplayer << "Players Online : " << number;
         std::string onlineamount = onlineplayer.str();
-        IPlayer.SystemMessage(onlineamount.c_str(),TEXTCOLOR_INFOMSG);
+        IPlayer.SystemMessage(onlineamount.c_str(), TEXTCOLOR_INFOMSG);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command, "/moveto %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
-                      &moveto) == 1)
+        && sscanf(command, "/moveto %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
+            &moveto) == 1)
     {
         if (strlen(moveto))
         {
             const char *PlayerName = moveto;
             IChar Target((void*)CPlayer::FindPlayerByName((char)PlayerName));
 
-            if (Target.IsOnline())
-                IPlayer.Teleport(Target.GetMap(),Target.GetX(),Target.GetY());
+            if (Target.IsOnline()) {
+                IPlayer.Teleport(Target.GetMap(), Target.GetX(), Target.GetY());
+            }
         }
 
         return;
     }
 
-    if (IPlayer.IsOnline() && cmd.substr(0,11) == "/servertime")
+    if (IPlayer.IsOnline() && cmd.substr(0, 11) == "/servertime")
     {
         std::stringstream servertime;
         servertime << "Server Time : " << Time::GetTime();
         std::string time = servertime.str();
-        IPlayer.SystemMessage(time.c_str(),TEXTCOLOR_INFOMSG);
+        IPlayer.SystemMessage(time.c_str(), TEXTCOLOR_INFOMSG);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && cmd.substr(0,7) == "/uptime")
+        && cmd.substr(0, 7) == "/uptime")
     {
         time_t diff = difftime(time(NULL), uptimestart);
         const unsigned int SECS_PER_DAY = 60 * 60 * 24;
@@ -525,30 +549,32 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         unsigned int seconds = diff;
         std::stringstream uptime;
         uptime << "Server Uptime : " << days << " Days " << hours << " Hours " <<
-               minutes << " Minutes " << seconds << " Seconds.";
+            minutes << " Minutes " << seconds << " Seconds.";
         std::string showuptime = uptime.str();
-        IPlayer.SystemMessage(showuptime.c_str(),TEXTCOLOR_INFOMSG);
+        IPlayer.SystemMessage(showuptime.c_str(), TEXTCOLOR_INFOMSG);
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command,
-                      "/newnotice %d %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
-                      &newnoticetype, &newnotice) == 2)
+        && sscanf(command,
+            "/newnotice %d %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
+            &newnoticetype, &newnotice) == 2)
     {
-        if (strlen(newnotice))
+        if (strlen(newnotice)) {
             CPlayer::WriteAll(0xFF, "dsd", 247, newnotice, newnoticetype);
+        }
 
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command,
-                      "/hardblock %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
-                      &hardblock) == 1)
+        && sscanf(command,
+            "/hardblock %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
+            &hardblock) == 1)
     {
-        if (!strlen(hardblock))
+        if (!strlen(hardblock)) {
             return;
+        }
 
         RETCODE rcc;
         HENV henvc;
@@ -574,6 +600,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         std::string runquery = query.str();
         const char *sql =  runquery.c_str();
         rcc = SQLExecDirect(hstmtc, (unsigned char*)sql, SQL_NTS);
+
         if ((rcc != SQL_SUCCESS) && (rcc != SQL_SUCCESS_WITH_INFO))
         {
             SQLFreeStmt(hstmtc, SQL_DROP);
@@ -582,8 +609,9 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             SQLFreeEnv(henvc);
             return;
         } else {
-            for (rcc = SQLFetch(hstmtc); rcc == SQL_SUCCESS; rcc = SQLFetch(hstmtc))
+            for (rcc = SQLFetch(hstmtc); rcc == SQL_SUCCESS; rcc = SQLFetch(hstmtc)) {
                 SQLGetData(hstmtc, 1, SQL_INTEGER, &UID, sizeof(int), &cbDatac);
+            }
         }
 
         SQLFreeStmt(hstmtc, SQL_DROP);
@@ -591,7 +619,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         SQLFreeConnect(hdbcc);
         SQLFreeEnv(henvc);
 
-        if ( UID )
+        if (UID)
         {
             RETCODE rcb;
             HENV henvb;
@@ -615,6 +643,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             std::string runquery = query.str();
             const char *sql =  runquery.c_str();
             rcb = SQLExecDirect(hstmtb, (unsigned char*)sql, SQL_NTS);
+
             if ((rcb != SQL_SUCCESS) && (rcb != SQL_SUCCESS_WITH_INFO))
             {
                 SQLFreeStmt(hstmtb, SQL_DROP);
@@ -631,26 +660,28 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             const char *Player = hardblock;
             IChar Target((void*)CPlayer::FindPlayerByName((char)Player));
             IPlayer.SystemMessage("Player successfully blocked.", TEXTCOLOR_GREEN);
-            if ( Target.IsOnline() )
+
+            if (Target.IsOnline())
             {
                 PlayerBlockCheck[Target.GetUID()] = 1;
                 Target.SystemMessage("Your account has been blocked.", TEXTCOLOR_RED);
-                CPlayer::Write(Target.GetOffset(),0xFF, "d", 246);
+                CPlayer::Write(Target.GetOffset(), 0xFF, "d", 246);
                 Target.Kick();
             }
         } else {
-            IPlayer.SystemMessage("Could not block player.",TEXTCOLOR_GREEN);
+            IPlayer.SystemMessage("Could not block player.", TEXTCOLOR_GREEN);
         }
 
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command, "/block %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
-                      &block) == 1)
+        && sscanf(command, "/block %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]",
+            &block) == 1)
     {
-        if (!strlen(block))
+        if (!strlen(block)) {
             return;
+        }
 
         RETCODE rcd;
         HENV henvd;
@@ -676,6 +707,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         std::string runquery = query.str();
         const char *sql =  runquery.c_str();
         rcd = SQLExecDirect(hstmtd, (unsigned char*)sql, SQL_NTS);
+
         if ((rcd != SQL_SUCCESS) && (rcd != SQL_SUCCESS_WITH_INFO))
         {
             SQLFreeStmt(hstmtd, SQL_DROP);
@@ -684,8 +716,9 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             SQLFreeEnv(henvd);
             return;
         } else {
-            for (rcd = SQLFetch(hstmtd); rcd == SQL_SUCCESS; rcd = SQLFetch(hstmtd))
+            for (rcd = SQLFetch(hstmtd); rcd == SQL_SUCCESS; rcd = SQLFetch(hstmtd)) {
                 SQLGetData(hstmtd, 1, SQL_INTEGER, &UID, sizeof(int), &cbDatad);
+            }
         }
 
         SQLFreeStmt(hstmtd, SQL_DROP);
@@ -693,7 +726,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         SQLFreeConnect(hdbcd);
         SQLFreeEnv(henvd);
 
-        if ( UID )
+        if (UID)
         {
             RETCODE rce;
             HENV henve;
@@ -717,6 +750,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             std::string runquery = query.str();
             const char *sql =  runquery.c_str();
             rce = SQLExecDirect(hstmte, (unsigned char*)sql, SQL_NTS);
+
             if ((rce != SQL_SUCCESS) && (rce != SQL_SUCCESS_WITH_INFO))
             {
                 SQLFreeStmt(hstmte, SQL_DROP);
@@ -733,25 +767,27 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             const char *Player = block;
             IChar Target((void*)CPlayer::FindPlayerByName((char)Player));
             IPlayer.SystemMessage("Player successfully blocked.", TEXTCOLOR_GREEN);
-            if ( Target.IsOnline() )
+
+            if (Target.IsOnline())
             {
                 PlayerBlockCheck[Target.GetUID()] = 1;
                 Target.SystemMessage("Your account has been blocked.", TEXTCOLOR_RED);
                 Target.Kick();
             }
         } else {
-            IPlayer.SystemMessage("Could not block player.",TEXTCOLOR_GREEN);
+            IPlayer.SystemMessage("Could not block player.", TEXTCOLOR_GREEN);
         }
 
         return;
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetAdmin() >= 3
-            && sscanf(command,
-                      "/unblock %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]", &unblock) == 1)
+        && sscanf(command,
+            "/unblock %[a-z | A-Z | 0-9/<>|.,~*;`:!'^+%&/()=?_-£#${[]}€]", &unblock) == 1)
     {
-        if (!strlen(unblock))
+        if (!strlen(unblock)) {
             return;
+        }
 
         RETCODE rc;
         HENV henv;
@@ -777,6 +813,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         std::string runquery = query.str();
         const char *sql =  runquery.c_str();
         rc = SQLExecDirect(hstmt, (unsigned char*)sql, SQL_NTS);
+
         if ((rc != SQL_SUCCESS) && (rc != SQL_SUCCESS_WITH_INFO))
         {
             SQLFreeStmt(hstmt, SQL_DROP);
@@ -785,8 +822,9 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             SQLFreeEnv(henv);
             return;
         } else {
-            for (rc = SQLFetch(hstmt); rc == SQL_SUCCESS; rc = SQLFetch(hstmt))
+            for (rc = SQLFetch(hstmt); rc == SQL_SUCCESS; rc = SQLFetch(hstmt)) {
                 SQLGetData(hstmt, 1, SQL_INTEGER, &UID, sizeof(int), &cbData);
+            }
         }
 
         SQLFreeStmt(hstmt, SQL_DROP);
@@ -819,6 +857,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             std::string runquery = query.str();
             const char *sql =  runquery.c_str();
             rca = SQLExecDirect(hstmta, (unsigned char*)sql, SQL_NTS);
+
             if ((rca != SQL_SUCCESS) && (rca != SQL_SUCCESS_WITH_INFO))
             {
                 SQLFreeStmt(hstmta, SQL_DROP);
@@ -834,7 +873,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
             SQLFreeEnv(henva);
             IPlayer.SystemMessage("Player successfully unblocked.", TEXTCOLOR_GREEN);
         } else {
-            IPlayer.SystemMessage("Could not unblock player.",TEXTCOLOR_GREEN);
+            IPlayer.SystemMessage("Could not unblock player.", TEXTCOLOR_GREEN);
         }
 
         return;

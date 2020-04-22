@@ -34,6 +34,6 @@ public:
     void SetSetGem(int Value);
     int LevelLimit();
     void SetLevelLimit(int Value);
-    int GetItemPointerFromIID(void *Player,int IID);
+    int GetItemPointerFromIID(void *Player, int IID);
     int GetGrade();
 };

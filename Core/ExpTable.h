@@ -58,21 +58,23 @@ void SwitchTable()
 {
     DWORD* ExpPtr = (DWORD*)_ExpTable;
     DWORD Exptr2;
-    DWORD ExpAdr1[] = {0x004592A6,0x004592BE,0x0046337A,0x0046440F,0x00415649, 0x0041566F,0x004156B8,0x00415737};
-    DWORD ExpAdr2[] = {0x00459289,0x004592CB,0x00463387,0x00464407,0x00415650,0x00415667,0x004156B0,0x0041572F};
+    DWORD ExpAdr1[] = {0x004592A6, 0x004592BE, 0x0046337A, 0x0046440F, 0x00415649, 0x0041566F, 0x004156B8, 0x00415737};
+    DWORD ExpAdr2[] = {0x00459289, 0x004592CB, 0x00463387, 0x00464407, 0x00415650, 0x00415667, 0x004156B0, 0x0041572F};
 
-    for(int i = 0; i<sizeof(ExpAdr1)/4; i++)
+    for (int i = 0; i<sizeof(ExpAdr1)/4; i++) {
         MemoryCopy((void*)ExpAdr1[i], (void*) &ExpPtr, 4);
+    }
 
-    MemoryCopy((void*)&Exptr2,(void*)0x00415737,4);
+    MemoryCopy((void*)&Exptr2, (void*)0x00415737, 4);
     Exptr2 += 0x04;
 
-    for(int i = 0; i<sizeof(ExpAdr2)/4; i++)
+    for (int i = 0; i<sizeof(ExpAdr2)/4; i++) {
         MemoryCopy((void*)ExpAdr2[i], (void*) &Exptr2, 4);
+    }
 }
 
 int __cdecl MyUpdateProperty(int Player, int Type, int InOut,
-                             signed __int64 Exp)
+    signed __int64 Exp)
 {
     IChar IPlayer((void*)Player);
 
@@ -90,106 +92,110 @@ int __cdecl MyUpdateProperty(int Player, int Type, int InOut,
 
     if (Type == 25 && IPlayer.IsOnline() && InOut)
     {
-        if (IPlayer.IsBuff(258))
+        if (IPlayer.IsBuff(258)) {
             Exp += (Exp / 5);
+        }
 
-        if (IPlayer.IsBuff(120))
+        if (IPlayer.IsBuff(120)) {
             Exp += (Exp / 10);
+        }
 
-        if (IPlayer.IsBuff(298) && Exp > 100)
+        if (IPlayer.IsBuff(298) && Exp > 100) {
             Exp += (Exp / 100);
+        }
 
         if (LevelGap.count(IPlayer.GetLevel())
-                && LevelGap.find(IPlayer.GetLevel())->second > 0 && Exp > 100)
+            && LevelGap.find(IPlayer.GetLevel())->second > 0 && Exp > 100) {
             Exp = (Exp * LevelGap.find(IPlayer.GetLevel())->second) / 100;
+        }
     }
 
-    return CPlayer::UpdateProperty(Player,Type,InOut,Exp);
+    return CPlayer::UpdateProperty(Player, Type, InOut, Exp);
 }
 
 void __cdecl MyStatStr(int Player, unsigned char Packet, char *Format,
-                       unsigned char Type, unsigned short Str, unsigned short Otp,
-                       unsigned short MinAtk, unsigned short MaxAtk)
+    unsigned char Type, unsigned short Str, unsigned short Otp,
+    unsigned short MinAtk, unsigned short MaxAtk)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwww", 0, IPlayer.GetStr(),
-                   CChar::GetHit(Player), CChar::GetMinAttack(Player),
-                   CChar::GetMaxAttack(Player));
+        CChar::GetHit(Player), CChar::GetMinAttack(Player),
+        CChar::GetMaxAttack(Player));
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwww", 43,
-                   (CChar::GetStr(Player) - IPlayer.GetStr()), CChar::GetHit(Player),
-                   CChar::GetMinAttack(Player), CChar::GetMaxAttack(Player));
+        (CChar::GetStr(Player) - IPlayer.GetStr()), CChar::GetHit(Player),
+        CChar::GetMinAttack(Player), CChar::GetMaxAttack(Player));
 }
 
 void __cdecl MyStatHth(int Player, unsigned char Packet, char *Format,
-                       unsigned char Type, unsigned short Str, unsigned short Otp,
-                       unsigned short MinAtk, unsigned short MaxAtk)
+    unsigned char Type, unsigned short Str, unsigned short Otp,
+    unsigned short MinAtk, unsigned short MaxAtk)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwddw", 1, IPlayer.GetHth(),
-                   IPlayer.GetCurHp(), CChar::GetMaxHP(Player),
-                   CChar::GetResist(IPlayer.GetOffset(), 4));
+        IPlayer.GetCurHp(), CChar::GetMaxHP(Player),
+        CChar::GetResist(IPlayer.GetOffset(), 4));
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwddw", 44,
-                   (CChar::GetHth(Player) - IPlayer.GetHth()), IPlayer.GetCurHp(),
-                   CChar::GetMaxHP(Player), CChar::GetResist(IPlayer.GetOffset(), 4));
+        (CChar::GetHth(Player) - IPlayer.GetHth()), IPlayer.GetCurHp(),
+        CChar::GetMaxHP(Player), CChar::GetResist(IPlayer.GetOffset(), 4));
 }
 
 void __cdecl MyStatInt(int Player, unsigned char Packet, char* Format,
-                       unsigned char statType, unsigned short points, unsigned short curWisdom,
-                       unsigned short maxWisdom, unsigned short curse)
+    unsigned char statType, unsigned short points, unsigned short curWisdom,
+    unsigned short maxWisdom, unsigned short curse)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwwwww", 2, IPlayer.GetInt(),
-                   CChar::GetMinMagic(Player), CChar::GetMaxMagic(Player),
-                   CChar::GetResist(IPlayer.GetOffset(), 0), CChar::GetResist(IPlayer.GetOffset(),
-                           1), CChar::GetResist(IPlayer.GetOffset(), 2));
+        CChar::GetMinMagic(Player), CChar::GetMaxMagic(Player),
+        CChar::GetResist(IPlayer.GetOffset(), 0), CChar::GetResist(IPlayer.GetOffset(),
+            1), CChar::GetResist(IPlayer.GetOffset(), 2));
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwwwww", 45,
-                   (CChar::GetInt(Player) - IPlayer.GetInt()), CChar::GetMinMagic(Player),
-                   CChar::GetMaxMagic(Player), CChar::GetResist(IPlayer.GetOffset(), 0),
-                   CChar::GetResist(IPlayer.GetOffset(), 1), CChar::GetResist(IPlayer.GetOffset(),
-                           2));
+        (CChar::GetInt(Player) - IPlayer.GetInt()), CChar::GetMinMagic(Player),
+        CChar::GetMaxMagic(Player), CChar::GetResist(IPlayer.GetOffset(), 0),
+        CChar::GetResist(IPlayer.GetOffset(), 1), CChar::GetResist(IPlayer.GetOffset(),
+            2));
 }
 
 void __cdecl MyStatWis(int Player, unsigned char Packet, char* Format,
-                       unsigned char statType, unsigned short points, unsigned short curWisdom,
-                       unsigned short maxWisdom, unsigned short curse)
+    unsigned char statType, unsigned short points, unsigned short curWisdom,
+    unsigned short maxWisdom, unsigned short curse)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwwwww", 3, IPlayer.GetWis(),
-                   IPlayer.GetCurMp(), CChar::GetMaxMp(Player), CChar::GetMinMagic(Player),
-                   CChar::GetMaxMagic(Player), CChar::GetResist(IPlayer.GetOffset(), 3));
+        IPlayer.GetCurMp(), CChar::GetMaxMp(Player), CChar::GetMinMagic(Player),
+        CChar::GetMaxMagic(Player), CChar::GetResist(IPlayer.GetOffset(), 3));
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwwwww", 46,
-                   (CChar::GetWis(Player) - IPlayer.GetWis()), IPlayer.GetCurMp(),
-                   CChar::GetMaxMp(Player), CChar::GetMinMagic(Player), CChar::GetMaxMagic(Player),
-                   CChar::GetResist(IPlayer.GetOffset(), 3));
+        (CChar::GetWis(Player) - IPlayer.GetWis()), IPlayer.GetCurMp(),
+        CChar::GetMaxMp(Player), CChar::GetMinMagic(Player), CChar::GetMaxMagic(Player),
+        CChar::GetResist(IPlayer.GetOffset(), 3));
 }
 
 void __cdecl MyStatAgi(int Player, unsigned char Type, char* format,
-                       unsigned char statType, unsigned short points, unsigned short otp,
-                       unsigned short evasion, unsigned short minAttack, unsigned short maxAttack)
+    unsigned char statType, unsigned short points, unsigned short otp,
+    unsigned short evasion, unsigned short minAttack, unsigned short maxAttack)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwwwww", 4, IPlayer.GetAgi(),
-                   CChar::GetHit(Player), CChar::GetDodge(Player), CChar::GetDodge(Player),
-                   CChar::GetMinAttack(Player), CChar::GetMaxAttack(Player));
+        CChar::GetHit(Player), CChar::GetDodge(Player), CChar::GetDodge(Player),
+        CChar::GetMinAttack(Player), CChar::GetMaxAttack(Player));
     CPlayer::Write(IPlayer.GetOffset(), 69, "bwwwwww", 47,
-                   (CChar::GetDex(Player) - IPlayer.GetAgi()), CChar::GetHit(Player),
-                   CChar::GetDodge(Player), CChar::GetDodge(Player), CChar::GetMinAttack(Player),
-                   CChar::GetMaxAttack(Player));
+        (CChar::GetDex(Player) - IPlayer.GetAgi()), CChar::GetHit(Player),
+        CChar::GetDodge(Player), CChar::GetDodge(Player), CChar::GetMinAttack(Player),
+        CChar::GetMaxAttack(Player));
 }
 
 void __cdecl MyStatCurHp1(int Player, unsigned char Type, char* format,
-                          unsigned char statType, unsigned short hp)
+    unsigned char statType, unsigned short hp)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bd", 7, IPlayer.GetCurHp());
 }
 
 void __cdecl MyStatCurHp(int Player, unsigned char Type, char* format,
-                         unsigned char statType, unsigned short hp, unsigned short maxhp)
+    unsigned char statType, unsigned short hp, unsigned short maxhp)
 {
     IChar IPlayer((void*)Player);
     CPlayer::Write(IPlayer.GetOffset(), 69, "bdd", 5, IPlayer.GetCurHp(),
-                   CChar::GetMaxHP(Player));
+        CChar::GetMaxHP(Player));
 }
 
 int __fastcall IsNormal(int Player, void *edx)
@@ -200,14 +206,16 @@ int __fastcall IsNormal(int Player, void *edx)
     {
         if (IPlayer.GetClass() == 3)
         {
-            if (IPlayer.IsBuff(329))
+            if (IPlayer.IsBuff(329)) {
                 return 0;
+            }
         }
 
-        if (IPlayer.GetClass() < 5 && CChar::IsGState((int)IPlayer.GetOffset(),512))
+        if (IPlayer.GetClass() < 5 && CChar::IsGState((int)IPlayer.GetOffset(), 512))
         {
-            if (IPlayer.IsBuff(327))
+            if (IPlayer.IsBuff(327)) {
                 return 0;
+            }
         }
     }
 
@@ -219,96 +227,153 @@ int __fastcall IsStateCheck(int Item, void *edx, int Value)
     IItem IItem((void*)Item);
 
     if (IItem.CheckIndex() >= 3381 && IItem.CheckIndex() <= 3383
-            && !CheckHaninMirror.find(*(DWORD*)(Item + 32))->second && IItem.GetInfo() & 1)
+        && !CheckHaninMirror.find(*(DWORD*)(Item + 32))->second &&
+        IItem.GetInfo() & 1) {
         CheckHaninMirror[*(DWORD*)(Item + 32)] = IItem.GetIID();
+    }
 
     if (IItem.CheckIndex() >= 2986 && IItem.CheckIndex() <= 3009
-            && IItem.GetInfo() & 1)
+        && IItem.GetInfo() & 1)
     {
         int GetGrade = (GetItemStat.find(IItem.GetIID())->second % 10000) / 100;
 
         if (TrigramGrade.count(*(DWORD*)(Item + 32))
-                && GetGrade < TrigramGrade.find(*(DWORD*)(Item + 32))->second)
+            && GetGrade < TrigramGrade.find(*(DWORD*)(Item + 32))->second) {
             TrigramGrade[*(DWORD*)(Item + 32)] = GetGrade;
+        }
 
-        if (!TrigramGrade.count(*(DWORD*)(Item + 32)))
+        if (!TrigramGrade.count(*(DWORD*)(Item + 32))) {
             TrigramGrade[*(DWORD*)(Item + 32)] = GetGrade;
+        }
     }
 
     if (IItem.CheckIndex() >= 2986 && IItem.CheckIndex() <= 3009
-            && IItem.GetInfo() & 1)
+        && IItem.GetInfo() & 1)
     {
         int GetCurrentGrade = (GetItemStat.find(IItem.GetIID())->second % 10000) / 100;
-        if (IItem.CheckIndex() == 2986) TrigramHP[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2986)
+            TrigramHP[*(DWORD*)(Item + 32)] =
                 TriagramStats[0][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2994) TrigramHP[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2994)
+            TrigramHP[*(DWORD*)(Item + 32)] =
                 TriagramStats[1][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3002) TrigramHP[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3002)
+            TrigramHP[*(DWORD*)(Item + 32)] =
                 TriagramStats[2][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2987) TrigramMP[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2987)
+            TrigramMP[*(DWORD*)(Item + 32)] =
                 TriagramStats[3][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2995) TrigramMP[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2995)
+            TrigramMP[*(DWORD*)(Item + 32)] =
                 TriagramStats[4][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3003) TrigramMP[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3003)
+            TrigramMP[*(DWORD*)(Item + 32)] =
                 TriagramStats[5][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2988) TrigramAtk[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2988)
+            TrigramAtk[*(DWORD*)(Item + 32)] =
                 TriagramStats[6][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2996) TrigramAtk[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2996)
+            TrigramAtk[*(DWORD*)(Item + 32)] =
                 TriagramStats[7][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3004) TrigramAtk[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3004)
+            TrigramAtk[*(DWORD*)(Item + 32)] =
                 TriagramStats[8][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2989) TrigramStr[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2989)
+            TrigramStr[*(DWORD*)(Item + 32)] =
                 TriagramStats[9][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2997) TrigramStr[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2997)
+            TrigramStr[*(DWORD*)(Item + 32)] =
                 TriagramStats[10][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3005) TrigramStr[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3005)
+            TrigramStr[*(DWORD*)(Item + 32)] =
                 TriagramStats[11][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2990) TrigramAgi[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2990)
+            TrigramAgi[*(DWORD*)(Item + 32)] =
                 TriagramStats[12][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2998) TrigramAgi[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2998)
+            TrigramAgi[*(DWORD*)(Item + 32)] =
                 TriagramStats[13][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3006) TrigramAgi[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3006)
+            TrigramAgi[*(DWORD*)(Item + 32)] =
                 TriagramStats[14][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2991) TrigramInt[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2991)
+            TrigramInt[*(DWORD*)(Item + 32)] =
                 TriagramStats[15][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2999) TrigramInt[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2999)
+            TrigramInt[*(DWORD*)(Item + 32)] =
                 TriagramStats[16][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3007) TrigramInt[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3007)
+            TrigramInt[*(DWORD*)(Item + 32)] =
                 TriagramStats[17][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2992) TrigramWis[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2992)
+            TrigramWis[*(DWORD*)(Item + 32)] =
                 TriagramStats[18][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3000) TrigramWis[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3000)
+            TrigramWis[*(DWORD*)(Item + 32)] =
                 TriagramStats[19][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3008) TrigramWis[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3008)
+            TrigramWis[*(DWORD*)(Item + 32)] =
                 TriagramStats[20][GetCurrentGrade];
-        if (IItem.CheckIndex() == 2993) TrigramHth[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 2993)
+            TrigramHth[*(DWORD*)(Item + 32)] =
                 TriagramStats[21][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3001) TrigramHth[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3001)
+            TrigramHth[*(DWORD*)(Item + 32)] =
                 TriagramStats[22][GetCurrentGrade];
-        if (IItem.CheckIndex() == 3009) TrigramHth[*(DWORD*)(Item + 32)] =
+
+        if (IItem.CheckIndex() == 3009)
+            TrigramHth[*(DWORD*)(Item + 32)] =
                 TriagramStats[23][GetCurrentGrade];
     }
 
     if (IItem.CheckIndex() >= 3018 && IItem.CheckIndex() <= 3020
-            && IItem.GetInfo() & 1)
+        && IItem.GetInfo() & 1)
     {
         int GetTaegeukPrefix = GetItemStat.find(IItem.GetIID())->second / 1000;
-        if (GetTaegeukPrefix) Taegeuk[*(DWORD*)(Item + 32)] = GetTaegeukPrefix;
+
+        if (GetTaegeukPrefix) {
+            Taegeuk[*(DWORD*)(Item + 32)] = GetTaegeukPrefix;
+        }
     }
 
     if (PetTime.count(IItem.CheckIndex()) || (IItem.CheckIndex() >= 1747
-           && IItem.CheckIndex() <= 1762) || (IItem.CheckIndex() >= 1870
-           && IItem.CheckIndex() <= 1877) || (IItem.CheckIndex() >= 2004
-           && IItem.CheckIndex() <= 2007) || (IItem.CheckIndex() >= 2421
-           && IItem.CheckIndex() <= 2423) || (IItem.CheckIndex() >= 2550
-           && IItem.CheckIndex() <= 2653) || (IItem.CheckIndex() >= 6045
-           && IItem.CheckIndex() <= 6052))
-        CDBSocket::Write(85,"d",IItem.GetIID());
+            && IItem.CheckIndex() <= 1762) || (IItem.CheckIndex() >= 1870
+            && IItem.CheckIndex() <= 1877) || (IItem.CheckIndex() >= 2004
+            && IItem.CheckIndex() <= 2007) || (IItem.CheckIndex() >= 2421
+            && IItem.CheckIndex() <= 2423) || (IItem.CheckIndex() >= 2550
+            && IItem.CheckIndex() <= 2653) || (IItem.CheckIndex() >= 6045
+            && IItem.CheckIndex() <= 6052)) {
+        CDBSocket::Write(85, "d", IItem.GetIID());
+    }
 
-    if (IItem.GetInfo() & 4194304)
-        CDBSocket::Write(85,"d",IItem.GetIID());
+    if (IItem.GetInfo() & 4194304) {
+        CDBSocket::Write(85, "d", IItem.GetIID());
+    }
 
-    return CItem::IsState(Item,Value);
+    return CItem::IsState(Item, Value);
 }
 
 int __cdecl OpenPortalFix(int Player)
@@ -317,7 +382,7 @@ int __cdecl OpenPortalFix(int Player)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(349))
     {
-        IPlayer.SystemMessage("You can not use portal while riding.",TEXTCOLOR_RED);
+        IPlayer.SystemMessage("You can not use portal while riding.", TEXTCOLOR_RED);
         return 0;
     }
 
@@ -327,13 +392,15 @@ int __cdecl OpenPortalFix(int Player)
 int __fastcall MyForPortalCheck(void *Value, void *edx, int Player)
 {
     IChar IPlayer((void*)Player);
+
     if (IPlayer.IsOnline() && (*(DWORD*)((int)Value + 4) & 65536))
     {
         CChar::Unlock(IPlayer.GetOffset());
-        IPlayer.Buff(331,3,0);
+        IPlayer.Buff(331, 3, 0);
         CChar::Lock(IPlayer.GetOffset());
     }
-    return Undefined::ForPortalCheck(Value,Player);
+
+    return Undefined::ForPortalCheck(Value, Player);
 }
 
 int __fastcall RidingFix(void *Argument, void *edx)
@@ -350,95 +417,115 @@ int __fastcall RidingFix(void *Argument, void *edx)
         if (IPlayer.IsOnline())
         {
             if (IPlayer.IsOnline() && ((Item.CheckIndex() >= 3412
-                    && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
-                    && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
-                    && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
-                    && Item.CheckIndex() <= 6024)) && CChar::IsGState((int)IPlayer.GetOffset(),4))
+                        && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
+                        && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
+                        && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
+                        && Item.CheckIndex() <= 6024)) &&
+                CChar::IsGState((int)IPlayer.GetOffset(), 4)) {
                 return Check;
+            }
 
             if (IPlayer.IsOnline() && ((Item.CheckIndex() >= 3412
-                    && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
-                    && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
-                    && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
-                    && Item.CheckIndex() <= 6024)) && CChar::IsGState((int)IPlayer.GetOffset(),512))
+                        && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
+                        && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
+                        && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
+                        && Item.CheckIndex() <= 6024)) &&
+                CChar::IsGState((int)IPlayer.GetOffset(), 512)) {
                 return Check;
+            }
 
             if (IPlayer.IsOnline() && ((Item.CheckIndex() >= 3412
-                    && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
-                    && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
-                    && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
-                    && Item.CheckIndex() <= 6024)) && (IPlayer.IsBuff(18) || IPlayer.IsBuff(19)
-                    || IPlayer.IsBuff(313) || IPlayer.IsBuff(329)))
+                        && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
+                        && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
+                        && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
+                        && Item.CheckIndex() <= 6024)) && (IPlayer.IsBuff(18) || IPlayer.IsBuff(19)
+                    || IPlayer.IsBuff(313) || IPlayer.IsBuff(329))) {
                 return Check;
+            }
 
             if (IPlayer.IsOnline() && ((Item.CheckIndex() >= 3412
-                    && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
-                    && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
-                    && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
-                    && Item.CheckIndex() <= 6024)) && !IPlayer.IsBuff(349))
+                        && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
+                        && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
+                        && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
+                        && Item.CheckIndex() <= 6024)) && !IPlayer.IsBuff(349))
             {
                 if (IPlayer.IsValid())
                 {
-                    IPlayer.Buff(313,3,0);
-                    IPlayer.Buff(Item.CheckIndex(),1296000,0);
+                    IPlayer.Buff(313, 3, 0);
+                    IPlayer.Buff(Item.CheckIndex(), 1296000, 0);
 
                     if (Item.CheckIndex() >= 3412
-                            && Item.CheckIndex() <= 3419)
+                        && Item.CheckIndex() <= 3419) {
                         IPlayer.EnableRiding(Item.CheckIndex()-3411);
+                    }
 
-                    if (Item.CheckIndex() == 4149)
+                    if (Item.CheckIndex() == 4149) {
                         IPlayer.EnableRiding(9);
+                    }
 
-                    if (Item.CheckIndex() == 4150)
+                    if (Item.CheckIndex() == 4150) {
                         IPlayer.EnableRiding(10);
+                    }
 
-                    if (Item.CheckIndex() == 4151)
+                    if (Item.CheckIndex() == 4151) {
                         IPlayer.EnableRiding(11);
+                    }
 
-                    if (Item.CheckIndex() == 4152)
+                    if (Item.CheckIndex() == 4152) {
                         IPlayer.EnableRiding(14);
+                    }
 
-                    if (Item.CheckIndex() == 4153)
+                    if (Item.CheckIndex() == 4153) {
                         IPlayer.EnableRiding(15);
+                    }
 
-                    if (Item.CheckIndex() == 4156)
+                    if (Item.CheckIndex() == 4156) {
                         IPlayer.EnableRiding(12);
+                    }
 
-                    if (Item.CheckIndex() == 4157)
+                    if (Item.CheckIndex() == 4157) {
                         IPlayer.EnableRiding(13);
+                    }
 
-                    if (Item.CheckIndex() == 4158)
+                    if (Item.CheckIndex() == 4158) {
                         IPlayer.EnableRiding(16);
+                    }
 
-                    if (Item.CheckIndex() == 4159)
+                    if (Item.CheckIndex() == 4159) {
                         IPlayer.EnableRiding(17);
+                    }
 
-                    if (Item.CheckIndex() == 4160)
+                    if (Item.CheckIndex() == 4160) {
                         IPlayer.EnableRiding(18);
+                    }
 
-                    if (Item.CheckIndex() == 6022)
+                    if (Item.CheckIndex() == 6022) {
                         IPlayer.EnableRiding(20);
+                    }
 
-                    if (Item.CheckIndex() == 6021)
+                    if (Item.CheckIndex() == 6021) {
                         IPlayer.EnableRiding(21);
+                    }
 
-                    if (Item.CheckIndex() == 6023)
+                    if (Item.CheckIndex() == 6023) {
                         IPlayer.EnableRiding(22);
+                    }
 
-                    if (Item.CheckIndex() == 6024)
+                    if (Item.CheckIndex() == 6024) {
                         IPlayer.EnableRiding(23);
+                    }
                 }
 
                 return Check;
             }
 
             if (IPlayer.IsOnline() && ((Item.CheckIndex() >= 3412
-                    && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
-                    && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
-                    && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
-                    && Item.CheckIndex() <= 6024)) && IPlayer.IsBuff(349))
+                        && Item.CheckIndex() <= 3419) || (Item.CheckIndex() >= 4149
+                        && Item.CheckIndex() <= 4153) || (Item.CheckIndex() >= 4156
+                        && Item.CheckIndex() <= 4160) || (Item.CheckIndex() >= 6021
+                        && Item.CheckIndex() <= 6024)) && IPlayer.IsBuff(349))
             {
-                IPlayer.Buff(313,3,0);
+                IPlayer.Buff(313, 3, 0);
                 IPlayer.DisableRiding();
                 return Check;
             }
@@ -452,24 +539,41 @@ int __fastcall MyInventoryCheck(int Player, void *edx)
 {
     IChar IPlayer((void*)Player);
     int Size = CPlayer::GetInvenSize(Player);
-    if (Size >= 60) Size -= 12;
+
+    if (Size >= 60) {
+        Size -= 12;
+    }
+
     if (IPlayer.IsOnline() && IPlayer.IsBuff(172) && IPlayer.IsBuff(173)
-            && IPlayer.IsBuff(174)) Size -= 108;
+        && IPlayer.IsBuff(174)) {
+        Size -= 108;
+    }
+
     if (IPlayer.IsOnline() && !IPlayer.IsBuff(172) && IPlayer.IsBuff(173)
-            && IPlayer.IsBuff(174)) Size -= 72;
+        && IPlayer.IsBuff(174)) {
+        Size -= 72;
+    }
+
     if (IPlayer.IsOnline() && !IPlayer.IsBuff(172) && !IPlayer.IsBuff(173)
-            && IPlayer.IsBuff(174)) Size -= 36;
-    if (Size < 0) Size = 0;
+        && IPlayer.IsBuff(174)) {
+        Size -= 36;
+    }
+
+    if (Size < 0) {
+        Size = 0;
+    }
+
     return Size;
 }
 
 int __fastcall MirrorFix(int Player, void *edx, int Type)
 {
     if (Type == -3 || Type == -97 || Type == -98 || Type == -99 || Type == -100
-            || Type == -101)
+        || Type == -101) {
         return 0;
+    }
 
-    return CPlayer::IsWState(Player,Type);
+    return CPlayer::IsWState(Player, Type);
 }
 
 void ExpMultiplier()

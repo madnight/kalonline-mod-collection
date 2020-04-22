@@ -13,7 +13,7 @@ void __fastcall ContinueSpinBlade(IChar IPlayer)
             }
 
             if (IPlayer.IsMoved(CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerX,
-                                CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerY))
+                    CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerY))
             {
                 ResetContinueSkill(IPlayer);
                 return;
@@ -21,23 +21,25 @@ void __fastcall ContinueSpinBlade(IChar IPlayer)
 
             int Around = IPlayer.GetObjectListAround(3);
 
-            while(Around)
+            while (Around)
             {
                 IChar Object((void*)*(DWORD*)Around);
 
                 if (Object.IsValid() && IPlayer.IsValid()
-                        && (*(int (__thiscall **)(int, int, DWORD))
-                            (*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(),
-                                                          (int)Object.GetOffset(), 0))
+                    && (*(int (__thiscall **)(int, int, DWORD))
+                        (*(DWORD *)IPlayer.GetOffset() + 176))((int)IPlayer.GetOffset(),
+                        (int)Object.GetOffset(), 0))
                 {
                     int nDmg = (IPlayer.GetAttack() * TSBMul) + (CheckContinueSkill.find(
-                                   IPlayer.GetPID())->second.PlayerSkillGrade * CTools::Rate(TSBMin,TSBMax));
+                                IPlayer.GetPID())->second.PlayerSkillGrade * CTools::Rate(TSBMin, TSBMax));
 
-                    if (Object.GetType() == 0)
+                    if (Object.GetType() == 0) {
                         nDmg = (nDmg * TSBReduce) / 100;
+                    }
 
-                    if (IPlayer.CheckHit(Object, 10) || Object.GetType() == 1)
-                        IPlayer.OktayDamageArea(Object,nDmg,36);
+                    if (IPlayer.CheckHit(Object, 10) || Object.GetType() == 1) {
+                        IPlayer.OktayDamageArea(Object, nDmg, 36);
+                    }
                 }
 
                 Around = CBaseList::Pop((void*)Around);
@@ -45,12 +47,14 @@ void __fastcall ContinueSpinBlade(IChar IPlayer)
 
             IPlayer._ShowBattleAnimation(IPlayer, 36);
 
-            if (IPlayer.IsOnline())
+            if (IPlayer.IsOnline()) {
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 1000;
+            }
 
             if (IPlayer.IsOnline()
-                    && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                 ResetContinueSkill(IPlayer);
+            }
 
             return;
         }
@@ -68,10 +72,12 @@ void __fastcall SpinBlade(IChar IPlayer)
     {
         ISkill xSkill((void*)pSkill);
         int nSkillGrade = xSkill.GetGrade();
-        int nMana = (int)((((nSkillGrade+IPlayer.GetLevel()) * nSkillGrade)*1.25) + 180);
+        int nMana = (int)((((nSkillGrade+IPlayer.GetLevel()) * nSkillGrade)*1.25) +
+                180);
 
-        if (IPlayer.GetCurMp() < nMana)
+        if (IPlayer.GetCurMp() < nMana) {
             return;
+        }
 
         if (nSkillGrade && IPlayer.IsValid())
         {

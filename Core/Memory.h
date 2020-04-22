@@ -24,29 +24,29 @@ private:
 public:
     void Copy(void *Source, void *Destination, size_t Size);
     void Fill(unsigned long Destination, unsigned char Fill, size_t Size,
-              bool Recoverable = true);
+        bool Recoverable = true);
     void Fill(void *Destination, unsigned char Fill, size_t Size,
-              bool Recoverable = true);
+        bool Recoverable = true);
     void Set(unsigned long Destination, unsigned char *Data, size_t Size,
-             bool Recoverable = true);
+        bool Recoverable = true);
     void Set(void *Destination, unsigned char *Data, size_t Size,
-             bool Recoverable = true);
+        bool Recoverable = true);
     void Set(unsigned long Destination, const char *Data, size_t Size,
-             bool Recoverable = true);
+        bool Recoverable = true);
     void Set(void *Destination, const char *Data, size_t Size,
-             bool Recoverable = true);
+        bool Recoverable = true);
     void Hook(void *Address, void *Destination, unsigned char Instruction = _I_CALL,
-              size_t Size = 5, bool Recoverable = true);
+        size_t Size = 5, bool Recoverable = true);
     void Hook(unsigned long Address, void *Destination,
-              unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
+        unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
     void Hook(unsigned long Address[], size_t Count, void *Destination,
-              unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
+        unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
     void Hook(void *Address, unsigned long Destination,
-              unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
+        unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
     void Hook(unsigned long Address, unsigned long Destination,
-              unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
+        unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
     void Hook(unsigned long Address[], size_t Count, unsigned long Destination,
-              unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
+        unsigned char Instruction = _I_CALL, size_t Size = 5, bool Recoverable = true);
     void HookAPI(void *Address, unsigned long Destination);
     void HookAPI(unsigned long Address, unsigned long Destination);
     void HookAPI(void *Address, void *Destination);

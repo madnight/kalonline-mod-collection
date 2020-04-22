@@ -18,18 +18,22 @@ void *ISkill::GetOffset()
 
 int ISkill::GetIndex()
 {
-    if (this->GetOffset())
+    if (this->GetOffset()) {
         return *(DWORD*)((int)(this->Offset) + 4);
-    else
+    }
+    else {
         return 0;
+    }
 }
 
 int ISkill::GetGrade()
 {
-    if (this->GetOffset())
+    if (this->GetOffset()) {
         return *(DWORD*)((int)(this->Offset) + 8);
-    else
+    }
+    else {
         return 0;
+    }
 }
 
 int ISkill::DecreaseMana()
@@ -37,14 +41,17 @@ int ISkill::DecreaseMana()
     if (this->GetOffset())
         return (*(int (__thiscall **)(void*, DWORD))
                 (*(DWORD *)this->Offset + 0x20))(this->Offset, 0);
-    else
+    else {
         return 0;
+    }
 }
 
 void* ISkill::GetPlayer()
 {
-    if (this->GetOffset())
+    if (this->GetOffset()) {
         return (void*)*(DWORD*)(int)(this->Offset);
-    else
+    }
+    else {
         return 0;
+    }
 }

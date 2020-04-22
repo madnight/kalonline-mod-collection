@@ -3,16 +3,16 @@ void __fastcall ContinueLightningSlash(IChar IPlayer)
     if (IPlayer.IsValid())
     {
         int nSkillGrade = CheckContinueSkill.find(
-                              IPlayer.GetPID())->second.PlayerSkillGrade;
+                IPlayer.GetPID())->second.PlayerSkillGrade;
         void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
 
         if (nSkillGrade && pTarget
-                && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
+            && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
         {
             IChar Target(pTarget);
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
 
-            if(IPlayer.IsValid() && Target.IsValid())
+            if (IPlayer.IsValid() && Target.IsValid())
             {
                 if (!IPlayer.IsInRange(Target, 2))
                 {
@@ -21,7 +21,7 @@ void __fastcall ContinueLightningSlash(IChar IPlayer)
                 }
 
                 if (IPlayer.IsMoved(CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerX,
-                                    CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerY))
+                        CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerY))
                 {
                     ResetContinueSkill(IPlayer);
                     return;
@@ -30,20 +30,23 @@ void __fastcall ContinueLightningSlash(IChar IPlayer)
                 if (IPlayer.CheckHit(Target, 30))
                 {
                     int nDmg = (IPlayer.GetAttack() * TLSMul) + (nSkillGrade * CTools::Rate(TLSMin,
-                               TLSMax));
+                                TLSMax));
 
-                    if (Target.GetType() == 0)
+                    if (Target.GetType() == 0) {
                         nDmg = nDmg * TLSReduce / 100;
+                    }
 
-                    IPlayer.OktayDamageSingle(Target,nDmg,28);
+                    IPlayer.OktayDamageSingle(Target, nDmg, 28);
                 }
 
-                if (IPlayer.IsOnline())
+                if (IPlayer.IsOnline()) {
                     CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 700;
+                }
 
                 if (IPlayer.IsOnline()
-                        && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0)
+                    && CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount == 0) {
                     ResetContinueSkill(IPlayer);
+                }
 
                 return;
             }
@@ -68,29 +71,35 @@ void __fastcall LightningSlash(IChar IPlayer, int pPacket, int pPos)
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
         int nMana = (nSkillGrade + IPlayer.GetLevel()) * 3 + 50;
 
-        if (bType == 0 && nTargetID)
+        if (bType == 0 && nTargetID) {
             pTarget = CPlayer::FindPlayer(nTargetID);
+        }
 
-        if (bType == 1 && nTargetID)
+        if (bType == 1 && nTargetID) {
             pTarget = CMonster::FindMonster(nTargetID);
+        }
 
-        if(bType >= 2)
+        if (bType >= 2) {
             return;
+        }
 
         if (pTarget && nSkillGrade && IPlayer.IsValid())
         {
             IChar Target(pTarget);
 
-            if (IPlayer.GetCurMp() < nMana)
+            if (IPlayer.GetCurMp() < nMana) {
                 return;
+            }
 
-            if (pTarget == IPlayer.GetOffset())
+            if (pTarget == IPlayer.GetOffset()) {
                 return;
+            }
 
-            if(IPlayer.IsValid() && Target.IsValid())
+            if (IPlayer.IsValid() && Target.IsValid())
             {
-                if (!IPlayer.IsInRange(Target,300))
+                if (!IPlayer.IsInRange(Target, 300)) {
                     return;
+                }
 
                 IPlayer.DecreaseMana(nMana);
                 CheckContinueSkill[IPlayer.GetPID()].PlayerX = IPlayer.GetX();
