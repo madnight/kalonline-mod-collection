@@ -13,7 +13,6 @@ int EggExpTime = 0, EggExpKill = 0, ConfigMaxDamage = 0, ConfigMaxMagAtk = 0,
     ConfigMaxPhyAtk = 0;
 int EmokQuestIndex = 0, EmokX = 0, EmokY = 0, EmokMap = 0, EmokCert = 0;
 int MysteryResetItem = 0, MysteryQuest = 0;
-bool LicenseSerialCheck = false;
 int FishLowest = 0, FishLow = 0, FishNormal = 0, FishHard = 0, FishHardest = 0;
 int KnightManaCirculation = 0, Knight, KPWWReduce = 0, KPWWMul = 0, KPWWMin = 0,
     KPWWMax = 0;

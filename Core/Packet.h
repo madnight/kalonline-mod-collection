@@ -3,10 +3,6 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 {
     IChar IPlayer((void*)Player);
 
-    if (!LicenseSerialCheck) {
-        return;
-    }
-
     if (IPlayer.IsOnline())
     {
         if ((packet == 31 || packet == 61) && IPlayer.IsBuff(349)) {

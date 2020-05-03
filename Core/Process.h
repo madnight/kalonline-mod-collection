@@ -1,9 +1,5 @@
 int __fastcall Process(void *Socket, void *edx, char *Data)
 {
-    if (!LicenseSerialCheck) {
-        return 0;
-    }
-
     if ((unsigned char)Data[2] == 253)
     {
         int Type = 0, Value = 0;
