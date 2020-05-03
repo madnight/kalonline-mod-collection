@@ -24,6 +24,47 @@ void playerAddAgiStrInt(int value) {
     IPlayer.AddInt(value);
 }
 
+int getStat(int grade) {
+
+    if (grade >= 46 && grade <= 49) {
+        return 1;
+    }
+
+    if (grade >= 50 && grade <= 53) {
+        return 2;
+    }
+
+    if (grade >= 55 && grade <= 58) {
+        return 3;
+    }
+
+    if (grade >= 60 && grade <= 63) {
+        return 4;
+    }
+
+    if (grade >= 65 && grade <= 68) {
+        return 5;
+    }
+
+    if (grade >= 70 && grade <= 73) {
+        return 6;
+    }
+
+    if (grade >= 80 && grade <= 83) {
+        return 7;
+    }
+
+    if (grade >= 90 && grade <= 93) {
+        return 8;
+    }
+
+    if (grade >= 95) {
+        return 9;
+    }
+
+    return 0;
+}
+
 void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 {
     IItem IItem((void*)Item);
@@ -147,43 +188,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
         if (IItem.GetInfo() & 2097152)
         {
             int Grade = *(DWORD*)(*(DWORD*)(Item + 40) + 80);
-            int Stat = 0;
-
-            if (Grade >= 46 && Grade <= 49) {
-                Stat = 1;
-            }
-
-            if (Grade >= 50 && Grade <= 53) {
-                Stat = 2;
-            }
-
-            if (Grade >= 55 && Grade <= 58) {
-                Stat = 3;
-            }
-
-            if (Grade >= 60 && Grade <= 63) {
-                Stat = 4;
-            }
-
-            if (Grade >= 65 && Grade <= 68) {
-                Stat = 5;
-            }
-
-            if (Grade >= 70 && Grade <= 73) {
-                Stat = 6;
-            }
-
-            if (Grade >= 80 && Grade <= 83) {
-                Stat = 7;
-            }
-
-            if (Grade >= 90 && Grade <= 93) {
-                Stat = 8;
-            }
-
-            if (Grade >= 95) {
-                Stat = 9;
-            }
+            int Stat = getStat(Grade);
 
             playerAddAgiStrInt(Stat);
 
@@ -377,35 +382,7 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
         if (IItem.GetInfo() & 2097152)
         {
             int Grade = *(DWORD*)(*(DWORD*)((int)Item + 40) + 80);
-            int Stat = 0;
-
-            if (Grade >= 46 && Grade <= 49) {
-                Stat = 1;
-            }
-            else if (Grade >= 50 && Grade <= 53) {
-                Stat = 2;
-            }
-            else if (Grade >= 55 && Grade <= 58) {
-                Stat = 3;
-            }
-            else if (Grade >= 60 && Grade <= 63) {
-                Stat = 4;
-            }
-            else if (Grade >= 65 && Grade <= 68) {
-                Stat = 5;
-            }
-            else if (Grade >= 70 && Grade <= 73) {
-                Stat = 6;
-            }
-            else if (Grade >= 80 && Grade <= 83) {
-                Stat = 7;
-            }
-            else if (Grade >= 90 && Grade <= 93) {
-                Stat = 8;
-            }
-            else if (Grade >= 95) {
-                Stat = 9;
-            }
+            int Stat = getStat(Grade);
 
             IPlayer.RemoveAgi(Stat);
             IPlayer.RemoveStr(Stat);
