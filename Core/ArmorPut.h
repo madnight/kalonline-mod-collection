@@ -146,28 +146,36 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
             if (Grade >= 46 && Grade <= 49) {
                 Stat = 1;
             }
-            else if (Grade >= 50 && Grade <= 53) {
+
+            if (Grade >= 50 && Grade <= 53) {
                 Stat = 2;
             }
-            else if (Grade >= 55 && Grade <= 58) {
+
+            if (Grade >= 55 && Grade <= 58) {
                 Stat = 3;
             }
-            else if (Grade >= 60 && Grade <= 63) {
+
+            if (Grade >= 60 && Grade <= 63) {
                 Stat = 4;
             }
-            else if (Grade >= 65 && Grade <= 68) {
+
+            if (Grade >= 65 && Grade <= 68) {
                 Stat = 5;
             }
-            else if (Grade >= 70 && Grade <= 73) {
+
+            if (Grade >= 70 && Grade <= 73) {
                 Stat = 6;
             }
-            else if (Grade >= 80 && Grade <= 83) {
+
+            if (Grade >= 80 && Grade <= 83) {
                 Stat = 7;
             }
-            else if (Grade >= 90 && Grade <= 93) {
+
+            if (Grade >= 90 && Grade <= 93) {
                 Stat = 8;
             }
-            else if (Grade >= 95) {
+
+            if (Grade >= 95) {
                 Stat = 9;
             }
 
@@ -175,20 +183,17 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
             IPlayer.AddStr(Stat);
             IPlayer.AddInt(Stat);
 
-            if (IItem.GetType() == 2) {
-                BeadOfFire[IPlayer.GetPID()].Helmet = Grade;
-            }
-            else if (IItem.GetType() == 3) {
-                BeadOfFire[IPlayer.GetPID()].Chest = Grade;
-            }
-            else if (IItem.GetType() == 4) {
-                BeadOfFire[IPlayer.GetPID()].Short = Grade;
-            }
-            else if (IItem.GetType() == 5) {
-                BeadOfFire[IPlayer.GetPID()].Gloves = Grade;
-            }
-            else if (IItem.GetType() == 6) {
-                BeadOfFire[IPlayer.GetPID()].Boots = Grade;
+            switch (IItem.GetType()) {
+                case 2:
+                    BeadOfFire[IPlayer.GetPID()].Helmet = Grade;
+                case 3:
+                    BeadOfFire[IPlayer.GetPID()].Chest = Grade;
+                case 4:
+                    BeadOfFire[IPlayer.GetPID()].Short = Grade;
+                case 5:
+                    BeadOfFire[IPlayer.GetPID()].Gloves = Grade;
+                case 6:
+                    BeadOfFire[IPlayer.GetPID()].Boots = Grade;
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
