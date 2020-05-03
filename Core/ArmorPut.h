@@ -62,232 +62,153 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 
             if (QigongType)
             {
-                if (IItem.GetType() == 3)
-                {
+                if (IItem.GetType() == 3) {
                     IPlayer.AddDef((check * QigongChest[QigongType - 1][0]) / 100);
-                    int Type = QigongChest[QigongType - 1][1];
-                    int Stat = QigongChest[QigongType - 1][2];
-
-                    if (Type == 0) {
-                        IPlayer.AddStr(Stat);
-                    }
-                    else if (Type == 1) {
-                        IPlayer.AddHp(Stat);
-                    }
-                    else if (Type == 2) {
-                        IPlayer.AddInt(Stat);
-                    }
-                    else if (Type == 3) {
-                        IPlayer.AddWis(Stat);
-                    }
-                    else if (Type == 4) {
-                        IPlayer.AddAgi(Stat);
-                    }
-                } else if (IItem.GetType() == 4)
-                {
+                } else if (IItem.GetType() == 4) {
                     IPlayer.AddDef((check * QigongShort[QigongType - 1][0]) / 100);
-                    int Type = QigongChest[QigongType - 1][1];
-                    int Stat = QigongChest[QigongType - 1][2];
-
-                    if (Type == 0) {
-                        IPlayer.AddStr(Stat);
-                    }
-                    else if (Type == 1) {
-                        IPlayer.AddHp(Stat);
-                    }
-                    else if (Type == 2) {
-                        IPlayer.AddInt(Stat);
-                    }
-                    else if (Type == 3) {
-                        IPlayer.AddWis(Stat);
-                    }
-                    else if (Type == 4) {
-                        IPlayer.AddAgi(Stat);
-                    }
                 } else {
                     IPlayer.AddDef((check * QigongMain[QigongType - 1][0]) / 100);
-                    int Type = QigongChest[QigongType - 1][1];
-                    int Stat = QigongChest[QigongType - 1][2];
+                }
 
-                    if (Type == 0) {
+                int Type = QigongChest[QigongType - 1][1];
+                int Stat = QigongChest[QigongType - 1][2];
+
+                switch (Type) {
+                    case 0:
                         IPlayer.AddStr(Stat);
-                    }
-                    else if (Type == 1) {
+                    case 1:
                         IPlayer.AddHp(Stat);
-                    }
-                    else if (Type == 2) {
+                    case 2:
                         IPlayer.AddInt(Stat);
-                    }
-                    else if (Type == 3) {
+                    case 3:
                         IPlayer.AddWis(Stat);
-                    }
-                    else if (Type == 4) {
+                    case 4:
                         IPlayer.AddAgi(Stat);
-                    }
                 }
             }
         }
 
-        if (IItem.GetSetGem() == 240)
-        {
-            IPlayer.AddDef((check * 18) / 100);
-            IPlayer.AddAgi(7);
-        } else if (IItem.GetSetGem() == 239)
-        {
-            IPlayer.AddDef((check * 18) / 100);
-            IPlayer.AddWis(7);
-        } else if (IItem.GetSetGem() == 238)
-        {
-            IPlayer.AddDef((check * 18) / 100);
-            IPlayer.AddInt(7);
-        } else if (IItem.GetSetGem() == 237)
-        {
-            IPlayer.AddDef((check * 18) / 100);
-            IPlayer.AddHp(7);
-        } else if (IItem.GetSetGem() == 236)
-        {
-            IPlayer.AddDef((check * 18) / 100);
-            IPlayer.AddStr(7);
-        } else if (IItem.GetSetGem() == 235)
-        {
-            IPlayer.AddDef((check * 16) / 100);
-            IPlayer.AddAgi(5);
-        } else if (IItem.GetSetGem() == 234)
-        {
-            IPlayer.AddDef((check * 16) / 100);
-            IPlayer.AddWis(5);
-        } else if (IItem.GetSetGem() == 233)
-        {
-            IPlayer.AddDef((check * 16) / 100);
-            IPlayer.AddInt(5);
-        } else if (IItem.GetSetGem() == 232)
-        {
-            IPlayer.AddDef((check * 16) / 100);
-            IPlayer.AddHp(5);
-        } else if (IItem.GetSetGem() == 231)
-        {
-            IPlayer.AddDef((check * 16) / 100);
-            IPlayer.AddStr(5);
-        } else if (IItem.GetSetGem() == 230)
-        {
-            IPlayer.AddDef((check * 14) / 100);
-            IPlayer.AddAgi(3);
-        } else if (IItem.GetSetGem() == 229)
-        {
-            IPlayer.AddDef((check * 14) / 100);
-            IPlayer.AddWis(3);
-        } else if (IItem.GetSetGem() == 228)
-        {
-            IPlayer.AddDef((check * 14) / 100);
-            IPlayer.AddInt(3);
-        } else if (IItem.GetSetGem() == 227)
-        {
-            IPlayer.AddDef((check * 14) / 100);
-            IPlayer.AddHp(3);
-        } else if (IItem.GetSetGem() == 226)
-        {
-            IPlayer.AddDef((check * 14) / 100);
-            IPlayer.AddStr(3);
-        } else if (IItem.GetSetGem() == 225)
-        {
-            IPlayer.AddDef((check * 12) / 100);
-            IPlayer.AddAgi(3);
-        } else if (IItem.GetSetGem() == 224)
-        {
-            IPlayer.AddDef((check * 12) / 100);
-            IPlayer.AddWis(3);
-        } else if (IItem.GetSetGem() == 223)
-        {
-            IPlayer.AddDef((check * 12) / 100);
-            IPlayer.AddInt(3);
-        } else if (IItem.GetSetGem() == 222)
-        {
-            IPlayer.AddDef((check * 12) / 100);
-            IPlayer.AddHp(3);
-        } else if (IItem.GetSetGem() == 221)
-        {
-            IPlayer.AddDef((check * 12) / 100);
-            IPlayer.AddStr(3);
-        } else if (IItem.GetSetGem() == 220)
-        {
-            IPlayer.AddDef((check * 10) / 100);
-            IPlayer.AddAgi(2);
-        } else if (IItem.GetSetGem() == 219)
-        {
-            IPlayer.AddDef((check * 10) / 100);
-            IPlayer.AddWis(2);
-        } else if (IItem.GetSetGem() == 218)
-        {
-            IPlayer.AddDef((check * 10) / 100);
-            IPlayer.AddInt(2);
-        } else if (IItem.GetSetGem() == 217)
-        {
-            IPlayer.AddDef((check * 10) / 100);
-            IPlayer.AddHp(2);
-        } else if (IItem.GetSetGem() == 216)
-        {
-            IPlayer.AddDef((check * 10) / 100);
-            IPlayer.AddStr(2);
-        } else if (IItem.GetSetGem() == 215)
-        {
-            IPlayer.AddDef((check * 8) / 100);
-            IPlayer.AddAgi(2);
-        } else if (IItem.GetSetGem() == 214)
-        {
-            IPlayer.AddDef((check * 8) / 100);
-            IPlayer.AddWis(2);
-        } else if (IItem.GetSetGem() == 213)
-        {
-            IPlayer.AddDef((check * 8) / 100);
-            IPlayer.AddInt(2);
-        } else if (IItem.GetSetGem() == 212)
-        {
-            IPlayer.AddDef((check * 8) / 100);
-            IPlayer.AddHp(2);
-        } else if (IItem.GetSetGem() == 211)
-        {
-            IPlayer.AddDef((check * 8) / 100);
-            IPlayer.AddStr(2);
-        } else if (IItem.GetSetGem() == 210)
-        {
-            IPlayer.AddDef((check * 6) / 100);
-            IPlayer.AddAgi(1);
-        } else if (IItem.GetSetGem() == 209)
-        {
-            IPlayer.AddDef((check * 6) / 100);
-            IPlayer.AddWis(1);
-        } else if (IItem.GetSetGem() == 208)
-        {
-            IPlayer.AddDef((check * 6) / 100);
-            IPlayer.AddInt(1);
-        } else if (IItem.GetSetGem() == 207)
-        {
-            IPlayer.AddDef((check * 6) / 100);
-            IPlayer.AddHp(1);
-        } else if (IItem.GetSetGem() == 206)
-        {
-            IPlayer.AddDef((check * 6) / 100);
-            IPlayer.AddStr(1);
-        } else if (IItem.GetSetGem() == 205)
-        {
-            IPlayer.AddDef((check * 4) / 100);
-            IPlayer.AddAgi(1);
-        } else if (IItem.GetSetGem() == 204)
-        {
-            IPlayer.AddDef((check * 4) / 100);
-            IPlayer.AddWis(1);
-        } else if (IItem.GetSetGem() == 203)
-        {
-            IPlayer.AddDef((check * 4) / 100);
-            IPlayer.AddInt(1);
-        } else if (IItem.GetSetGem() == 202)
-        {
-            IPlayer.AddDef((check * 4) / 100);
-            IPlayer.AddHp(1);
-        } else if (IItem.GetSetGem() == 201)
-        {
-            IPlayer.AddDef((check * 4) / 100);
-            IPlayer.AddStr(1);
+        switch (IItem.GetSetGem()) {
+            case 240:
+                IPlayer.AddDef((check * 18) / 100);
+                IPlayer.AddAgi(7);
+            case 239:
+                IPlayer.AddDef((check * 18) / 100);
+                IPlayer.AddWis(7);
+            case 238:
+                IPlayer.AddDef((check * 18) / 100);
+                IPlayer.AddInt(7);
+            case 237:
+                IPlayer.AddDef((check * 18) / 100);
+                IPlayer.AddHp(7);
+            case 236:
+                IPlayer.AddDef((check * 18) / 100);
+                IPlayer.AddStr(7);
+            case 235:
+                IPlayer.AddDef((check * 16) / 100);
+                IPlayer.AddAgi(5);
+            case 234:
+                IPlayer.AddDef((check * 16) / 100);
+                IPlayer.AddWis(5);
+            case 233:
+                IPlayer.AddDef((check * 16) / 100);
+                IPlayer.AddInt(5);
+            case 232:
+                IPlayer.AddDef((check * 16) / 100);
+                IPlayer.AddHp(5);
+            case 231:
+                IPlayer.AddDef((check * 16) / 100);
+                IPlayer.AddStr(5);
+            case 230:
+                IPlayer.AddDef((check * 14) / 100);
+                IPlayer.AddAgi(3);
+            case 229:
+                IPlayer.AddDef((check * 14) / 100);
+                IPlayer.AddWis(3);
+            case 228:
+                IPlayer.AddDef((check * 14) / 100);
+                IPlayer.AddInt(3);
+            case 227:
+                IPlayer.AddDef((check * 14) / 100);
+                IPlayer.AddHp(3);
+            case 226:
+                IPlayer.AddDef((check * 14) / 100);
+                IPlayer.AddStr(3);
+            case 225:
+                IPlayer.AddDef((check * 12) / 100);
+                IPlayer.AddAgi(3);
+            case 224:
+                IPlayer.AddDef((check * 12) / 100);
+                IPlayer.AddWis(3);
+            case 223:
+                IPlayer.AddDef((check * 12) / 100);
+                IPlayer.AddInt(3);
+            case 222:
+                IPlayer.AddDef((check * 12) / 100);
+                IPlayer.AddHp(3);
+            case 221:
+                IPlayer.AddDef((check * 12) / 100);
+                IPlayer.AddStr(3);
+            case 220:
+                IPlayer.AddDef((check * 10) / 100);
+                IPlayer.AddAgi(2);
+            case 219:
+                IPlayer.AddDef((check * 10) / 100);
+                IPlayer.AddWis(2);
+            case 218:
+                IPlayer.AddDef((check * 10) / 100);
+                IPlayer.AddInt(2);
+            case 217:
+                IPlayer.AddDef((check * 10) / 100);
+                IPlayer.AddHp(2);
+            case 216:
+                IPlayer.AddDef((check * 10) / 100);
+                IPlayer.AddStr(2);
+            case 215:
+                IPlayer.AddDef((check * 8) / 100);
+                IPlayer.AddAgi(2);
+            case 214:
+                IPlayer.AddDef((check * 8) / 100);
+                IPlayer.AddWis(2);
+            case 213:
+                IPlayer.AddDef((check * 8) / 100);
+                IPlayer.AddInt(2);
+            case 212:
+                IPlayer.AddDef((check * 8) / 100);
+                IPlayer.AddHp(2);
+            case 211:
+                IPlayer.AddDef((check * 8) / 100);
+                IPlayer.AddStr(2);
+            case 210:
+                IPlayer.AddDef((check * 6) / 100);
+                IPlayer.AddAgi(1);
+            case 209:
+                IPlayer.AddDef((check * 6) / 100);
+                IPlayer.AddWis(1);
+            case 208:
+                IPlayer.AddDef((check * 6) / 100);
+                IPlayer.AddInt(1);
+            case 207:
+                IPlayer.AddDef((check * 6) / 100);
+                IPlayer.AddHp(1);
+            case 206:
+                IPlayer.AddDef((check * 6) / 100);
+                IPlayer.AddStr(1);
+            case 205:
+                IPlayer.AddDef((check * 4) / 100);
+                IPlayer.AddAgi(1);
+            case 204:
+                IPlayer.AddDef((check * 4) / 100);
+                IPlayer.AddWis(1);
+            case 203:
+                IPlayer.AddDef((check * 4) / 100);
+                IPlayer.AddInt(1);
+            case 202:
+                IPlayer.AddDef((check * 4) / 100);
+                IPlayer.AddHp(1);
+            case 201:
+                IPlayer.AddDef((check * 4) / 100);
+                IPlayer.AddStr(1);
         }
 
         if (IItem.GetInfo() & 2097152)
