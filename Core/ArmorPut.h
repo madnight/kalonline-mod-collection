@@ -512,173 +512,101 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
                     IPlayer.RemoveInt(3);
                 }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.HalfSet == 60)
-                {
-                    if (bof.Boots != 60 ||
-                        bof.Short != 60 ||
-                        bof.Gloves != 60)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
-                        IPlayer.RemoveAgi(4);
-                        IPlayer.RemoveStr(4);
-                        IPlayer.RemoveInt(4);
-                    }
-                }
+               if (bof.HalfSet == 60 && (bof.Boots != 60 || bof.Short != 60 || bof.Gloves != 60))
+               {
+                   BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
+                   IPlayer.RemoveAgi(4);
+                   IPlayer.RemoveStr(4);
+                   IPlayer.RemoveInt(4);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.FullSet == 60)
-                {
-                    if (bof.HalfSet != 60 ||
-                        bof.Chest != 60 ||
-                        bof.Helmet != 60)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].FullSet = 0;
-                        IPlayer.RemoveAgi(4);
-                        IPlayer.RemoveStr(4);
-                        IPlayer.RemoveInt(4);
-                    }
-                }
+               if (bof.FullSet == 60 && (bof.HalfSet != 60 || bof.Chest != 60 || bof.Helmet != 60))
+               {
+                   BeadOfFire[IPlayer.GetPID()].FullSet = 0;
+                   IPlayer.RemoveAgi(4);
+                   IPlayer.RemoveStr(4);
+                   IPlayer.RemoveInt(4);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.HalfSet == 65)
-                {
-                    if (bof.Boots != 65 ||
-                        bof.Short != 65 ||
-                        bof.Gloves != 65)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
-                        IPlayer.RemoveAgi(5);
-                        IPlayer.RemoveStr(5);
-                        IPlayer.RemoveInt(5);
-                    }
-                }
+               if (bof.HalfSet == 65 && (bof.Boots != 65 || bof.Short != 65 || bof.Gloves != 65))
+               {
+                   BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
+                   IPlayer.RemoveAgi(5);
+                   IPlayer.RemoveStr(5);
+                   IPlayer.RemoveInt(5);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.FullSet == 65)
-                {
-                    if (bof.HalfSet != 65 ||
-                        bof.Chest != 65 ||
-                        bof.Helmet != 65)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].FullSet = 0;
-                        IPlayer.RemoveAgi(5);
-                        IPlayer.RemoveStr(5);
-                        IPlayer.RemoveInt(5);
-                    }
-                }
+               if (bof.FullSet == 65 && (bof.HalfSet != 65 || bof.Chest != 65 || bof.Helmet != 65))
+               {
+                   BeadOfFire[IPlayer.GetPID()].FullSet = 0;
+                   IPlayer.RemoveAgi(5);
+                   IPlayer.RemoveStr(5);
+                   IPlayer.RemoveInt(5);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.HalfSet == 70)
-                {
-                    if (bof.Boots != 70 ||
-                        bof.Short != 70 ||
-                        bof.Gloves != 70)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
-                        IPlayer.RemoveAgi(6);
-                        IPlayer.RemoveStr(6);
-                        IPlayer.RemoveInt(6);
-                    }
-                }
+               if (bof.HalfSet == 70 && (bof.Boots != 70 || bof.Short != 70 || bof.Gloves != 70))
+               {
+                   BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
+                   IPlayer.RemoveAgi(6);
+                   IPlayer.RemoveStr(6);
+                   IPlayer.RemoveInt(6);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.FullSet == 70)
-                {
-                    if (bof.HalfSet != 70 ||
-                        bof.Chest != 70 ||
-                        bof.Helmet != 70)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].FullSet = 0;
-                        IPlayer.RemoveAgi(6);
-                        IPlayer.RemoveStr(6);
-                        IPlayer.RemoveInt(6);
-                    }
-                }
+               if (bof.FullSet == 70 && (bof.HalfSet != 70 || bof.Chest != 70 || bof.Helmet != 70))
+               {
+                   BeadOfFire[IPlayer.GetPID()].FullSet = 0;
+                   IPlayer.RemoveAgi(6);
+                   IPlayer.RemoveStr(6);
+                   IPlayer.RemoveInt(6);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.HalfSet == 80)
-                {
-                    if (bof.Boots != 80 ||
-                        bof.Short != 80 ||
-                        bof.Gloves != 80)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
-                        IPlayer.RemoveAgi(7);
-                        IPlayer.RemoveStr(7);
-                        IPlayer.RemoveInt(7);
-                    }
-                }
+               if (bof.HalfSet == 80 && (bof.Boots != 80 || bof.Short != 80 || bof.Gloves != 80))
+               {
+                   BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
+                   IPlayer.RemoveAgi(7);
+                   IPlayer.RemoveStr(7);
+                   IPlayer.RemoveInt(7);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.FullSet == 80)
-                {
-                    if (bof.HalfSet != 80 ||
-                        bof.Chest != 80 ||
-                        bof.Helmet != 80)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].FullSet = 0;
-                        IPlayer.RemoveAgi(7);
-                        IPlayer.RemoveStr(7);
-                        IPlayer.RemoveInt(7);
-                    }
-                }
+               if (bof.FullSet == 80 && (bof.HalfSet != 80 || bof.Chest != 80 || bof.Helmet != 80))
+               {
+                   BeadOfFire[IPlayer.GetPID()].FullSet = 0;
+                   IPlayer.RemoveAgi(7);
+                   IPlayer.RemoveStr(7);
+                   IPlayer.RemoveInt(7);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.HalfSet == 90)
-                {
-                    if (bof.Boots != 90 ||
-                        bof.Short != 90 ||
-                        bof.Gloves != 90)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
-                        IPlayer.RemoveAgi(8);
-                        IPlayer.RemoveStr(8);
-                        IPlayer.RemoveInt(8);
-                    }
-                }
+               if (bof.HalfSet == 90 && (bof.Boots != 90 || bof.Short != 90 || bof.Gloves != 90))
+               {
+                   BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
+                   IPlayer.RemoveAgi(8);
+                   IPlayer.RemoveStr(8);
+                   IPlayer.RemoveInt(8);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.FullSet == 90)
-                {
-                    if (bof.HalfSet != 90 ||
-                        bof.Chest != 90 ||
-                        bof.Helmet != 90)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].FullSet = 0;
-                        IPlayer.RemoveAgi(8);
-                        IPlayer.RemoveStr(8);
-                        IPlayer.RemoveInt(8);
-                    }
-                }
+               if (bof.FullSet == 90 && (bof.HalfSet != 90 || bof.Chest != 90 || bof.Helmet != 90))
+               {
+                   BeadOfFire[IPlayer.GetPID()].FullSet = 0;
+                   IPlayer.RemoveAgi(8);
+                   IPlayer.RemoveStr(8);
+                   IPlayer.RemoveInt(8);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.HalfSet >= 95)
-                {
-                    if (bof.Boots < 95 ||
-                        bof.Short < 95 ||
-                        bof.Gloves < 95)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
-                        IPlayer.RemoveAgi(9);
-                        IPlayer.RemoveStr(9);
-                        IPlayer.RemoveInt(9);
-                    }
-                }
+               if (bof.HalfSet >= 95 && (bof.Boots < 95 || bof.Short < 95 || bof.Gloves < 95))
+               {
+                   BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
+                   IPlayer.RemoveAgi(9);
+                   IPlayer.RemoveStr(9);
+                   IPlayer.RemoveInt(9);
+               }
 
-                if (BeadOfFire.count(IPlayer.GetPID()) &&
-                    bof.FullSet >= 95)
-                {
-                    if (bof.HalfSet < 95 ||
-                        bof.Chest < 95 ||
-                        bof.Helmet < 95)
-                    {
-                        BeadOfFire[IPlayer.GetPID()].FullSet = 0;
-                        IPlayer.RemoveAgi(9);
-                        IPlayer.RemoveStr(9);
-                        IPlayer.RemoveInt(9);
-                    }
-                }
+               if (bof.FullSet >= 95 && (bof.HalfSet < 95 || bof.Chest < 95 || bof.Helmet < 95))
+               {
+                   BeadOfFire[IPlayer.GetPID()].FullSet = 0;
+                   IPlayer.RemoveAgi(9);
+                   IPlayer.RemoveStr(9);
+                   IPlayer.RemoveInt(9);
+               }
             }
         }
 
