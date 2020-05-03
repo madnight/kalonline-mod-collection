@@ -2,7 +2,8 @@ int getItemStat(int x, int y) {
     return (GetItemStat.find(IItem.GetIID())->second % x) / y;
 }
 
-void playerAddStats (int x, int y) {
+void playerAddStats (int x, int y, int z) {
+    IPlayer.AddDef(z / 100);
     switch ( x % 5 ) {
         case 0:
             IPlayer.AddAgi(y);
@@ -103,65 +104,38 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
             }
         }
 
+        int nItemGST = IItem.GetSetGem() - 200;
 
+        if (nItemGST >= 36 && nItemGST <= 40) {
+            playerAddStats(nItemGST, 7, (check * 18));
+        }
 
-        switch (IItem.GetSetGem() - 200) {
-            case 40:
-            case 39:
-            case 38:
-            case 37:
-            case 36:
-                IPlayer.AddDef((check * 18) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 7);
-            case 35:
-            case 34:
-            case 33:
-            case 32:
-            case 31:
-                IPlayer.AddDef((check * 16) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 5);
-            case 30:
-            case 29:
-            case 28:
-            case 27:
-            case 26:
-                IPlayer.AddDef((check * 14) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 3);
-            case 25:
-            case 24:
-            case 23:
-            case 22:
-            case 21:
-                IPlayer.AddDef((check * 12) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 3);
-            case 20:
-            case 19:
-            case 18:
-            case 17:
-            case 16:
-                IPlayer.AddDef((check * 10) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 2);
-            case 15:
-            case 14:
-            case 13:
-            case 12:
-            case 11:
-                IPlayer.AddDef((check * 8) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 2);
-            case 10:
-            case 9:
-            case 8:
-            case 7:
-            case 6:
-                IPlayer.AddDef((check * 6) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 1);
-            case 5:
-            case 4:
-            case 3:
-            case 2:
-            case 1:
-                IPlayer.AddDef((check * 4) / 100);
-                playerAddStats(IItem.GetSetGem() - 200, 1);
+        if (nItemGST >= 31 && nItemGST <= 35) {
+            playerAddStats(nItemGST, 5, (check * 16));
+        }
+
+        if (nItemGST >= 26 && nItemGST <= 30) {
+            playerAddStats(nItemGST, 3, (check * 14));
+        }
+
+        if (nItemGST >= 21 && nItemGST <= 25) {
+            playerAddStats(nItemGST, 3, (check * 12));
+        }
+
+        if (nItemGST >= 16 && nItemGST <= 20) {
+            playerAddStats(nItemGST, 2, (check * 10));
+        }
+
+        if (nItemGST >= 11 && nItemGST <= 15) {
+            playerAddStats(nItemGST, 2, (check * 8));
+        }
+
+        if (nItemGST >= 6 && nItemGST <= 10) {
+            playerAddStats(nItemGST, 1, (check * 6));
+        }
+
+        if (nItemGST >= 1 && nItemGST <= 5) {
+            playerAddStats(nItemGST, 1, (check * 4));
         }
 
         if (IItem.GetInfo() & 2097152)
