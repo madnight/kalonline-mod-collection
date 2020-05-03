@@ -137,7 +137,7 @@ void IItem::SetLevelLimit(int Value)
     *(DWORD *)(*(DWORD *)((int)this->Offset + 40) + 100) = Value;
 }
 
-int IItem::GetItemPointerFromIID(void *Player,int IID)
+int IItem::GetItemPointerFromIID(void *Player, int IID)
 {
     IChar IPlayer(Player);
 

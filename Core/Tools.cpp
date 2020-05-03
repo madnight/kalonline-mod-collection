@@ -181,7 +181,7 @@ void ITools::Compile(char *Destination, int Size, std::string Format,
 
             case 'I':
                 pTypeQword = va_arg(vArgs, unsigned __int64);
-                memcpy((void*)Destination,(void*)&pTypeDword,8);
+                memcpy((void*)Destination, (void*)&pTypeDword, 8);
                 Destination+= 8;
 
             case 's':
@@ -265,7 +265,7 @@ char *ITools::Compile(char *Destination, std::string Format, va_list vArgs)
 
             case 'I':
                 pTypeQword = va_arg(vArgs, unsigned __int64);
-                memcpy((void*)Destination,(void*)&pTypeDword,8);
+                memcpy((void*)Destination, (void*)&pTypeDword, 8);
                 Destination+= 8;
 
             case 's':
@@ -436,16 +436,16 @@ unsigned long ITools::Intercept(unsigned char instruction, void *source,
 {
     unsigned long realTarget;
     LPBYTE buffer = new BYTE[length];
-    memset(buffer,0x90,length);
+    memset(buffer, 0x90, length);
 
     if (instruction != ITools::_I_NOP && length >= 5)
     {
         buffer[(length-5)] = instruction;
         unsigned long dwJMP = (unsigned long)destination - ((unsigned long)source + 5
                 + (length-5));
-        memcpy(&realTarget,(void*)((unsigned long)source+1),4);
+        memcpy(&realTarget, (void*)((unsigned long)source+1), 4);
         realTarget = realTarget + (unsigned long)source + 5;
-        memcpy(buffer + 1 + (length - 5),&dwJMP,4);
+        memcpy(buffer + 1 + (length - 5), &dwJMP, 4);
     }
 
     if (instruction == ITools::_I_JE_SHORT)

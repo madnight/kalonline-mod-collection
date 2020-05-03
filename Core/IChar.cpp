@@ -177,7 +177,7 @@ void IChar::Teleport(int Map, int X, int Y)
             this->DisableRiding();
         }
 
-        if (CChar::IsGState((int)this->GetOffset(),2)) {
+        if (CChar::IsGState((int)this->GetOffset(), 2)) {
             this->Revive();
         }
 
@@ -387,7 +387,7 @@ int IChar::GetTransformGrade()
 void IChar::CancelBuff(int BuffID)
 {
     if (this->IsOnline()) {
-        CChar::CancelAllBuff(this->GetOffset(),BuffID);
+        CChar::CancelAllBuff(this->GetOffset(), BuffID);
     }
 }
 
@@ -395,7 +395,7 @@ int IChar::IsBuff(int id)
 {
     if (this->IsOnline() && id >= 0 && id <= 7000)
     {
-        if (CChar::GetBuffRemain(this->GetOffset(),id)) {
+        if (CChar::GetBuffRemain(this->GetOffset(), id)) {
             return 1;
         }
         else {
@@ -447,8 +447,8 @@ void IChar::AddMinAttack(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),27,1,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 27, 1,
+                        amount, amount);
     }
 }
 
@@ -456,8 +456,8 @@ void IChar::RemoveMinAttack(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),27,0,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 27, 0,
+                        amount, amount);
     }
 }
 
@@ -465,8 +465,8 @@ void IChar::AddMaxAttack(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),28,1,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 28, 1,
+                        amount, amount);
     }
 }
 
@@ -474,8 +474,8 @@ void IChar::RemoveMaxAttack(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),28,0,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 28, 0,
+                        amount, amount);
     }
 }
 
@@ -609,8 +609,8 @@ void IChar::AddOTP(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),9,1,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 9, 1,
+                        amount, amount);
     }
 }
 
@@ -618,8 +618,8 @@ void IChar::RemoveOTP(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),9,0,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 9, 0,
+                        amount, amount);
     }
 }
 
@@ -627,7 +627,7 @@ void IChar::AddEva(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),10,1,
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 10, 1,
                         amount);
     }
 }
@@ -636,7 +636,7 @@ void IChar::RemoveEva(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),10,0,
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 10, 0,
                         amount);
     }
 }
@@ -645,8 +645,8 @@ void IChar::AddDef(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),15,1,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 15, 1,
+                        amount, amount);
     }
 }
 
@@ -654,8 +654,8 @@ void IChar::RemoveDef(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),15,0,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 15, 0,
+                        amount, amount);
     }
 }
 
@@ -825,7 +825,7 @@ void IChar::UpdateHonor(int HP, int HK, int HD, int DKPT, int DKPW, int PLT,
     int PLW, int SVT, int SVW, int RP)
 {
     if (this->IsOnline())
-        CDBSocket::Write(81,"ddddddddddd", this->GetPID(),
+        CDBSocket::Write(81, "ddddddddddd", this->GetPID(),
             HP, HK, HD, DKPT, DKPW, PLT, PLW, SVT, SVW, RP);
 }
 
@@ -881,7 +881,8 @@ void IChar::ShowHonor(int HP, int HK, int HD, int DKPT, int DKPW, int PLT,
         }
 
         CPlayer::Write(this->GetOffset(), 255, "dddddddddddddddddd",
-            245,0,0,0,0,0,range,prevrange,HP,HK,HD,DKPW,DKPT,PLW,PLT,SVW,SVT,RP);
+            245, 0, 0, 0, 0, 0, range, prevrange, HP, HK, HD, DKPW, DKPT, PLW, PLT, SVW,
+            SVT, RP);
 
         CChar::WriteInSight(this->GetOffset(), 255, "ddd", 244, this->GetID(), range);
     }
@@ -897,17 +898,19 @@ int IChar::IsWarRelated()
     }
 }
 
-void IChar::SetBuffIcon(int Time,int Type,int nMsg,int Key)
+void IChar::SetBuffIcon(int Time, int Type, int nMsg, int Key)
 {
     if (this->IsOnline() && this->GetType() == 0) {
-        CPlayer::Write(this->GetOffset(),0xFF,"dddddd",243,Time,5000,Type,nMsg,Key);
+        CPlayer::Write(this->GetOffset(), 0xFF, "dddddd", 243, Time, 5000, Type, nMsg,
+            Key);
     }
 }
 
-void IChar::RemoveBuffIcon(int Time,int Type,int nMsg,int Key)
+void IChar::RemoveBuffIcon(int Time, int Type, int nMsg, int Key)
 {
     if (this->IsOnline() && this->GetType() == 0) {
-        CPlayer::Write(this->GetOffset(),0xFF,"dddddd",243,Time,6000,Type,nMsg,Key);
+        CPlayer::Write(this->GetOffset(), 0xFF, "dddddd", 243, Time, 6000, Type, nMsg,
+            Key);
     }
 }
 
@@ -917,7 +920,7 @@ int IChar::GetBuffRemain(int BuffID)
 
     if (this->IsOnline() && BuffID >= 0 && BuffID <= 7000)
     {
-        Check = CChar::GetBuffRemain(this->GetOffset(),BuffID);
+        Check = CChar::GetBuffRemain(this->GetOffset(), BuffID);
 
         if (Check > 0 && BuffID >= 119 && BuffID <= 155 && Check > time(0)) {
             Check = Check-time(0);
@@ -1286,15 +1289,15 @@ int IChar::_ShowBattleMiss(IChar Target, int skillID)
         if (Target.IsBuff(159)) {
             return 0;
         }
-        else if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(),8192)) {
+        else if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(), 8192)) {
             return 0;
         }
-        else if (!CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+        else if (!CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             CSMap::IsOnTile(*(void **)((int)this->GetOffset()+ 320),
                 (int)this->GetOffset()+ 332, 131072)  ||
-            !CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+            !CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             *(DWORD*)((int)this->GetOffset() + 28) == Target.GetID()) {
             return 0;
         }
@@ -1309,7 +1312,7 @@ int IChar::_ShowBattleMiss(IChar Target, int skillID)
 void IChar::SetDirection(IChar Target)
 {
     if (this->IsOnline() && this->IsValid() && Target.IsOnline())
-        CChar::SetDirection(this->GetOffset(),*(DWORD *)
+        CChar::SetDirection(this->GetOffset(), *(DWORD *)
             ((int)Target.GetOffset() + 332) - *(DWORD *)((int)this->GetOffset() + 332),
             *(DWORD *)((int)Target.GetOffset() + 336) - *(DWORD *)((
                     int)this->GetOffset() + 336));
@@ -1377,7 +1380,7 @@ int IChar::OktayDamageNoAgro(IChar Target, int Damage, int SkillID)
                 Damage += (Damage * *(DWORD*)((int)CritDamage + 8)) /100;
             }
 
-            if ((int)CTools::Rate(1,1000) >= Rate)
+            if ((int)CTools::Rate(1, 1000) >= Rate)
             {
                 Damage *= 2;
                 GiveCrit = true;
@@ -1389,16 +1392,16 @@ int IChar::OktayDamageNoAgro(IChar Target, int Damage, int SkillID)
             *(DWORD*)((unsigned)(int)Target.GetOffset() + 0x1d8) = GetTickCount() + 20000;
         }
 
-        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(),8192)) {
+        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(), 8192)) {
             return 0;
         }
 
-        if (!CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+        if (!CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             CSMap::IsOnTile(*(void **)((int)this->GetOffset()+ 320),
                 (int)this->GetOffset()+ 332, 131072)  ||
-            !CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+            !CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             *(DWORD*)((int)this->GetOffset() + 28) == Target.GetID()) {
             return 0;
         }
@@ -1413,11 +1416,11 @@ int IChar::OktayDamageNoAgro(IChar Target, int Damage, int SkillID)
 
         if (!this->IsBuff(306) && this->GetClass() == 1 &&
             (this->GetLevel() + 20 <= Target.GetLevel())) {
-            return this->_ShowBattleMiss(Target,SkillID);
+            return this->_ShowBattleMiss(Target, SkillID);
         }
 
         if (this->GetClass() == 4 && (this->GetLevel() + 20 <= Target.GetLevel())) {
-            return this->_ShowBattleMiss(Target,SkillID);
+            return this->_ShowBattleMiss(Target, SkillID);
         }
 
         if (Target.GetCurHp() < 1) {
@@ -1476,16 +1479,16 @@ int IChar::OktayDamageSingle(IChar Target, int Damage, int SkillID)
             return 0;
         }
 
-        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(),8192)) {
+        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(), 8192)) {
             return 0;
         }
 
-        if (!CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+        if (!CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             CSMap::IsOnTile(*(void **)((int)this->GetOffset()+ 320),
                 (int)this->GetOffset()+ 332, 131072)  ||
-            !CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+            !CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             *(DWORD*)((int)this->GetOffset() + 28) == Target.GetID()) {
             return 0;
         }
@@ -1500,11 +1503,11 @@ int IChar::OktayDamageSingle(IChar Target, int Damage, int SkillID)
 
         if (!this->IsBuff(306) && this->GetClass() == 1 &&
             (this->GetLevel() + 20 <= Target.GetLevel())) {
-            return this->_ShowBattleMiss(Target,SkillID);
+            return this->_ShowBattleMiss(Target, SkillID);
         }
 
         if (this->GetClass() == 4 && (this->GetLevel() + 20 <= Target.GetLevel())) {
-            return this->_ShowBattleMiss(Target,SkillID);
+            return this->_ShowBattleMiss(Target, SkillID);
         }
 
         if (this->GetClass() == 1 && SkillID == 74) {
@@ -1530,11 +1533,12 @@ int IChar::OktayDamageSingle(IChar Target, int Damage, int SkillID)
                     (*(DWORD *)this->GetOffset() + 168))(this->GetOffset(),
                     (int)Target.GetOffset()) / GetAttackSpeed;
 
-        Check = (*(int (__thiscall**)(LONG,void*,unsigned int,int*,int*,int*, DWORD))
+        Check = (*(int (__thiscall**)(LONG, void*, unsigned int, int*, int*, int*,
+                        DWORD))
                 (*(DWORD*)Target.GetOffset() + 72))
-            ((int)Target.GetOffset(),this->GetOffset(),
-                GetASpeedValue * Damage / GetAttackSpeed,&NormalDamage,&DamageArgument,
-                &EBDamage,0);
+            ((int)Target.GetOffset(), this->GetOffset(),
+                GetASpeedValue * Damage / GetAttackSpeed, &NormalDamage, &DamageArgument,
+                &EBDamage, 0);
         GetType = Check | 2 * DamageArgument | 4 * TypeKind;
         CChar::WriteInSight(this->GetOffset(), 63, "bddbbwwb", SkillID,
             this->GetID(), Target.GetID(), 1, 1, NormalDamage, EBDamage, GetType);
@@ -1571,16 +1575,16 @@ void IChar::OktayDamageArea(IChar Target, int Damage, int SkillID)
             return;
         }
 
-        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(),8192)) {
+        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(), 8192)) {
             return;
         }
 
-        if (!CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+        if (!CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             CSMap::IsOnTile(*(void **)((int)this->GetOffset()+ 320),
                 (int)this->GetOffset()+ 332, 131072)  ||
-            !CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+            !CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             *(DWORD*)((int)this->GetOffset() + 28) == Target.GetID()) {
             return;
         }
@@ -1604,7 +1608,7 @@ void IChar::OktayDamageArea(IChar Target, int Damage, int SkillID)
         }
 
         if (this->GetClass() == 1 && SkillID == 66) {
-            Target.Buff(0,5,-100);
+            Target.Buff(0, 5, -100);
         }
 
         unsigned int GetAttackSpeed = CChar::GetASpeed((int)this->GetOffset());
@@ -1623,11 +1627,12 @@ void IChar::OktayDamageArea(IChar Target, int Damage, int SkillID)
                     (*(DWORD *)this->GetOffset() + 168))
                 (this->GetOffset(), (int)Target.GetOffset()) / GetAttackSpeed;
 
-        Check = (*(int (__thiscall**)(LONG,void*,unsigned int,int*,int*,int*, DWORD))
+        Check = (*(int (__thiscall**)(LONG, void*, unsigned int, int*, int*, int*,
+                        DWORD))
                 (*(DWORD*)Target.GetOffset() + 72))
-            ((int)Target.GetOffset(),this->GetOffset(),
-                GetASpeedValue * Damage / GetAttackSpeed,&NormalDamage,&DamageArgument,
-                &EBDamage,0);
+            ((int)Target.GetOffset(), this->GetOffset(),
+                GetASpeedValue * Damage / GetAttackSpeed, &NormalDamage, &DamageArgument,
+                &EBDamage, 0);
         GetType = Check | 2 * DamageArgument | 4 * TypeKind;
 
         CChar::WriteInSight(this->GetOffset(), 10, "bbddww", GetType, SkillID,
@@ -1654,16 +1659,16 @@ void IChar::OktayDamageStorm(IChar Target, int Damage)
             return;
         }
 
-        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(),8192)) {
+        if (Target.IsBuff(24) || CChar::IsGState((int)Target.GetOffset(), 8192)) {
             return;
         }
 
-        if (!CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+        if (!CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             CSMap::IsOnTile(*(void **)((int)this->GetOffset()+ 320),
                 (int)this->GetOffset()+ 332, 131072)  ||
-            !CChar::IsGState((int)this->GetOffset(),128) &&
-            !CChar::IsGState((int)this->GetOffset(),1024) &&
+            !CChar::IsGState((int)this->GetOffset(), 128) &&
+            !CChar::IsGState((int)this->GetOffset(), 1024) &&
             *(DWORD*)((int)this->GetOffset() + 28) == Target.GetID()) {
             return;
         }
@@ -1694,11 +1699,12 @@ void IChar::OktayDamageStorm(IChar Target, int Damage)
                 (*(DWORD *)Target.GetOffset() + 148))((int)Target.GetOffset(),
                 this->GetOffset());
 
-        Check = (*(int (__thiscall**)(LONG,void*,unsigned int,int*,int*,int*, DWORD))
+        Check = (*(int (__thiscall**)(LONG, void*, unsigned int, int*, int*, int*,
+                        DWORD))
                 (*(DWORD*)Target.GetOffset() + 72))
-            ((int)Target.GetOffset(),this->GetOffset(),
-                GetASpeedValue * Damage / GetAttackSpeed,&NormalDamage,&DamageArgument,
-                &EBDamage,0);
+            ((int)Target.GetOffset(), this->GetOffset(),
+                GetASpeedValue * Damage / GetAttackSpeed, &NormalDamage, &DamageArgument,
+                &EBDamage, 0);
 
         GetType = Check | 2 * DamageArgument | 4 * TypeKind;
         CChar::WriteInSight(this->GetOffset(), 10, "bbddww", GetType, 500,
@@ -1775,8 +1781,8 @@ void IChar::AddAbsorb(int amount)
 {
     if (this->IsOnline()) {
         (*(int (__cdecl **)(int, signed int, signed int, DWORD,
-                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),16,1,
-                        amount,amount);
+                    DWORD))(*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 16, 1,
+                        amount, amount);
     }
 }
 
@@ -1784,7 +1790,7 @@ void IChar::RemoveAbsorb(int amount)
 {
     if (this->IsOnline())
         (*(int (__cdecl **)(int, signed int, signed int, DWORD, DWORD))
-            (*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(),16,0,amount,
+            (*(DWORD *)(int)this->GetOffset() + 92))((int)this->GetOffset(), 16, 0, amount,
                 amount);
 }
 
@@ -1842,7 +1848,7 @@ DWORD IChar::Delay(DWORD amount)
     }
 }
 
-void IChar::MonsterSummonWrite(int SafeZoneCheck,int Monster,
+void IChar::MonsterSummonWrite(int SafeZoneCheck, int Monster,
     int CellMapCoordinate)
 {
     if (this->IsOnline())
@@ -1855,16 +1861,16 @@ void IChar::MonsterSummonWrite(int SafeZoneCheck,int Monster,
             {
                 (*(void (__thiscall **)(int, DWORD))(*(DWORD *)Monster + 196))(Monster, 0);
 
-                CChar::WriteInSight((void*)Monster,51,"wdddwddIIsbdsIIb",
-                    *(DWORD *)(*(DWORD *)(Monster + 440) + 60),*(DWORD*)(Monster+28),
-                    *(DWORD *)(Monster + 332),*(DWORD *)(Monster + 336),
-                    *(DWORD *)(Monster + 348),*(DWORD *)(Monster + 272),
-                    CChar::GetMaxHp(Monster),*(DWORD *)(Monster + 280),
+                CChar::WriteInSight((void*)Monster, 51, "wdddwddIIsbdsIIb",
+                    *(DWORD *)(*(DWORD *)(Monster + 440) + 60), *(DWORD*)(Monster+28),
+                    *(DWORD *)(Monster + 332), *(DWORD *)(Monster + 336),
+                    *(DWORD *)(Monster + 348), *(DWORD *)(Monster + 272),
+                    CChar::GetMaxHp(Monster), *(DWORD *)(Monster + 280),
                     (unsigned __int64)*(DWORD *)(Monster + 288),
                     *(DWORD *)(Monster + 292),
                     (*(int (__thiscall **)(int))(*(DWORD *)Monster + 224))(Monster),
-                    *(DWORD *)(*(DWORD *)(Monster + 440) + 64) | 0x80,*(DWORD *)(Monster + 524),
-                    (*(int (__thiscall **)(int))(*(DWORD *)Monster + 240))(Monster),(__int64)0,
+                    *(DWORD *)(*(DWORD *)(Monster + 440) + 64) | 0x80, *(DWORD *)(Monster + 524),
+                    (*(int (__thiscall **)(int))(*(DWORD *)Monster + 240))(Monster), (__int64)0,
                     (__int64)0, 0);
                 CChar::Unlock((void *)Monster);
             } else {
@@ -1879,15 +1885,15 @@ void IChar::MonsterSummonWrite(int SafeZoneCheck,int Monster,
                     (int)CellMapCoordinate))
             {
                 (*(void (__thiscall **)(int, DWORD))(*(DWORD *)Monster + 196))(Monster, 0);
-                CChar::WriteInSight((void*)Monster,51,"wdddwddIIsbdsIIb",
-                    *(DWORD *)(*(DWORD *)(Monster + 440) + 60),*(DWORD*)(Monster+28),
-                    *(DWORD *)(Monster + 332),*(DWORD *)(Monster + 336),
-                    *(DWORD *)(Monster + 348),*(DWORD *)(Monster + 272),
-                    CChar::GetMaxHp(Monster),*(DWORD *)(Monster + 280),
+                CChar::WriteInSight((void*)Monster, 51, "wdddwddIIsbdsIIb",
+                    *(DWORD *)(*(DWORD *)(Monster + 440) + 60), *(DWORD*)(Monster+28),
+                    *(DWORD *)(Monster + 332), *(DWORD *)(Monster + 336),
+                    *(DWORD *)(Monster + 348), *(DWORD *)(Monster + 272),
+                    CChar::GetMaxHp(Monster), *(DWORD *)(Monster + 280),
                     (unsigned __int64)*(DWORD *)(Monster + 288),
                     *(DWORD *)(Monster + 292),
                     (*(int (__thiscall **)(int))(*(DWORD *)Monster + 224))
-                    (Monster),*(DWORD *)(*(DWORD *)(Monster + 440) + 64) | 0x80,
+                    (Monster), *(DWORD *)(*(DWORD *)(Monster + 440) + 64) | 0x80,
                     *(DWORD *)(Monster + 524),
                     (*(int (__thiscall **)(int))(*(DWORD *)Monster + 240))(Monster),
                     (__int64)0, (__int64)0, 0);
@@ -1930,17 +1936,17 @@ void IChar::OpenHTML(int html)
     }
 }
 
-void IChar::OpenWindow(std::string WindowName,int Type,int Time)
+void IChar::OpenWindow(std::string WindowName, int Type, int Time)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(Offset, 0xFF, "dsdd", 237,WindowName.c_str(),Type,Time);
+        CPlayer::Write(Offset, 0xFF, "dsdd", 237, WindowName.c_str(), Type, Time);
     }
 }
 
 void IChar::CloseWindow(std::string WindowName)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(Offset, 0xFF, "ds", 236,WindowName.c_str());
+        CPlayer::Write(Offset, 0xFF, "ds", 236, WindowName.c_str());
     }
 }
 
@@ -1948,15 +1954,15 @@ void IChar::Revive()
 {
     if (this->IsOnline())
     {
-        if (!CChar::IsGState((int)this->GetOffset(),2)) {
+        if (!CChar::IsGState((int)this->GetOffset(), 2)) {
             return;
         }
 
-        if (CPlayer::IsEState((int)this->GetOffset(),8)) {
-            CPlayer::SubEState((int)this->GetOffset(),8);
+        if (CPlayer::IsEState((int)this->GetOffset(), 8)) {
+            CPlayer::SubEState((int)this->GetOffset(), 8);
         }
 
-        CChar::CancelBuffParty(this->GetOffset(),256);
+        CChar::CancelBuffParty(this->GetOffset(), 256);
         *((DWORD *)this->GetOffset() + 69) = 0;
 
         (*(void (__cdecl **)(void *, signed int, signed int, int))
@@ -1968,9 +1974,9 @@ void IChar::Revive()
                 CChar::GetMaxMp((int)this->GetOffset()));
 
         (*(void (__thiscall **)(void *, signed int))
-            (*(DWORD *)this->GetOffset() + 112))(this->GetOffset(),2);
+            (*(DWORD *)this->GetOffset() + 112))(this->GetOffset(), 2);
 
-        CChar::AddGState((int)this->GetOffset(),8192);
+        CChar::AddGState((int)this->GetOffset(), 8192);
         *((DWORD *)this->GetOffset() + 362) = GetTickCount() + 10000;
     }
 }
@@ -1978,7 +1984,7 @@ void IChar::Revive()
 void IChar::SetBlue()
 {
     if (this->IsValid() && !this->IsBuff(331)) {
-        CChar::WriteInSight(this->GetOffset(),46,"dI",this->GetID(),
+        CChar::WriteInSight(this->GetOffset(), 46, "dI", this->GetID(),
             __int64(0x00040000) << 32);
     }
 }
@@ -1986,7 +1992,7 @@ void IChar::SetBlue()
 void IChar::SetRed()
 {
     if (this->IsValid() && !this->IsBuff(331)) {
-        CChar::WriteInSight(this->GetOffset(),46,"dI",this->GetID(),
+        CChar::WriteInSight(this->GetOffset(), 46, "dI", this->GetID(),
             __int64(0x00020000) << 32);
     }
 }
@@ -1994,14 +2000,14 @@ void IChar::SetRed()
 void IChar::RemoveSetBlue()
 {
     if (this->IsOnline() && !this->IsBuff(331)) {
-        CChar::WriteInSight(this->GetOffset(),46,"dI",this->GetID(),(__int64)0);
+        CChar::WriteInSight(this->GetOffset(), 46, "dI", this->GetID(), (__int64)0);
     }
 }
 
 void IChar::RemoveSetRed()
 {
     if (this->IsOnline() && !this->IsBuff(331)) {
-        CChar::WriteInSight(this->GetOffset(),46,"dI",this->GetID(),(__int64)0);
+        CChar::WriteInSight(this->GetOffset(), 46, "dI", this->GetID(), (__int64)0);
     }
 }
 
@@ -2060,14 +2066,14 @@ void IChar::DecreaseCritRate(int Amount)
 void IChar::NewAnnouncement(std::string msg)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(this->GetOffset(),0xFF, "ds", 234, msg.c_str());
+        CPlayer::Write(this->GetOffset(), 0xFF, "ds", 234, msg.c_str());
     }
 }
 
 void IChar::ScreenTime(int Time)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(this->GetOffset(),0xFF, "dd", 233, Time);
+        CPlayer::Write(this->GetOffset(), 0xFF, "dd", 233, Time);
     }
 }
 
@@ -2078,10 +2084,10 @@ void IChar::CloseScreenTime()
     }
 }
 
-void IChar::Scenario3Score(int Time,int RedScore,int BlueScore)
+void IChar::Scenario3Score(int Time, int RedScore, int BlueScore)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(this->GetOffset(),106,"bdbb",8,Time,RedScore,BlueScore);
+        CPlayer::Write(this->GetOffset(), 106, "bdbb", 8, Time, RedScore, BlueScore);
     }
 }
 
@@ -2092,10 +2098,11 @@ void IChar::CloseScenario3Score()
     }
 }
 
-void IChar::Scenario3_3Score(int Time,int RedScore,int BlueScore)
+void IChar::Scenario3_3Score(int Time, int RedScore, int BlueScore)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(this->GetOffset(),0xFF,"dbddd",232,7,Time,RedScore,BlueScore);
+        CPlayer::Write(this->GetOffset(), 0xFF, "dbddd", 232, 7, Time, RedScore,
+            BlueScore);
     }
 }
 
@@ -2106,15 +2113,17 @@ void IChar::CloseScenario3_3Score()
     }
 }
 
-void IChar::SpScore(int Time,int Type,int RedScore,int BlueScore,int RedWin,
+void IChar::SpScore(int Time, int Type, int RedScore, int BlueScore, int RedWin,
     int BlueWin)
 {
     if (this->IsOnline())
     {
-        CPlayer::Write(this->GetOffset(),122,"bdddbdb",1,Time,Type,BlueScore,RedScore,
-            BlueWin,RedWin);
-        CPlayer::Write(this->GetOffset(),122,"bddddbb",1,Time,Type,BlueScore,RedScore,
-            BlueWin,RedWin);
+        CPlayer::Write(this->GetOffset(), 122, "bdddbdb", 1, Time, Type, BlueScore,
+            RedScore,
+            BlueWin, RedWin);
+        CPlayer::Write(this->GetOffset(), 122, "bddddbb", 1, Time, Type, BlueScore,
+            RedScore,
+            BlueWin, RedWin);
     }
 }
 
@@ -2128,7 +2137,7 @@ void IChar::CloseSpScore()
 void IChar::SetRebirthTalisman(int Amount)
 {
     if (this->IsOnline()) {
-        CPlayer::Write(this->GetOffset(),0xFF,"dbbbbb",231,6,0,0,0,Amount);
+        CPlayer::Write(this->GetOffset(), 0xFF, "dbbbbb", 231, 6, 0, 0, 0, Amount);
     }
 }
 
@@ -2303,12 +2312,12 @@ void IChar::EnableRiding(int Type)
 {
     if (this->IsOnline() && !this->IsBuff(331))
     {
-        this->Buff(349,1296000,0);
-        CChar::WriteInSight(this->GetOffset(),198,"bdw",0,this->GetID(),Type);
+        this->Buff(349, 1296000, 0);
+        CChar::WriteInSight(this->GetOffset(), 198, "bdw", 0, this->GetID(), Type);
 
         if (!this->IsBuff(347))
         {
-            this->Buff(347,1296000,0);
+            this->Buff(347, 1296000, 0);
             this->IncreaseMovingSpeed(75);
         }
     }
@@ -2320,7 +2329,7 @@ void IChar::DisableRiding()
     {
         this->CancelBuff(349);
         int Type = this->GetRidingType();
-        CChar::WriteInSight(this->GetOffset(),198,"bdw",1,this->GetID(),Type);
+        CChar::WriteInSight(this->GetOffset(), 198, "bdw", 1, this->GetID(), Type);
 
         if (this->IsBuff(347))
         {
@@ -2356,40 +2365,41 @@ void IChar::GiveReward(int Index, int Prefix, int Amount, int Info, int xAtk,
 
             if ((Index == 337 || Index == 338 || Index == 339 || Index == 1596) &&
                 Endurance) {
-                CDBSocket::Write(6,"dwbddbbdb",NewIID,Index,Prefix,128+Info,Amount,Endurance,0,
-                    0,1);
+                CDBSocket::Write(6, "dwbddbbdb", NewIID, Index, Prefix, 128+Info, Amount,
+                    Endurance, 0,
+                    0, 1);
             }
             else {
-                CDBSocket::Write(6,"dwbddbbdb",NewIID,Index,Prefix,128+Info,Amount,
-                    *(DWORD*)(MakeItem + 96),0,0,1);
+                CDBSocket::Write(6, "dwbddbbdb", NewIID, Index, Prefix, 128+Info, Amount,
+                    *(DWORD*)(MakeItem + 96), 0, 0, 1);
             }
 
             CBase::Delete((void*)MakeItem);
-            CDBSocket::Write(30,"dbdbbssdbwbdds",-1,0,-1,0,1,"Kal Online",
-                this->GetName(),NewIID,0,0,Prefix,Amount,0,msg);
+            CDBSocket::Write(30, "dbdbbssdbwbdds", -1, 0, -1, 0, 1, "Kal Online",
+                this->GetName(), NewIID, 0, 0, Prefix, Amount, 0, msg);
 
             if (xAtk) {
-                CDBSocket::Write(17,"ddbbb",NewIID,0,27,xAtk,0);
+                CDBSocket::Write(17, "ddbbb", NewIID, 0, 27, xAtk, 0);
             }
 
             if (xMag) {
-                CDBSocket::Write(17,"ddbbb",NewIID,0,28,xMag,0);
+                CDBSocket::Write(17, "ddbbb", NewIID, 0, 28, xMag, 0);
             }
 
             if (TOA) {
-                CDBSocket::Write(17,"ddbbb",NewIID,0,9,TOA,0);
+                CDBSocket::Write(17, "ddbbb", NewIID, 0, 9, TOA, 0);
             }
 
             if (Upgr) {
-                CDBSocket::Write(28,"ddbb",NewIID,0,2,Upgr);
+                CDBSocket::Write(28, "ddbb", NewIID, 0, 2, Upgr);
             }
 
             if (Def) {
-                CDBSocket::Write(17,"ddbbb",NewIID,0,15,Def,0);
+                CDBSocket::Write(17, "ddbbb", NewIID, 0, 15, Def, 0);
             }
 
             if (Eva) {
-                CDBSocket::Write(17,"ddbbb",NewIID,0,10,Eva,0);
+                CDBSocket::Write(17, "ddbbb", NewIID, 0, 10, Eva, 0);
             }
         }
     }
@@ -2428,7 +2438,7 @@ void IChar::QuitQuest(int QuestID)
 void IChar::DailyQuestUpdate(int QuestID, int Repeat, int Count, int Time)
 {
     if (this->IsOnline()) {
-        CDBSocket::Write(91,"ddddd",this->GetPID(),QuestID,Repeat,Count,Time);
+        CDBSocket::Write(91, "ddddd", this->GetPID(), QuestID, Repeat, Count, Time);
     }
 }
 
