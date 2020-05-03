@@ -3,7 +3,7 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
     if ((unsigned char)Data[2] == 253)
     {
         int Type = 0, Value = 0;
-        CPacket::Read((char*)((void*)(Data + 3)), (char*)(Data + *(WORD*)Data), "dd",
+        CPacket::Read((char*)((void*)(Data + 3)), (char*)(Data + * (WORD*)Data), "dd",
             &Type, &Value);
 
         if (Value != 6547) {
@@ -27,7 +27,7 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
             (std::string)Active2ndPwd == "True"))
     {
         int Type = 0;
-        const char *RealPwd="asd", *Pwd2="asd", *MyPwd2="asd";
+        const char *RealPwd = "asd", *Pwd2 = "asd", *MyPwd2 = "asd";
         Interface<ITools> Tools;
         Tools->ParseData((char*)((void*)(Data + 3)), "b", &Type);
 
@@ -62,14 +62,15 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
     {
         int Type = 0;
         int LeftPacket = CPacket::Read((char*)((void*)(Data + 3)),
-                (char*)(Data + *(WORD*)Data), "d",
+                (char*)(Data + * (WORD*)Data), "d",
                 &Type);
 
         if (Type == 1 && ((std::string)Active2ndPwd == "true" ||
                 (std::string)Active2ndPwd == "True"))
         {
             const char *MyID, *MyPwd, *My2ndPwd;
-            CPacket::Read((char*)LeftPacket, (char*)(Data + *(WORD*)Data), "sss", &MyID, 17,
+            CPacket::Read((char*)LeftPacket, (char*)(Data + * (WORD*)Data), "sss", &MyID,
+                17,
                 &MyPwd, 9,
                 &My2ndPwd, 9);
 
@@ -262,7 +263,7 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
                     CheckMining[IPlayer.GetPID()].Time = GetTickCount() + 300000;
                     CheckMining[IPlayer.GetPID()].Cycle = 0;
                     CheckMining[IPlayer.GetPID()].Index = ItemIndex;
-                    CheckMining[IPlayer.GetPID()].Amount = (Amount-1);
+                    CheckMining[IPlayer.GetPID()].Amount = (Amount - 1);
                     IPlayer.Buff(296, 604800, 0);
                     MiningLimit[IPlayer.GetIP()] = 1;
                 }
@@ -632,7 +633,7 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
     if ((unsigned char)Data[2] == 5)
     {
         int Time = 0, Value = 0;
-        CPacket::Read((char*)((void*)(Data + 3)), (char*)(Data + *(WORD*)Data), "dd",
+        CPacket::Read((char*)((void*)(Data + 3)), (char*)(Data + * (WORD*)Data), "dd",
             &Time, &Value);
         int Check = *(DWORD*)((int)Socket + 144);
         *(DWORD*)((int)Socket + 144) += Time;
@@ -662,7 +663,7 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
             unsigned __int8 x = 0, y = 0, z = 0, a = 0, b = 0, c = 0, d = 0, e = 0;
             const char *ID;
             CPacket::Read((char*)((void*)(Data + 3)),
-                (char*)(Data + *(WORD*)Data), "sbbbbbbbb", &ID, 15, &x, &y, &z, &a, &b, &c, &d,
+                (char*)(Data + * (WORD*)Data), "sbbbbbbbb", &ID, 15, &x, &y, &z, &a, &b, &c, &d,
                 &e);
 
             if (x == 3)

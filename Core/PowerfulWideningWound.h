@@ -58,7 +58,8 @@ void __fastcall PowerfulWideningWound(IChar IPlayer, int pPacket, int pPos)
                         Target.IsValid() && Target.GetType() == 1 &&
                         Target.GetCurHp() > 0 && Target.IsMobAggressive() &&
                         Target.IsMobHaveTarget()) {
-                        CMonsterReal::AddHostility(Target.GetOffset(), (int)IPlayer.GetOffset(), nDmg*2,
+                        CMonsterReal::AddHostility(Target.GetOffset(), (int)IPlayer.GetOffset(),
+                            nDmg * 2,
                             0);
                     }
                 } else {

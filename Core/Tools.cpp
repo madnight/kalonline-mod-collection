@@ -17,7 +17,7 @@ unsigned long ITools::GetCaller(size_t Depth)
         __asm mov _Ebp, eax
     }
 
-    for (size_t i=0; i < Depth; i++)
+    for (size_t i = 0; i < Depth; i++)
     {
         __asm mov eax, _Ebp
         __asm mov eax, [eax]
@@ -27,7 +27,7 @@ unsigned long ITools::GetCaller(size_t Depth)
     __asm mov eax, _Ebp
     __asm mov eax, [eax+4]
     __asm mov Addr, eax
-    return Addr-5;
+    return Addr - 5;
 }
 
 PIMAGE_NT_HEADERS ITools::GetModuleInfo(HMODULE Module)
@@ -43,7 +43,7 @@ std::string ITools::GetExecutableFromPath(std::string Path)
     size_t sep = Path.find_last_of("\\/");
 
     if (sep != std::string::npos) {
-        return Path.substr(sep+1);
+        return Path.substr(sep + 1);
     }
     else {
         return Path;
@@ -64,7 +64,7 @@ size_t ITools::GenerateSize(std::string Format, va_list vArgs)
     int PacketSize = 0;
     std::string pSizeStr;
 
-    for (size_t i=0; i < Format.length(); i++)
+    for (size_t i = 0; i < Format.length(); i++)
     {
         switch (Format[i])
         {
@@ -104,7 +104,7 @@ size_t ITools::GenerateSize(std::string Format, va_list vArgs)
             case 's':
             case 'S':
                 pSizeStr = va_arg(vArgs, char*);
-                PacketSize += pSizeStr.length() +1;
+                PacketSize += pSizeStr.length() + 1;
                 break;
 
             case 'm':
@@ -142,7 +142,7 @@ void ITools::Compile(char *Destination, int Size, std::string Format,
     char* pTypeArray = NULL;
     int pTypeArrayLen = 0;
 
-    for (size_t i=0; i < Format.length(); i++)
+    for (size_t i = 0; i < Format.length(); i++)
     {
         switch (Format[i])
         {
@@ -182,13 +182,13 @@ void ITools::Compile(char *Destination, int Size, std::string Format,
             case 'I':
                 pTypeQword = va_arg(vArgs, unsigned __int64);
                 memcpy((void*)Destination, (void*)&pTypeDword, 8);
-                Destination+= 8;
+                Destination += 8;
 
             case 's':
             case 'S':
                 pTypeStr = va_arg(vArgs, char*);
-                memcpy(Destination, pTypeStr.c_str(), pTypeStr.length() +1);
-                Destination += pTypeStr.length() +1;
+                memcpy(Destination, pTypeStr.c_str(), pTypeStr.length() + 1);
+                Destination += pTypeStr.length() + 1;
                 break;
 
             case 'm':
@@ -226,7 +226,7 @@ char *ITools::Compile(char *Destination, std::string Format, va_list vArgs)
     char* pTypeArray = NULL;
     int pTypeArrayLen = 0;
 
-    for (size_t i=0; i < Format.length(); i++)
+    for (size_t i = 0; i < Format.length(); i++)
     {
         switch (Format[i])
         {
@@ -266,13 +266,13 @@ char *ITools::Compile(char *Destination, std::string Format, va_list vArgs)
             case 'I':
                 pTypeQword = va_arg(vArgs, unsigned __int64);
                 memcpy((void*)Destination, (void*)&pTypeDword, 8);
-                Destination+= 8;
+                Destination += 8;
 
             case 's':
             case 'S':
                 pTypeStr = va_arg(vArgs, char*);
-                memcpy(Destination, pTypeStr.c_str(), pTypeStr.length() +1);
-                Destination += pTypeStr.length() +1;
+                memcpy(Destination, pTypeStr.c_str(), pTypeStr.length() + 1);
+                Destination += pTypeStr.length() + 1;
                 break;
 
             case 'm':
@@ -296,7 +296,7 @@ char *ITools::ParseData(char *Data, char *Format, ...)
     va_list vArgs;
     va_start(vArgs, Format);
 
-    for (unsigned int i=0; i < strlen(Format); i++)
+    for (unsigned int i = 0; i < strlen(Format); i++)
     {
         switch (Format[i])
         {
@@ -332,7 +332,7 @@ char *ITools::ParseData(char *Data, char *Format, ...)
 
             case 's':
                 *va_arg(vArgs, char**) = Data;
-                Data += strlen(Data) +1;
+                Data += strlen(Data) + 1;
                 break;
 
             case 'm':
@@ -440,10 +440,10 @@ unsigned long ITools::Intercept(unsigned char instruction, void *source,
 
     if (instruction != ITools::_I_NOP && length >= 5)
     {
-        buffer[(length-5)] = instruction;
+        buffer[(length - 5)] = instruction;
         unsigned long dwJMP = (unsigned long)destination - ((unsigned long)source + 5
-                + (length-5));
-        memcpy(&realTarget, (void*)((unsigned long)source+1), 4);
+                + (length - 5));
+        memcpy(&realTarget, (void*)((unsigned long)source + 1), 4);
         realTarget = realTarget + (unsigned long)source + 5;
         memcpy(buffer + 1 + (length - 5), &dwJMP, 4);
     }

@@ -252,7 +252,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
             if (!pSkill)
             {
                 CSkill::LearnSkill(SkillPointer, 30);
-                IPlayer.IncreaseMaxHp(5*IPlayer.GetHth());
+                IPlayer.IncreaseMaxHp(5 * IPlayer.GetHth());
             }
         }
     }
@@ -826,7 +826,7 @@ void __fastcall AutoLearn(void *SkillPointer, void *edx, int Value)
                         CDBSocket::Write(10, "ddbw", IPlayer.GetPID(), 30, xSkill.GetGrade() + 1, 56);
                         CPlayer::Write(IPlayer.GetOffset(), 81, "bb", 30, xSkill.GetGrade() + 1);
                         *(DWORD*)((int)xSkill.GetOffset() + 8) = xSkill.GetGrade() + 1;
-                        IPlayer.IncreaseMaxHp(5*IPlayer.GetHth());
+                        IPlayer.IncreaseMaxHp(5 * IPlayer.GetHth());
                     }
                 }
             }

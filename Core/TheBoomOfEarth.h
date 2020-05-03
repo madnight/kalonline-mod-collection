@@ -26,13 +26,13 @@ void __fastcall TheBoomOfEarth(IChar IPlayer)
 
                 while (Around)
                 {
-                    IChar Object((void*)*(DWORD*)Around);
+                    IChar Object((void*) * (DWORD*)Around);
 
                     if (Object.IsValid() && IPlayer.IsValid() &&
                         (*(int (__thiscall **)(int, int, DWORD))
                             (*(DWORD *)IPlayer.GetOffset() + 176))
                         ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0)) {
-                        Object.Buff(7, 2*xSkill.GetGrade(), 0);
+                        Object.Buff(7, 2 * xSkill.GetGrade(), 0);
                     }
 
                     Around = CBaseList::Pop((void*)Around);

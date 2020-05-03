@@ -1657,7 +1657,7 @@ int __fastcall SkillUpgradeCheck(void *Player, int SkillID, int PointerCheck)
 
             if (IPlayer.GetLevel() >= 6 && SkillID == 3 && PointerCheck)
             {
-                int CheckGrade = IPlayer.GetLevel()- 4;
+                int CheckGrade = IPlayer.GetLevel() - 4;
                 int SkillPointer = *((DWORD*)((int)Player + 624) + SkillID + 2);
 
                 if (SkillPointer)

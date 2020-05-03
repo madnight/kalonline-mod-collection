@@ -60,8 +60,8 @@ void __fastcall MagicalExplosion(IChar IPlayer, int pPacket, int pPos)
                     return;
                 }
 
-                int nDmg = (((IPlayer.GetMaxMagAttack()+ExtraDamage) +
-                            ((((IPlayer.GetMaxMagAttack()+ExtraDamage) / 4) +
+                int nDmg = (((IPlayer.GetMaxMagAttack() + ExtraDamage) +
+                            ((((IPlayer.GetMaxMagAttack() + ExtraDamage) / 4) +
                                     (CChar::GetInt((int)IPlayer.GetOffset()) / 4)) +
                                 ((CChar::GetWis((int)IPlayer.GetOffset()) / 4) +
                                     (nSkillGrade * 450))))) + (IPlayer.GetLevel() * 2);

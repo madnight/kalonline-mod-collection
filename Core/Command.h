@@ -193,7 +193,7 @@ void __fastcall ChatCommand(int Player, void *edx, const char *command)
         if (Target.IsOnline() && mutetime)
         {
             Target.Buff(164, mutetime, 0);
-            Mute[Target.GetPID()] = (mutetime*1000)+GetTickCount();
+            Mute[Target.GetPID()] = (mutetime * 1000) + GetTickCount();
         }
 
         return;

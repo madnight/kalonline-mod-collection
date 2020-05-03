@@ -28,23 +28,23 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
         {
             if (FirstDemonGongType == 1)
             {
-                IPlayer.AddMinAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat-1]);
-                IPlayer.AddMaxAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat-1]);
-                IPlayer.AddOTP(DemonGongStatWeaponEarth[1][FirstDemonGongStat-1]);
+                IPlayer.AddMinAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat - 1]);
+                IPlayer.AddMaxAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat - 1]);
+                IPlayer.AddOTP(DemonGongStatWeaponEarth[1][FirstDemonGongStat - 1]);
             }
 
             if (FirstDemonGongType == 2)
             {
-                IPlayer.AddMinAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat-1]);
-                IPlayer.AddMaxAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat-1]);
-                IPlayer.AddEva(DemonGongStatWeaponWind[1][FirstDemonGongStat-1]);
+                IPlayer.AddMinAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat - 1]);
+                IPlayer.AddMaxAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat - 1]);
+                IPlayer.AddEva(DemonGongStatWeaponWind[1][FirstDemonGongStat - 1]);
             }
 
             if (FirstDemonGongType == 3)
             {
-                IPlayer.AddMinAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat-1]);
-                IPlayer.AddMaxAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat-1]);
-                IPlayer.IncreaseMaxHp(DemonGongStatWeaponWater[1][FirstDemonGongStat-1]);
+                IPlayer.AddMinAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat - 1]);
+                IPlayer.AddMaxAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat - 1]);
+                IPlayer.IncreaseMaxHp(DemonGongStatWeaponWater[1][FirstDemonGongStat - 1]);
             }
         }
 
@@ -52,23 +52,23 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
         {
             if (SecondDemonGongType == 1)
             {
-                IPlayer.AddMinAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat-1]);
-                IPlayer.AddMaxAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat-1]);
-                IPlayer.AddOTP(DemonGongStatWeaponEarth[1][SecondDemonGongStat-1]);
+                IPlayer.AddMinAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat - 1]);
+                IPlayer.AddMaxAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat - 1]);
+                IPlayer.AddOTP(DemonGongStatWeaponEarth[1][SecondDemonGongStat - 1]);
             }
 
             if (SecondDemonGongType == 2)
             {
-                IPlayer.AddMinAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat-1]);
-                IPlayer.AddMaxAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat-1]);
-                IPlayer.AddEva(DemonGongStatWeaponWind[1][SecondDemonGongStat-1]);
+                IPlayer.AddMinAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat - 1]);
+                IPlayer.AddMaxAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat - 1]);
+                IPlayer.AddEva(DemonGongStatWeaponWind[1][SecondDemonGongStat - 1]);
             }
 
             if (SecondDemonGongType == 3)
             {
-                IPlayer.AddMinAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat-1]);
-                IPlayer.AddMaxAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat-1]);
-                IPlayer.IncreaseMaxHp(DemonGongStatWeaponWater[1][SecondDemonGongStat-1]);
+                IPlayer.AddMinAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat - 1]);
+                IPlayer.AddMaxAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat - 1]);
+                IPlayer.IncreaseMaxHp(DemonGongStatWeaponWater[1][SecondDemonGongStat - 1]);
             }
         }
 
@@ -78,21 +78,21 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
 
             if (QigongType)
             {
-                IPlayer.AddMaxAttack(check*QigongWeapon[QigongType-1][0]/100);
-                IPlayer.AddMinAttack(check*QigongWeapon[QigongType-1][1]/100);
-                IPlayer.IncreaseMaxHp(QigongWeapon[QigongType-1][2]);
-                IPlayer.IncreaseMaxMp(QigongWeapon[QigongType-1][3]);
+                IPlayer.AddMaxAttack(check * QigongWeapon[QigongType - 1][0] / 100);
+                IPlayer.AddMinAttack(check * QigongWeapon[QigongType - 1][1] / 100);
+                IPlayer.IncreaseMaxHp(QigongWeapon[QigongType - 1][2]);
+                IPlayer.IncreaseMaxMp(QigongWeapon[QigongType - 1][3]);
 
                 if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
                         IPlayer.GetClass() == 4)) {
-                    IPlayer.AddEva(QigongWeapon[QigongType-1][4]);
+                    IPlayer.AddEva(QigongWeapon[QigongType - 1][4]);
                 }
                 else {
-                    IPlayer.AddOTP(QigongWeapon[QigongType-1][4]);
+                    IPlayer.AddOTP(QigongWeapon[QigongType - 1][4]);
                 }
 
-                int Type = QigongWeapon[QigongType-1][5];
-                int Stat = QigongWeapon[QigongType-1][6];
+                int Type = QigongWeapon[QigongType - 1][5];
+                int Stat = QigongWeapon[QigongType - 1][6];
 
                 if (Type == 0) {
                     IPlayer.AddStr(Stat);
@@ -114,8 +114,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
 
         if (IItem.GetSetGem() == 240 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*17/100);
-            IPlayer.AddMinAttack(check*17/100);
+            IPlayer.AddMaxAttack(check * 17 / 100);
+            IPlayer.AddMinAttack(check * 17 / 100);
             IPlayer.AddAgi(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -130,8 +130,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 239 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*17/100);
-            IPlayer.AddMinAttack(check*17/100);
+            IPlayer.AddMaxAttack(check * 17 / 100);
+            IPlayer.AddMinAttack(check * 17 / 100);
             IPlayer.AddWis(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -146,8 +146,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 238 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*17/100);
-            IPlayer.AddMinAttack(check*17/100);
+            IPlayer.AddMaxAttack(check * 17 / 100);
+            IPlayer.AddMinAttack(check * 17 / 100);
             IPlayer.AddInt(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -162,8 +162,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 237 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*17/100);
-            IPlayer.AddMinAttack(check*17/100);
+            IPlayer.AddMaxAttack(check * 17 / 100);
+            IPlayer.AddMinAttack(check * 17 / 100);
             IPlayer.AddHp(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -178,8 +178,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 236 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*17/100);
-            IPlayer.AddMinAttack(check*17/100);
+            IPlayer.AddMaxAttack(check * 17 / 100);
+            IPlayer.AddMinAttack(check * 17 / 100);
             IPlayer.AddStr(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -194,8 +194,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 235 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*14/100);
-            IPlayer.AddMinAttack(check*14/100);
+            IPlayer.AddMaxAttack(check * 14 / 100);
+            IPlayer.AddMinAttack(check * 14 / 100);
             IPlayer.AddAgi(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -210,8 +210,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 234 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*14/100);
-            IPlayer.AddMinAttack(check*14/100);
+            IPlayer.AddMaxAttack(check * 14 / 100);
+            IPlayer.AddMinAttack(check * 14 / 100);
             IPlayer.AddWis(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -226,8 +226,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 233 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*14/100);
-            IPlayer.AddMinAttack(check*14/100);
+            IPlayer.AddMaxAttack(check * 14 / 100);
+            IPlayer.AddMinAttack(check * 14 / 100);
             IPlayer.AddInt(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -242,8 +242,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 232 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*14/100);
-            IPlayer.AddMinAttack(check*14/100);
+            IPlayer.AddMaxAttack(check * 14 / 100);
+            IPlayer.AddMinAttack(check * 14 / 100);
             IPlayer.AddHp(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -258,8 +258,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 231 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*14/100);
-            IPlayer.AddMinAttack(check*14/100);
+            IPlayer.AddMaxAttack(check * 14 / 100);
+            IPlayer.AddMinAttack(check * 14 / 100);
             IPlayer.AddStr(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -274,8 +274,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 230 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*12/100);
-            IPlayer.AddMinAttack(check*12/100);
+            IPlayer.AddMaxAttack(check * 12 / 100);
+            IPlayer.AddMinAttack(check * 12 / 100);
             IPlayer.AddAgi(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -290,8 +290,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 229 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*12/100);
-            IPlayer.AddMinAttack(check*12/100);
+            IPlayer.AddMaxAttack(check * 12 / 100);
+            IPlayer.AddMinAttack(check * 12 / 100);
             IPlayer.AddWis(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -306,8 +306,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 228 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*12/100);
-            IPlayer.AddMinAttack(check*12/100);
+            IPlayer.AddMaxAttack(check * 12 / 100);
+            IPlayer.AddMinAttack(check * 12 / 100);
             IPlayer.AddInt(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -322,8 +322,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 227 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*12/100);
-            IPlayer.AddMinAttack(check*12/100);
+            IPlayer.AddMaxAttack(check * 12 / 100);
+            IPlayer.AddMinAttack(check * 12 / 100);
             IPlayer.AddHp(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -338,8 +338,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 226 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*12/100);
-            IPlayer.AddMinAttack(check*12/100);
+            IPlayer.AddMaxAttack(check * 12 / 100);
+            IPlayer.AddMinAttack(check * 12 / 100);
             IPlayer.AddStr(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -354,8 +354,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 225 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*10/100);
-            IPlayer.AddMinAttack(check*10/100);
+            IPlayer.AddMaxAttack(check * 10 / 100);
+            IPlayer.AddMinAttack(check * 10 / 100);
             IPlayer.AddAgi(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -370,8 +370,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 224 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*10/100);
-            IPlayer.AddMinAttack(check*10/100);
+            IPlayer.AddMaxAttack(check * 10 / 100);
+            IPlayer.AddMinAttack(check * 10 / 100);
             IPlayer.AddWis(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -386,8 +386,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 223 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*10/100);
-            IPlayer.AddMinAttack(check*10/100);
+            IPlayer.AddMaxAttack(check * 10 / 100);
+            IPlayer.AddMinAttack(check * 10 / 100);
             IPlayer.AddInt(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -402,8 +402,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 222 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*10/100);
-            IPlayer.AddMinAttack(check*10/100);
+            IPlayer.AddMaxAttack(check * 10 / 100);
+            IPlayer.AddMinAttack(check * 10 / 100);
             IPlayer.AddHp(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -418,8 +418,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 221 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*10/100);
-            IPlayer.AddMinAttack(check*10/100);
+            IPlayer.AddMaxAttack(check * 10 / 100);
+            IPlayer.AddMinAttack(check * 10 / 100);
             IPlayer.AddStr(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -434,8 +434,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 220 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*8/100);
-            IPlayer.AddMinAttack(check*8/100);
+            IPlayer.AddMaxAttack(check * 8 / 100);
+            IPlayer.AddMinAttack(check * 8 / 100);
             IPlayer.AddAgi(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -450,8 +450,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 219 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*8/100);
-            IPlayer.AddMinAttack(check*8/100);
+            IPlayer.AddMaxAttack(check * 8 / 100);
+            IPlayer.AddMinAttack(check * 8 / 100);
             IPlayer.AddWis(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -466,8 +466,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 218 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*8/100);
-            IPlayer.AddMinAttack(check*8/100);
+            IPlayer.AddMaxAttack(check * 8 / 100);
+            IPlayer.AddMinAttack(check * 8 / 100);
             IPlayer.AddInt(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -482,8 +482,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 217 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*8/100);
-            IPlayer.AddMinAttack(check*8/100);
+            IPlayer.AddMaxAttack(check * 8 / 100);
+            IPlayer.AddMinAttack(check * 8 / 100);
             IPlayer.AddHp(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -498,8 +498,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 216 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*8/100);
-            IPlayer.AddMinAttack(check*8/100);
+            IPlayer.AddMaxAttack(check * 8 / 100);
+            IPlayer.AddMinAttack(check * 8 / 100);
             IPlayer.AddStr(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -514,8 +514,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 215 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*6/100);
-            IPlayer.AddMinAttack(check*6/100);
+            IPlayer.AddMaxAttack(check * 6 / 100);
+            IPlayer.AddMinAttack(check * 6 / 100);
             IPlayer.AddAgi(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -530,8 +530,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 214 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*6/100);
-            IPlayer.AddMinAttack(check*6/100);
+            IPlayer.AddMaxAttack(check * 6 / 100);
+            IPlayer.AddMinAttack(check * 6 / 100);
             IPlayer.AddWis(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -546,8 +546,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 213 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*6/100);
-            IPlayer.AddMinAttack(check*6/100);
+            IPlayer.AddMaxAttack(check * 6 / 100);
+            IPlayer.AddMinAttack(check * 6 / 100);
             IPlayer.AddInt(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -562,8 +562,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 212 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*6/100);
-            IPlayer.AddMinAttack(check*6/100);
+            IPlayer.AddMaxAttack(check * 6 / 100);
+            IPlayer.AddMinAttack(check * 6 / 100);
             IPlayer.AddHp(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -578,8 +578,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 211 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*6/100);
-            IPlayer.AddMinAttack(check*6/100);
+            IPlayer.AddMaxAttack(check * 6 / 100);
+            IPlayer.AddMinAttack(check * 6 / 100);
             IPlayer.AddStr(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -594,8 +594,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 210 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*4/100);
-            IPlayer.AddMinAttack(check*4/100);
+            IPlayer.AddMaxAttack(check * 4 / 100);
+            IPlayer.AddMinAttack(check * 4 / 100);
             IPlayer.AddAgi(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -610,8 +610,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 209 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*4/100);
-            IPlayer.AddMinAttack(check*4/100);
+            IPlayer.AddMaxAttack(check * 4 / 100);
+            IPlayer.AddMinAttack(check * 4 / 100);
             IPlayer.AddWis(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -626,8 +626,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 208 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*4/100);
-            IPlayer.AddMinAttack(check*4/100);
+            IPlayer.AddMaxAttack(check * 4 / 100);
+            IPlayer.AddMinAttack(check * 4 / 100);
             IPlayer.AddInt(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -642,8 +642,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 207 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*4/100);
-            IPlayer.AddMinAttack(check*4/100);
+            IPlayer.AddMaxAttack(check * 4 / 100);
+            IPlayer.AddMinAttack(check * 4 / 100);
             IPlayer.AddHp(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -658,8 +658,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 206 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*4/100);
-            IPlayer.AddMinAttack(check*4/100);
+            IPlayer.AddMaxAttack(check * 4 / 100);
+            IPlayer.AddMinAttack(check * 4 / 100);
             IPlayer.AddStr(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -674,8 +674,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 205 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*2/100);
-            IPlayer.AddMinAttack(check*2/100);
+            IPlayer.AddMaxAttack(check * 2 / 100);
+            IPlayer.AddMinAttack(check * 2 / 100);
             IPlayer.AddAgi(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -690,8 +690,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 204 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*2/100);
-            IPlayer.AddMinAttack(check*2/100);
+            IPlayer.AddMaxAttack(check * 2 / 100);
+            IPlayer.AddMinAttack(check * 2 / 100);
             IPlayer.AddWis(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -706,8 +706,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 203 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*2/100);
-            IPlayer.AddMinAttack(check*2/100);
+            IPlayer.AddMaxAttack(check * 2 / 100);
+            IPlayer.AddMinAttack(check * 2 / 100);
             IPlayer.AddInt(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -722,8 +722,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 202 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*2/100);
-            IPlayer.AddMinAttack(check*2/100);
+            IPlayer.AddMaxAttack(check * 2 / 100);
+            IPlayer.AddMinAttack(check * 2 / 100);
             IPlayer.AddHp(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -738,8 +738,8 @@ void __fastcall WeaponApplySpec(int Item, void *edx, int Player)
             IPlayer.IncreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 201 && IItem.GetInfo() & 1)
         {
-            IPlayer.AddMaxAttack(check*2/100);
-            IPlayer.AddMinAttack(check*2/100);
+            IPlayer.AddMaxAttack(check * 2 / 100);
+            IPlayer.AddMinAttack(check * 2 / 100);
             IPlayer.AddStr(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -791,23 +791,23 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
         {
             if (FirstDemonGongType == 1)
             {
-                IPlayer.RemoveMinAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat-1]);
-                IPlayer.RemoveMaxAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat-1]);
-                IPlayer.RemoveOTP(DemonGongStatWeaponEarth[1][FirstDemonGongStat-1]);
+                IPlayer.RemoveMinAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat - 1]);
+                IPlayer.RemoveMaxAttack(DemonGongStatWeaponEarth[0][FirstDemonGongStat - 1]);
+                IPlayer.RemoveOTP(DemonGongStatWeaponEarth[1][FirstDemonGongStat - 1]);
             }
 
             if (FirstDemonGongType == 2)
             {
-                IPlayer.RemoveMinAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat-1]);
-                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat-1]);
-                IPlayer.RemoveEva(DemonGongStatWeaponWind[1][FirstDemonGongStat-1]);
+                IPlayer.RemoveMinAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat - 1]);
+                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWind[0][FirstDemonGongStat - 1]);
+                IPlayer.RemoveEva(DemonGongStatWeaponWind[1][FirstDemonGongStat - 1]);
             }
 
             if (FirstDemonGongType == 3)
             {
-                IPlayer.RemoveMinAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat-1]);
-                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat-1]);
-                IPlayer.DecreaseMaxHp(DemonGongStatWeaponWater[1][FirstDemonGongStat-1]);
+                IPlayer.RemoveMinAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat - 1]);
+                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWater[0][FirstDemonGongStat - 1]);
+                IPlayer.DecreaseMaxHp(DemonGongStatWeaponWater[1][FirstDemonGongStat - 1]);
             }
         }
 
@@ -815,23 +815,23 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
         {
             if (SecondDemonGongType == 1)
             {
-                IPlayer.RemoveMinAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat-1]);
-                IPlayer.RemoveMaxAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat-1]);
-                IPlayer.RemoveOTP(DemonGongStatWeaponEarth[1][SecondDemonGongStat-1]);
+                IPlayer.RemoveMinAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat - 1]);
+                IPlayer.RemoveMaxAttack(DemonGongStatWeaponEarth[0][SecondDemonGongStat - 1]);
+                IPlayer.RemoveOTP(DemonGongStatWeaponEarth[1][SecondDemonGongStat - 1]);
             }
 
             if (SecondDemonGongType == 2)
             {
-                IPlayer.RemoveMinAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat-1]);
-                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat-1]);
-                IPlayer.RemoveEva(DemonGongStatWeaponWind[1][SecondDemonGongStat-1]);
+                IPlayer.RemoveMinAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat - 1]);
+                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWind[0][SecondDemonGongStat - 1]);
+                IPlayer.RemoveEva(DemonGongStatWeaponWind[1][SecondDemonGongStat - 1]);
             }
 
             if (SecondDemonGongType == 3)
             {
-                IPlayer.RemoveMinAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat-1]);
-                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat-1]);
-                IPlayer.DecreaseMaxHp(DemonGongStatWeaponWater[1][SecondDemonGongStat-1]);
+                IPlayer.RemoveMinAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat - 1]);
+                IPlayer.RemoveMaxAttack(DemonGongStatWeaponWater[0][SecondDemonGongStat - 1]);
+                IPlayer.DecreaseMaxHp(DemonGongStatWeaponWater[1][SecondDemonGongStat - 1]);
             }
         }
 
@@ -841,21 +841,21 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
 
             if (QigongType)
             {
-                IPlayer.RemoveMaxAttack(check*QigongWeapon[QigongType-1][0]/100);
-                IPlayer.RemoveMinAttack(check*QigongWeapon[QigongType-1][1]/100);
-                IPlayer.DecreaseMaxHp(QigongWeapon[QigongType-1][2]);
-                IPlayer.DecreaseMaxMp(QigongWeapon[QigongType-1][3]);
+                IPlayer.RemoveMaxAttack(check * QigongWeapon[QigongType - 1][0] / 100);
+                IPlayer.RemoveMinAttack(check * QigongWeapon[QigongType - 1][1] / 100);
+                IPlayer.DecreaseMaxHp(QigongWeapon[QigongType - 1][2]);
+                IPlayer.DecreaseMaxMp(QigongWeapon[QigongType - 1][3]);
 
                 if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
                         IPlayer.GetClass() == 4)) {
-                    IPlayer.RemoveEva(QigongWeapon[QigongType-1][4]);
+                    IPlayer.RemoveEva(QigongWeapon[QigongType - 1][4]);
                 }
                 else {
-                    IPlayer.RemoveOTP(QigongWeapon[QigongType-1][4]);
+                    IPlayer.RemoveOTP(QigongWeapon[QigongType - 1][4]);
                 }
 
-                int Type = QigongWeapon[QigongType-1][5];
-                int Stat = QigongWeapon[QigongType-1][6];
+                int Type = QigongWeapon[QigongType - 1][5];
+                int Stat = QigongWeapon[QigongType - 1][6];
 
                 if (Type == 0) {
                     IPlayer.RemoveStr(Stat);
@@ -877,8 +877,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
 
         if (IItem.GetSetGem() == 240)
         {
-            IPlayer.RemoveMaxAttack(check*17/100);
-            IPlayer.RemoveMinAttack(check*17/100);
+            IPlayer.RemoveMaxAttack(check * 17 / 100);
+            IPlayer.RemoveMinAttack(check * 17 / 100);
             IPlayer.RemoveAgi(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -893,8 +893,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 239)
         {
-            IPlayer.RemoveMaxAttack(check*17/100);
-            IPlayer.RemoveMinAttack(check*17/100);
+            IPlayer.RemoveMaxAttack(check * 17 / 100);
+            IPlayer.RemoveMinAttack(check * 17 / 100);
             IPlayer.RemoveWis(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -909,8 +909,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 238)
         {
-            IPlayer.RemoveMaxAttack(check*17/100);
-            IPlayer.RemoveMinAttack(check*17/100);
+            IPlayer.RemoveMaxAttack(check * 17 / 100);
+            IPlayer.RemoveMinAttack(check * 17 / 100);
             IPlayer.RemoveInt(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -925,8 +925,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 237)
         {
-            IPlayer.RemoveMaxAttack(check*17/100);
-            IPlayer.RemoveMinAttack(check*17/100);
+            IPlayer.RemoveMaxAttack(check * 17 / 100);
+            IPlayer.RemoveMinAttack(check * 17 / 100);
             IPlayer.RemoveHp(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -941,8 +941,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 236)
         {
-            IPlayer.RemoveMaxAttack(check*17/100);
-            IPlayer.RemoveMinAttack(check*17/100);
+            IPlayer.RemoveMaxAttack(check * 17 / 100);
+            IPlayer.RemoveMinAttack(check * 17 / 100);
             IPlayer.RemoveStr(8);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -957,8 +957,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(200);
         } else if (IItem.GetSetGem() == 235)
         {
-            IPlayer.RemoveMaxAttack(check*14/100);
-            IPlayer.RemoveMinAttack(check*14/100);
+            IPlayer.RemoveMaxAttack(check * 14 / 100);
+            IPlayer.RemoveMinAttack(check * 14 / 100);
             IPlayer.RemoveAgi(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -973,8 +973,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 234)
         {
-            IPlayer.RemoveMaxAttack(check*14/100);
-            IPlayer.RemoveMinAttack(check*14/100);
+            IPlayer.RemoveMaxAttack(check * 14 / 100);
+            IPlayer.RemoveMinAttack(check * 14 / 100);
             IPlayer.RemoveWis(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -989,8 +989,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 233)
         {
-            IPlayer.RemoveMaxAttack(check*14/100);
-            IPlayer.RemoveMinAttack(check*14/100);
+            IPlayer.RemoveMaxAttack(check * 14 / 100);
+            IPlayer.RemoveMinAttack(check * 14 / 100);
             IPlayer.RemoveInt(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1005,8 +1005,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 232)
         {
-            IPlayer.RemoveMaxAttack(check*14/100);
-            IPlayer.RemoveMinAttack(check*14/100);
+            IPlayer.RemoveMaxAttack(check * 14 / 100);
+            IPlayer.RemoveMinAttack(check * 14 / 100);
             IPlayer.RemoveHp(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1021,8 +1021,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 231)
         {
-            IPlayer.RemoveMaxAttack(check*14/100);
-            IPlayer.RemoveMinAttack(check*14/100);
+            IPlayer.RemoveMaxAttack(check * 14 / 100);
+            IPlayer.RemoveMinAttack(check * 14 / 100);
             IPlayer.RemoveStr(5);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1037,8 +1037,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(150);
         } else if (IItem.GetSetGem() == 230)
         {
-            IPlayer.RemoveMaxAttack(check*12/100);
-            IPlayer.RemoveMinAttack(check*12/100);
+            IPlayer.RemoveMaxAttack(check * 12 / 100);
+            IPlayer.RemoveMinAttack(check * 12 / 100);
             IPlayer.RemoveAgi(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1053,8 +1053,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 229)
         {
-            IPlayer.RemoveMaxAttack(check*12/100);
-            IPlayer.RemoveMinAttack(check*12/100);
+            IPlayer.RemoveMaxAttack(check * 12 / 100);
+            IPlayer.RemoveMinAttack(check * 12 / 100);
             IPlayer.RemoveWis(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1069,8 +1069,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 228)
         {
-            IPlayer.RemoveMaxAttack(check*12/100);
-            IPlayer.RemoveMinAttack(check*12/100);
+            IPlayer.RemoveMaxAttack(check * 12 / 100);
+            IPlayer.RemoveMinAttack(check * 12 / 100);
             IPlayer.RemoveInt(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1085,8 +1085,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 227)
         {
-            IPlayer.RemoveMaxAttack(check*12/100);
-            IPlayer.RemoveMinAttack(check*12/100);
+            IPlayer.RemoveMaxAttack(check * 12 / 100);
+            IPlayer.RemoveMinAttack(check * 12 / 100);
             IPlayer.RemoveHp(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1101,8 +1101,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 226)
         {
-            IPlayer.RemoveMaxAttack(check*12/100);
-            IPlayer.RemoveMinAttack(check*12/100);
+            IPlayer.RemoveMaxAttack(check * 12 / 100);
+            IPlayer.RemoveMinAttack(check * 12 / 100);
             IPlayer.RemoveStr(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1117,8 +1117,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(110);
         } else if (IItem.GetSetGem() == 225)
         {
-            IPlayer.RemoveMaxAttack(check*10/100);
-            IPlayer.RemoveMinAttack(check*10/100);
+            IPlayer.RemoveMaxAttack(check * 10 / 100);
+            IPlayer.RemoveMinAttack(check * 10 / 100);
             IPlayer.RemoveAgi(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1133,8 +1133,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 224)
         {
-            IPlayer.RemoveMaxAttack(check*10/100);
-            IPlayer.RemoveMinAttack(check*10/100);
+            IPlayer.RemoveMaxAttack(check * 10 / 100);
+            IPlayer.RemoveMinAttack(check * 10 / 100);
             IPlayer.RemoveWis(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1149,8 +1149,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 223)
         {
-            IPlayer.RemoveMaxAttack(check*10/100);
-            IPlayer.RemoveMinAttack(check*10/100);
+            IPlayer.RemoveMaxAttack(check * 10 / 100);
+            IPlayer.RemoveMinAttack(check * 10 / 100);
             IPlayer.RemoveInt(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1165,8 +1165,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 222)
         {
-            IPlayer.RemoveMaxAttack(check*10/100);
-            IPlayer.RemoveMinAttack(check*10/100);
+            IPlayer.RemoveMaxAttack(check * 10 / 100);
+            IPlayer.RemoveMinAttack(check * 10 / 100);
             IPlayer.RemoveHp(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1181,8 +1181,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 221)
         {
-            IPlayer.RemoveMaxAttack(check*10/100);
-            IPlayer.RemoveMinAttack(check*10/100);
+            IPlayer.RemoveMaxAttack(check * 10 / 100);
+            IPlayer.RemoveMinAttack(check * 10 / 100);
             IPlayer.RemoveStr(3);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1197,8 +1197,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(90);
         } else if (IItem.GetSetGem() == 220)
         {
-            IPlayer.RemoveMaxAttack(check*8/100);
-            IPlayer.RemoveMinAttack(check*8/100);
+            IPlayer.RemoveMaxAttack(check * 8 / 100);
+            IPlayer.RemoveMinAttack(check * 8 / 100);
             IPlayer.RemoveAgi(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1213,8 +1213,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 219)
         {
-            IPlayer.RemoveMaxAttack(check*8/100);
-            IPlayer.RemoveMinAttack(check*8/100);
+            IPlayer.RemoveMaxAttack(check * 8 / 100);
+            IPlayer.RemoveMinAttack(check * 8 / 100);
             IPlayer.RemoveWis(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1229,8 +1229,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 218)
         {
-            IPlayer.RemoveMaxAttack(check*8/100);
-            IPlayer.RemoveMinAttack(check*8/100);
+            IPlayer.RemoveMaxAttack(check * 8 / 100);
+            IPlayer.RemoveMinAttack(check * 8 / 100);
             IPlayer.RemoveInt(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1245,8 +1245,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 217)
         {
-            IPlayer.RemoveMaxAttack(check*8/100);
-            IPlayer.RemoveMinAttack(check*8/100);
+            IPlayer.RemoveMaxAttack(check * 8 / 100);
+            IPlayer.RemoveMinAttack(check * 8 / 100);
             IPlayer.RemoveHp(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1261,8 +1261,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 216)
         {
-            IPlayer.RemoveMaxAttack(check*8/100);
-            IPlayer.RemoveMinAttack(check*8/100);
+            IPlayer.RemoveMaxAttack(check * 8 / 100);
+            IPlayer.RemoveMinAttack(check * 8 / 100);
             IPlayer.RemoveStr(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1277,8 +1277,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(70);
         } else if (IItem.GetSetGem() == 215)
         {
-            IPlayer.RemoveMaxAttack(check*6/100);
-            IPlayer.RemoveMinAttack(check*6/100);
+            IPlayer.RemoveMaxAttack(check * 6 / 100);
+            IPlayer.RemoveMinAttack(check * 6 / 100);
             IPlayer.RemoveAgi(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1293,8 +1293,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 214)
         {
-            IPlayer.RemoveMaxAttack(check*6/100);
-            IPlayer.RemoveMinAttack(check*6/100);
+            IPlayer.RemoveMaxAttack(check * 6 / 100);
+            IPlayer.RemoveMinAttack(check * 6 / 100);
             IPlayer.RemoveWis(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1309,8 +1309,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 213)
         {
-            IPlayer.RemoveMaxAttack(check*6/100);
-            IPlayer.RemoveMinAttack(check*6/100);
+            IPlayer.RemoveMaxAttack(check * 6 / 100);
+            IPlayer.RemoveMinAttack(check * 6 / 100);
             IPlayer.RemoveInt(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1325,8 +1325,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 212)
         {
-            IPlayer.RemoveMaxAttack(check*6/100);
-            IPlayer.RemoveMinAttack(check*6/100);
+            IPlayer.RemoveMaxAttack(check * 6 / 100);
+            IPlayer.RemoveMinAttack(check * 6 / 100);
             IPlayer.RemoveHp(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1341,8 +1341,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 211)
         {
-            IPlayer.RemoveMaxAttack(check*6/100);
-            IPlayer.RemoveMinAttack(check*6/100);
+            IPlayer.RemoveMaxAttack(check * 6 / 100);
+            IPlayer.RemoveMinAttack(check * 6 / 100);
             IPlayer.RemoveStr(2);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1357,8 +1357,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(50);
         } else if (IItem.GetSetGem() == 210)
         {
-            IPlayer.RemoveMaxAttack(check*4/100);
-            IPlayer.RemoveMinAttack(check*4/100);
+            IPlayer.RemoveMaxAttack(check * 4 / 100);
+            IPlayer.RemoveMinAttack(check * 4 / 100);
             IPlayer.RemoveAgi(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1373,8 +1373,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 209)
         {
-            IPlayer.RemoveMaxAttack(check*4/100);
-            IPlayer.RemoveMinAttack(check*4/100);
+            IPlayer.RemoveMaxAttack(check * 4 / 100);
+            IPlayer.RemoveMinAttack(check * 4 / 100);
             IPlayer.RemoveWis(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1389,8 +1389,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 208)
         {
-            IPlayer.RemoveMaxAttack(check*4/100);
-            IPlayer.RemoveMinAttack(check*4/100);
+            IPlayer.RemoveMaxAttack(check * 4 / 100);
+            IPlayer.RemoveMinAttack(check * 4 / 100);
             IPlayer.RemoveInt(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1405,8 +1405,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 207)
         {
-            IPlayer.RemoveMaxAttack(check*4/100);
-            IPlayer.RemoveMinAttack(check*4/100);
+            IPlayer.RemoveMaxAttack(check * 4 / 100);
+            IPlayer.RemoveMinAttack(check * 4 / 100);
             IPlayer.RemoveHp(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1421,8 +1421,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 206)
         {
-            IPlayer.RemoveMaxAttack(check*4/100);
-            IPlayer.RemoveMinAttack(check*4/100);
+            IPlayer.RemoveMaxAttack(check * 4 / 100);
+            IPlayer.RemoveMinAttack(check * 4 / 100);
             IPlayer.RemoveStr(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1437,8 +1437,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(30);
         } else if (IItem.GetSetGem() == 205)
         {
-            IPlayer.RemoveMaxAttack(check*2/100);
-            IPlayer.RemoveMinAttack(check*2/100);
+            IPlayer.RemoveMaxAttack(check * 2 / 100);
+            IPlayer.RemoveMinAttack(check * 2 / 100);
             IPlayer.RemoveAgi(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1453,8 +1453,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 204)
         {
-            IPlayer.RemoveMaxAttack(check*2/100);
-            IPlayer.RemoveMinAttack(check*2/100);
+            IPlayer.RemoveMaxAttack(check * 2 / 100);
+            IPlayer.RemoveMinAttack(check * 2 / 100);
             IPlayer.RemoveWis(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1469,8 +1469,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 203)
         {
-            IPlayer.RemoveMaxAttack(check*2/100);
-            IPlayer.RemoveMinAttack(check*2/100);
+            IPlayer.RemoveMaxAttack(check * 2 / 100);
+            IPlayer.RemoveMinAttack(check * 2 / 100);
             IPlayer.RemoveInt(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1485,8 +1485,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 202)
         {
-            IPlayer.RemoveMaxAttack(check*2/100);
-            IPlayer.RemoveMinAttack(check*2/100);
+            IPlayer.RemoveMaxAttack(check * 2 / 100);
+            IPlayer.RemoveMinAttack(check * 2 / 100);
             IPlayer.RemoveHp(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1501,8 +1501,8 @@ void __fastcall WeaponPutOff(void *Item, void *edx, int Player)
             IPlayer.DecreaseMaxMp(10);
         } else if (IItem.GetSetGem() == 201)
         {
-            IPlayer.RemoveMaxAttack(check*2/100);
-            IPlayer.RemoveMinAttack(check*2/100);
+            IPlayer.RemoveMaxAttack(check * 2 / 100);
+            IPlayer.RemoveMinAttack(check * 2 / 100);
             IPlayer.RemoveStr(1);
 
             if (IItem.GetType() == -1 || (IItem.GetType() == -3 &&
@@ -1535,7 +1535,7 @@ void __fastcall WeaponPutOn(int Item, void *edx, int Player)
         if (IPlayer.IsValid() && IPlayer.IsBuff(120))
         {
             if (IItem.LevelLimit() > 5) {
-                IItem.SetLevelLimit(IItem.LevelLimit()-5);
+                IItem.SetLevelLimit(IItem.LevelLimit() - 5);
             }
         }
 
@@ -1544,7 +1544,7 @@ void __fastcall WeaponPutOn(int Item, void *edx, int Player)
         if (IPlayer.IsValid() && IPlayer.IsBuff(120))
         {
             if (IItem.LevelLimit() > 5) {
-                IItem.SetLevelLimit(IItem.LevelLimit()+5);
+                IItem.SetLevelLimit(IItem.LevelLimit() + 5);
             }
         }
     }

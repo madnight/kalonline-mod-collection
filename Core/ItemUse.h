@@ -29,8 +29,9 @@ int __fastcall ItemUse(void *ItemOffset, void *edx, int PlayerOffset)
                 }
 
                 CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IItem.GetIID(), Value, Add);
-                GetItemStat[IItem.GetIID()] = Value+(Add*1000);
-                CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IItem.GetIID());
+                GetItemStat[IItem.GetIID()] = Value + (Add * 1000);
+                CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000),
+                    IItem.GetIID());
             }
         } else {
             IPlayer.SystemMessage("Inventory is full.", TEXTCOLOR_PINK);
@@ -100,16 +101,16 @@ int __fastcall ItemUse(void *ItemOffset, void *edx, int PlayerOffset)
     {
         if (IPlayer.GetLevel() <= BufferCheck.find(ICI)->second.Limit)
         {
-            IPlayer.Buff(48, 1800, 8*(BufferCheck.find(ICI)->second.Grade)+3);
-            IPlayer.Buff(50, 1800, 8*(BufferCheck.find(ICI)->second.Grade)+3);
-            IPlayer.Buff(47, 1800, 8*(BufferCheck.find(ICI)->second.Grade)+3);
-            IPlayer.Buff(49, 1800, 8*(BufferCheck.find(ICI)->second.Grade)+3);
-            IPlayer.Buff(46, 1800, 8*(BufferCheck.find(ICI)->second.Grade)+3);
-            IPlayer.Buff(36, 1800, 8*(BufferCheck.find(ICI)->second.Grade)+16);
+            IPlayer.Buff(48, 1800, 8 * (BufferCheck.find(ICI)->second.Grade) + 3);
+            IPlayer.Buff(50, 1800, 8 * (BufferCheck.find(ICI)->second.Grade) + 3);
+            IPlayer.Buff(47, 1800, 8 * (BufferCheck.find(ICI)->second.Grade) + 3);
+            IPlayer.Buff(49, 1800, 8 * (BufferCheck.find(ICI)->second.Grade) + 3);
+            IPlayer.Buff(46, 1800, 8 * (BufferCheck.find(ICI)->second.Grade) + 3);
+            IPlayer.Buff(36, 1800, 8 * (BufferCheck.find(ICI)->second.Grade) + 16);
             CChar::CancelAllBuff(IPlayer.GetOffset(), 37);
             int AddBuff = CBuff::CreateBuff(37, 1800,
-                    30*(BufferCheck.find(ICI)->second.Grade)+5,
-                    20*(BufferCheck.find(ICI)->second.Grade)+5);
+                    30 * (BufferCheck.find(ICI)->second.Grade) + 5,
+                    20 * (BufferCheck.find(ICI)->second.Grade) + 5);
             (*(int (__thiscall **)(int, int))(*(DWORD *)PlayerOffset + 180))(PlayerOffset,
                 AddBuff);
             IPlayer.Buff(12, 1800, 45);
@@ -422,10 +423,10 @@ int __fastcall ItemUse(void *ItemOffset, void *edx, int PlayerOffset)
     if (IPlayer.IsOnline() && ICI == EmokCert)
     {
         if (IPlayer.IsBuff(156)) {
-            IPlayer.Buff(156, IPlayer.GetBuffRemain(156)+3600, 0);
+            IPlayer.Buff(156, IPlayer.GetBuffRemain(156) + 3600, 0);
         }
         else {
-            IPlayer.Buff(156, CheckEmok.find(IPlayer.GetPID())->second.Time+3600, 0);
+            IPlayer.Buff(156, CheckEmok.find(IPlayer.GetPID())->second.Time + 3600, 0);
         }
 
         (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
@@ -537,49 +538,49 @@ int __fastcall ItemUse(void *ItemOffset, void *edx, int PlayerOffset)
     if (IPlayer.IsOnline() && ICI >= 1299
         && ICI <= 1317)
     {
-        IPlayer.OpenHTML(598702+ICI);
+        IPlayer.OpenHTML(598702 + ICI);
         return Item.GetAmount();
     }
 
     if (IPlayer.IsOnline() && ICI >= 1328
         && ICI <= 1365)
     {
-        IPlayer.OpenHTML(598692+ICI);
+        IPlayer.OpenHTML(598692 + ICI);
         return Item.GetAmount();
     }
 
     if (IPlayer.IsOnline() && ICI >= 1741
         && ICI <= 1745)
     {
-        IPlayer.OpenHTML(598317+ICI);
+        IPlayer.OpenHTML(598317 + ICI);
         return Item.GetAmount();
     }
 
     if (IPlayer.IsOnline() && ICI >= 1796
         && ICI <= 1800)
     {
-        IPlayer.OpenHTML(598267+ICI);
+        IPlayer.OpenHTML(598267 + ICI);
         return Item.GetAmount();
     }
 
     if (IPlayer.IsOnline() && ICI >= 2061
         && ICI <= 2069)
     {
-        IPlayer.OpenHTML(598007+ICI);
+        IPlayer.OpenHTML(598007 + ICI);
         return Item.GetAmount();
     }
 
     if (IPlayer.IsOnline() && ICI >= 2417
         && ICI <= 2419)
     {
-        IPlayer.OpenHTML(597660+ICI);
+        IPlayer.OpenHTML(597660 + ICI);
         return Item.GetAmount();
     }
 
     if (IPlayer.IsOnline() && ICI >= 3060
         && ICI <= 3069)
     {
-        IPlayer.OpenHTML(597020+ICI);
+        IPlayer.OpenHTML(597020 + ICI);
         return Item.GetAmount();
     }
 

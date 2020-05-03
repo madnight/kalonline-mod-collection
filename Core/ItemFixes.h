@@ -21,7 +21,7 @@ void __fastcall ModsItemPutInfo(void *_this, void *_edx, char **spec, int a3)
     *spec = CItem::PutDword(*spec, v4[12]);
     *spec = CItem::PutDword(*spec, a3);
 
-    for (int i=0; i < 11; i++) {
+    for (int i = 0; i < 11; i++) {
         *spec = CItem::PutByte(*spec, 0);
     }
 }
@@ -31,14 +31,14 @@ void __fastcall ModsSendStallList(void *player, void *_edx, char* packet)
     Interface<ITools> Tools;
     unsigned char type, pType, Items;
     unsigned long id, version;
-    packet = Tools->ParseData(packet+2, "bbddb", &type, &pType, &id, &version,
+    packet = Tools->ParseData(packet + 2, "bbddb", &type, &pType, &id, &version,
             &Items);
     size_t Size = Items * 67;
     char *Packet = new char[Size];
     ZeroMemory(Packet, Size);
     void *GetPlayer = CPlayer::FindPlayer(id);
 
-    for (unsigned char i=0; i < Items; i++)
+    for (unsigned char i = 0; i < Items; i++)
     {
         unsigned short index;
         unsigned long iid;
@@ -48,11 +48,13 @@ void __fastcall ModsSendStallList(void *player, void *_edx, char* packet)
         unsigned short xprotect;
         unsigned char upgrlvl, upgrrate;
         unsigned long price;
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0;
-        unsigned char hp=0, intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0,
-                      dg2type=0, PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0;
+        unsigned char hp = 0, intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0,
+                      dg1type = 0, dg2stat = 0,
+                      dg2type = 0, PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
         packet = Tools->ParseData(packet, "dwbddbbbbbbbbbbbd", &iid, &index,
                 &prefix, &info, &amount, &maxend, &curend, &setgem, &xatk,
@@ -964,7 +966,7 @@ void __fastcall ModsSendStallList(void *player, void *_edx, char* packet)
             prefix = GetItemStat.find(iid)->second / 1000;
         }
 
-        Tools->Compile(Packet + i*67, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbbd",
+        Tools->Compile(Packet + i * 67, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbbd",
             index, iid, prefix, info, amount, maxend, curend, setgem, xatk,
             xmagic, xdefense, xhit, xevasion, xprotect, upgrlvl, upgrrate,
             x, y, z, remaintime, dsstype, phyatk, magatk, def, absorb, eva,
@@ -988,7 +990,7 @@ void __fastcall ModsSendTradeList(void *player, void *_edx, char* packet)
     ZeroMemory(Packet, Size);
     void *GetPlayer = *(void**)((int)player + 120);
 
-    for (unsigned char i=0; i < Items; i++)
+    for (unsigned char i = 0; i < Items; i++)
     {
         unsigned short index;
         unsigned long iid;
@@ -997,13 +999,15 @@ void __fastcall ModsSendTradeList(void *player, void *_edx, char* packet)
         unsigned char maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion;
         unsigned short xprotect;
         unsigned char upgrlvl, upgrrate;
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                      hp=0;
-        unsigned char intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0,
-                      dg2type=0,
-                      PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0,
+                      hp = 0;
+        unsigned char intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0,
+                      dg2stat = 0,
+                      dg2type = 0,
+                      PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
         packet = Tools->ParseData(packet, "dwbddbbbbbbbbbbb", &iid, &index, &prefix,
                 &info, &amount, &maxend, &curend, &setgem, &xatk, &xmagic, &xdefense,
@@ -1917,7 +1921,7 @@ void __fastcall ModsSendTradeList(void *player, void *_edx, char* packet)
             prefix = GetItemStat.find(iid)->second / 1000;
         }
 
-        Tools->Compile(Packet + i*63, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb",
+        Tools->Compile(Packet + i * 63, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb",
             index, iid, prefix, info, amount, maxend, curend, setgem, xatk,
             xmagic, xdefense, xhit, xevasion, xprotect, upgrlvl, upgrrate,
             x, y, z, remaintime, dsstype, phyatk, magatk, def, absorb, eva,
@@ -1940,7 +1944,7 @@ void __fastcall ModsSendStorageList(void *player, void *_edx, char* packet)
     ZeroMemory(Packet, Size);
     void *GetPlayer = *(void**)((int)player + 120);
 
-    for (unsigned char i=0; i < Items; i++)
+    for (unsigned char i = 0; i < Items; i++)
     {
         unsigned short index;
         unsigned long iid;
@@ -1949,13 +1953,15 @@ void __fastcall ModsSendStorageList(void *player, void *_edx, char* packet)
         unsigned char maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion;
         unsigned short xprotect;
         unsigned char upgrlvl, upgrrate;
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                      hp=0;
-        unsigned char intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0,
-                      dg2type=0,
-                      PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0,
+                      hp = 0;
+        unsigned char intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0,
+                      dg2stat = 0,
+                      dg2type = 0,
+                      PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
         packet = Tools->ParseData(packet, "wdbddbbbbbbbbbbb", &index, &iid, &prefix,
                 &info, &amount, &maxend, &curend, &setgem, &xatk,
@@ -2870,7 +2876,7 @@ void __fastcall ModsSendStorageList(void *player, void *_edx, char* packet)
             prefix = GetItemStat.find(iid)->second / 1000;
         }
 
-        Tools->Compile(Packet + i*63, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb",
+        Tools->Compile(Packet + i * 63, "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb",
             index,
             iid, prefix, info, amount, maxend, curend,
             setgem, xatk, xmagic, xdefense, xhit, xevasion, xprotect, upgrlvl, upgrrate, x,
@@ -2903,12 +2909,14 @@ void __fastcall ModsSendItemInfo(void *player, void *_edx, char* Inventory)
         unsigned char maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion;
         unsigned short xprotect;
         unsigned char upgrlvl, upgrrate;
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                      hp=0,
-                      intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0, dg2type=0,
-                      PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0,
+                      hp = 0,
+                      intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0, dg2stat = 0,
+                      dg2type = 0,
+                      PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
         FindSize = Tools->ParseData(FindSize, "dwbddbbbbbbbbbbb", &iid, &index, &prefix,
                 &info, &amount, &maxend, &curend, &setgem, &xatk, &xmagic, &xdefense, &xhit,
                 &xevasion, &xprotect, &upgrlvl, &upgrrate);
@@ -2930,12 +2938,14 @@ void __fastcall ModsSendItemInfo(void *player, void *_edx, char* Inventory)
         unsigned char maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion;
         unsigned short xprotect;
         unsigned char upgrlvl, upgrrate;
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                      hp=0,
-                      intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0, dg2type=0,
-                      PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0,
+                      hp = 0,
+                      intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0, dg2stat = 0,
+                      dg2type = 0,
+                      PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
         WriteWear = Tools->ParseData(WriteWear, "dwbddbbbbbbbbbbb", &iid, &index,
                 &prefix, &info, &amount, &maxend, &curend, &setgem, &xatk,
@@ -3863,10 +3873,10 @@ void __fastcall ModsSendItemInfo(void *player, void *_edx, char* Inventory)
             }
 
             if (index == 3383 && GetItemStat.find(iid)->second == 0) {
-                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second+2);
+                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second + 2);
             }
             else {
-                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second+1);
+                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second + 1);
             }
         }
 
@@ -3884,7 +3894,7 @@ void __fastcall ModsSendItemInfo(void *player, void *_edx, char* Inventory)
 
         if (info & 1)
         {
-            Tools->Compile(xPacket + FixedLoop*63,
+            Tools->Compile(xPacket + FixedLoop * 63,
                 "wdbddbbbbbbbbwbbbbbdbwwwwbbbbbbbbbbdbbwbb", index, iid, prefix, info, amount,
                 maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion, xprotect,
                 upgrlvl, upgrrate, x, y, z, remaintime, dsstype, phyatk, magatk, def, absorb,
@@ -3907,12 +3917,14 @@ void __fastcall ModsSendItemInfo(void *player, void *_edx, char* Inventory)
         unsigned char maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion;
         unsigned short xprotect;
         unsigned char upgrlvl, upgrrate;
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                      hp=0,
-                      intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0, dg2type=0,
-                      PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0,
+                      hp = 0,
+                      intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0, dg2stat = 0,
+                      dg2type = 0,
+                      PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
         Inventory = Tools->ParseData(Inventory, "dwbddbbbbbbbbbbb", &iid, &index,
                 &prefix, &info, &amount, &maxend, &curend, &setgem, &xatk,
@@ -4847,10 +4859,10 @@ void __fastcall ModsSendItemInfo(void *player, void *_edx, char* Inventory)
             }
 
             if (index == 3383 && GetItemStat.find(iid)->second == 0) {
-                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second+2);
+                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second + 2);
             }
             else {
-                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second+1);
+                CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second + 1);
             }
         }
 
@@ -4893,14 +4905,16 @@ void __fastcall ModsSendUpdateItemInfo(void *player, void *_edx, char* Item)
     unsigned char maxend, curend, setgem, xatk, xmagic, xdefense, xhit, xevasion;
     unsigned short xprotect;
     unsigned char upgrlvl, upgrrate;
-    unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                  hp=0,
-                  intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0, dg2type=0,
-                  PerfShotCheck=0;
-    unsigned long remaintime=0, QigongGrade=0;
-    unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+    unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                  mpinc = 0, str = 0,
+                  hp = 0,
+                  intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0, dg2stat = 0,
+                  dg2type = 0,
+                  PerfShotCheck = 0;
+    unsigned long remaintime = 0, QigongGrade = 0;
+    unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
-    Tools->ParseData(Item+3, "dwbddbbbbbbbbbbb", &iid, &index, &prefix, &info,
+    Tools->ParseData(Item + 3, "dwbddbbbbbbbbbbb", &iid, &index, &prefix, &info,
         &amount, &maxend, &curend, &setgem, &xatk,
         &xmagic, &xdefense, &xhit, &xevasion, &xprotect, &upgrlvl, &upgrrate);
 
@@ -6665,10 +6679,10 @@ void __fastcall ModsSendUpdateItemInfo(void *player, void *_edx, char* Item)
         }
 
         if (index == 3383 && GetItemStat.find(iid)->second == 0) {
-            CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second+2);
+            CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second + 2);
         }
         else {
-            CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second+1);
+            CPlayer::Write(player, 193, "ddd", iid, 100, GetItemStat.find(iid)->second + 1);
         }
     }
 

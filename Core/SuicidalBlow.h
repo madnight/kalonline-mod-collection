@@ -53,7 +53,7 @@ void __fastcall SuicidalBlow(IChar IPlayer, int pPacket, int pPos)
                     if (Additional > 0 && IPlayer.GetCurHp() > Additional)
                     {
                         IPlayer.DecreaseHp(Additional);
-                        nDmg = nDmg + (Additional/2);
+                        nDmg = nDmg + (Additional / 2);
                     }
                 }
 

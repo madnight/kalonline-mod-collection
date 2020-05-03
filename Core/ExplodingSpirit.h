@@ -61,8 +61,8 @@ void __fastcall ExplodingSpirit(IChar IPlayer, int pPacket, int pPos)
                 }
 
                 int Around = Target.GetObjectListAround(3);
-                int nDmg = (((IPlayer.GetMaxMagAttack()+ExtraDamage) +
-                            ((((IPlayer.GetMaxMagAttack()+ExtraDamage) / 1) +
+                int nDmg = (((IPlayer.GetMaxMagAttack() + ExtraDamage) +
+                            ((((IPlayer.GetMaxMagAttack() + ExtraDamage) / 1) +
                                     (CChar::GetInt((int)IPlayer.GetOffset()) / 1)) +
                                 ((CChar::GetWis((int)IPlayer.GetOffset()) / 1) +
                                     (nSkillGrade * 600)))) * 3) + (IPlayer.GetLevel() * 10);

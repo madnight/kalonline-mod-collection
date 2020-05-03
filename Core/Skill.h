@@ -51,17 +51,18 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
             return;
         }
 
-        if (CooldownTable.count(IPlayer.GetPID()+4000000000+(SkillID*1000000)))
-            CooldownCheck = CooldownTable.find(IPlayer.GetPID()+4000000000+
-                    (SkillID*1000000))->second;
+        if (CooldownTable.count(IPlayer.GetPID() + 4000000000 + (SkillID * 1000000)))
+            CooldownCheck = CooldownTable.find(IPlayer.GetPID() + 4000000000 +
+                    (SkillID * 1000000))->second;
 
         if (CooldownCheck > GetTickCount())
         {
             IPlayer.SystemMessage("Invalid skill time detected!", TEXTCOLOR_RED);
             return;
         } else {
-            CooldownTable[IPlayer.GetPID()+4000000000+(SkillID*1000000)] = GetTickCount()
-                +CdTime+DelayTime;
+            CooldownTable[IPlayer.GetPID() + 4000000000 + (SkillID * 1000000)] =
+                GetTickCount()
+                + CdTime + DelayTime;
         }
 
         if (IPlayer.GetClass() == 1 && IPlayer.GetSpecialty() == 23) {
@@ -309,8 +310,8 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                 }
 
                 IPlayer.DecreaseMana(nMana);
-                IPlayer.Buff(305, 20+(xSkill.GetGrade()*5), 0);
-                IPlayer.Buff(306, 25+(xSkill.GetGrade()*5), 0);
+                IPlayer.Buff(305, 20 + (xSkill.GetGrade() * 5), 0);
+                IPlayer.Buff(306, 25 + (xSkill.GetGrade() * 5), 0);
                 IPlayer.SetBuffIcon(20000 + (xSkill.GetGrade() * 5000), 0, 1794, 202);
                 IPlayer._ShowBattleAnimation(IPlayer, 64);
             }
@@ -766,9 +767,9 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                     {
                         IPlayer._ShowBattleAnimation(IPlayer, 27);
                         IPlayer.DecreaseMana(nMana);
-                        IPlayer.SetBuffIcon(((nSkillGrade*60)+300)*1000, 0, 9103, 1012);
-                        IPlayer.Buff(405, (nSkillGrade*60)+300, 0);
-                        IPlayer.Buff(406, (nSkillGrade*100)+300, 0);
+                        IPlayer.SetBuffIcon(((nSkillGrade * 60) + 300) * 1000, 0, 9103, 1012);
+                        IPlayer.Buff(405, (nSkillGrade * 60) + 300, 0);
+                        IPlayer.Buff(406, (nSkillGrade * 100) + 300, 0);
                     }
                 }
 
@@ -849,7 +850,7 @@ void __fastcall ExecuteSkill(void *pSkill, void* edx, signed int SkillID,
                         IPlayer._ShowBattleAnimation(IPlayer, 45);
                         IPlayer.DecreaseMana(nMana);
                         IPlayer.SetBuffIcon(-2, -1, 9106, 1015);
-                        IPlayer.Buff(412, 1296000, 15*nSkillGrade);
+                        IPlayer.Buff(412, 1296000, 15 * nSkillGrade);
                     }
                 }
 

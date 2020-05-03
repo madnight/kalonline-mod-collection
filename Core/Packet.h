@@ -80,7 +80,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     Item = *(DWORD*)(Undefined::GetValue(&Value) + 4);
                     IItem Mirror((void*)Item);
-                    *(DWORD*)((int)Mirror.GetOffset()+48) = 0;
+                    *(DWORD*)((int)Mirror.GetOffset() + 48) = 0;
                     CItem::SendItemInfo(Mirror.GetOffset(), (int)IPlayer.GetOffset(), 92);
                     CPlayer::Write(IPlayer.GetOffset(), 6, "ddw", IPlayer.GetID(), Mirror.GetIID(),
                         Mirror.CheckIndex());
@@ -98,7 +98,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     Item = *(DWORD*)(Undefined::GetValue(&Value) + 4);
                     IItem Essense1((void*)Item);
-                    *(DWORD*)((int)Essense1.GetOffset()+48) = 0;
+                    *(DWORD*)((int)Essense1.GetOffset() + 48) = 0;
                     CItem::SendItemInfo(Essense1.GetOffset(), (int)IPlayer.GetOffset(), 92);
                     CPlayer::Write(IPlayer.GetOffset(), 6, "ddw", IPlayer.GetID(),
                         Essense1.GetIID(),
@@ -117,7 +117,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     Item = *(DWORD*)(Undefined::GetValue(&Value) + 4);
                     IItem Essense2((void*)Item);
-                    *(DWORD*)((int)Essense2.GetOffset()+48) = 0;
+                    *(DWORD*)((int)Essense2.GetOffset() + 48) = 0;
                     CItem::SendItemInfo(Essense2.GetOffset(), (int)IPlayer.GetOffset(), 92);
                     CPlayer::Write(IPlayer.GetOffset(), 6, "ddw", IPlayer.GetID(),
                         Essense2.GetIID(),
@@ -136,7 +136,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     Item = *(DWORD*)(Undefined::GetValue(&Value) + 4);
                     IItem Essense3((void*)Item);
-                    *(DWORD*)((int)Essense3.GetOffset()+48) = 0;
+                    *(DWORD*)((int)Essense3.GetOffset() + 48) = 0;
                     CItem::SendItemInfo(Essense3.GetOffset(), (int)IPlayer.GetOffset(), 92);
                     CPlayer::Write(IPlayer.GetOffset(), 6, "ddw", IPlayer.GetID(),
                         Essense3.GetIID(),
@@ -155,7 +155,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     Item = *(DWORD*)(Undefined::GetValue(&Value) + 4);
                     IItem Essense4((void*)Item);
-                    *(DWORD*)((int)Essense4.GetOffset()+48) = 0;
+                    *(DWORD*)((int)Essense4.GetOffset() + 48) = 0;
                     CItem::SendItemInfo(Essense4.GetOffset(), (int)IPlayer.GetOffset(), 92);
                     CPlayer::Write(IPlayer.GetOffset(), 6, "ddw", IPlayer.GetID(),
                         Essense4.GetIID(),
@@ -174,7 +174,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     Item = *(DWORD*)(Undefined::GetValue(&Value) + 4);
                     IItem Essense5((void*)Item);
-                    *(DWORD*)((int)Essense5.GetOffset()+48) = 0;
+                    *(DWORD*)((int)Essense5.GetOffset() + 48) = 0;
                     CItem::SendItemInfo(Essense5.GetOffset(), (int)IPlayer.GetOffset(), 92);
                     CPlayer::Write(IPlayer.GetOffset(), 6, "ddw", IPlayer.GetID(),
                         Essense5.GetIID(),
@@ -280,8 +280,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", MainItem.GetIID(), Value, Add);
                         CPlayer::Write(IPlayer.GetOffset(), 192, "bddd", 3, MainItem.GetIID(), Value,
                             Add);
-                        GetItemStat[IID] = Value+(Add*1000);
-                        CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IID);
+                        GetItemStat[IID] = Value + (Add * 1000);
+                        CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000), IID);
                     }
 
                     if (MainItem.CheckIndex() == 3385)
@@ -310,8 +310,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", MainItem.GetIID(), Value, Add);
                         CPlayer::Write(IPlayer.GetOffset(), 192, "bddd", 3, MainItem.GetIID(), Value,
                             Add);
-                        GetItemStat[IID] = Value+(Add*1000);
-                        CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IID);
+                        GetItemStat[IID] = Value + (Add * 1000);
+                        CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000), IID);
                     }
 
                     if (MainItem.CheckIndex() == 3386)
@@ -348,8 +348,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", MainItem.GetIID(), Value, Add);
                         CPlayer::Write(IPlayer.GetOffset(), 192, "bddd", 3, MainItem.GetIID(), Value,
                             Add);
-                        GetItemStat[IID] = Value+(Add*1000);
-                        CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IID);
+                        GetItemStat[IID] = Value + (Add * 1000);
+                        CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000), IID);
                     }
                 } else {
                     if (!CBase::IsDeleted((int)NextItem.GetOffset()))
@@ -374,8 +374,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                             CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", MainItem.GetIID(), Value, Add);
                             CPlayer::Write(IPlayer.GetOffset(), 192, "bddd", 3, MainItem.GetIID(), Value,
                                 Add);
-                            GetItemStat[IID] = Value+(Add*1000);
-                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IID);
+                            GetItemStat[IID] = Value + (Add * 1000);
+                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000), IID);
                         } else {
                             CPlayer::Write(IPlayer.GetOffset(), 192, "b", 4);
                         }
@@ -409,8 +409,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                             CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", MainItem.GetIID(), Value, Add);
                             CPlayer::Write(IPlayer.GetOffset(), 192, "bddd", 3, MainItem.GetIID(), Value,
                                 Add);
-                            GetItemStat[IID] = Value+(Add*1000);
-                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IID);
+                            GetItemStat[IID] = Value + (Add * 1000);
+                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000), IID);
                         } else {
                             CPlayer::Write(IPlayer.GetOffset(), 192, "b", 4);
                         }
@@ -452,8 +452,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                             CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", MainItem.GetIID(), Value, Add);
                             CPlayer::Write(IPlayer.GetOffset(), 192, "bddd", 3, MainItem.GetIID(), Value,
                                 Add);
-                            GetItemStat[IID] = Value+(Add*1000);
-                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IID);
+                            GetItemStat[IID] = Value + (Add * 1000);
+                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000), IID);
                         } else {
                             CPlayer::Write(IPlayer.GetOffset(), 192, "b", 4);
                         }
@@ -553,8 +553,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
                             CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IItem.GetIID(), Value, Add);
                             CPlayer::Write(IPlayer.GetOffset(), 192, "bd", 5, IItem.GetIID());
-                            GetItemStat[IItem.GetIID()] = Value+(Add*1000);
-                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IItem.GetIID());
+                            GetItemStat[IItem.GetIID()] = Value + (Add * 1000);
+                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000),
+                                IItem.GetIID());
                         }
                     }
 
@@ -599,8 +600,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
                             CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IItem.GetIID(), Value, Add);
                             CPlayer::Write(IPlayer.GetOffset(), 192, "bd", 5, IItem.GetIID());
-                            GetItemStat[IItem.GetIID()] = Value+(Add*1000);
-                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IItem.GetIID());
+                            GetItemStat[IItem.GetIID()] = Value + (Add * 1000);
+                            CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000),
+                                IItem.GetIID());
                         }
                     }
                 } else {
@@ -658,8 +660,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
                                 CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IItem.GetIID(), Value, Add);
                                 CPlayer::Write(IPlayer.GetOffset(), 192, "bd", 5, IItem.GetIID());
-                                GetItemStat[IItem.GetIID()] = Value+(Add*1000);
-                                CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IItem.GetIID());
+                                GetItemStat[IItem.GetIID()] = Value + (Add * 1000);
+                                CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000),
+                                    IItem.GetIID());
                             }
                         } else {
                             CPlayer::Write(IPlayer.GetOffset(), 192, "b", 6);
@@ -709,8 +712,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
                                 CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IItem.GetIID(), Value, Add);
                                 CPlayer::Write(IPlayer.GetOffset(), 192, "bd", 5, IItem.GetIID());
-                                GetItemStat[IItem.GetIID()] = Value+(Add*1000);
-                                CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value+(Add*1000), IItem.GetIID());
+                                GetItemStat[IItem.GetIID()] = Value + (Add * 1000);
+                                CDBSocket::Write(90, "ddd", IPlayer.GetPID(), Value + (Add * 1000),
+                                    IItem.GetIID());
                             }
                         } else {
                             CPlayer::Write(IPlayer.GetOffset(), 192, "b", 6);
@@ -727,19 +731,19 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
             if (Type == 2 && IID && GetItemStat.find(IID)->second >= 1)
             {
                 int JewelCheck = CPlayer::FindItem(IPlayer.GetOffset(), 3360,
-                        GetItemStat.find(IID)->second*60);
+                        GetItemStat.find(IID)->second * 60);
 
                 if (JewelCheck
                     && CPlayer::FindItem(IPlayer.GetOffset(), 3360,
-                        GetItemStat.find(IID)->second*60))
+                        GetItemStat.find(IID)->second * 60))
                 {
                     (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
                         (*(DWORD*)JewelCheck + 120))((int)JewelCheck, IPlayer.GetOffset(), 9,
-                            -(GetItemStat.find(IID)->second*60));
+                            -(GetItemStat.find(IID)->second * 60));
                     GetItemStat[IID] = GetItemStat.find(IID)->second + 1;
                     CPlayer::Write(IPlayer.GetOffset(), 194, "dd", IID, 100);
                     CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IID, 100,
-                        GetItemStat.find(IID)->second+1);
+                        GetItemStat.find(IID)->second + 1);
                     CDBSocket::Write(90, "ddd", IPlayer.GetPID(), GetItemStat.find(IID)->second,
                         IID);
                     CPlayer::Write(IPlayer.GetOffset(), 192, "b", 7);
@@ -761,7 +765,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     GetItemStat[IID] = GetItemStat.find(IID)->second + 1;
                     CPlayer::Write(IPlayer.GetOffset(), 194, "dd", IID, 100);
                     CPlayer::Write(IPlayer.GetOffset(), 193, "ddd", IID, 100,
-                        GetItemStat.find(IID)->second+1);
+                        GetItemStat.find(IID)->second + 1);
                     CDBSocket::Write(90, "ddd", IPlayer.GetPID(), GetItemStat.find(IID)->second,
                         IID);
                     CPlayer::Write(IPlayer.GetOffset(), 192, "b", 7);
@@ -890,7 +894,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     {
                         if (GoldKC && GoldKCAmount > Price && Target.IsOnline() && IPlayer.IsOnline())
                         {
-                            CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount-Price,
+                            CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount - Price,
                                 SilverKCAmount, CheckHonor.find(IPlayer.GetPID())->second.RPx, JewelAmount);
                             (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
                                 (*(DWORD*)(int)xGold.GetOffset() + 120))((int)xGold.GetOffset(),
@@ -912,7 +916,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         {
                             CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount,
                                 SilverKCAmount,
-                                CheckHonor.find(IPlayer.GetPID())->second.RPx, JewelAmount-Price);
+                                CheckHonor.find(IPlayer.GetPID())->second.RPx, JewelAmount - Price);
                             (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
                                 (*(DWORD*)(int)xJewel.GetOffset() + 120))((int)xJewel.GetOffset(),
                                     IPlayer.GetOffset(), 9, -Price);
@@ -986,7 +990,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     {
                         if (GoldKC && GoldKCAmount > Price)
                         {
-                            CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount-Price,
+                            CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount - Price,
                                 SilverKCAmount, CheckHonor.find(IPlayer.GetPID())->second.RPx, JewelAmount);
                             (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
                                 (*(DWORD*)(int)xGold.GetOffset() + 120))((int)xGold.GetOffset(),
@@ -1005,7 +1009,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         if (SilverKC && SilverKCAmount > Price)
                         {
                             CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount,
-                                SilverKCAmount-Price, CheckHonor.find(IPlayer.GetPID())->second.RPx,
+                                SilverKCAmount - Price, CheckHonor.find(IPlayer.GetPID())->second.RPx,
                                 JewelAmount);
                             (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
                                 (*(DWORD*)(int)xSilver.GetOffset() + 120))((int)xSilver.GetOffset(),
@@ -1043,7 +1047,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         {
                             CPlayer::Write(IPlayer.GetOffset(), 186, "bdddd", 4, GoldKCAmount,
                                 SilverKCAmount,
-                                CheckHonor.find(IPlayer.GetPID())->second.RPx, JewelAmount-Price);
+                                CheckHonor.find(IPlayer.GetPID())->second.RPx, JewelAmount - Price);
                             (*(int (__thiscall **)(DWORD, void *, signed int, signed int))
                                 (*(DWORD*)(int)xJewel.GetOffset() + 120))((int)xJewel.GetOffset(),
                                     IPlayer.GetOffset(), 9, -Price);
@@ -1081,7 +1085,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
         }
 
         if (packet == 67 && ShopLimit.count(IPlayer.GetIP())
-            &&ShopLimit.find(IPlayer.GetIP())->second && !IPlayer.IsBuff(297))
+            && ShopLimit.find(IPlayer.GetIP())->second && !IPlayer.IsBuff(297))
         {
             IPlayer.SystemMessage("Exceeded the maximum shop limit.", TEXTCOLOR_RED);
             return;
@@ -2116,7 +2120,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 PrefixMainItem = 1;
             }
 
-            GetRate = DemonGongStoneEnchant[PrefixMainItem-1][PrefixStone-1];
+            GetRate = DemonGongStoneEnchant[PrefixMainItem - 1][PrefixStone - 1];
 
             if (MainItem.GetInfo() & 4194304)
             {
@@ -2149,11 +2153,11 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
             if (JewelCheck == 1 && JewelAmount >= 1 && JewelAmount <= 10)
             {
-                if (CPlayer::FindItem(IPlayer.Offset, 3360, (50*JewelAmount)))
+                if (CPlayer::FindItem(IPlayer.Offset, 3360, (50 * JewelAmount)))
                 {
-                    CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (50*JewelAmount));
+                    CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (50 * JewelAmount));
                     JewelCalculation = JewelAmount;
-                    GetRate += (JewelCalculation*500);
+                    GetRate += (JewelCalculation * 500);
                 } else {
                     return;
                 }
@@ -2161,7 +2165,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
             if (Rate <= GetRate)
             {
-                int AddPrefix = CItem::FindPrefix(PrefixMainItem+1);
+                int AddPrefix = CItem::FindPrefix(PrefixMainItem + 1);
 
                 if (!AddPrefix) {
                     return;
@@ -2169,10 +2173,10 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
                 *(DWORD *)((int)MainItem.GetOffset() + 44) = AddPrefix;
                 CDBSocket::Write(19, "ddbb", MainItem.GetIID(), IPlayer.GetID(),
-                    PrefixMainItem+1);
+                    PrefixMainItem + 1);
                 CItem::SendItemInfo(MainItem.GetOffset(), (int)IPlayer.GetOffset(), 92);
                 CPlayer::Write(IPlayer.GetOffset(), 255, "dbdb", 225, 0, MainItem.GetIID(),
-                    PrefixMainItem+1);
+                    PrefixMainItem + 1);
             } else {
                 IPlayer.BoxMsg("Refining the Stone of Demon Gong has failed.");
                 CPlayer::Write(IPlayer.GetOffset(), 255, "dbdb", 225, 1, 20);
@@ -2385,9 +2389,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         Multiply = 20;
                     }
 
-                    if (CPlayer::FindItem(IPlayer.Offset, 3360, (Multiply*JewelAmount)))
+                    if (CPlayer::FindItem(IPlayer.Offset, 3360, (Multiply * JewelAmount)))
                     {
-                        CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (Multiply*JewelAmount));
+                        CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (Multiply * JewelAmount));
                         JewelCalculation = JewelAmount;
                     } else {
                         return;
@@ -2399,7 +2403,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     int PerfRate = CTools::Rate(1, 1000);
 
-                    if (PerfRate >= (900-(JewelCalculation*70)))
+                    if (PerfRate >= (900 - (JewelCalculation * 70)))
                     {
                         GetItemStat[IID] = GetItemStat.find(IID)->second + 100000000;
                         CDBSocket::Write(90, "ddd", IPlayer.GetPID(), GetItemStat.find(IID)->second,
@@ -2456,7 +2460,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     int PerfRate = CTools::Rate(1, 1000);
 
-                    if (PerfRate >= (900-(JewelCalculation*70)))
+                    if (PerfRate >= (900 - (JewelCalculation * 70)))
                     {
                         GetItemStat[IID] = GetItemStat.find(IID)->second + 100000000;
                         CDBSocket::Write(90, "ddd", IPlayer.GetPID(), GetItemStat.find(IID)->second,
@@ -2546,9 +2550,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
                 if (JewelCheck == 1 && JewelAmount >= 1 && JewelAmount <= 10)
                 {
-                    if (CPlayer::FindItem(IPlayer.Offset, 3360, (10*JewelAmount)))
+                    if (CPlayer::FindItem(IPlayer.Offset, 3360, (10 * JewelAmount)))
                     {
-                        CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (10*JewelAmount));
+                        CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (10 * JewelAmount));
                         JewelCalculation = JewelAmount;
                     } else {
                         return;
@@ -2560,19 +2564,19 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     int QigongRate = CTools::Rate(1, 1000);
 
-                    if (QigongRate >= (550-(JewelCalculation*50)))
+                    if (QigongRate >= (550 - (JewelCalculation * 50)))
                     {
-                        if (QigongRate >= (750-(JewelCalculation*60)))
+                        if (QigongRate >= (750 - (JewelCalculation * 60)))
                         {
-                            if (QigongRate >= (850-(JewelCalculation*60)))
+                            if (QigongRate >= (850 - (JewelCalculation * 60)))
                             {
-                                if (QigongRate >= (950-(JewelCalculation*70)))
+                                if (QigongRate >= (950 - (JewelCalculation * 70)))
                                 {
-                                    if (QigongRate >= (970-(JewelCalculation*70)))
+                                    if (QigongRate >= (970 - (JewelCalculation * 70)))
                                     {
-                                        if (QigongRate >= (980-(JewelCalculation*80)))
+                                        if (QigongRate >= (980 - (JewelCalculation * 80)))
                                         {
-                                            if (QigongRate >= (990-(JewelCalculation*80)))
+                                            if (QigongRate >= (990 - (JewelCalculation * 80)))
                                             {
                                                 int Rate = CTools::Rate(71, 80);
                                                 SetType += Rate;
@@ -2706,7 +2710,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     }
 
                     if (!SecondDemonGongType) {
-                        GetItemStat[IID] = GetItemStat.find(IID)->second + (DemonGongStyle*100000);
+                        GetItemStat[IID] = GetItemStat.find(IID)->second + (DemonGongStyle * 100000);
                     }
 
                     SecondDemonGongStat = (GetItemStat.find(IID)->second % 100000) / 10000;
@@ -2715,7 +2719,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         return;
                     }
 
-                    GetItemStat[IID] = GetItemStat.find(IID)->second + (GetStonePrefix*10000) -
+                    GetItemStat[IID] = GetItemStat.find(IID)->second + (GetStonePrefix * 10000) -
                         10000;
                     CDBSocket::Write(90, "ddd", IPlayer.GetPID(), GetItemStat.find(IID)->second,
                         MainItem.GetIID());
@@ -2750,7 +2754,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     }
 
                     if (!FirstDemonGongType) {
-                        GetItemStat[IID] = GetItemStat.find(IID)->second + (DemonGongStyle*10000000);
+                        GetItemStat[IID] = GetItemStat.find(IID)->second + (DemonGongStyle * 10000000);
                     }
 
                     FirstDemonGongStat = (GetItemStat.find(IID)->second % 10000000) / 1000000;
@@ -2759,7 +2763,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         return;
                     }
 
-                    GetItemStat[IID] = GetItemStat.find(IID)->second + (GetStonePrefix*1000000) -
+                    GetItemStat[IID] = GetItemStat.find(IID)->second + (GetStonePrefix * 1000000) -
                         1000000;
                     CDBSocket::Write(90, "ddd", IPlayer.GetPID(), GetItemStat.find(IID)->second,
                         MainItem.GetIID());
@@ -2808,21 +2812,21 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
             if (mtype == 10 && yintype == 1)
             {
                 if (key > 28) {
-                    key -=6;
+                    key -= 6;
                 }
                 else if (key > 18) {
-                    key -=4;
+                    key -= 4;
                 }
                 else if (key > 8) {
-                    key -=2;
+                    key -= 2;
                 }
 
                 if (IPlayer.IsOnline()
                     && CPlayer::GetInvenSize((int)IPlayer.GetOffset()) < IPlayer.MaxInventorySize())
                 {
-                    if (CPlayer::RemoveItem(IPlayer.GetOffset(), 9, (key+2953), 2))
+                    if (CPlayer::RemoveItem(IPlayer.GetOffset(), 9, (key + 2953), 2))
                     {
-                        CItem::InsertItem((int)IPlayer.GetOffset(), 27, (key+2985), 0, 1, -1);
+                        CItem::InsertItem((int)IPlayer.GetOffset(), 27, (key + 2985), 0, 1, -1);
                         IPlayer.CloseWindow("yinyang_enchant");
                         IPlayer.OpenWindow("yinyang_enchant", 0, 0);
                     }
@@ -2834,16 +2838,16 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
             if (mtype == 20 && yintype == 2)
             {
                 if (key > 128) {
-                    key -=6;
+                    key -= 6;
                 }
                 else if (key > 118) {
-                    key -=4;
+                    key -= 4;
                 }
                 else if (key > 108) {
-                    key -=2;
+                    key -= 2;
                 }
 
-                if (CPlayer::RemoveItem(IPlayer.GetOffset(), 9, (key+2853), 1))
+                if (CPlayer::RemoveItem(IPlayer.GetOffset(), 9, (key + 2853), 1))
                 {
                     if (CheckWater == 1) {
                         CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3024, 1);
@@ -2855,10 +2859,11 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         GetCurrentGrade = 1;
                     }
 
-                    int GetRate = TriagramUpgradeRate[0][GetCurrentGrade-1], Rate = CTools::Rate(1,
+                    int GetRate = TriagramUpgradeRate[0][GetCurrentGrade - 1],
+                        Rate = CTools::Rate(1,
                                 10000);
 
-                    if (Rate <= GetRate+(CheckWater*1000))
+                    if (Rate <= GetRate + (CheckWater * 1000))
                     {
                         GetItemStat[TargetIID] = GetItemStat.find(TargetIID)->second + 100;
                         CDBSocket::Write(90, "ddd", IPlayer.GetPID(),
@@ -3093,7 +3098,8 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 {
                     for (int i = 0; i < (int)MSS.size(); i += 4)
                     {
-                        int Amount = MSS[i+2], Index = MSS[i+1], It = MSS[i], Dis = (MSS[i+3]*1000);
+                        int Amount = MSS[i + 2], Index = MSS[i + 1], It = MSS[i],
+                            Dis = (MSS[i + 3] * 1000);
 
                         if (It && ItemIndex == It)
                         {
@@ -3223,7 +3229,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                         for (int i = CParty::GetPlayerList((void*)Party); i;
                             i = CBaseList::Pop((void *)i))
                         {
-                            IChar Member((void*)*(DWORD*)((void*)i));
+                            IChar Member((void*) * (DWORD*)((void*)i));
 
                             if (Member.IsValid() && IPlayer.IsValid()
                                 && Member.GetOffset() != IPlayer.GetOffset())
@@ -3542,7 +3548,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 CPlayer::Write(IPlayer.GetOffset(), 11, "bb", *(DWORD*)(SkillPointer + 4), 0);
                 CDBSocket::Write(22, "dbbw", IPlayer.GetPID(), *(DWORD*)(SkillPointer + 4),
                     *(DWORD*)(SkillPointer + 8), *(DWORD*)((int)IPlayer.GetOffset() + 548));
-                *(DWORD*)((int)IPlayer.GetOffset() + 4 * *(DWORD*)(SkillPointer +4) + 632) = 0;
+                *(DWORD*)((int)IPlayer.GetOffset() + 4 * *(DWORD*)(SkillPointer + 4) + 632) = 0;
             } else {
                 return;
             }
@@ -3668,7 +3674,7 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
         if (packet == 172)
         {
-            int Str=0, Hp=0, Int=0, Wis=0, Agi=0;
+            int Str = 0, Hp = 0, Int = 0, Wis = 0, Agi = 0;
             int LeftPacket = CPacket::Read((char*)pPacket, (char*)pPos, "bbbbb", &Str, &Hp,
                     &Int, &Wis, &Agi);
             int GetStr = IPlayer.GetStr(), GetHth = IPlayer.GetHth(),
@@ -3870,9 +3876,9 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     Multiply = 5;
                 }
 
-                if (CPlayer::FindItem(IPlayer.Offset, 3360, (Multiply*JewelAmount)))
+                if (CPlayer::FindItem(IPlayer.Offset, 3360, (Multiply * JewelAmount)))
                 {
-                    CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (Multiply*JewelAmount));
+                    CPlayer::RemoveItem(IPlayer.GetOffset(), 9, 3360, (Multiply * JewelAmount));
                     JewelCalculation = JewelAmount;
                 } else {
                     return;
@@ -3883,19 +3889,19 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
             {
                 int Type = 0, DssRate = CTools::Rate(1, 1000);
 
-                if (DssRate >= (550-(JewelCalculation*50)))
+                if (DssRate >= (550 - (JewelCalculation * 50)))
                 {
-                    if (DssRate >= (750-(JewelCalculation*60)))
+                    if (DssRate >= (750 - (JewelCalculation * 60)))
                     {
-                        if (DssRate >= (850-(JewelCalculation*60)))
+                        if (DssRate >= (850 - (JewelCalculation * 60)))
                         {
-                            if (DssRate >= (950-(JewelCalculation*70)))
+                            if (DssRate >= (950 - (JewelCalculation * 70)))
                             {
-                                if (DssRate >= (970-(JewelCalculation*70)))
+                                if (DssRate >= (970 - (JewelCalculation * 70)))
                                 {
-                                    if (DssRate >= (980-(JewelCalculation*80)))
+                                    if (DssRate >= (980 - (JewelCalculation * 80)))
                                     {
-                                        if (DssRate >= (990-(JewelCalculation*80)))
+                                        if (DssRate >= (990 - (JewelCalculation * 80)))
                                         {
                                             int Rate = CTools::Rate(36, 40);
                                             SetType += Rate;
@@ -4469,25 +4475,25 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                     {
                         IPlayer.Buff(291, 18, 0);
                         IPlayer.Buff(295, 18, 0);
-                        IPlayer.SendGStateExIceArrow(GState*2);
+                        IPlayer.SendGStateExIceArrow(GState * 2);
                         IPlayer.SendGStateExIceArrow(State << 32);
                     } else if (IceArrowGrade == 3)
                     {
                         IPlayer.Buff(292, 18, 0);
                         IPlayer.Buff(295, 18, 0);
-                        IPlayer.SendGStateExIceArrow(GState*4);
+                        IPlayer.SendGStateExIceArrow(GState * 4);
                         IPlayer.SendGStateExIceArrow(State << 32);
                     } else if (IceArrowGrade == 4)
                     {
                         IPlayer.Buff(293, 18, 0);
                         IPlayer.Buff(295, 18, 0);
-                        IPlayer.SendGStateExIceArrow(GState*8);
+                        IPlayer.SendGStateExIceArrow(GState * 8);
                         IPlayer.SendGStateExIceArrow(State << 32);
                     } else if (IceArrowGrade == 5)
                     {
                         IPlayer.Buff(294, 18, 0);
                         IPlayer.Buff(295, 18, 0);
-                        IPlayer.SendGStateExIceArrow(GState*16);
+                        IPlayer.SendGStateExIceArrow(GState * 16);
                         IPlayer.SendGStateExIceArrow(StateEx << 32);
                     } else {
                         return;

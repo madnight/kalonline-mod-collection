@@ -9,7 +9,8 @@ int __fastcall LevelUp(void *Player, void *edx)
 
     if (IPlayer.IsOnline())
     {
-        for (int i = (IPlayer.GetLevel()*10); i < ((IPlayer.GetLevel()*10) + 10); i++)
+        for (int i = (IPlayer.GetLevel() * 10); i < ((IPlayer.GetLevel() * 10) + 10);
+            i++)
         {
             if (LevelReward.count(i) &&
                 (LevelReward.find(i)->second.Class == IPlayer.GetClass() ||

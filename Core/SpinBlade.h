@@ -72,7 +72,7 @@ void __fastcall SpinBlade(IChar IPlayer)
     {
         ISkill xSkill((void*)pSkill);
         int nSkillGrade = xSkill.GetGrade();
-        int nMana = (int)((((nSkillGrade+IPlayer.GetLevel()) * nSkillGrade)*1.25) +
+        int nMana = (int)((((nSkillGrade + IPlayer.GetLevel()) * nSkillGrade) * 1.25) +
                 180);
 
         if (IPlayer.GetCurMp() < nMana) {
@@ -86,7 +86,7 @@ void __fastcall SpinBlade(IChar IPlayer)
             CheckContinueSkill[IPlayer.GetPID()].PlayerY = IPlayer.GetY();
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 36;
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillGrade = xSkill.GetGrade();
-            CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = xSkill.GetGrade()+1;
+            CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = xSkill.GetGrade() + 1;
             CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = 0;
         }
     }

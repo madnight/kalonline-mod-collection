@@ -228,7 +228,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
                     SummonTimer.find(Time::GetTime())->second.X,
                     SummonTimer.find(Time::GetTime())->second.Y,
                     SummonTimer.find(Time::GetTime())->second.Index, 1, 1, 0,
-                    SummonTimer.find(Time::GetTime())->second.Disappear*1000, 0);
+                    SummonTimer.find(Time::GetTime())->second.Disappear * 1000, 0);
             }
         }
     }
@@ -440,7 +440,7 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
                     CPlayer::WriteAll(0xFF, "ds", 234, msg.c_str());
                     CheckHonor[WinnerPlayer.GetPID()].RPx += 5000;
                     CheckHonor[WinnerPlayer.GetPID()].HPx += 1000;
-                    WinnerPlayer.Buff(120, (21600+WinnerPlayer.GetBuffRemain(120)), 0);
+                    WinnerPlayer.Buff(120, (21600 + WinnerPlayer.GetBuffRemain(120)), 0);
                 }
             } else {
                 CPlayer::WriteAll(0xFF, "ds", 234,
@@ -723,8 +723,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 21; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 841, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 841, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -750,8 +750,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 14; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 842, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 842, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -777,8 +777,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 16; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 843, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 843, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -804,8 +804,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 12; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 845, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 845, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -831,8 +831,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 13; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 846, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 846, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -858,8 +858,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 18; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 847, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 847, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -885,8 +885,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 15; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 849, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 849, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -912,8 +912,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 17; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 850, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 850, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -939,8 +939,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 12; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 852, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 852, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }
@@ -966,8 +966,8 @@ void __fastcall OnTimer(void *Value, void *edx, int Argument)
 
             for (int i = 0; i < 18; i++)
             {
-                IChar xSummon((void*)Summon(0, HellMap, HellSummonX+CTools::Rate(1, 20),
-                        HellSummonY+CTools::Rate(1, 20), 851, 1, 1, 0, 0, 0));
+                IChar xSummon((void*)Summon(0, HellMap, HellSummonX + CTools::Rate(1, 20),
+                        HellSummonY + CTools::Rate(1, 20), 851, 1, 1, 0, 0, 0));
                 xSummon.Buff(168, 3600, 0);
             }
         }

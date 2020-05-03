@@ -16,20 +16,20 @@ void __fastcall BlessingOfIntelligence(int Packet, void *edx, int Player,
                 for (int i = CParty::GetPlayerList(Party); i; i = CBaseList::Pop((void*)i))
                 {
                     int Members = *(DWORD*)((void*)i);
-                    IChar IMembers((void*)*(DWORD*)((void*)i));
+                    IChar IMembers((void*) * (DWORD*)((void*)i));
 
                     if (CChar::IsNormal(Members) && IPlayer.IsValid())
                     {
                         if (CChar::GetRange((int)IPlayer.GetOffset() + 332, Members + 332) <= 300)
                         {
-                            IMembers.Buff(49, 1800, 8*ISkill.GetGrade()+3);
+                            IMembers.Buff(49, 1800, 8 * ISkill.GetGrade() + 3);
                             IPlayer._ShowBattleAnimation(IMembers, ISkill.GetIndex());
                         }
                     }
                 }
             }
         } else {
-            ITarget.Buff(49, 1800, 8*ISkill.GetGrade()+3);
+            ITarget.Buff(49, 1800, 8 * ISkill.GetGrade() + 3);
             IPlayer._ShowBattleAnimation(ITarget, ISkill.GetIndex());
         }
     }

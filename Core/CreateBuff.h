@@ -4,7 +4,7 @@ int __fastcall CBuffCBuffPrtyExIsExpired(int Buff, void *edx, int Player)
 
     if (*(DWORD*)(Buff + 4) == 400 && Object.IsOnline() && Object.IsValid())
     {
-        int Time = ((*(DWORD*)(Buff + 8))-GetTickCount())/1000;
+        int Time = ((*(DWORD*)(Buff + 8)) - GetTickCount()) / 1000;
         int Damage = *(DWORD*)(Buff + 12);
 
         if ((GetTickCount() / 1000) % 2 == 0 && Object.GetCurHp() > 1)
@@ -25,7 +25,7 @@ int __fastcall CBuffCBuffPrtyExIsExpired(int Buff, void *edx, int Player)
 
     if (*(DWORD*)(Buff + 4) == 411 && Object.IsOnline())
     {
-        int Time = ((*(DWORD*)(Buff + 8))-GetTickCount())/1000;
+        int Time = ((*(DWORD*)(Buff + 8)) - GetTickCount()) / 1000;
         int Damage = *(DWORD*)(Buff + 12);
 
         if (Time == 2)
@@ -37,7 +37,7 @@ int __fastcall CBuffCBuffPrtyExIsExpired(int Buff, void *edx, int Player)
 
     if (*(DWORD*)(Buff + 4) == 415 && Object.IsOnline())
     {
-        int Time = ((*(DWORD*)(Buff + 8))-GetTickCount())/1000;
+        int Time = ((*(DWORD*)(Buff + 8)) - GetTickCount()) / 1000;
         int Damage = *(DWORD*)(Buff + 12);
 
         if (Time == 2) {
@@ -47,7 +47,7 @@ int __fastcall CBuffCBuffPrtyExIsExpired(int Buff, void *edx, int Player)
 
     if (*(DWORD*)(Buff + 4) == 416 && Object.IsOnline())
     {
-        int Time = ((*(DWORD*)(Buff + 8))-GetTickCount())/1000;
+        int Time = ((*(DWORD*)(Buff + 8)) - GetTickCount()) / 1000;
         int Damage = *(DWORD*)(Buff + 12);
 
         if (Time == 2) {

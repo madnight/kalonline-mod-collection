@@ -49,21 +49,21 @@ void __fastcall IceArrow(IChar IPlayer, int pPacket, int pPos)
                     IPlayer.CancelBuff(294);
                     IPlayer.Buff(293, 18, 0);
                     IPlayer.Buff(295, 18, 0);
-                    IPlayer.SendGStateExIceArrow(GState*8);
+                    IPlayer.SendGStateExIceArrow(GState * 8);
                     IPlayer.SendGStateExIceArrow(State << 32);
                 } else if (IPlayer.IsValid() && IPlayer.IsBuff(293))
                 {
                     IPlayer.CancelBuff(293);
                     IPlayer.Buff(292, 18, 0);
                     IPlayer.Buff(295, 18, 0);
-                    IPlayer.SendGStateExIceArrow(GState*4);
+                    IPlayer.SendGStateExIceArrow(GState * 4);
                     IPlayer.SendGStateExIceArrow(State << 32);
                 } else if (IPlayer.IsValid() && IPlayer.IsBuff(292))
                 {
                     IPlayer.CancelBuff(292);
                     IPlayer.Buff(291, 18, 0);
                     IPlayer.Buff(295, 18, 0);
-                    IPlayer.SendGStateExIceArrow(GState*2);
+                    IPlayer.SendGStateExIceArrow(GState * 2);
                     IPlayer.SendGStateExIceArrow(State << 32);
                 } else if (IPlayer.IsValid() && IPlayer.IsBuff(291))
                 {

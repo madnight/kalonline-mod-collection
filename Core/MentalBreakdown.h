@@ -74,9 +74,9 @@ void __fastcall MentalBreakdown(IChar IPlayer, int pPacket, int pPos)
                             int Atk = (Object.GetMaxPhyAttack() * nSkillGrade) / 100;
                             int Def = (Object.GetDef() * nSkillGrade) / 100;
                             int Otp = (CChar::GetHit((int)Object.GetOffset()) * nSkillGrade) / 100;
-                            Object.Buff(411, (nSkillGrade*20)+2, Atk);
-                            Object.Buff(415, (nSkillGrade*20)+2, Def);
-                            Object.Buff(416, (nSkillGrade*20)+2, Otp);
+                            Object.Buff(411, (nSkillGrade * 20) + 2, Atk);
+                            Object.Buff(415, (nSkillGrade * 20) + 2, Def);
+                            Object.Buff(416, (nSkillGrade * 20) + 2, Otp);
                             Object.RemoveMaxAttack(Atk);
                             Object.RemoveMinAttack(Atk);
                             Object.RemoveDef(Def);

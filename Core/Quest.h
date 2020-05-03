@@ -120,10 +120,10 @@ void __fastcall Quest(void *QuestOffset, void *edx, int PlayerOffset)
                         PetLifeCheck.find(*(DWORD *)(Armor + 36))->second.Time,
                         *(DWORD *)(Armor + 36));
                     CPlayer::Write(IPlayer.GetOffset(), 0xFF, "ddd", 230, *(DWORD *)(Armor + 36),
-                        RentArmor.find(Quest.GetIndex())->second.Time*1000);
-                    *(DWORD*)(Armor+68) = GetTickCount() + (2000*RentArmor.find(
+                        RentArmor.find(Quest.GetIndex())->second.Time * 1000);
+                    *(DWORD*)(Armor + 68) = GetTickCount() + (2000 * RentArmor.find(
                                 Quest.GetIndex())->second.Time);
-                    *(DWORD*)(Armor+72) = 0;
+                    *(DWORD*)(Armor + 72) = 0;
                     CItem::OnTimer(Armor, 0);
                 }
             }
@@ -186,10 +186,10 @@ void __fastcall Quest(void *QuestOffset, void *edx, int PlayerOffset)
                         PetLifeCheck.find(*(DWORD *)(Weapon + 36))->second.Time,
                         *(DWORD *)(Weapon + 36));
                     CPlayer::Write(IPlayer.GetOffset(), 0xFF, "ddd", 230, *(DWORD *)(Weapon + 36),
-                        RentWeapon.find(Quest.GetIndex())->second.Time*1000);
-                    *(DWORD*)(Weapon+68) = GetTickCount() + (2000*RentWeapon.find(
+                        RentWeapon.find(Quest.GetIndex())->second.Time * 1000);
+                    *(DWORD*)(Weapon + 68) = GetTickCount() + (2000 * RentWeapon.find(
                                 Quest.GetIndex())->second.Time);
-                    *(DWORD*)(Weapon+72) = 0;
+                    *(DWORD*)(Weapon + 72) = 0;
                     CItem::OnTimer(Weapon, 0);
                 }
             }
@@ -292,7 +292,7 @@ void __fastcall Quest(void *QuestOffset, void *edx, int PlayerOffset)
                 NPCEDailyLimit++;
                 NPCELeftTime += (ENPCDU + 2);
                 NPCECollectedTotalItem = 0;
-                ENPCDC = GetTickCount() + (ENPCDD*1000);
+                ENPCDC = GetTickCount() + (ENPCDD * 1000);
             }
         } else {
             IPlayer.SystemMessage("Daily limit has been exceeded! Please try again tomorrow!",
@@ -315,16 +315,22 @@ void __fastcall Quest(void *QuestOffset, void *edx, int PlayerOffset)
     {
         if (IPlayer.GetLevel() <= BufferCheck.find(Quest.GetIndex())->second.Limit)
         {
-            IPlayer.Buff(48, 1800, 8*(BufferCheck.find(Quest.GetIndex())->second.Grade)+3);
-            IPlayer.Buff(50, 1800, 8*(BufferCheck.find(Quest.GetIndex())->second.Grade)+3);
-            IPlayer.Buff(47, 1800, 8*(BufferCheck.find(Quest.GetIndex())->second.Grade)+3);
-            IPlayer.Buff(49, 1800, 8*(BufferCheck.find(Quest.GetIndex())->second.Grade)+3);
-            IPlayer.Buff(46, 1800, 8*(BufferCheck.find(Quest.GetIndex())->second.Grade)+3);
-            IPlayer.Buff(36, 1800, 8*(BufferCheck.find(Quest.GetIndex())->second.Grade)+16);
+            IPlayer.Buff(48, 1800, 8 * (BufferCheck.find(Quest.GetIndex())->second.Grade) +
+                3);
+            IPlayer.Buff(50, 1800, 8 * (BufferCheck.find(Quest.GetIndex())->second.Grade) +
+                3);
+            IPlayer.Buff(47, 1800, 8 * (BufferCheck.find(Quest.GetIndex())->second.Grade) +
+                3);
+            IPlayer.Buff(49, 1800, 8 * (BufferCheck.find(Quest.GetIndex())->second.Grade) +
+                3);
+            IPlayer.Buff(46, 1800, 8 * (BufferCheck.find(Quest.GetIndex())->second.Grade) +
+                3);
+            IPlayer.Buff(36, 1800, 8 * (BufferCheck.find(Quest.GetIndex())->second.Grade) +
+                16);
             CChar::CancelAllBuff(IPlayer.GetOffset(), 37);
             int AddBuff = CBuff::CreateBuff(37, 1800,
-                    30*(BufferCheck.find(Quest.GetIndex())->second.Grade)+5,
-                    20*(BufferCheck.find(Quest.GetIndex())->second.Grade)+5);
+                    30 * (BufferCheck.find(Quest.GetIndex())->second.Grade) + 5,
+                    20 * (BufferCheck.find(Quest.GetIndex())->second.Grade) + 5);
             (*(int (__thiscall **)(int, int))(*(DWORD *)PlayerOffset + 180))(PlayerOffset,
                 AddBuff);
             IPlayer.Buff(12, 1800, 45);
@@ -645,7 +651,7 @@ void __fastcall Quest(void *QuestOffset, void *edx, int PlayerOffset)
         } else if (IPlayer.IsOnline()
             && CheckEmok.find(IPlayer.GetPID())->second.Day != String2Int(Time::GetDay()))
         {
-            CheckEmok[IPlayer.GetPID()].Time = 3600+addtime;
+            CheckEmok[IPlayer.GetPID()].Time = 3600 + addtime;
             CheckEmok[IPlayer.GetPID()].Day = String2Int(Time::GetDay());
             IPlayer.Buff(156, CheckEmok.find(IPlayer.GetPID())->second.Time, 0);
             IPlayer.Teleport(EmokMap, EmokX, EmokY);

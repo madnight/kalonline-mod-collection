@@ -48,7 +48,7 @@ int __cdecl Summon(int Player, int Map, int X, int Y, int Index, int Amount,
 
                 if (Delay)
                 {
-                    IMonster.Buff(159, (Delay+2000)/1000, 0);
+                    IMonster.Buff(159, (Delay + 2000) / 1000, 0);
                     IMonster.Delay(Delay);
                     IMonster.UnAttack(Delay);
                 }
@@ -409,7 +409,8 @@ int __fastcall SummonTick(void *Monster, void *edx)
                     || Check == 3000 || Check == 3300) && F10::Active == true && IMonster.IsValid())
             {
                 for (int x = 0; x < 8; x++)
-                    Summon(0, 21, CTools::Rate(117028, 117028+550), CTools::Rate(36601, 36601+550),
+                    Summon(0, 21, CTools::Rate(117028, 117028 + 550), CTools::Rate(36601,
+                            36601 + 550),
                         564, 1, 1, 0, 0, 0);
             }
 

@@ -17,7 +17,7 @@ void __fastcall SoulShield(IChar IPlayer, int pPacket, int pPos)
                 IPlayer._ShowBattleAnimation(IPlayer, 15);
 
                 if (nSkillGrade == 1) {
-                    IPlayer.Buff(396, 5+Time, 0);
+                    IPlayer.Buff(396, 5 + Time, 0);
                 }
 
                 if (nSkillGrade == 2) {
@@ -58,7 +58,7 @@ void __fastcall SoulShield(IChar IPlayer, int pPacket, int pPos)
 
                 IPlayer.Buff(397, 10000, 0);
                 IPlayer.AddDef(6 * nSkillGrade);
-                IPlayer.SetBuffIcon(Time*1000, 0, 9100, 1009);
+                IPlayer.SetBuffIcon(Time * 1000, 0, 9100, 1009);
             }
         }
     }

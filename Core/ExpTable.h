@@ -61,14 +61,14 @@ void SwitchTable()
     DWORD ExpAdr1[] = {0x004592A6, 0x004592BE, 0x0046337A, 0x0046440F, 0x00415649, 0x0041566F, 0x004156B8, 0x00415737};
     DWORD ExpAdr2[] = {0x00459289, 0x004592CB, 0x00463387, 0x00464407, 0x00415650, 0x00415667, 0x004156B0, 0x0041572F};
 
-    for (int i = 0; i<sizeof(ExpAdr1)/4; i++) {
+    for (int i = 0; i < sizeof(ExpAdr1) / 4; i++) {
         MemoryCopy((void*)ExpAdr1[i], (void*) &ExpPtr, 4);
     }
 
     MemoryCopy((void*)&Exptr2, (void*)0x00415737, 4);
     Exptr2 += 0x04;
 
-    for (int i = 0; i<sizeof(ExpAdr2)/4; i++) {
+    for (int i = 0; i < sizeof(ExpAdr2) / 4; i++) {
         MemoryCopy((void*)ExpAdr2[i], (void*) &Exptr2, 4);
     }
 }
@@ -456,7 +456,7 @@ int __fastcall RidingFix(void *Argument, void *edx)
 
                     if (Item.CheckIndex() >= 3412
                         && Item.CheckIndex() <= 3419) {
-                        IPlayer.EnableRiding(Item.CheckIndex()-3411);
+                        IPlayer.EnableRiding(Item.CheckIndex() - 3411);
                     }
 
                     if (Item.CheckIndex() == 4149) {

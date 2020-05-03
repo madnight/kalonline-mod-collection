@@ -131,7 +131,7 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
             if (pSkill)
             {
                 ISkill xSkill((void*)pSkill);
-                IPlayer.AddOTP(xSkill.GetGrade()*2);
+                IPlayer.AddOTP(xSkill.GetGrade() * 2);
             }
         }
 
@@ -257,43 +257,43 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
         if (IPlayer.GetLevel() >= 70 && IPlayer.GetLevel() <= 74)
         {
             int Value = IPlayer.GetLevel() - 69;
-            IPlayer.IncreaseMaxHp(Value*6);
-            IPlayer.IncreaseMaxMp(Value*3);
+            IPlayer.IncreaseMaxHp(Value * 6);
+            IPlayer.IncreaseMaxMp(Value * 3);
         }
 
         if (IPlayer.GetLevel() >= 75 && IPlayer.GetLevel() <= 79)
         {
             int Value = IPlayer.GetLevel() - 74;
-            IPlayer.IncreaseMaxHp((Value*12)+30);
-            IPlayer.IncreaseMaxMp((Value*6)+15);
+            IPlayer.IncreaseMaxHp((Value * 12) + 30);
+            IPlayer.IncreaseMaxMp((Value * 6) + 15);
         }
 
         if (IPlayer.GetLevel() >= 80 && IPlayer.GetLevel() <= 84)
         {
             int Value = IPlayer.GetLevel() - 79;
-            IPlayer.IncreaseMaxHp((Value*18)+90);
-            IPlayer.IncreaseMaxMp((Value*9)+45);
+            IPlayer.IncreaseMaxHp((Value * 18) + 90);
+            IPlayer.IncreaseMaxMp((Value * 9) + 45);
         }
 
         if (IPlayer.GetLevel() >= 85 && IPlayer.GetLevel() <= 89)
         {
             int Value = IPlayer.GetLevel() - 84;
-            IPlayer.IncreaseMaxHp((Value*24)+180);
-            IPlayer.IncreaseMaxMp((Value*12)+90);
+            IPlayer.IncreaseMaxHp((Value * 24) + 180);
+            IPlayer.IncreaseMaxMp((Value * 12) + 90);
         }
 
         if (IPlayer.GetLevel() >= 90 && IPlayer.GetLevel() <= 94)
         {
             int Value = IPlayer.GetLevel() - 89;
-            IPlayer.IncreaseMaxHp((Value*30)+300);
-            IPlayer.IncreaseMaxMp((Value*15)+150);
+            IPlayer.IncreaseMaxHp((Value * 30) + 300);
+            IPlayer.IncreaseMaxMp((Value * 15) + 150);
         }
 
         if (IPlayer.GetLevel() >= 95)
         {
             int Value = IPlayer.GetLevel() - 94;
-            IPlayer.IncreaseMaxHp((Value*36)+450);
-            IPlayer.IncreaseMaxMp((Value*18)+225);
+            IPlayer.IncreaseMaxHp((Value * 36) + 450);
+            IPlayer.IncreaseMaxMp((Value * 18) + 225);
         }
 
         if (IPlayer.GetClass() == 2 && IPlayer.GetLevel() < 100
@@ -314,7 +314,7 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
             {
                 ISkill xSkill((void*)pSkill);
                 int nSkillGrade = xSkill.GetGrade();
-                IPlayer.IncreaseMaxMp(30*nSkillGrade);
+                IPlayer.IncreaseMaxMp(30 * nSkillGrade);
             }
         }
 
@@ -326,7 +326,7 @@ int __fastcall OnLoadPlayer(void *Player, void *edx, int Value)
             {
                 ISkill xSkill((void*)pSkill);
                 int nSkillGrade = xSkill.GetGrade();
-                IPlayer.AddInt(2*nSkillGrade);
+                IPlayer.AddInt(2 * nSkillGrade);
             }
         }
 

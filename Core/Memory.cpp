@@ -61,9 +61,9 @@ void IMemory::Hook(void *Address, void *Destination, unsigned char Instruction,
 {
     unsigned char *Data = new unsigned char[Size];
     FillMemory(Data, Size, IMemory::_I_NOP);
-    unsigned long Target = (unsigned long)Destination - (unsigned long)Address -5;
+    unsigned long Target = (unsigned long)Destination - (unsigned long)Address - 5;
     Data[0] = Instruction;
-    CopyMemory(Data+1, &Target, 4);
+    CopyMemory(Data + 1, &Target, 4);
     this->m_Patches[Address] = new Patch(Address, Data, Size, Recoverable);
     delete[] Data;
 }
@@ -77,7 +77,7 @@ void IMemory::Hook(unsigned long Address, void *Destination,
 void IMemory::Hook(unsigned long Address[], size_t Count, void *Destination,
     unsigned char Instruction, size_t Size, bool Recoverable)
 {
-    for (size_t i=0; i < Count; i++) {
+    for (size_t i = 0; i < Count; i++) {
         this->Hook((void*)Address[i], Destination, Instruction, Size, Recoverable);
     }
 }
@@ -98,7 +98,7 @@ void IMemory::Hook(unsigned long Address[], size_t Count,
     unsigned long Destination, unsigned char Instruction, size_t Size,
     bool Recoverable)
 {
-    for (size_t i=0; i < Count; i++)
+    for (size_t i = 0; i < Count; i++)
         this->Hook((void*)Address[i], (void*)Destination, Instruction, Size,
             Recoverable);
 }
@@ -119,7 +119,7 @@ void IMemory::Restore(unsigned long Address)
 
 void IMemory::Restore(unsigned long Address[], size_t Count)
 {
-    for (size_t i=0; i < Count; i++) {
+    for (size_t i = 0; i < Count; i++) {
         this->Restore((void*)Address);
     }
 }

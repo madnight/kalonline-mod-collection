@@ -8,8 +8,8 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
         IPlayer.Buff(343, 1, 0);
         Interface<ITools> Tools;
         char Packet[63] = {0};
-        int Check, nMID=0, nIID=0;
-        char byMType=0;
+        int Check, nMID = 0, nIID = 0;
+        char byMType = 0;
         unsigned __int16 wLen = 0;
         char Msg[512] = {0};
         Check = CPacket::xRead((void *)pPacket, "dbdw", &nMID, &byMType, &nIID, &wLen);
@@ -75,12 +75,14 @@ void __fastcall MAILProcess(void *Player, void *edx, int Type, int pPacket,
         SQLDisconnect(hdbc);
         SQLFreeConnect(hdbc);
         SQLFreeEnv(henv);
-        unsigned char x=0, y=0, z=0, dsstype=0, eva=0, otp=0, hpinc=0, mpinc=0, str=0,
-                      hp=0,
-                      intel=0, wis=0, agi=0, a=0, dg1stat=0, dg1type=0, dg2stat=0, dg2type=0,
-                      PerfShotCheck=0;
-        unsigned long remaintime=0, QigongGrade=0;
-        unsigned short phyatk=0, magatk=0, def=0, absorb=0;
+        unsigned char x = 0, y = 0, z = 0, dsstype = 0, eva = 0, otp = 0, hpinc = 0,
+                      mpinc = 0, str = 0,
+                      hp = 0,
+                      intel = 0, wis = 0, agi = 0, a = 0, dg1stat = 0, dg1type = 0, dg2stat = 0,
+                      dg2type = 0,
+                      PerfShotCheck = 0;
+        unsigned long remaintime = 0, QigongGrade = 0;
+        unsigned short phyatk = 0, magatk = 0, def = 0, absorb = 0;
 
         if (ItemStat) {
             GetItemStat[nIID] = ItemStat;

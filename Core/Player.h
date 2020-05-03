@@ -97,134 +97,134 @@ void __fastcall MyGameStart(void *Player, void *edx)
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(119*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(119*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (119 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (119 * 1000000))->second)
         {
-            IPlayer.Buff(119, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (119*1000000))->second, 0);
+            IPlayer.Buff(119, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (119 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(119)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(119*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (119 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(120*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(120*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (120 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (120 * 1000000))->second)
         {
-            IPlayer.Buff(120, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (120*1000000))->second, 0);
+            IPlayer.Buff(120, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (120 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(120)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(120*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (120 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(121*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(121*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (121 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (121 * 1000000))->second)
         {
-            IPlayer.Buff(121, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (121*1000000))->second, 0);
+            IPlayer.Buff(121, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (121 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(121)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(121*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (121 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(122*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(122*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (122 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (122 * 1000000))->second)
         {
-            IPlayer.Buff(122, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (122*1000000))->second, 0);
+            IPlayer.Buff(122, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (122 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(122)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(122*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (122 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(123*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(123*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (123 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (123 * 1000000))->second)
         {
-            IPlayer.Buff(123, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (123*1000000))->second, 0);
+            IPlayer.Buff(123, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (123 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(123)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(123*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (123 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(124*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(124*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (124 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (124 * 1000000))->second)
         {
-            IPlayer.Buff(124, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (124*1000000))->second, 0);
+            IPlayer.Buff(124, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (124 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(124)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(124*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (124 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(125*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(125*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (125 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (125 * 1000000))->second)
         {
-            IPlayer.Buff(125, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (125*1000000))->second, 0);
+            IPlayer.Buff(125, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (125 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(125)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(125*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (125 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(126*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(126*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (126 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (126 * 1000000))->second)
         {
-            IPlayer.Buff(126, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (126*1000000))->second, 0);
+            IPlayer.Buff(126, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (126 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(126)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(126*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (126 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(127*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(127*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (127 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (127 * 1000000))->second)
         {
-            IPlayer.Buff(127, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (127*1000000))->second, 0);
+            IPlayer.Buff(127, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (127 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(127)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(127*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (127 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(128*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(128*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (128 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (128 * 1000000))->second)
         {
-            IPlayer.Buff(128, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (128*1000000))->second, 0);
+            IPlayer.Buff(128, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (128 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(128)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(128*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (128 * 1000000));
             }
         }
 
         if (IPlayer.IsOnline()
-            && SetBuffx.count(IPlayer.GetPID()+4000000000+(129*1000000))
-            && SetBuffx.find(IPlayer.GetPID()+4000000000+(129*1000000))->second)
+            && SetBuffx.count(IPlayer.GetPID() + 4000000000 + (129 * 1000000))
+            && SetBuffx.find(IPlayer.GetPID() + 4000000000 + (129 * 1000000))->second)
         {
-            IPlayer.Buff(129, SetBuffx.find(IPlayer.GetPID()+4000000000+
-                    (129*1000000))->second, 0);
+            IPlayer.Buff(129, SetBuffx.find(IPlayer.GetPID() + 4000000000 +
+                    (129 * 1000000))->second, 0);
 
             if (IPlayer.IsBuff(129)) {
-                SetBuffx.erase(IPlayer.GetPID()+4000000000+(129*1000000));
+                SetBuffx.erase(IPlayer.GetPID() + 4000000000 + (129 * 1000000));
             }
         }
     }
@@ -835,8 +835,8 @@ int __fastcall Tick(void *Player, void *edx)
         }
 
         if (IPlayer.IsValid() && IPlayer.GetMap() != PLMap)
-            IPlayer.Teleport(PLMap, 308588+CTools::Rate(-100, 100),
-                284483+CTools::Rate(-100,
+            IPlayer.Teleport(PLMap, 308588 + CTools::Rate(-100, 100),
+                284483 + CTools::Rate(-100,
                     100));
 
         if (CChar::IsGState((int)IPlayer.GetOffset(), 2))
@@ -849,9 +849,9 @@ int __fastcall Tick(void *Player, void *edx)
                 Protect32::BluePrayerTime = 0;
             }
 
-            if ((*(DWORD*)((int)IPlayer.GetOffset() + 1452)-GetTickCount())/1000 <= 580)
-                IPlayer.Teleport(PLMap, 308588+CTools::Rate(-100, 100),
-                    284483+CTools::Rate(-100,
+            if ((*(DWORD*)((int)IPlayer.GetOffset() + 1452) - GetTickCount()) / 1000 <= 580)
+                IPlayer.Teleport(PLMap, 308588 + CTools::Rate(-100, 100),
+                    284483 + CTools::Rate(-100,
                         100));
         }
     }
@@ -864,8 +864,8 @@ int __fastcall Tick(void *Player, void *edx)
         }
 
         if (IPlayer.IsValid() && IPlayer.GetMap() != PLMap)
-            IPlayer.Teleport(PLMap, 310264+CTools::Rate(-100, 100),
-                284486+CTools::Rate(-100,
+            IPlayer.Teleport(PLMap, 310264 + CTools::Rate(-100, 100),
+                284486 + CTools::Rate(-100,
                     100));
 
         if (CChar::IsGState((int)IPlayer.GetOffset(), 2))
@@ -878,9 +878,9 @@ int __fastcall Tick(void *Player, void *edx)
                 Protect32::RedPrayerTime = 0;
             }
 
-            if ((*(DWORD*)((int)IPlayer.GetOffset() + 1452)-GetTickCount())/1000 <= 580)
-                IPlayer.Teleport(PLMap, 310264+CTools::Rate(-100, 100),
-                    284486+CTools::Rate(-100,
+            if ((*(DWORD*)((int)IPlayer.GetOffset() + 1452) - GetTickCount()) / 1000 <= 580)
+                IPlayer.Teleport(PLMap, 310264 + CTools::Rate(-100, 100),
+                    284486 + CTools::Rate(-100,
                         100));
         }
     }
@@ -936,16 +936,16 @@ int __fastcall Tick(void *Player, void *edx)
 
         if (IPlayer.GetRectX() > 9686 && IPlayer.GetRectX() < 9705
             && IPlayer.GetRectY() > 8879 && IPlayer.GetRectY() < 8914)
-            IPlayer.Teleport(PLMap, 308588+CTools::Rate(-100, 100),
-                284483+CTools::Rate(-100,
+            IPlayer.Teleport(PLMap, 308588 + CTools::Rate(-100, 100),
+                284483 + CTools::Rate(-100,
                     100));
 
         if (Protect32::Time >= 1200)
         {
             if (IPlayer.GetRectX() < 9631 || IPlayer.GetRectX() > 9653
                 || IPlayer.GetRectY() < 8879 || IPlayer.GetRectY() > 8897)
-                IPlayer.Teleport(PLMap, 308588+CTools::Rate(-100, 100),
-                    284483+CTools::Rate(-100,
+                IPlayer.Teleport(PLMap, 308588 + CTools::Rate(-100, 100),
+                    284483 + CTools::Rate(-100,
                         100));
 
             IPlayer.CloseSpScore();
@@ -955,7 +955,7 @@ int __fastcall Tick(void *Player, void *edx)
                 timecheck = timecheck;
             }
             else
-                timecheck = "The battle is starting in " + Int2String(Protect32::Time-1200) +
+                timecheck = "The battle is starting in " + Int2String(Protect32::Time - 1200) +
                     " seconds.";
 
             CPlayer::Write(IPlayer.GetOffset(), 0xFF, "dsd", 247, timecheck.c_str(), 0);
@@ -968,8 +968,8 @@ int __fastcall Tick(void *Player, void *edx)
         if (Protect32::Time == 0 && (IPlayer.GetRectX() < 9631
                 || IPlayer.GetRectX() > 9653 || IPlayer.GetRectY() < 8879
                 || IPlayer.GetRectY() > 8897))
-            IPlayer.Teleport(PLMap, 308588+CTools::Rate(-100, 100),
-                284483+CTools::Rate(-100,
+            IPlayer.Teleport(PLMap, 308588 + CTools::Rate(-100, 100),
+                284483 + CTools::Rate(-100,
                     100));
     }
 
@@ -1024,16 +1024,16 @@ int __fastcall Tick(void *Player, void *edx)
 
         if (IPlayer.GetRectX() > 9633 && IPlayer.GetRectX() < 9655
             && IPlayer.GetRectY() > 8877 && IPlayer.GetRectY() < 8914)
-            IPlayer.Teleport(PLMap, 310264+CTools::Rate(-100, 100),
-                284486+CTools::Rate(-100,
+            IPlayer.Teleport(PLMap, 310264 + CTools::Rate(-100, 100),
+                284486 + CTools::Rate(-100,
                     100));
 
         if (Protect32::Time >= 1200)
         {
             if (IPlayer.GetRectX() < 9685 || IPlayer.GetRectX() > 9707
                 || IPlayer.GetRectY() < 8879 || IPlayer.GetRectY() > 8896)
-                IPlayer.Teleport(PLMap, 310264+CTools::Rate(-100, 100),
-                    284486+CTools::Rate(-100,
+                IPlayer.Teleport(PLMap, 310264 + CTools::Rate(-100, 100),
+                    284486 + CTools::Rate(-100,
                         100));
 
             IPlayer.CloseSpScore();
@@ -1043,7 +1043,7 @@ int __fastcall Tick(void *Player, void *edx)
                 timecheck = timecheck;
             }
             else
-                timecheck = "The battle is starting in " + Int2String(Protect32::Time-1200) +
+                timecheck = "The battle is starting in " + Int2String(Protect32::Time - 1200) +
                     " seconds.";
 
             CPlayer::Write(IPlayer.GetOffset(), 0xFF, "dsd", 247, timecheck.c_str(), 1);
@@ -1056,8 +1056,8 @@ int __fastcall Tick(void *Player, void *edx)
         if (Protect32::Time == 0 && (IPlayer.GetRectX() < 9685
                 || IPlayer.GetRectX() > 9707 || IPlayer.GetRectY() < 8879
                 || IPlayer.GetRectY() > 8896))
-            IPlayer.Teleport(PLMap, 310264+CTools::Rate(-100, 100),
-                284486+CTools::Rate(-100,
+            IPlayer.Teleport(PLMap, 310264 + CTools::Rate(-100, 100),
+                284486 + CTools::Rate(-100,
                     100));
     }
 
@@ -1124,9 +1124,9 @@ int __fastcall Tick(void *Player, void *edx)
         if (pSkill)
         {
             ISkill xSkill((void*)pSkill);
-            IPlayer.DecreaseMaxHp(500*xSkill.GetGrade());
-            IPlayer.RemoveMaxAttack(100*xSkill.GetGrade());
-            IPlayer.RemoveMinAttack(100*xSkill.GetGrade());
+            IPlayer.DecreaseMaxHp(500 * xSkill.GetGrade());
+            IPlayer.RemoveMaxAttack(100 * xSkill.GetGrade());
+            IPlayer.RemoveMinAttack(100 * xSkill.GetGrade());
         }
     }
 
@@ -1295,7 +1295,7 @@ int __fastcall Tick(void *Player, void *edx)
                     IPlayer.AddFxToTarget("Pet_Defensebuff_03", 1, 0, 0);
                 } else if (Number == 8)
                 {
-                    IPlayer.Buff(325, 180-2, 0);
+                    IPlayer.Buff(325, 180 - 2, 0);
                     IPlayer.Buff(326, 185, 0);
                     IPlayer.SetBuffIcon(180000, 0, 2374, 305);
                     IPlayer.AddDef(7);
@@ -1308,7 +1308,8 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && CChar::IsGState((int)Player, 2)
         && (IPlayer.IsBuff(373) || IPlayer.IsBuff(374))) {
-        IPlayer.Teleport(0, 214806+CTools::Rate(-100, 100), 280796+CTools::Rate(-100,
+        IPlayer.Teleport(0, 214806 + CTools::Rate(-100, 100),
+            280796 + CTools::Rate(-100,
                 100));
     }
 
@@ -1557,14 +1558,16 @@ int __fastcall Tick(void *Player, void *edx)
     if (IPlayer.IsOnline() && IPlayer.GetMap() == BFMap
         && IPlayer.GetRectX() >= 8560 && IPlayer.IsBuff(160)
         && IPlayer.GetRectX() <= 8579) {
-        IPlayer.Teleport(BFMap, 282821+CTools::Rate(-50, 50), 217307+CTools::Rate(-50,
+        IPlayer.Teleport(BFMap, 282821 + CTools::Rate(-50, 50),
+            217307 + CTools::Rate(-50,
                 50));
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetMap() == BFMap
         && IPlayer.GetRectX() >= 8828 && IPlayer.IsBuff(161)
         && IPlayer.GetRectX() <= 8847) {
-        IPlayer.Teleport(BFMap, 274256+CTools::Rate(-50, 50), 208690+CTools::Rate(-50,
+        IPlayer.Teleport(BFMap, 274256 + CTools::Rate(-50, 50),
+            208690 + CTools::Rate(-50,
                 50));
     }
 
@@ -1623,7 +1626,8 @@ int __fastcall Tick(void *Player, void *edx)
     }
 
     if (IPlayer.IsOnline() && IPlayer.GetMap() != LMSMap && IPlayer.IsBuff(378))
-        IPlayer.Teleport(LMSMap, LMSX+CTools::Rate(-200, 200), LMSY+CTools::Rate(-200,
+        IPlayer.Teleport(LMSMap, LMSX + CTools::Rate(-200, 200),
+            LMSY + CTools::Rate(-200,
                 200));
 
     if (IPlayer.IsOnline() && CChar::IsGState((int)Player, 2) && IPlayer.IsBuff(378)
@@ -1889,7 +1893,8 @@ int __fastcall Tick(void *Player, void *edx)
             CPlayer::FreeTransform(Player);
         }
 
-        IPlayer.Teleport(BFMap, 282821+CTools::Rate(-50, 50), 217307+CTools::Rate(-50,
+        IPlayer.Teleport(BFMap, 282821 + CTools::Rate(-50, 50),
+            217307 + CTools::Rate(-50,
                 50));
     }
 
@@ -1899,7 +1904,8 @@ int __fastcall Tick(void *Player, void *edx)
             CPlayer::FreeTransform(Player);
         }
 
-        IPlayer.Teleport(BFMap, 274256+CTools::Rate(-50, 50), 208690+CTools::Rate(-50,
+        IPlayer.Teleport(BFMap, 274256 + CTools::Rate(-50, 50),
+            208690 + CTools::Rate(-50,
                 50));
     }
 
@@ -1973,7 +1979,8 @@ int __fastcall Tick(void *Player, void *edx)
         && (GetTickCount() / 1000) % 5 == 0 && IPlayer.IsBuff(160))
     {
         Battlefield::BlueScore += 1;
-        IPlayer.Teleport(BFMap, 282821+CTools::Rate(-50, 50), 217307+CTools::Rate(-50,
+        IPlayer.Teleport(BFMap, 282821 + CTools::Rate(-50, 50),
+            217307 + CTools::Rate(-50,
                 50));
         IPlayer.Revive();
     }
@@ -1982,7 +1989,8 @@ int __fastcall Tick(void *Player, void *edx)
         && (GetTickCount() / 1000) % 5 == 0 && IPlayer.IsBuff(161))
     {
         Battlefield::RedScore += 1;
-        IPlayer.Teleport(BFMap, 274256+CTools::Rate(-50, 50), 208690+CTools::Rate(-50,
+        IPlayer.Teleport(BFMap, 274256 + CTools::Rate(-50, 50),
+            208690 + CTools::Rate(-50,
                 50));
         IPlayer.Revive();
     }
@@ -2182,7 +2190,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(121)
         && IPlayer.GetBuffRemain(121) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(121)*1000, 0, 3877, 442);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(121) * 1000, 0, 3877, 442);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(121) && !IPlayer.IsBuff(273)) {
@@ -2197,7 +2205,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(122)
         && IPlayer.GetBuffRemain(122) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(122)*1000, 0, 3879, 444);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(122) * 1000, 0, 3879, 444);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(122) && !IPlayer.IsBuff(274)) {
@@ -2212,7 +2220,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(123)
         && IPlayer.GetBuffRemain(123) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(123)*1000, 0, 3886, 451);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(123) * 1000, 0, 3886, 451);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(123) && !IPlayer.IsBuff(275))
@@ -2231,7 +2239,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(124)
         && IPlayer.GetBuffRemain(124) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(124)*1000, 0, 3880, 445);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(124) * 1000, 0, 3880, 445);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(124) && !IPlayer.IsBuff(276))
@@ -2250,7 +2258,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(125)
         && IPlayer.GetBuffRemain(125) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(125)*1000, 0, 3885, 450);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(125) * 1000, 0, 3885, 450);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(125) && !IPlayer.IsBuff(277))
@@ -2269,7 +2277,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(126)
         && IPlayer.GetBuffRemain(126) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(126)*1000, 0, 3884, 449);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(126) * 1000, 0, 3884, 449);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(126) && !IPlayer.IsBuff(278))
@@ -2288,7 +2296,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(127)
         && IPlayer.GetBuffRemain(127) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(127)*1000, 0, 3883, 448);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(127) * 1000, 0, 3883, 448);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(127) && !IPlayer.IsBuff(279))
@@ -2307,7 +2315,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(128)
         && IPlayer.GetBuffRemain(128) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(128)*1000, 0, 3882, 447);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(128) * 1000, 0, 3882, 447);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(128) && !IPlayer.IsBuff(280))
@@ -2326,7 +2334,7 @@ int __fastcall Tick(void *Player, void *edx)
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(129)
         && IPlayer.GetBuffRemain(129) > 10) {
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(129)*1000, 0, 3881, 446);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(129) * 1000, 0, 3881, 446);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsBuff(129) && !IPlayer.IsBuff(281))
@@ -2406,7 +2414,7 @@ int __fastcall Tick(void *Player, void *edx)
     if (IPlayer.IsOnline() && IPlayer.IsBuff(120))
     {
         IPlayer.Buff(259, 604800, 0);
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(120)*1000, 0, 3691, 423);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(120) * 1000, 0, 3691, 423);
         CPlayer::Write(Player, 0xFF, "dd", 238, 0);
     }
 
@@ -2419,7 +2427,7 @@ int __fastcall Tick(void *Player, void *edx)
     if (IPlayer.IsOnline() && IPlayer.IsBuff(119))
     {
         IPlayer.Buff(260, 604800, 0);
-        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(119)*1000, 0, 3511, 370);
+        IPlayer.SetBuffIcon(IPlayer.GetBuffRemain(119) * 1000, 0, 3511, 370);
     }
 
     if (IPlayer.IsOnline() && IPlayer.IsParty())
@@ -2543,7 +2551,7 @@ int __fastcall Tick(void *Player, void *edx)
                     IPlayer.SetBuffIcon(-2, -1, 1767, 220);
                 }
                 else {
-                    IPlayer.SetBuffIcon(-2, -1, 3559+xSkill.GetGrade(), 398+xSkill.GetGrade());
+                    IPlayer.SetBuffIcon(-2, -1, 3559 + xSkill.GetGrade(), 398 + xSkill.GetGrade());
                 }
             }
 
@@ -2557,7 +2565,7 @@ int __fastcall Tick(void *Player, void *edx)
                     IPlayer.SetBuffIcon(-2, -1, 1767, 220);
                 }
                 else {
-                    IPlayer.SetBuffIcon(-2, -1, 3559+xSkill.GetGrade(), 398+xSkill.GetGrade());
+                    IPlayer.SetBuffIcon(-2, -1, 3559 + xSkill.GetGrade(), 398 + xSkill.GetGrade());
                 }
             }
         }
@@ -2576,7 +2584,7 @@ int __fastcall Tick(void *Player, void *edx)
                 IPlayer.SetBuffIcon(-2, -1, 1998, 221);
             }
             else {
-                IPlayer.SetBuffIcon(-2, -1, 3565+xSkill.GetGrade(), 404+xSkill.GetGrade());
+                IPlayer.SetBuffIcon(-2, -1, 3565 + xSkill.GetGrade(), 404 + xSkill.GetGrade());
             }
         }
     }
@@ -2589,7 +2597,7 @@ int __fastcall Tick(void *Player, void *edx)
         if (pSkill)
         {
             ISkill xSkill((void*)pSkill);
-            IPlayer.IncreaseMana(2*xSkill.GetGrade());
+            IPlayer.IncreaseMana(2 * xSkill.GetGrade());
         }
 
         IPlayer.SetBuffIcon(-2, -1, 4259, 956);
@@ -2649,7 +2657,7 @@ int __fastcall Tick(void *Player, void *edx)
             addtime = 60;
         }
 
-        IPlayer.Buff(156, 3600+addtime, 0);
+        IPlayer.Buff(156, 3600 + addtime, 0);
         CheckEmok[IPlayer.GetPID()].Day = String2Int(Time::GetDay());
     }
 
@@ -2764,7 +2772,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_01460" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_01460" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_01460" + Int2String(IPlayer.GetClass());
@@ -2777,7 +2785,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_02460" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_02460" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_02460" + Int2String(IPlayer.GetClass());
@@ -2791,7 +2799,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_01550" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_01550" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_01550" + Int2String(IPlayer.GetClass());
@@ -2811,7 +2819,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_02550" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_02550" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_02550" + Int2String(IPlayer.GetClass());
@@ -2831,7 +2839,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_01500" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_01500" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_01500" + Int2String(IPlayer.GetClass());
@@ -2851,7 +2859,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_02500" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_02500" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_02500" + Int2String(IPlayer.GetClass());
@@ -2870,7 +2878,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_01600" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_01600" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_01600" + Int2String(IPlayer.GetClass());
@@ -2883,7 +2891,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_02600" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_02600" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_02600" + Int2String(IPlayer.GetClass());
@@ -2896,7 +2904,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_01650" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_01650" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_01650" + Int2String(IPlayer.GetClass());
@@ -2909,7 +2917,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_02650" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_02650" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_02650" + Int2String(IPlayer.GetClass());
@@ -2923,7 +2931,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_01550" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_01550" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_01550" + Int2String(IPlayer.GetClass());
@@ -2943,7 +2951,7 @@ int __fastcall Tick(void *Player, void *edx)
         {
             if (IPlayer.GetClass() == 4)
             {
-                std::string Effect = "ef_setitem_02550" + Int2String(IPlayer.GetClass()-2);
+                std::string Effect = "ef_setitem_02550" + Int2String(IPlayer.GetClass() - 2);
                 IPlayer.AddFxToTarget(Effect, 1, 0, 0);
             } else {
                 std::string Effect = "ef_setitem_02550" + Int2String(IPlayer.GetClass());

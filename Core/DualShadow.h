@@ -49,7 +49,7 @@ void __fastcall DualShadow(IChar IPlayer, int pPacket, int pPos)
                     IPlayer.SetBuffIcon(15000, 0, 2012, 214);
                     IPlayer.Buff(354, 15, 0);
                     IPlayer.Buff(355, 20, 0);
-                    IPlayer.OktayDamageSingle(Target, IPlayer.GetAttack()*2, 12);
+                    IPlayer.OktayDamageSingle(Target, IPlayer.GetAttack() * 2, 12);
                     IPlayer._ShowBattleAnimation(Target, 12);
                 } else {
                     IPlayer._ShowBattleMiss(Target, 12);

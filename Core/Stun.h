@@ -50,7 +50,7 @@ void __fastcall Stun(IChar IPlayer, int pPacket, int pPos)
 
                     Target.Buff(7, nSkillGrade, 0);
                     Target.Buff(358, nSkillGrade, 0);
-                    Target.Buff(359, nSkillGrade+5, 0);
+                    Target.Buff(359, nSkillGrade + 5, 0);
                     Target.SetBuffIcon(nSkillGrade * 1000, 0, 2009, 207);
                     int nDmg = (IPlayer.GetAttack() * TStunMul) +
                         (nSkillGrade * CTools::Rate(TStunMin, TStunMax));

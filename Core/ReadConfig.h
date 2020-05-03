@@ -912,7 +912,7 @@ void ReadConfig()
 
         while (fgets(line, sizeof line, fileo) != NULL)
         {
-            int gaplevel = 0, gaprate =0;
+            int gaplevel = 0, gaprate = 0;
 
             if (sscanf(line, "(gap (level %d)(rate %d))", &gaplevel, &gaprate) == 2)
             {
@@ -1179,7 +1179,8 @@ void ReadConfig()
                     &BillCode, &Priority, &Type, &Price, &Discount, &ItemIndex, &Amount) == 7)
             {
                 Interface<ITools> Tools;
-                Tools->Compile(ItemShopPacket+(count*12), "wbbbbbdb", BillCode, Priority, 0, 0,
+                Tools->Compile(ItemShopPacket + (count * 12), "wbbbbbdb", BillCode, Priority, 0,
+                    0,
                     0,
                     Type, Price, Discount);
                 ItemShopCheck[BillCode].Type = Type;

@@ -50,7 +50,7 @@ void __fastcall ArmorBreaker(IChar IPlayer, int pPacket, int pPos)
 
                 if (!Target.IsBuff(342))
                 {
-                    Target.SendGStateEx(Target.GetGStateEx()+131072);
+                    Target.SendGStateEx(Target.GetGStateEx() + 131072);
                     Target.Buff(342, 9, 0);
                 }
 

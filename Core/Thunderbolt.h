@@ -65,7 +65,7 @@ void __fastcall Thunderbolt(IChar IPlayer, int pPacket, int pPos)
         char bType = 0;
         void* pTarget = 0;
         CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
-        int nMana = (int)(((((xSkill.GetGrade()-1)+45) * xSkill.GetGrade())+280) *
+        int nMana = (int)(((((xSkill.GetGrade() - 1) + 45) * xSkill.GetGrade()) + 280) *
                 0.75);
 
         if (bType == 0 && nTargetID) {

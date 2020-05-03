@@ -17,7 +17,7 @@ void __fastcall MudRoom(IChar IPlayer, int pPacket, int pPos)
                 IPlayer._ShowBattleAnimation(IPlayer, 20);
 
                 if (nSkillGrade == 1) {
-                    IPlayer.Buff(398, 5+Time, 0);
+                    IPlayer.Buff(398, 5 + Time, 0);
                 }
 
                 if (nSkillGrade == 2) {
@@ -59,7 +59,7 @@ void __fastcall MudRoom(IChar IPlayer, int pPacket, int pPos)
                 IPlayer.Buff(399, 10000, 0);
                 IPlayer.AddDef(nSkillGrade);
                 IPlayer.AddAbsorb(nSkillGrade);
-                IPlayer.SetBuffIcon(Time*1000, 0, 9101, 1010);
+                IPlayer.SetBuffIcon(Time * 1000, 0, 9101, 1010);
             }
         }
     }

@@ -26,7 +26,7 @@ void __fastcall CombativeSpirit(IChar IPlayer, int pPacket, int pPos)
         if (IPlayer.IsValid() && pTarget && nSkillGrade)
         {
             IChar Target(pTarget);
-            int nMana = (int)(((((nSkillGrade-1)+20) * nSkillGrade)+200) * 1.85);
+            int nMana = (int)(((((nSkillGrade - 1) + 20) * nSkillGrade) + 200) * 1.85);
 
             if (pTarget == IPlayer.GetOffset()) {
                 return;

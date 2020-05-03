@@ -60,7 +60,7 @@ void __fastcall VirulentArrow(IChar IPlayer, int pPacket, int pPos)
 
                 while (Around)
                 {
-                    IChar Object((void*)*(DWORD*)Around);
+                    IChar Object((void*) * (DWORD*)Around);
 
                     if (Object.IsValid() && IPlayer.IsValid() &&
                         (*(int (__thiscall **)(int, int, DWORD))

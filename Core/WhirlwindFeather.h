@@ -20,7 +20,7 @@ void __fastcall ContinueWhirlwindFeather(IChar IPlayer)
 
             while (Around)
             {
-                IChar Object((void*)*(DWORD*)Around);
+                IChar Object((void*) * (DWORD*)Around);
 
                 if (Object.IsValid() && Target.IsValid() && IPlayer.IsValid() &&
                     (*(int (__thiscall **)(int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))

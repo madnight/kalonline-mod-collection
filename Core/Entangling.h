@@ -66,7 +66,7 @@ void __fastcall Entangling(IChar IPlayer, int pPacket, int pPos)
                         {
                             if (IPlayer.IsOnline() &&
                                 IPlayer.GetLevel() >= Object.GetLevel() - 20) {
-                                Object.Buff(8, (nSkillGrade*5)+2+SetTime, 0);
+                                Object.Buff(8, (nSkillGrade * 5) + 2 + SetTime, 0);
                             }
                         }
 

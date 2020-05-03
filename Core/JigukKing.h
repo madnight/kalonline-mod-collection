@@ -34,17 +34,17 @@ void __fastcall JigukKing(IChar IPlayer, int pPacket, int pPos)
                     for (int i = CParty::GetPlayerList(Party); i; i = CBaseList::Pop((void *)i))
                     {
                         int Members = *(DWORD*)((void*)i);
-                        IChar IMembers((void*)*(DWORD*)((void*)i));
+                        IChar IMembers((void*) * (DWORD*)((void*)i));
 
                         if (CChar::IsNormal(Members) && IPlayer.IsValid())
                         {
                             if (CChar::GetRange((int)IPlayer.GetOffset() + 332, Members + 332) <= 300 &&
                                 !IMembers.IsBuff(402))
                             {
-                                IMembers.SetBuffIcon(1000*((nSkillGrade*60)+ExtraTime), 0, 9104, 1013);
-                                IMembers.IncreaseMaxHp(150*nSkillGrade);
-                                IMembers.Buff(401, (nSkillGrade*60)+ExtraTime, 0);
-                                IMembers.Buff(402, nSkillGrade*100, 150*nSkillGrade);
+                                IMembers.SetBuffIcon(1000 * ((nSkillGrade * 60) + ExtraTime), 0, 9104, 1013);
+                                IMembers.IncreaseMaxHp(150 * nSkillGrade);
+                                IMembers.Buff(401, (nSkillGrade * 60) + ExtraTime, 0);
+                                IMembers.Buff(402, nSkillGrade * 100, 150 * nSkillGrade);
                             }
                         }
                     }
@@ -52,10 +52,10 @@ void __fastcall JigukKing(IChar IPlayer, int pPacket, int pPos)
             } else {
                 if (!IPlayer.IsBuff(402))
                 {
-                    IPlayer.SetBuffIcon(1000*((nSkillGrade*60)+ExtraTime), 0, 9104, 1013);
-                    IPlayer.IncreaseMaxHp(150*nSkillGrade);
-                    IPlayer.Buff(401, (nSkillGrade*60)+ExtraTime, 0);
-                    IPlayer.Buff(402, nSkillGrade*100, 150*nSkillGrade);
+                    IPlayer.SetBuffIcon(1000 * ((nSkillGrade * 60) + ExtraTime), 0, 9104, 1013);
+                    IPlayer.IncreaseMaxHp(150 * nSkillGrade);
+                    IPlayer.Buff(401, (nSkillGrade * 60) + ExtraTime, 0);
+                    IPlayer.Buff(402, nSkillGrade * 100, 150 * nSkillGrade);
                 }
             }
         }

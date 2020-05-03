@@ -11,13 +11,13 @@ int __fastcall UpdateExp(int PlayerEgg, void *edx, int Player, int Check)
         if (*(DWORD *)(PlayerEgg + 100) == 179)
         {
             if (IPlayer.IsBuff(119) && IPlayer.IsBuff(120)) {
-                *(DWORD *)(PlayerEgg + 96) += (EggExpTime + ((EggExpTime *4) / 10)) - 10;
+                *(DWORD *)(PlayerEgg + 96) += (EggExpTime + ((EggExpTime * 4) / 10)) - 10;
             }
             else if (IPlayer.IsBuff(120)) {
                 *(DWORD *)(PlayerEgg + 96) += (EggExpTime + (EggExpTime / 10)) - 10;
             }
             else if (IPlayer.IsBuff(119)) {
-                *(DWORD *)(PlayerEgg + 96) += (EggExpTime + ((EggExpTime *3) / 10)) - 10;
+                *(DWORD *)(PlayerEgg + 96) += (EggExpTime + ((EggExpTime * 3) / 10)) - 10;
             }
             else {
                 *(DWORD *)(PlayerEgg + 96) += EggExpTime - 10;
@@ -35,13 +35,13 @@ int __fastcall UpdateExp(int PlayerEgg, void *edx, int Player, int Check)
         }
 
         if (IPlayer.IsBuff(119) && IPlayer.IsBuff(120)) {
-            *(DWORD *)(PlayerEgg + 96) += (EggExpKill + ((EggExpKill *4) / 10)) - Remove;
+            *(DWORD *)(PlayerEgg + 96) += (EggExpKill + ((EggExpKill * 4) / 10)) - Remove;
         }
         else if (IPlayer.IsBuff(120)) {
             *(DWORD *)(PlayerEgg + 96) += (EggExpKill + (EggExpKill / 10)) - Remove;
         }
         else if (IPlayer.IsBuff(119)) {
-            *(DWORD *)(PlayerEgg + 96) += (EggExpKill + ((EggExpKill *3) / 10)) - Remove;
+            *(DWORD *)(PlayerEgg + 96) += (EggExpKill + ((EggExpKill * 3) / 10)) - Remove;
         }
         else {
             *(DWORD *)(PlayerEgg + 96) += EggExpKill - Remove;

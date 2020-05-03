@@ -27,20 +27,20 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
         {
             if (FirstDemonGongType == 1)
             {
-                IPlayer.AddDef(DemonGongStatArmorEarth[0][FirstDemonGongStat-1]);
-                IPlayer.AddOTP(DemonGongStatArmorEarth[1][FirstDemonGongStat-1]);
+                IPlayer.AddDef(DemonGongStatArmorEarth[0][FirstDemonGongStat - 1]);
+                IPlayer.AddOTP(DemonGongStatArmorEarth[1][FirstDemonGongStat - 1]);
             }
 
             if (FirstDemonGongType == 2)
             {
-                IPlayer.IncreaseMaxHp(DemonGongStatArmorWind[0][FirstDemonGongStat-1]);
-                IPlayer.AddEva(DemonGongStatArmorWind[1][FirstDemonGongStat-1]);
+                IPlayer.IncreaseMaxHp(DemonGongStatArmorWind[0][FirstDemonGongStat - 1]);
+                IPlayer.AddEva(DemonGongStatArmorWind[1][FirstDemonGongStat - 1]);
             }
 
             if (FirstDemonGongType == 3)
             {
-                IPlayer.AddAgi(DemonGongStatArmorWater[0][FirstDemonGongStat-1]);
-                IPlayer.AddDef(DemonGongStatArmorWater[1][FirstDemonGongStat-1]);
+                IPlayer.AddAgi(DemonGongStatArmorWater[0][FirstDemonGongStat - 1]);
+                IPlayer.AddDef(DemonGongStatArmorWater[1][FirstDemonGongStat - 1]);
             }
         }
 
@@ -48,20 +48,20 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
         {
             if (SecondDemonGongType == 1)
             {
-                IPlayer.AddDef(DemonGongStatArmorEarth[0][SecondDemonGongStat-1]);
-                IPlayer.AddOTP(DemonGongStatArmorEarth[1][SecondDemonGongStat-1]);
+                IPlayer.AddDef(DemonGongStatArmorEarth[0][SecondDemonGongStat - 1]);
+                IPlayer.AddOTP(DemonGongStatArmorEarth[1][SecondDemonGongStat - 1]);
             }
 
             if (SecondDemonGongType == 2)
             {
-                IPlayer.IncreaseMaxHp(DemonGongStatArmorWind[0][SecondDemonGongStat-1]);
-                IPlayer.AddEva(DemonGongStatArmorWind[1][SecondDemonGongStat-1]);
+                IPlayer.IncreaseMaxHp(DemonGongStatArmorWind[0][SecondDemonGongStat - 1]);
+                IPlayer.AddEva(DemonGongStatArmorWind[1][SecondDemonGongStat - 1]);
             }
 
             if (SecondDemonGongType == 3)
             {
-                IPlayer.AddAgi(DemonGongStatArmorWater[0][SecondDemonGongStat-1]);
-                IPlayer.AddDef(DemonGongStatArmorWater[1][SecondDemonGongStat-1]);
+                IPlayer.AddAgi(DemonGongStatArmorWater[0][SecondDemonGongStat - 1]);
+                IPlayer.AddDef(DemonGongStatArmorWater[1][SecondDemonGongStat - 1]);
             }
         }
 
@@ -73,9 +73,9 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
             {
                 if (IItem.GetType() == 3)
                 {
-                    IPlayer.AddDef((check*QigongChest[QigongType-1][0])/100);
-                    int Type = QigongChest[QigongType-1][1];
-                    int Stat = QigongChest[QigongType-1][2];
+                    IPlayer.AddDef((check * QigongChest[QigongType - 1][0]) / 100);
+                    int Type = QigongChest[QigongType - 1][1];
+                    int Stat = QigongChest[QigongType - 1][2];
 
                     if (Type == 0) {
                         IPlayer.AddStr(Stat);
@@ -94,9 +94,9 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                     }
                 } else if (IItem.GetType() == 4)
                 {
-                    IPlayer.AddDef((check*QigongShort[QigongType-1][0])/100);
-                    int Type = QigongChest[QigongType-1][1];
-                    int Stat = QigongChest[QigongType-1][2];
+                    IPlayer.AddDef((check * QigongShort[QigongType - 1][0]) / 100);
+                    int Type = QigongChest[QigongType - 1][1];
+                    int Stat = QigongChest[QigongType - 1][2];
 
                     if (Type == 0) {
                         IPlayer.AddStr(Stat);
@@ -114,9 +114,9 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                         IPlayer.AddAgi(Stat);
                     }
                 } else {
-                    IPlayer.AddDef((check*QigongMain[QigongType-1][0])/100);
-                    int Type = QigongChest[QigongType-1][1];
-                    int Stat = QigongChest[QigongType-1][2];
+                    IPlayer.AddDef((check * QigongMain[QigongType - 1][0]) / 100);
+                    int Type = QigongChest[QigongType - 1][1];
+                    int Stat = QigongChest[QigongType - 1][2];
 
                     if (Type == 0) {
                         IPlayer.AddStr(Stat);
@@ -139,163 +139,163 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 
         if (IItem.GetSetGem() == 240)
         {
-            IPlayer.AddDef((check*18)/100);
+            IPlayer.AddDef((check * 18) / 100);
             IPlayer.AddAgi(7);
         } else if (IItem.GetSetGem() == 239)
         {
-            IPlayer.AddDef((check*18)/100);
+            IPlayer.AddDef((check * 18) / 100);
             IPlayer.AddWis(7);
         } else if (IItem.GetSetGem() == 238)
         {
-            IPlayer.AddDef((check*18)/100);
+            IPlayer.AddDef((check * 18) / 100);
             IPlayer.AddInt(7);
         } else if (IItem.GetSetGem() == 237)
         {
-            IPlayer.AddDef((check*18)/100);
+            IPlayer.AddDef((check * 18) / 100);
             IPlayer.AddHp(7);
         } else if (IItem.GetSetGem() == 236)
         {
-            IPlayer.AddDef((check*18)/100);
+            IPlayer.AddDef((check * 18) / 100);
             IPlayer.AddStr(7);
         } else if (IItem.GetSetGem() == 235)
         {
-            IPlayer.AddDef((check*16)/100);
+            IPlayer.AddDef((check * 16) / 100);
             IPlayer.AddAgi(5);
         } else if (IItem.GetSetGem() == 234)
         {
-            IPlayer.AddDef((check*16)/100);
+            IPlayer.AddDef((check * 16) / 100);
             IPlayer.AddWis(5);
         } else if (IItem.GetSetGem() == 233)
         {
-            IPlayer.AddDef((check*16)/100);
+            IPlayer.AddDef((check * 16) / 100);
             IPlayer.AddInt(5);
         } else if (IItem.GetSetGem() == 232)
         {
-            IPlayer.AddDef((check*16)/100);
+            IPlayer.AddDef((check * 16) / 100);
             IPlayer.AddHp(5);
         } else if (IItem.GetSetGem() == 231)
         {
-            IPlayer.AddDef((check*16)/100);
+            IPlayer.AddDef((check * 16) / 100);
             IPlayer.AddStr(5);
         } else if (IItem.GetSetGem() == 230)
         {
-            IPlayer.AddDef((check*14)/100);
+            IPlayer.AddDef((check * 14) / 100);
             IPlayer.AddAgi(3);
         } else if (IItem.GetSetGem() == 229)
         {
-            IPlayer.AddDef((check*14)/100);
+            IPlayer.AddDef((check * 14) / 100);
             IPlayer.AddWis(3);
         } else if (IItem.GetSetGem() == 228)
         {
-            IPlayer.AddDef((check*14)/100);
+            IPlayer.AddDef((check * 14) / 100);
             IPlayer.AddInt(3);
         } else if (IItem.GetSetGem() == 227)
         {
-            IPlayer.AddDef((check*14)/100);
+            IPlayer.AddDef((check * 14) / 100);
             IPlayer.AddHp(3);
         } else if (IItem.GetSetGem() == 226)
         {
-            IPlayer.AddDef((check*14)/100);
+            IPlayer.AddDef((check * 14) / 100);
             IPlayer.AddStr(3);
         } else if (IItem.GetSetGem() == 225)
         {
-            IPlayer.AddDef((check*12)/100);
+            IPlayer.AddDef((check * 12) / 100);
             IPlayer.AddAgi(3);
         } else if (IItem.GetSetGem() == 224)
         {
-            IPlayer.AddDef((check*12)/100);
+            IPlayer.AddDef((check * 12) / 100);
             IPlayer.AddWis(3);
         } else if (IItem.GetSetGem() == 223)
         {
-            IPlayer.AddDef((check*12)/100);
+            IPlayer.AddDef((check * 12) / 100);
             IPlayer.AddInt(3);
         } else if (IItem.GetSetGem() == 222)
         {
-            IPlayer.AddDef((check*12)/100);
+            IPlayer.AddDef((check * 12) / 100);
             IPlayer.AddHp(3);
         } else if (IItem.GetSetGem() == 221)
         {
-            IPlayer.AddDef((check*12)/100);
+            IPlayer.AddDef((check * 12) / 100);
             IPlayer.AddStr(3);
         } else if (IItem.GetSetGem() == 220)
         {
-            IPlayer.AddDef((check*10)/100);
+            IPlayer.AddDef((check * 10) / 100);
             IPlayer.AddAgi(2);
         } else if (IItem.GetSetGem() == 219)
         {
-            IPlayer.AddDef((check*10)/100);
+            IPlayer.AddDef((check * 10) / 100);
             IPlayer.AddWis(2);
         } else if (IItem.GetSetGem() == 218)
         {
-            IPlayer.AddDef((check*10)/100);
+            IPlayer.AddDef((check * 10) / 100);
             IPlayer.AddInt(2);
         } else if (IItem.GetSetGem() == 217)
         {
-            IPlayer.AddDef((check*10)/100);
+            IPlayer.AddDef((check * 10) / 100);
             IPlayer.AddHp(2);
         } else if (IItem.GetSetGem() == 216)
         {
-            IPlayer.AddDef((check*10)/100);
+            IPlayer.AddDef((check * 10) / 100);
             IPlayer.AddStr(2);
         } else if (IItem.GetSetGem() == 215)
         {
-            IPlayer.AddDef((check*8)/100);
+            IPlayer.AddDef((check * 8) / 100);
             IPlayer.AddAgi(2);
         } else if (IItem.GetSetGem() == 214)
         {
-            IPlayer.AddDef((check*8)/100);
+            IPlayer.AddDef((check * 8) / 100);
             IPlayer.AddWis(2);
         } else if (IItem.GetSetGem() == 213)
         {
-            IPlayer.AddDef((check*8)/100);
+            IPlayer.AddDef((check * 8) / 100);
             IPlayer.AddInt(2);
         } else if (IItem.GetSetGem() == 212)
         {
-            IPlayer.AddDef((check*8)/100);
+            IPlayer.AddDef((check * 8) / 100);
             IPlayer.AddHp(2);
         } else if (IItem.GetSetGem() == 211)
         {
-            IPlayer.AddDef((check*8)/100);
+            IPlayer.AddDef((check * 8) / 100);
             IPlayer.AddStr(2);
         } else if (IItem.GetSetGem() == 210)
         {
-            IPlayer.AddDef((check*6)/100);
+            IPlayer.AddDef((check * 6) / 100);
             IPlayer.AddAgi(1);
         } else if (IItem.GetSetGem() == 209)
         {
-            IPlayer.AddDef((check*6)/100);
+            IPlayer.AddDef((check * 6) / 100);
             IPlayer.AddWis(1);
         } else if (IItem.GetSetGem() == 208)
         {
-            IPlayer.AddDef((check*6)/100);
+            IPlayer.AddDef((check * 6) / 100);
             IPlayer.AddInt(1);
         } else if (IItem.GetSetGem() == 207)
         {
-            IPlayer.AddDef((check*6)/100);
+            IPlayer.AddDef((check * 6) / 100);
             IPlayer.AddHp(1);
         } else if (IItem.GetSetGem() == 206)
         {
-            IPlayer.AddDef((check*6)/100);
+            IPlayer.AddDef((check * 6) / 100);
             IPlayer.AddStr(1);
         } else if (IItem.GetSetGem() == 205)
         {
-            IPlayer.AddDef((check*4)/100);
+            IPlayer.AddDef((check * 4) / 100);
             IPlayer.AddAgi(1);
         } else if (IItem.GetSetGem() == 204)
         {
-            IPlayer.AddDef((check*4)/100);
+            IPlayer.AddDef((check * 4) / 100);
             IPlayer.AddWis(1);
         } else if (IItem.GetSetGem() == 203)
         {
-            IPlayer.AddDef((check*4)/100);
+            IPlayer.AddDef((check * 4) / 100);
             IPlayer.AddInt(1);
         } else if (IItem.GetSetGem() == 202)
         {
-            IPlayer.AddDef((check*4)/100);
+            IPlayer.AddDef((check * 4) / 100);
             IPlayer.AddHp(1);
         } else if (IItem.GetSetGem() == 201)
         {
-            IPlayer.AddDef((check*4)/100);
+            IPlayer.AddDef((check * 4) / 100);
             IPlayer.AddStr(1);
         }
 
@@ -604,7 +604,7 @@ void __fastcall ArmorPutOn(int Item, void *edx, int Player)
             if (IPlayer.IsOnline() && IPlayer.IsBuff(120))
             {
                 if (IItem.LevelLimit() > 5) {
-                    IItem.SetLevelLimit(IItem.LevelLimit()-5);
+                    IItem.SetLevelLimit(IItem.LevelLimit() - 5);
                 }
             }
 
@@ -613,7 +613,7 @@ void __fastcall ArmorPutOn(int Item, void *edx, int Player)
             if (IPlayer.IsOnline() && IPlayer.IsBuff(120))
             {
                 if (IItem.LevelLimit() > 5) {
-                    IItem.SetLevelLimit(IItem.LevelLimit()+5);
+                    IItem.SetLevelLimit(IItem.LevelLimit() + 5);
                 }
             }
         }
@@ -962,20 +962,20 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             {
                 if (FirstDemonGongType == 1)
                 {
-                    IPlayer.RemoveDef(DemonGongStatArmorEarth[0][FirstDemonGongStat-1]);
-                    IPlayer.RemoveOTP(DemonGongStatArmorEarth[1][FirstDemonGongStat-1]);
+                    IPlayer.RemoveDef(DemonGongStatArmorEarth[0][FirstDemonGongStat - 1]);
+                    IPlayer.RemoveOTP(DemonGongStatArmorEarth[1][FirstDemonGongStat - 1]);
                 }
 
                 if (FirstDemonGongType == 2)
                 {
-                    IPlayer.DecreaseMaxHp(DemonGongStatArmorWind[0][FirstDemonGongStat-1]);
-                    IPlayer.RemoveEva(DemonGongStatArmorWind[1][FirstDemonGongStat-1]);
+                    IPlayer.DecreaseMaxHp(DemonGongStatArmorWind[0][FirstDemonGongStat - 1]);
+                    IPlayer.RemoveEva(DemonGongStatArmorWind[1][FirstDemonGongStat - 1]);
                 }
 
                 if (FirstDemonGongType == 3)
                 {
-                    IPlayer.RemoveAgi(DemonGongStatArmorWater[0][FirstDemonGongStat-1]);
-                    IPlayer.RemoveDef(DemonGongStatArmorWater[1][FirstDemonGongStat-1]);
+                    IPlayer.RemoveAgi(DemonGongStatArmorWater[0][FirstDemonGongStat - 1]);
+                    IPlayer.RemoveDef(DemonGongStatArmorWater[1][FirstDemonGongStat - 1]);
                 }
             }
 
@@ -983,20 +983,20 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             {
                 if (SecondDemonGongType == 1)
                 {
-                    IPlayer.RemoveDef(DemonGongStatArmorEarth[0][SecondDemonGongStat-1]);
-                    IPlayer.RemoveOTP(DemonGongStatArmorEarth[1][SecondDemonGongStat-1]);
+                    IPlayer.RemoveDef(DemonGongStatArmorEarth[0][SecondDemonGongStat - 1]);
+                    IPlayer.RemoveOTP(DemonGongStatArmorEarth[1][SecondDemonGongStat - 1]);
                 }
 
                 if (SecondDemonGongType == 2)
                 {
-                    IPlayer.DecreaseMaxHp(DemonGongStatArmorWind[0][SecondDemonGongStat-1]);
-                    IPlayer.RemoveEva(DemonGongStatArmorWind[1][SecondDemonGongStat-1]);
+                    IPlayer.DecreaseMaxHp(DemonGongStatArmorWind[0][SecondDemonGongStat - 1]);
+                    IPlayer.RemoveEva(DemonGongStatArmorWind[1][SecondDemonGongStat - 1]);
                 }
 
                 if (SecondDemonGongType == 3)
                 {
-                    IPlayer.RemoveAgi(DemonGongStatArmorWater[0][SecondDemonGongStat-1]);
-                    IPlayer.RemoveDef(DemonGongStatArmorWater[1][SecondDemonGongStat-1]);
+                    IPlayer.RemoveAgi(DemonGongStatArmorWater[0][SecondDemonGongStat - 1]);
+                    IPlayer.RemoveDef(DemonGongStatArmorWater[1][SecondDemonGongStat - 1]);
                 }
             }
 
@@ -1008,9 +1008,9 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
                 {
                     if (IItem.GetType() == 3)
                     {
-                        IPlayer.RemoveDef((check*QigongChest[QigongType-1][0])/100);
-                        int Type = QigongChest[QigongType-1][1];
-                        int Stat = QigongChest[QigongType-1][2];
+                        IPlayer.RemoveDef((check * QigongChest[QigongType - 1][0]) / 100);
+                        int Type = QigongChest[QigongType - 1][1];
+                        int Stat = QigongChest[QigongType - 1][2];
 
                         if (Type == 0) {
                             IPlayer.RemoveStr(Stat);
@@ -1029,9 +1029,9 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
                         }
                     } else if (IItem.GetType() == 4)
                     {
-                        IPlayer.RemoveDef((check*QigongShort[QigongType-1][0])/100);
-                        int Type = QigongChest[QigongType-1][1];
-                        int Stat = QigongChest[QigongType-1][2];
+                        IPlayer.RemoveDef((check * QigongShort[QigongType - 1][0]) / 100);
+                        int Type = QigongChest[QigongType - 1][1];
+                        int Stat = QigongChest[QigongType - 1][2];
 
                         if (Type == 0) {
                             IPlayer.RemoveStr(Stat);
@@ -1049,9 +1049,9 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
                             IPlayer.RemoveAgi(Stat);
                         }
                     } else {
-                        IPlayer.RemoveDef((check*QigongMain[QigongType-1][0])/100);
-                        int Type = QigongChest[QigongType-1][1];
-                        int Stat = QigongChest[QigongType-1][2];
+                        IPlayer.RemoveDef((check * QigongMain[QigongType - 1][0]) / 100);
+                        int Type = QigongChest[QigongType - 1][1];
+                        int Stat = QigongChest[QigongType - 1][2];
 
                         if (Type == 0) {
                             IPlayer.RemoveStr(Stat);
@@ -1074,163 +1074,163 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
 
             if (IItem.GetSetGem() == 240)
             {
-                IPlayer.RemoveDef((check*18)/100);
+                IPlayer.RemoveDef((check * 18) / 100);
                 IPlayer.RemoveAgi(7);
             } else if (IItem.GetSetGem() == 239)
             {
-                IPlayer.RemoveDef((check*18)/100);
+                IPlayer.RemoveDef((check * 18) / 100);
                 IPlayer.RemoveWis(7);
             } else if (IItem.GetSetGem() == 238)
             {
-                IPlayer.RemoveDef((check*18)/100);
+                IPlayer.RemoveDef((check * 18) / 100);
                 IPlayer.RemoveInt(7);
             } else if (IItem.GetSetGem() == 237)
             {
-                IPlayer.RemoveDef((check*18)/100);
+                IPlayer.RemoveDef((check * 18) / 100);
                 IPlayer.RemoveHp(7);
             } else if (IItem.GetSetGem() == 236)
             {
-                IPlayer.RemoveDef((check*18)/100);
+                IPlayer.RemoveDef((check * 18) / 100);
                 IPlayer.RemoveStr(7);
             } else if (IItem.GetSetGem() == 235)
             {
-                IPlayer.RemoveDef((check*16)/100);
+                IPlayer.RemoveDef((check * 16) / 100);
                 IPlayer.RemoveAgi(5);
             } else if (IItem.GetSetGem() == 234)
             {
-                IPlayer.RemoveDef((check*16)/100);
+                IPlayer.RemoveDef((check * 16) / 100);
                 IPlayer.RemoveWis(5);
             } else if (IItem.GetSetGem() == 233)
             {
-                IPlayer.RemoveDef((check*16)/100);
+                IPlayer.RemoveDef((check * 16) / 100);
                 IPlayer.RemoveInt(5);
             } else if (IItem.GetSetGem() == 232)
             {
-                IPlayer.RemoveDef((check*16)/100);
+                IPlayer.RemoveDef((check * 16) / 100);
                 IPlayer.RemoveHp(5);
             } else if (IItem.GetSetGem() == 231)
             {
-                IPlayer.RemoveDef((check*16)/100);
+                IPlayer.RemoveDef((check * 16) / 100);
                 IPlayer.RemoveStr(5);
             } else if (IItem.GetSetGem() == 230)
             {
-                IPlayer.RemoveDef((check*14)/100);
+                IPlayer.RemoveDef((check * 14) / 100);
                 IPlayer.RemoveAgi(3);
             } else if (IItem.GetSetGem() == 229)
             {
-                IPlayer.RemoveDef((check*14)/100);
+                IPlayer.RemoveDef((check * 14) / 100);
                 IPlayer.RemoveWis(3);
             } else if (IItem.GetSetGem() == 228)
             {
-                IPlayer.RemoveDef((check*14)/100);
+                IPlayer.RemoveDef((check * 14) / 100);
                 IPlayer.RemoveInt(3);
             } else if (IItem.GetSetGem() == 227)
             {
-                IPlayer.RemoveDef((check*14)/100);
+                IPlayer.RemoveDef((check * 14) / 100);
                 IPlayer.RemoveHp(3);
             } else if (IItem.GetSetGem() == 226)
             {
-                IPlayer.RemoveDef((check*14)/100);
+                IPlayer.RemoveDef((check * 14) / 100);
                 IPlayer.RemoveStr(3);
             } else if (IItem.GetSetGem() == 225)
             {
-                IPlayer.RemoveDef((check*12)/100);
+                IPlayer.RemoveDef((check * 12) / 100);
                 IPlayer.RemoveAgi(3);
             } else if (IItem.GetSetGem() == 224)
             {
-                IPlayer.RemoveDef((check*12)/100);
+                IPlayer.RemoveDef((check * 12) / 100);
                 IPlayer.RemoveWis(3);
             } else if (IItem.GetSetGem() == 223)
             {
-                IPlayer.RemoveDef((check*12)/100);
+                IPlayer.RemoveDef((check * 12) / 100);
                 IPlayer.RemoveInt(3);
             } else if (IItem.GetSetGem() == 222)
             {
-                IPlayer.RemoveDef((check*12)/100);
+                IPlayer.RemoveDef((check * 12) / 100);
                 IPlayer.RemoveHp(3);
             } else if (IItem.GetSetGem() == 221)
             {
-                IPlayer.RemoveDef((check*12)/100);
+                IPlayer.RemoveDef((check * 12) / 100);
                 IPlayer.RemoveStr(3);
             } else if (IItem.GetSetGem() == 220)
             {
-                IPlayer.RemoveDef((check*10)/100);
+                IPlayer.RemoveDef((check * 10) / 100);
                 IPlayer.RemoveAgi(2);
             } else if (IItem.GetSetGem() == 219)
             {
-                IPlayer.RemoveDef((check*10)/100);
+                IPlayer.RemoveDef((check * 10) / 100);
                 IPlayer.RemoveWis(2);
             } else if (IItem.GetSetGem() == 218)
             {
-                IPlayer.RemoveDef((check*10)/100);
+                IPlayer.RemoveDef((check * 10) / 100);
                 IPlayer.RemoveInt(2);
             } else if (IItem.GetSetGem() == 217)
             {
-                IPlayer.RemoveDef((check*10)/100);
+                IPlayer.RemoveDef((check * 10) / 100);
                 IPlayer.RemoveHp(2);
             } else if (IItem.GetSetGem() == 216)
             {
-                IPlayer.RemoveDef((check*10)/100);
+                IPlayer.RemoveDef((check * 10) / 100);
                 IPlayer.RemoveStr(2);
             } else if (IItem.GetSetGem() == 215)
             {
-                IPlayer.RemoveDef((check*8)/100);
+                IPlayer.RemoveDef((check * 8) / 100);
                 IPlayer.RemoveAgi(2);
             } else if (IItem.GetSetGem() == 214)
             {
-                IPlayer.RemoveDef((check*8)/100);
+                IPlayer.RemoveDef((check * 8) / 100);
                 IPlayer.RemoveWis(2);
             } else if (IItem.GetSetGem() == 213)
             {
-                IPlayer.RemoveDef((check*8)/100);
+                IPlayer.RemoveDef((check * 8) / 100);
                 IPlayer.RemoveInt(2);
             } else if (IItem.GetSetGem() == 212)
             {
-                IPlayer.RemoveDef((check*8)/100);
+                IPlayer.RemoveDef((check * 8) / 100);
                 IPlayer.RemoveHp(2);
             } else if (IItem.GetSetGem() == 211)
             {
-                IPlayer.RemoveDef((check*8)/100);
+                IPlayer.RemoveDef((check * 8) / 100);
                 IPlayer.RemoveStr(2);
             } else if (IItem.GetSetGem() == 210)
             {
-                IPlayer.RemoveDef((check*6)/100);
+                IPlayer.RemoveDef((check * 6) / 100);
                 IPlayer.RemoveAgi(1);
             } else if (IItem.GetSetGem() == 209)
             {
-                IPlayer.RemoveDef((check*6)/100);
+                IPlayer.RemoveDef((check * 6) / 100);
                 IPlayer.RemoveWis(1);
             } else if (IItem.GetSetGem() == 208)
             {
-                IPlayer.RemoveDef((check*6)/100);
+                IPlayer.RemoveDef((check * 6) / 100);
                 IPlayer.RemoveInt(1);
             } else if (IItem.GetSetGem() == 207)
             {
-                IPlayer.RemoveDef((check*6)/100);
+                IPlayer.RemoveDef((check * 6) / 100);
                 IPlayer.RemoveHp(1);
             } else if (IItem.GetSetGem() == 206)
             {
-                IPlayer.RemoveDef((check*6)/100);
+                IPlayer.RemoveDef((check * 6) / 100);
                 IPlayer.RemoveStr(1);
             } else if (IItem.GetSetGem() == 205)
             {
-                IPlayer.RemoveDef((check*4)/100);
+                IPlayer.RemoveDef((check * 4) / 100);
                 IPlayer.RemoveAgi(1);
             } else if (IItem.GetSetGem() == 204)
             {
-                IPlayer.RemoveDef((check*4)/100);
+                IPlayer.RemoveDef((check * 4) / 100);
                 IPlayer.RemoveWis(1);
             } else if (IItem.GetSetGem() == 203)
             {
-                IPlayer.RemoveDef((check*4)/100);
+                IPlayer.RemoveDef((check * 4) / 100);
                 IPlayer.RemoveInt(1);
             } else if (IItem.GetSetGem() == 202)
             {
-                IPlayer.RemoveDef((check*4)/100);
+                IPlayer.RemoveDef((check * 4) / 100);
                 IPlayer.RemoveHp(1);
             } else if (IItem.GetSetGem() == 201)
             {
-                IPlayer.RemoveDef((check*4)/100);
+                IPlayer.RemoveDef((check * 4) / 100);
                 IPlayer.RemoveStr(1);
             }
         }

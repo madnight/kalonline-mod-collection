@@ -32,12 +32,12 @@ void __fastcall Blessing(IChar IPlayer, int pPacket, int pPos)
 
                 if (IPlayer.GetID() != Target.GetID())
                 {
-                    Target.Buff(24, (nSkillGrade*3)+3, 40);
+                    Target.Buff(24, (nSkillGrade * 3) + 3, 40);
                     Target.RemoveBuffIcon(0, 0, 703, 34);
                     CChar::AddMState(Target.GetOffset(), 0, 2147483648);
                 }
 
-                IPlayer.Buff(24, (nSkillGrade*3)+3, 40);
+                IPlayer.Buff(24, (nSkillGrade * 3) + 3, 40);
                 IPlayer.RemoveBuffIcon(0, 0, 703, 34);
                 CChar::AddMState(IPlayer.GetOffset(), 0, 2147483648);
                 IPlayer._ShowBattleAnimation(Target, 69);

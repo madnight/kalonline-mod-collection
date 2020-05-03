@@ -107,7 +107,7 @@ void __fastcall LightningSlash(IChar IPlayer, int pPacket, int pPos)
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 28;
                 CheckContinueSkill[IPlayer.GetPID()].PlayerTarget = Target.GetOffset();
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillGrade = xSkill.GetGrade();
-                CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = xSkill.GetGrade()+1;
+                CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = xSkill.GetGrade() + 1;
                 CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = 0;
             }
         }

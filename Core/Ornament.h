@@ -382,9 +382,9 @@ int __fastcall OrnamentPutOn(int Itemx, void *edx, int Playerx)
                 CDBSocket::Write(89, "ddd", Player.GetPID(), (int)time(0) + GetPetTime,
                     Item.GetIID());
                 CPlayer::Write(Player.GetOffset(), 0xFF, "ddd", 230, Item.GetIID(),
-                    GetPetTime*1000);
-                *(DWORD*)(Itemx+68) = GetTickCount() + (2000*GetPetTime);
-                *(DWORD*)(Itemx+72) = 0;
+                    GetPetTime * 1000);
+                *(DWORD*)(Itemx + 68) = GetTickCount() + (2000 * GetPetTime);
+                *(DWORD*)(Itemx + 72) = 0;
                 CItem::OnTimer(Itemx, 0);
             }
 
@@ -462,55 +462,57 @@ int __fastcall OrnamentPutOff(void *Itemx, void *edx, int Playerx)
 
                 int Str = Player.GetStr(), Wis = Player.GetWis(), Hth = Player.GetHth(),
                     Int = Player.GetInt(), Agi = Player.GetAgi();
-                int Otp = (15*Str/54), MinPAtk = (11*Str-80)/30, MaxPAtk = (8*Str-25)/15,
-                    Eva = Agi/3, HpPoint = ((2*Hth*Hth)/100);
-                int MpPoint = ((Wis+2*Wis*Wis)/100), MinMAtk = ((7*Int-20)/12)+(Wis/7),
-                    MaxMAtk = (7*Int/12)+(14*Wis/45);
+                int Otp = (15 * Str / 54), MinPAtk = (11 * Str - 80) / 30,
+                    MaxPAtk = (8 * Str - 25) / 15,
+                    Eva = Agi / 3, HpPoint = ((2 * Hth * Hth) / 100);
+                int MpPoint = ((Wis + 2 * Wis * Wis) / 100),
+                    MinMAtk = ((7 * Int - 20) / 12) + (Wis / 7),
+                    MaxMAtk = (7 * Int / 12) + (14 * Wis / 45);
 
                 if (Stat && Mirror.CheckIndex() == 3381)
                 {
                     if (Type == 0) {
-                        Player.RemoveStr(((Str*Stat)/100)+0.5);
+                        Player.RemoveStr(((Str * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 1) {
-                        Player.RemoveWis(((Wis*Stat)/100)+0.5);
+                        Player.RemoveWis(((Wis * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 2) {
-                        Player.RemoveInt(((Int*Stat)/100)+0.5);
+                        Player.RemoveInt(((Int * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 3) {
-                        Player.RemoveHp(((Hth*Stat)/100)+0.5);
+                        Player.RemoveHp(((Hth * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 4) {
-                        Player.RemoveAgi(((Agi*Stat)/100)+0.5);
+                        Player.RemoveAgi(((Agi * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 5) {
-                        Player.RemoveOTP(((Otp*Stat)/100)+0.5);
+                        Player.RemoveOTP(((Otp * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 6) {
-                        Player.RemoveEva(((Eva*Stat)/100)+0.5);
+                        Player.RemoveEva(((Eva * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 7) {
-                        Player.RemoveDef(Stat+0.5);
+                        Player.RemoveDef(Stat + 0.5);
                     }
 
                     if (Type == 10) {
-                        Player.DecreaseMaxHp(((HpPoint*Stat)/100)+0.5);
+                        Player.DecreaseMaxHp(((HpPoint * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 11) {
-                        Player.DecreaseMaxMp(((MpPoint*Stat)/100)+0.5);
+                        Player.DecreaseMaxMp(((MpPoint * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 12) {
-                        Player.DecreaseMovingSpeed((3*Stat)+0.5);
+                        Player.DecreaseMovingSpeed((3 * Stat) + 0.5);
                     }
 
                     if (Type == 12) {
@@ -518,27 +520,27 @@ int __fastcall OrnamentPutOff(void *Itemx, void *edx, int Playerx)
                     }
 
                     if (Type == 13) {
-                        Player.RemoveMinAttack(((MinPAtk*Stat)/100)+0.5);
+                        Player.RemoveMinAttack(((MinPAtk * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 14) {
-                        Player.RemoveMaxAttack(((MaxPAtk*Stat)/100)+0.5);
+                        Player.RemoveMaxAttack(((MaxPAtk * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 15) {
-                        Player.DecreaseCritRate((Stat/3)+0.5);
+                        Player.DecreaseCritRate((Stat / 3) + 0.5);
                     }
 
                     if (Type == 16) {
-                        Player.DecreaseCritDamage((Stat/2)+0.5);
+                        Player.DecreaseCritDamage((Stat / 2) + 0.5);
                     }
 
                     if (Type == 18) {
-                        Player.RemoveMinAttack(((MinMAtk*Stat)/100)+0.5);
+                        Player.RemoveMinAttack(((MinMAtk * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 19) {
-                        Player.RemoveMaxAttack(((MaxMAtk*Stat)/100)+0.5);
+                        Player.RemoveMaxAttack(((MaxMAtk * Stat) / 100) + 0.5);
                     }
 
                     if (Type == 20) {
@@ -553,47 +555,47 @@ int __fastcall OrnamentPutOff(void *Itemx, void *edx, int Playerx)
                 if (Stat && Mirror.CheckIndex() == 3382)
                 {
                     if (Type == 0) {
-                        Player.RemoveStr(((Str*Stat)/90)+0.5);
+                        Player.RemoveStr(((Str * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 1) {
-                        Player.RemoveWis(((Wis*Stat)/90)+0.5);
+                        Player.RemoveWis(((Wis * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 2) {
-                        Player.RemoveInt(((Int*Stat)/90)+0.5);
+                        Player.RemoveInt(((Int * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 3) {
-                        Player.RemoveHp(((Hth*Stat)/90)+0.5);
+                        Player.RemoveHp(((Hth * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 4) {
-                        Player.RemoveAgi(((Agi*Stat)/90)+0.5);
+                        Player.RemoveAgi(((Agi * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 5) {
-                        Player.RemoveOTP(((Otp*Stat)/90)+0.5);
+                        Player.RemoveOTP(((Otp * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 6) {
-                        Player.RemoveEva(((Eva*Stat)/90)+0.5);
+                        Player.RemoveEva(((Eva * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 7) {
-                        Player.RemoveDef(Stat+1.5);
+                        Player.RemoveDef(Stat + 1.5);
                     }
 
                     if (Type == 10) {
-                        Player.DecreaseMaxHp(((HpPoint*Stat)/90)+0.5);
+                        Player.DecreaseMaxHp(((HpPoint * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 11) {
-                        Player.DecreaseMaxMp(((MpPoint*Stat)/90)+0.5);
+                        Player.DecreaseMaxMp(((MpPoint * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 12) {
-                        Player.DecreaseMovingSpeed((3*Stat)+1.5);
+                        Player.DecreaseMovingSpeed((3 * Stat) + 1.5);
                     }
 
                     if (Type == 12) {
@@ -601,27 +603,27 @@ int __fastcall OrnamentPutOff(void *Itemx, void *edx, int Playerx)
                     }
 
                     if (Type == 13) {
-                        Player.RemoveMinAttack(((MinPAtk*Stat)/90)+0.5);
+                        Player.RemoveMinAttack(((MinPAtk * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 14) {
-                        Player.RemoveMaxAttack(((MaxPAtk*Stat)/90)+0.5);
+                        Player.RemoveMaxAttack(((MaxPAtk * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 15) {
-                        Player.DecreaseCritRate((Stat/3)+1.5);
+                        Player.DecreaseCritRate((Stat / 3) + 1.5);
                     }
 
                     if (Type == 16) {
-                        Player.DecreaseCritDamage((Stat/2)+1.5);
+                        Player.DecreaseCritDamage((Stat / 2) + 1.5);
                     }
 
                     if (Type == 18) {
-                        Player.RemoveMinAttack(((MinMAtk*Stat)/90)+0.5);
+                        Player.RemoveMinAttack(((MinMAtk * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 19) {
-                        Player.RemoveMaxAttack(((MaxMAtk*Stat)/90)+0.5);
+                        Player.RemoveMaxAttack(((MaxMAtk * Stat) / 90) + 0.5);
                     }
 
                     if (Type == 20) {
@@ -636,47 +638,47 @@ int __fastcall OrnamentPutOff(void *Itemx, void *edx, int Playerx)
                 if (Stat && Mirror.CheckIndex() == 3383)
                 {
                     if (Type == 0) {
-                        Player.RemoveStr(((Str*Stat)/80)+0.5);
+                        Player.RemoveStr(((Str * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 1) {
-                        Player.RemoveWis(((Wis*Stat)/80)+0.5);
+                        Player.RemoveWis(((Wis * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 2) {
-                        Player.RemoveInt(((Int*Stat)/80)+0.5);
+                        Player.RemoveInt(((Int * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 3) {
-                        Player.RemoveHp(((Hth*Stat)/80)+0.5);
+                        Player.RemoveHp(((Hth * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 4) {
-                        Player.RemoveAgi(((Agi*Stat)/80)+0.5);
+                        Player.RemoveAgi(((Agi * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 5) {
-                        Player.RemoveOTP(((Otp*Stat)/80)+0.5);
+                        Player.RemoveOTP(((Otp * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 6) {
-                        Player.RemoveEva(((Eva*Stat)/80)+0.5);
+                        Player.RemoveEva(((Eva * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 7) {
-                        Player.RemoveDef(Stat+2.5);
+                        Player.RemoveDef(Stat + 2.5);
                     }
 
                     if (Type == 10) {
-                        Player.DecreaseMaxHp(((HpPoint*Stat)/80)+0.5);
+                        Player.DecreaseMaxHp(((HpPoint * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 11) {
-                        Player.DecreaseMaxMp(((MpPoint*Stat)/80)+0.5);
+                        Player.DecreaseMaxMp(((MpPoint * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 12) {
-                        Player.DecreaseMovingSpeed((3*Stat)+2.5);
+                        Player.DecreaseMovingSpeed((3 * Stat) + 2.5);
                     }
 
                     if (Type == 12) {
@@ -684,27 +686,27 @@ int __fastcall OrnamentPutOff(void *Itemx, void *edx, int Playerx)
                     }
 
                     if (Type == 13) {
-                        Player.RemoveMinAttack(((MinPAtk*Stat)/80)+0.5);
+                        Player.RemoveMinAttack(((MinPAtk * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 14) {
-                        Player.RemoveMaxAttack(((MaxPAtk*Stat)/80)+0.5);
+                        Player.RemoveMaxAttack(((MaxPAtk * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 15) {
-                        Player.DecreaseCritRate((Stat/3)+2.5);
+                        Player.DecreaseCritRate((Stat / 3) + 2.5);
                     }
 
                     if (Type == 16) {
-                        Player.DecreaseCritDamage((Stat/2)+2.5);
+                        Player.DecreaseCritDamage((Stat / 2) + 2.5);
                     }
 
                     if (Type == 18) {
-                        Player.RemoveMinAttack(((MinMAtk*Stat)/80)+0.5);
+                        Player.RemoveMinAttack(((MinMAtk * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 19) {
-                        Player.RemoveMaxAttack(((MaxMAtk*Stat)/80)+0.5);
+                        Player.RemoveMaxAttack(((MaxMAtk * Stat) / 80) + 0.5);
                     }
 
                     if (Type == 20) {
@@ -1044,55 +1046,57 @@ int __fastcall OrnamentApplySpec(void *Itemx, void *edx, int Playerx)
 
             int Str = Player.GetStr(), Wis = Player.GetWis(), Hth = Player.GetHth(),
                 Int = Player.GetInt(), Agi = Player.GetAgi();
-            int Otp = (15*Str/54), MinPAtk = (11*Str-80)/30, MaxPAtk = (8*Str-25)/15,
-                Eva = Agi/3, HpPoint = ((2*Hth*Hth)/100);
-            int MpPoint = ((Wis+2*Wis*Wis)/100), MinMAtk = ((7*Int-20)/12)+(Wis/7),
-                MaxMAtk = (7*Int/12)+(14*Wis/45);
+            int Otp = (15 * Str / 54), MinPAtk = (11 * Str - 80) / 30,
+                MaxPAtk = (8 * Str - 25) / 15,
+                Eva = Agi / 3, HpPoint = ((2 * Hth * Hth) / 100);
+            int MpPoint = ((Wis + 2 * Wis * Wis) / 100),
+                MinMAtk = ((7 * Int - 20) / 12) + (Wis / 7),
+                MaxMAtk = (7 * Int / 12) + (14 * Wis / 45);
 
             if (Stat && Mirror.CheckIndex() == 3381)
             {
                 if (Type == 0) {
-                    Player.AddStr(((Str*Stat)/100)+0.5);
+                    Player.AddStr(((Str * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 1) {
-                    Player.AddWis(((Wis*Stat)/100)+0.5);
+                    Player.AddWis(((Wis * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 2) {
-                    Player.AddInt(((Int*Stat)/100)+0.5);
+                    Player.AddInt(((Int * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 3) {
-                    Player.AddHp(((Hth*Stat)/100)+0.5);
+                    Player.AddHp(((Hth * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 4) {
-                    Player.AddAgi(((Agi*Stat)/100)+0.5);
+                    Player.AddAgi(((Agi * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 5) {
-                    Player.AddOTP(((Otp*Stat)/100)+0.5);
+                    Player.AddOTP(((Otp * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 6) {
-                    Player.AddEva(((Eva*Stat)/100)+0.5);
+                    Player.AddEva(((Eva * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 7) {
-                    Player.AddDef(Stat+0.5);
+                    Player.AddDef(Stat + 0.5);
                 }
 
                 if (Type == 10) {
-                    Player.IncreaseMaxHp(((HpPoint*Stat)/100)+0.5);
+                    Player.IncreaseMaxHp(((HpPoint * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 11) {
-                    Player.IncreaseMaxMp(((MpPoint*Stat)/100)+0.5);
+                    Player.IncreaseMaxMp(((MpPoint * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 12 && !Player.IsBuff(418)) {
-                    Player.IncreaseMovingSpeed((3*Stat)+0.5);
+                    Player.IncreaseMovingSpeed((3 * Stat) + 0.5);
                 }
 
                 if (Type == 12) {
@@ -1100,27 +1104,27 @@ int __fastcall OrnamentApplySpec(void *Itemx, void *edx, int Playerx)
                 }
 
                 if (Type == 13) {
-                    Player.AddMinAttack(((MinPAtk*Stat)/100)+0.5);
+                    Player.AddMinAttack(((MinPAtk * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 14) {
-                    Player.AddMaxAttack(((MaxPAtk*Stat)/100)+0.5);
+                    Player.AddMaxAttack(((MaxPAtk * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 15) {
-                    Player.IncreaseCritRate((Stat/3)+0.5);
+                    Player.IncreaseCritRate((Stat / 3) + 0.5);
                 }
 
                 if (Type == 16) {
-                    Player.IncreaseCritDamage((Stat/2)+0.5);
+                    Player.IncreaseCritDamage((Stat / 2) + 0.5);
                 }
 
                 if (Type == 18) {
-                    Player.AddMinAttack(((MinMAtk*Stat)/100)+0.5);
+                    Player.AddMinAttack(((MinMAtk * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 19) {
-                    Player.AddMaxAttack(((MaxMAtk*Stat)/100)+0.5);
+                    Player.AddMaxAttack(((MaxMAtk * Stat) / 100) + 0.5);
                 }
 
                 if (Type == 20) {
@@ -1135,47 +1139,47 @@ int __fastcall OrnamentApplySpec(void *Itemx, void *edx, int Playerx)
             if (Stat && Mirror.CheckIndex() == 3382)
             {
                 if (Type == 0) {
-                    Player.AddStr(((Str*Stat)/90)+0.5);
+                    Player.AddStr(((Str * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 1) {
-                    Player.AddWis(((Wis*Stat)/90)+0.5);
+                    Player.AddWis(((Wis * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 2) {
-                    Player.AddInt(((Int*Stat)/90)+0.5);
+                    Player.AddInt(((Int * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 3) {
-                    Player.AddHp(((Hth*Stat)/90)+0.5);
+                    Player.AddHp(((Hth * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 4) {
-                    Player.AddAgi(((Agi*Stat)/90)+0.5);
+                    Player.AddAgi(((Agi * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 5) {
-                    Player.AddOTP(((Otp*Stat)/90)+0.5);
+                    Player.AddOTP(((Otp * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 6) {
-                    Player.AddEva(((Eva*Stat)/90)+0.5);
+                    Player.AddEva(((Eva * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 7) {
-                    Player.AddDef(Stat+1.5);
+                    Player.AddDef(Stat + 1.5);
                 }
 
                 if (Type == 10) {
-                    Player.IncreaseMaxHp(((HpPoint*Stat)/90)+0.5);
+                    Player.IncreaseMaxHp(((HpPoint * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 11) {
-                    Player.IncreaseMaxMp(((MpPoint*Stat)/90)+0.5);
+                    Player.IncreaseMaxMp(((MpPoint * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 12 && !Player.IsBuff(418)) {
-                    Player.IncreaseMovingSpeed((3*Stat)+1.5);
+                    Player.IncreaseMovingSpeed((3 * Stat) + 1.5);
                 }
 
                 if (Type == 12) {
@@ -1183,27 +1187,27 @@ int __fastcall OrnamentApplySpec(void *Itemx, void *edx, int Playerx)
                 }
 
                 if (Type == 13) {
-                    Player.AddMinAttack(((MinPAtk*Stat)/90)+0.5);
+                    Player.AddMinAttack(((MinPAtk * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 14) {
-                    Player.AddMaxAttack(((MaxPAtk*Stat)/90)+0.5);
+                    Player.AddMaxAttack(((MaxPAtk * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 15) {
-                    Player.IncreaseCritRate((Stat/3)+1.5);
+                    Player.IncreaseCritRate((Stat / 3) + 1.5);
                 }
 
                 if (Type == 16) {
-                    Player.IncreaseCritDamage((Stat/2)+1.5);
+                    Player.IncreaseCritDamage((Stat / 2) + 1.5);
                 }
 
                 if (Type == 18) {
-                    Player.AddMinAttack(((MinMAtk*Stat)/90)+0.5);
+                    Player.AddMinAttack(((MinMAtk * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 19) {
-                    Player.AddMaxAttack(((MaxMAtk*Stat)/90)+0.5);
+                    Player.AddMaxAttack(((MaxMAtk * Stat) / 90) + 0.5);
                 }
 
                 if (Type == 20) {
@@ -1218,47 +1222,47 @@ int __fastcall OrnamentApplySpec(void *Itemx, void *edx, int Playerx)
             if (Stat && Mirror.CheckIndex() == 3383)
             {
                 if (Type == 0) {
-                    Player.AddStr(((Str*Stat)/80)+0.5);
+                    Player.AddStr(((Str * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 1) {
-                    Player.AddWis(((Wis*Stat)/80)+0.5);
+                    Player.AddWis(((Wis * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 2) {
-                    Player.AddInt(((Int*Stat)/80)+0.5);
+                    Player.AddInt(((Int * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 3) {
-                    Player.AddHp(((Hth*Stat)/80)+0.5);
+                    Player.AddHp(((Hth * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 4) {
-                    Player.AddAgi(((Agi*Stat)/80)+0.5);
+                    Player.AddAgi(((Agi * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 5) {
-                    Player.AddOTP(((Otp*Stat)/80)+0.5);
+                    Player.AddOTP(((Otp * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 6) {
-                    Player.AddEva(((Eva*Stat)/80)+0.5);
+                    Player.AddEva(((Eva * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 7) {
-                    Player.AddDef(Stat+2.5);
+                    Player.AddDef(Stat + 2.5);
                 }
 
                 if (Type == 10) {
-                    Player.IncreaseMaxHp(((HpPoint*Stat)/80)+0.5);
+                    Player.IncreaseMaxHp(((HpPoint * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 11) {
-                    Player.IncreaseMaxMp(((MpPoint*Stat)/80)+0.5);
+                    Player.IncreaseMaxMp(((MpPoint * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 12 && !Player.IsBuff(418)) {
-                    Player.IncreaseMovingSpeed((3*Stat)+2.5);
+                    Player.IncreaseMovingSpeed((3 * Stat) + 2.5);
                 }
 
                 if (Type == 12) {
@@ -1266,27 +1270,27 @@ int __fastcall OrnamentApplySpec(void *Itemx, void *edx, int Playerx)
                 }
 
                 if (Type == 13) {
-                    Player.AddMinAttack(((MinPAtk*Stat)/80)+0.5);
+                    Player.AddMinAttack(((MinPAtk * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 14) {
-                    Player.AddMaxAttack(((MaxPAtk*Stat)/80)+0.5);
+                    Player.AddMaxAttack(((MaxPAtk * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 15) {
-                    Player.IncreaseCritRate((Stat/3)+2.5);
+                    Player.IncreaseCritRate((Stat / 3) + 2.5);
                 }
 
                 if (Type == 16) {
-                    Player.IncreaseCritDamage((Stat/2)+2.5);
+                    Player.IncreaseCritDamage((Stat / 2) + 2.5);
                 }
 
                 if (Type == 18) {
-                    Player.AddMinAttack(((MinMAtk*Stat)/80)+0.5);
+                    Player.AddMinAttack(((MinMAtk * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 19) {
-                    Player.AddMaxAttack(((MaxMAtk*Stat)/80)+0.5);
+                    Player.AddMaxAttack(((MaxMAtk * Stat) / 80) + 0.5);
                 }
 
                 if (Type == 20) {
@@ -1638,7 +1642,7 @@ signed int __fastcall OrnamentChangePrefix(void *Item, void* _edx, int Player,
 
     for (signed int i = 0; i < 2; ++i)
     {
-        if (Rate <= (int)*(DWORD*)(Chance + 4 * i))
+        if (Rate <= (int) * (DWORD*)(Chance + 4 * i))
         {
             NewPrefix = *(DWORD *)(Argument + 4 * i);
             break;

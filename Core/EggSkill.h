@@ -14,9 +14,10 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx,
 
     if (IPlayer.IsValid() && CChar::IsGState((int)IPlayer.GetOffset(), 512))
     {
-        if (EggCooldownTable.count(IPlayer.GetPID()+4000000000+(SkillID*1000000))) {
-            CooldownCheck = EggCooldownTable.find(IPlayer.GetPID()+4000000000+
-                    (SkillID*1000000))->second;
+        if (EggCooldownTable.count(IPlayer.GetPID() + 4000000000 +
+                (SkillID * 1000000))) {
+            CooldownCheck = EggCooldownTable.find(IPlayer.GetPID() + 4000000000 +
+                    (SkillID * 1000000))->second;
         }
 
         int nTargetID = 0;
@@ -45,8 +46,9 @@ void __fastcall ExecuteTransformSkill(void *pSkill, void* edx,
             IPlayer.SystemMessage("Invalid egg skill time detected!", TEXTCOLOR_RED);
             return;
         } else {
-            EggCooldownTable[IPlayer.GetPID()+4000000000+(SkillID*1000000)] = GetTickCount()
-                +CdTime+DelayTime;
+            EggCooldownTable[IPlayer.GetPID() + 4000000000 + (SkillID * 1000000)] =
+                GetTickCount()
+                + CdTime + DelayTime;
         }
 
         if (IPlayer.IsBuff(327)) {

@@ -30,12 +30,12 @@ void __fastcall Incapacitation(IChar IPlayer)
                 {
                     if (!Object.IsBuff(395) && Object.GetDef() >= 140)
                     {
-                        Object.Buff(395, 8+(xSkill.GetGrade()*2), 0);
-                        Object.Buff(391+xSkill.GetGrade(), 15+(xSkill.GetGrade()*2), 0);
-                        Object.RemoveDef(80+(xSkill.GetGrade()*20));
+                        Object.Buff(395, 8 + (xSkill.GetGrade() * 2), 0);
+                        Object.Buff(391 + xSkill.GetGrade(), 15 + (xSkill.GetGrade() * 2), 0);
+                        Object.RemoveDef(80 + (xSkill.GetGrade() * 20));
 
                         if (Object.GetType() == 0) {
-                            Object.SetBuffIcon(8000+(2000*xSkill.GetGrade()), 0, 4242, 950);
+                            Object.SetBuffIcon(8000 + (2000 * xSkill.GetGrade()), 0, 4242, 950);
                         }
                     }
                 }

@@ -84,7 +84,8 @@ void __fastcall ProvocationOfBlow(IChar IPlayer, int pPacket, int pPos)
                         if (IPlayer.IsOnline() && IPlayer.IsValid() && Object.IsOnline()
                             && Object.IsValid() && Object.GetType() == 1 && Object.GetCurHp() > 0
                             && Object.IsMobAggressive() && Object.IsMobHaveTarget())
-                            CMonsterReal::AddHostility(Object.GetOffset(), (int)IPlayer.GetOffset(), nDmg*3,
+                            CMonsterReal::AddHostility(Object.GetOffset(), (int)IPlayer.GetOffset(),
+                                nDmg * 3,
                                 0);
                     }
 

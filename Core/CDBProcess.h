@@ -119,7 +119,8 @@ int __cdecl CDBProcess(char *Data)
         CPacket::xRead((void*)(Data + 3), "ddd", &PID, &Type, &Remain);
 
         if (PID && Type && Remain) {
-            SetBuffx.insert(std::pair<int, int>(PID+4000000000+(Type*1000000), Remain));
+            SetBuffx.insert(std::pair<int, int>(PID + 4000000000 + (Type * 1000000),
+                    Remain));
         }
 
         return 0;
@@ -176,11 +177,11 @@ int __cdecl CDBProcess(char *Data)
                             GetPetTime = PetTime.find(xIndex)->second.Time;
                         }
 
-                        *(DWORD*)(MyItem+68) = GetTickCount() + (2000*GetPetTime);
-                        *(DWORD*)(MyItem+72) = 0;
+                        *(DWORD*)(MyItem + 68) = GetTickCount() + (2000 * GetPetTime);
+                        *(DWORD*)(MyItem + 72) = 0;
                         CItem::OnTimer(MyItem, 0);
                         CPlayer::Write(IPlayer.GetOffset(), 0xFF, "ddd", 230, IID,
-                            (PetLifeCheck.find(IID)->second.Time-(int)time(0))*1000);
+                            (PetLifeCheck.find(IID)->second.Time - (int)time(0)) * 1000);
                     }
                 }
             }

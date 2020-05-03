@@ -45,17 +45,17 @@ void __fastcall Confusion(IChar IPlayer, int pPacket, int pPos)
                 if (IPlayer.CheckHit(Target, 10))
                 {
                     if (Target.GetType() == 1) {
-                        Target.Buff(7, 2+(nSkillGrade*2), 0);
+                        Target.Buff(7, 2 + (nSkillGrade * 2), 0);
                     }
                     else {
-                        Target.Buff(7, 2+(nSkillGrade), 0);
+                        Target.Buff(7, 2 + (nSkillGrade), 0);
                     }
 
                     if (!Target.IsBuff(356)) {
-                        Target.SendGStateEx(Target.GetGStateEx()+64);
+                        Target.SendGStateEx(Target.GetGStateEx() + 64);
                     }
 
-                    Target.Buff(356, 2+(nSkillGrade*2), 0);
+                    Target.Buff(356, 2 + (nSkillGrade * 2), 0);
                 } else {
                     IPlayer._ShowBattleMiss(Target, 9);
                 }
