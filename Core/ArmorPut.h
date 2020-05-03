@@ -2,7 +2,7 @@ int getItemStat(int x, int y) {
     return (GetItemStat.find(IItem.GetIID())->second % x) / y;
 }
 
-void playerAddStats (int x, int y, int z) {
+void playerAddStats(int x, int y, int z) {
     IPlayer.AddDef(z / 100);
     switch ( x % 5 ) {
         case 0:
@@ -16,6 +16,12 @@ void playerAddStats (int x, int y, int z) {
         case 4:
             IPlayer.AddWis(y);
     }
+}
+
+void playerAddAgiStrInt(int value) {
+    IPlayer.AddAgi(value);
+    IPlayer.AddStr(value);
+    IPlayer.AddInt(value);
 }
 
 void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
@@ -179,9 +185,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 Stat = 9;
             }
 
-            IPlayer.AddAgi(Stat);
-            IPlayer.AddStr(Stat);
-            IPlayer.AddInt(Stat);
+            playerAddAgiStrInt(Stat);
 
             switch (IItem.GetType()) {
                 case 2:
@@ -193,7 +197,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 case 5:
                     BeadOfFire[IPlayer.GetPID()].Gloves = Grade;
                 case 6:
-                BeadOfFire[IPlayer.GetPID()].Boots = Grade;
+                    BeadOfFire[IPlayer.GetPID()].Boots = Grade;
             }
 
             if (!BeadOfFire.count(IPlayer.GetPID())) {
@@ -205,129 +209,97 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
             if (bof.Boots == 46 && bof.Short == 46 && bof.Gloves == 46 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 46;
-                IPlayer.AddAgi(1);
-                IPlayer.AddStr(1);
-                IPlayer.AddInt(1);
+                playerAddAgiStrInt(1);
             }
 
             if (bof.Helmet == 46 && bof.Chest == 46 && bof.HalfSet == 46 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 46;
-                IPlayer.AddAgi(1);
-                IPlayer.AddStr(1);
-                IPlayer.AddInt(1);
+                playerAddAgiStrInt(1);
             }
 
             if (bof.Boots == 50 && bof.Short == 50 && bof.Gloves == 50 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 50;
-                IPlayer.AddAgi(2);
-                IPlayer.AddStr(2);
-                IPlayer.AddInt(2);
+                playerAddAgiStrInt(2);
             }
 
             if (bof.Helmet == 50 && bof.Chest == 50 && bof.HalfSet == 50 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 50;
-                IPlayer.AddAgi(2);
-                IPlayer.AddStr(2);
-                IPlayer.AddInt(2);
+                playerAddAgiStrInt(2);
             }
 
             if (bof.Boots == 55 && bof.Short == 55 && bof.Gloves == 55 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 55;
-                IPlayer.AddAgi(3);
-                IPlayer.AddStr(3);
-                IPlayer.AddInt(3);
+                playerAddAgiStrInt(3);
             }
 
             if (bof.Helmet == 55 && bof.Chest == 55 && bof.HalfSet == 55 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 55;
-                IPlayer.AddAgi(3);
-                IPlayer.AddStr(3);
-                IPlayer.AddInt(3);
+                playerAddAgiStrInt(3);
             }
 
             if (bof.Boots == 60 && bof.Short == 60 && bof.Gloves == 60 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 60;
-                IPlayer.AddAgi(4);
-                IPlayer.AddStr(4);
-                IPlayer.AddInt(4);
+                playerAddAgiStrInt(4);
             }
 
             if (bof.Helmet == 60 && bof.Chest == 60 && bof.HalfSet == 60 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 60;
-                IPlayer.AddAgi(4);
-                IPlayer.AddStr(4);
-                IPlayer.AddInt(4);
+                playerAddAgiStrInt(4);
             }
 
             if (bof.Boots == 65 && bof.Short == 65 && bof.Gloves == 65 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 65;
-                IPlayer.AddAgi(5);
-                IPlayer.AddStr(5);
-                IPlayer.AddInt(5);
+                playerAddAgiStrInt(5);
             }
 
             if (bof.Helmet == 65 && bof.Chest == 65 && bof.HalfSet == 65 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 65;
-                IPlayer.AddAgi(5);
-                IPlayer.AddStr(5);
-                IPlayer.AddInt(5);
+                playerAddAgiStrInt(5);
             }
 
             if (bof.Boots == 70 && bof.Short == 70 && bof.Gloves == 70 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 70;
-                IPlayer.AddAgi(6);
-                IPlayer.AddStr(6);
-                IPlayer.AddInt(6);
+                playerAddAgiStrInt(6);
             }
 
             if (bof.Helmet == 70 && bof.Chest == 70 && bof.HalfSet == 70 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 70;
-                IPlayer.AddAgi(6);
-                IPlayer.AddStr(6);
-                IPlayer.AddInt(6);
+                playerAddAgiStrInt(6);
             }
 
             if (bof.Boots == 80 && bof.Short == 80 && bof.Gloves == 80 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 80;
-                IPlayer.AddAgi(7);
-                IPlayer.AddStr(7);
-                IPlayer.AddInt(7);
+                playerAddAgiStrInt(7);
             }
 
             if (bof.Helmet == 80 && bof.Chest == 80 && bof.HalfSet == 80 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 80;
-                IPlayer.AddAgi(7);
-                IPlayer.AddStr(7);
-                IPlayer.AddInt(7);
+                playerAddAgiStrInt(7);
             }
 
             if (bof.Boots == 90 && bof.Short == 90 && bof.Gloves == 90 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 90;
-                IPlayer.AddAgi(8);
-                IPlayer.AddStr(8);
-                IPlayer.AddInt(8);
+                playerAddAgiStrInt(8);
             }
 
             if (bof.Helmet == 90 && bof.Chest == 90 && bof.HalfSet == 90 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 90;
-                IPlayer.AddAgi(8);
-                IPlayer.AddStr(8);
-                IPlayer.AddInt(8);
+                playerAddAgiStrInt(8);
             }
 
             if (bof.Boots >= 95 && bof.Short >= 95 && bof.Gloves >= 95 && !bof.HalfSet)
@@ -335,9 +307,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 if (bof.Boots == bof.Short && bof.Short == bof.Gloves && bof.Boots == bof.Gloves)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = Grade;
-                    IPlayer.AddAgi(9);
-                    IPlayer.AddStr(9);
-                    IPlayer.AddInt(9);
+                    playerAddAgiStrInt(9);
                 }
             }
 
@@ -346,9 +316,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 if (bof.Helmet == bof.Chest && bof.Helmet == bof.HalfSet && bof.Chest == bof.HalfSet)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = Grade;
-                    IPlayer.AddAgi(9);
-                    IPlayer.AddStr(9);
-                    IPlayer.AddInt(9);
+                    playerAddAgiStrInt(9);
                 }
             }
         }
