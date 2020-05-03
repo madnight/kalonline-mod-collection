@@ -2,6 +2,21 @@ int getItemStat(int x, int y) {
     return (GetItemStat.find(IItem.GetIID())->second % x) / y;
 }
 
+void playerAddStats (int x, int y) {
+    switch ( x % 5 ) {
+        case 0:
+            IPlayer.AddAgi(y);
+        case 1:
+            IPlayer.AddStr(y);
+        case 2:
+            IPlayer.AddHp(y);
+        case 3:
+            IPlayer.AddInt(y);
+        case 4:
+            IPlayer.AddWis(y);
+    }
+}
+
 void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 {
     IItem IItem((void*)Item);
@@ -88,127 +103,65 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
             }
         }
 
-        switch (IItem.GetSetGem()) {
-            case 240:
+
+
+        switch (IItem.GetSetGem() - 200) {
+            case 40:
+            case 39:
+            case 38:
+            case 37:
+            case 36:
                 IPlayer.AddDef((check * 18) / 100);
-                IPlayer.AddAgi(7);
-            case 239:
-                IPlayer.AddDef((check * 18) / 100);
-                IPlayer.AddWis(7);
-            case 238:
-                IPlayer.AddDef((check * 18) / 100);
-                IPlayer.AddInt(7);
-            case 237:
-                IPlayer.AddDef((check * 18) / 100);
-                IPlayer.AddHp(7);
-            case 236:
-                IPlayer.AddDef((check * 18) / 100);
-                IPlayer.AddStr(7);
-            case 235:
+                playerAddStats(IItem.GetSetGem() - 200, 7);
+            case 35:
+            case 34:
+            case 33:
+            case 32:
+            case 31:
                 IPlayer.AddDef((check * 16) / 100);
-                IPlayer.AddAgi(5);
-            case 234:
-                IPlayer.AddDef((check * 16) / 100);
-                IPlayer.AddWis(5);
-            case 233:
-                IPlayer.AddDef((check * 16) / 100);
-                IPlayer.AddInt(5);
-            case 232:
-                IPlayer.AddDef((check * 16) / 100);
-                IPlayer.AddHp(5);
-            case 231:
-                IPlayer.AddDef((check * 16) / 100);
-                IPlayer.AddStr(5);
-            case 230:
+                playerAddStats(IItem.GetSetGem() - 200, 5);
+            case 30:
+            case 29:
+            case 28:
+            case 27:
+            case 26:
                 IPlayer.AddDef((check * 14) / 100);
-                IPlayer.AddAgi(3);
-            case 229:
-                IPlayer.AddDef((check * 14) / 100);
-                IPlayer.AddWis(3);
-            case 228:
-                IPlayer.AddDef((check * 14) / 100);
-                IPlayer.AddInt(3);
-            case 227:
-                IPlayer.AddDef((check * 14) / 100);
-                IPlayer.AddHp(3);
-            case 226:
-                IPlayer.AddDef((check * 14) / 100);
-                IPlayer.AddStr(3);
-            case 225:
+                playerAddStats(IItem.GetSetGem() - 200, 3);
+            case 25:
+            case 24:
+            case 23:
+            case 22:
+            case 21:
                 IPlayer.AddDef((check * 12) / 100);
-                IPlayer.AddAgi(3);
-            case 224:
-                IPlayer.AddDef((check * 12) / 100);
-                IPlayer.AddWis(3);
-            case 223:
-                IPlayer.AddDef((check * 12) / 100);
-                IPlayer.AddInt(3);
-            case 222:
-                IPlayer.AddDef((check * 12) / 100);
-                IPlayer.AddHp(3);
-            case 221:
-                IPlayer.AddDef((check * 12) / 100);
-                IPlayer.AddStr(3);
-            case 220:
+                playerAddStats(IItem.GetSetGem() - 200, 3);
+            case 20:
+            case 19:
+            case 18:
+            case 17:
+            case 16:
                 IPlayer.AddDef((check * 10) / 100);
-                IPlayer.AddAgi(2);
-            case 219:
-                IPlayer.AddDef((check * 10) / 100);
-                IPlayer.AddWis(2);
-            case 218:
-                IPlayer.AddDef((check * 10) / 100);
-                IPlayer.AddInt(2);
-            case 217:
-                IPlayer.AddDef((check * 10) / 100);
-                IPlayer.AddHp(2);
-            case 216:
-                IPlayer.AddDef((check * 10) / 100);
-                IPlayer.AddStr(2);
-            case 215:
+                playerAddStats(IItem.GetSetGem() - 200, 2);
+            case 15:
+            case 14:
+            case 13:
+            case 12:
+            case 11:
                 IPlayer.AddDef((check * 8) / 100);
-                IPlayer.AddAgi(2);
-            case 214:
-                IPlayer.AddDef((check * 8) / 100);
-                IPlayer.AddWis(2);
-            case 213:
-                IPlayer.AddDef((check * 8) / 100);
-                IPlayer.AddInt(2);
-            case 212:
-                IPlayer.AddDef((check * 8) / 100);
-                IPlayer.AddHp(2);
-            case 211:
-                IPlayer.AddDef((check * 8) / 100);
-                IPlayer.AddStr(2);
-            case 210:
+                playerAddStats(IItem.GetSetGem() - 200, 2);
+            case 10:
+            case 9:
+            case 8:
+            case 7:
+            case 6:
                 IPlayer.AddDef((check * 6) / 100);
-                IPlayer.AddAgi(1);
-            case 209:
-                IPlayer.AddDef((check * 6) / 100);
-                IPlayer.AddWis(1);
-            case 208:
-                IPlayer.AddDef((check * 6) / 100);
-                IPlayer.AddInt(1);
-            case 207:
-                IPlayer.AddDef((check * 6) / 100);
-                IPlayer.AddHp(1);
-            case 206:
-                IPlayer.AddDef((check * 6) / 100);
-                IPlayer.AddStr(1);
-            case 205:
+                playerAddStats(IItem.GetSetGem() - 200, 1);
+            case 5:
+            case 4:
+            case 3:
+            case 2:
+            case 1:
                 IPlayer.AddDef((check * 4) / 100);
-                IPlayer.AddAgi(1);
-            case 204:
-                IPlayer.AddDef((check * 4) / 100);
-                IPlayer.AddWis(1);
-            case 203:
-                IPlayer.AddDef((check * 4) / 100);
-                IPlayer.AddInt(1);
-            case 202:
-                IPlayer.AddDef((check * 4) / 100);
-                IPlayer.AddHp(1);
-            case 201:
-                IPlayer.AddDef((check * 4) / 100);
-                IPlayer.AddStr(1);
+                playerAddStats(IItem.GetSetGem() - 200, 1);
         }
 
         if (IItem.GetInfo() & 2097152)
