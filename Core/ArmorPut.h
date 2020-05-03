@@ -193,14 +193,16 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 case 5:
                     BeadOfFire[IPlayer.GetPID()].Gloves = Grade;
                 case 6:
-                    BeadOfFire[IPlayer.GetPID()].Boots = Grade;
+                BeadOfFire[IPlayer.GetPID()].Boots = Grade;
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 46 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 46 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 46 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (!BeadOfFire.count(IPlayer.GetPID())) {
+                return;
+            }
+
+            CheckBof bof = BeadOfFire.find(IPlayer.GetPID())->second;
+
+            if (bof.Boots == 46 && bof.Short == 46 && bof.Gloves == 46 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 46;
                 IPlayer.AddAgi(1);
@@ -208,11 +210,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(1);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 46 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 46 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 46 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 46 && bof.Chest == 46 && bof.HalfSet == 46 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 46;
                 IPlayer.AddAgi(1);
@@ -220,11 +218,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(1);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 50 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 50 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 50 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 50 && bof.Short == 50 && bof.Gloves == 50 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 50;
                 IPlayer.AddAgi(2);
@@ -232,11 +226,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(2);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 50 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 50 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 50 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 50 && bof.Chest == 50 && bof.HalfSet == 50 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 50;
                 IPlayer.AddAgi(2);
@@ -244,11 +234,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(2);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 55 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 55 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 55 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 55 && bof.Short == 55 && bof.Gloves == 55 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 55;
                 IPlayer.AddAgi(3);
@@ -256,11 +242,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(3);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 55 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 55 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 55 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 55 && bof.Chest == 55 && bof.HalfSet == 55 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 55;
                 IPlayer.AddAgi(3);
@@ -268,11 +250,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(3);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 60 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 60 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 60 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 60 && bof.Short == 60 && bof.Gloves == 60 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 60;
                 IPlayer.AddAgi(4);
@@ -280,11 +258,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(4);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 60 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 60 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 60 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 60 && bof.Chest == 60 && bof.HalfSet == 60 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 60;
                 IPlayer.AddAgi(4);
@@ -292,11 +266,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(4);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 65 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 65 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 65 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 65 && bof.Short == 65 && bof.Gloves == 65 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 65;
                 IPlayer.AddAgi(5);
@@ -304,11 +274,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(5);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 65 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 65 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 65 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 65 && bof.Chest == 65 && bof.HalfSet == 65 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 65;
                 IPlayer.AddAgi(5);
@@ -316,11 +282,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(5);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 70 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 70 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 70 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 70 && bof.Short == 70 && bof.Gloves == 70 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 70;
                 IPlayer.AddAgi(6);
@@ -328,11 +290,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(6);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 70 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 70 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 70 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 70 && bof.Chest == 70 && bof.HalfSet == 70 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 70;
                 IPlayer.AddAgi(6);
@@ -340,11 +298,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(6);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 80 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 80 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 80 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 80 && bof.Short == 80 && bof.Gloves == 80 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 80;
                 IPlayer.AddAgi(7);
@@ -352,11 +306,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(7);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 80 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 80 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 80 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 80 && bof.Chest == 80 && bof.HalfSet == 80 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 80;
                 IPlayer.AddAgi(7);
@@ -364,11 +314,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(7);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots == 90 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short == 90 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves == 90 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots == 90 && bof.Short == 90 && bof.Gloves == 90 && !bof.HalfSet)
             {
                 BeadOfFire[IPlayer.GetPID()].HalfSet = 90;
                 IPlayer.AddAgi(8);
@@ -376,11 +322,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(8);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet == 90 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest == 90 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 90 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet == 90 && bof.Chest == 90 && bof.HalfSet == 90 && !bof.FullSet)
             {
                 BeadOfFire[IPlayer.GetPID()].FullSet = 90;
                 IPlayer.AddAgi(8);
@@ -388,18 +330,9 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 IPlayer.AddInt(8);
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Boots >= 95 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Short >= 95 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Gloves >= 95 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+            if (bof.Boots >= 95 && bof.Short >= 95 && bof.Gloves >= 95 && !bof.HalfSet)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots ==
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short &&
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short ==
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves &&
-                    BeadOfFire.find(IPlayer.GetPID())->second.Boots ==
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves)
+                if (bof.Boots == bof.Short && bof.Short == bof.Gloves && bof.Boots == bof.Gloves)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = Grade;
                     IPlayer.AddAgi(9);
@@ -408,18 +341,9 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
                 }
             }
 
-            if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Helmet >= 95 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.Chest >= 95 &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet >= 95 &&
-                !BeadOfFire.find(IPlayer.GetPID())->second.FullSet)
+            if (bof.Helmet >= 95 && bof.Chest >= 95 && bof.HalfSet >= 95 && !bof.FullSet)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Helmet ==
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest &&
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet ==
-                    BeadOfFire.find(IPlayer.GetPID())->second.HalfSet &&
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest ==
-                    BeadOfFire.find(IPlayer.GetPID())->second.HalfSet)
+                if (bof.Helmet == bof.Chest && bof.Helmet == bof.HalfSet && bof.Chest == bof.HalfSet)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = Grade;
                     IPlayer.AddAgi(9);
@@ -536,11 +460,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 46)
+                bof.HalfSet == 46)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 46 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 46 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 46)
+                if (bof.Boots != 46 ||
+                    bof.Short != 46 ||
+                    bof.Gloves != 46)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(1);
@@ -550,11 +474,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 46)
+                bof.FullSet == 46)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 46 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 46 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 46)
+                if (bof.HalfSet != 46 ||
+                    bof.Chest != 46 ||
+                    bof.Helmet != 46)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(1);
@@ -564,11 +488,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 50)
+                bof.HalfSet == 50)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 50 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 50 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 50)
+                if (bof.Boots != 50 ||
+                    bof.Short != 50 ||
+                    bof.Gloves != 50)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(2);
@@ -578,11 +502,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 50)
+                bof.FullSet == 50)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 50 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 50 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 50)
+                if (bof.HalfSet != 50 ||
+                    bof.Chest != 50 ||
+                    bof.Helmet != 50)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(2);
@@ -592,11 +516,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 55)
+                bof.HalfSet == 55)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 55 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 55 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 55)
+                if (bof.Boots != 55 ||
+                    bof.Short != 55 ||
+                    bof.Gloves != 55)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(3);
@@ -606,11 +530,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 55)
+                bof.FullSet == 55)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 55 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 55 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 55)
+                if (bof.HalfSet != 55 ||
+                    bof.Chest != 55 ||
+                    bof.Helmet != 55)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(3);
@@ -620,11 +544,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 60)
+                bof.HalfSet == 60)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 60 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 60 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 60)
+                if (bof.Boots != 60 ||
+                    bof.Short != 60 ||
+                    bof.Gloves != 60)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(4);
@@ -634,11 +558,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 60)
+                bof.FullSet == 60)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 60 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 60 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 60)
+                if (bof.HalfSet != 60 ||
+                    bof.Chest != 60 ||
+                    bof.Helmet != 60)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(4);
@@ -648,11 +572,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 65)
+                bof.HalfSet == 65)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 65 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 65 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 65)
+                if (bof.Boots != 65 ||
+                    bof.Short != 65 ||
+                    bof.Gloves != 65)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(5);
@@ -662,11 +586,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 65)
+                bof.FullSet == 65)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 65 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 65 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 65)
+                if (bof.HalfSet != 65 ||
+                    bof.Chest != 65 ||
+                    bof.Helmet != 65)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(5);
@@ -676,11 +600,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 70)
+                bof.HalfSet == 70)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 70 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 70 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 70)
+                if (bof.Boots != 70 ||
+                    bof.Short != 70 ||
+                    bof.Gloves != 70)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(6);
@@ -690,11 +614,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 70)
+                bof.FullSet == 70)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 70 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 70 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 70)
+                if (bof.HalfSet != 70 ||
+                    bof.Chest != 70 ||
+                    bof.Helmet != 70)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(6);
@@ -704,11 +628,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 80)
+                bof.HalfSet == 80)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 80 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 80 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 80)
+                if (bof.Boots != 80 ||
+                    bof.Short != 80 ||
+                    bof.Gloves != 80)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(7);
@@ -718,11 +642,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 80)
+                bof.FullSet == 80)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 80 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 80 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 80)
+                if (bof.HalfSet != 80 ||
+                    bof.Chest != 80 ||
+                    bof.Helmet != 80)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(7);
@@ -732,11 +656,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet == 90)
+                bof.HalfSet == 90)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots != 90 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short != 90 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves != 90)
+                if (bof.Boots != 90 ||
+                    bof.Short != 90 ||
+                    bof.Gloves != 90)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(8);
@@ -746,11 +670,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet == 90)
+                bof.FullSet == 90)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet != 90 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest != 90 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet != 90)
+                if (bof.HalfSet != 90 ||
+                    bof.Chest != 90 ||
+                    bof.Helmet != 90)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(8);
@@ -760,11 +684,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.HalfSet >= 95)
+                bof.HalfSet >= 95)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.Boots < 95 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Short < 95 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Gloves < 95)
+                if (bof.Boots < 95 ||
+                    bof.Short < 95 ||
+                    bof.Gloves < 95)
                 {
                     BeadOfFire[IPlayer.GetPID()].HalfSet = 0;
                     IPlayer.RemoveAgi(9);
@@ -774,11 +698,11 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
             }
 
             if (BeadOfFire.count(IPlayer.GetPID()) &&
-                BeadOfFire.find(IPlayer.GetPID())->second.FullSet >= 95)
+                bof.FullSet >= 95)
             {
-                if (BeadOfFire.find(IPlayer.GetPID())->second.HalfSet < 95 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Chest < 95 ||
-                    BeadOfFire.find(IPlayer.GetPID())->second.Helmet < 95)
+                if (bof.HalfSet < 95 ||
+                    bof.Chest < 95 ||
+                    bof.Helmet < 95)
                 {
                     BeadOfFire[IPlayer.GetPID()].FullSet = 0;
                     IPlayer.RemoveAgi(9);
