@@ -1,9 +1,11 @@
 int getItemStat(int x, int y, int item) {
+
     IItem IItem((void*)item);
     return (GetItemStat.find(IItem.GetIID())->second % x) / y;
 }
 
 void demonGongTypeApply(int type, int stat, int player, bool remove){
+
     IChar IPlayer((void*)player);
     int s = stat -1;
     if (remove) {
@@ -37,6 +39,7 @@ void demonGongTypeApply(int type, int stat, int player, bool remove){
 
 
 void qigongChestStats(int type, int attr, int player, bool remove) {
+
     IChar IPlayer((void*)player);
      if (remove) {
          switch (type) {
@@ -69,6 +72,7 @@ void qigongChestStats(int type, int attr, int player, bool remove) {
 }
 
 void playerAddStats(int x, int y, int z, int player, bool remove) {
+
     IChar IPlayer((void*)player);
     if (remove) {
         IPlayer.RemoveDef(z / 100);
@@ -102,6 +106,7 @@ void playerAddStats(int x, int y, int z, int player, bool remove) {
 }
 
 void playerAddAgiStrInt(int value, int player) {
+
     IChar IPlayer((void*)player);
     IPlayer.AddAgi(value);
     IPlayer.AddStr(value);
@@ -109,6 +114,7 @@ void playerAddAgiStrInt(int value, int player) {
 }
 
 void playerRemoveAgiStrInt(int value, int player) {
+
     IChar IPlayer((void*)player);
     IPlayer.RemoveAgi(value);
     IPlayer.RemoveStr(value);
@@ -149,6 +155,7 @@ int getStat(int grade) {
 }
 
 void setBeadOfFire(int grade, int type, int player) {
+
     IChar IPlayer((void*)player);
     switch (type) {
         case 2:
@@ -193,6 +200,7 @@ void beadOfFireApply(int grade, int attr, int player, bool remove) {
 }
 
 void nItemGSTApply(int gst, int check, int player, bool remove) {
+
     if (gst >= 36 && gst <= 40) {
         playerAddStats(gst, 7, (check * 18), player, remove);
     }
@@ -259,18 +267,18 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 
         if (QigongType)
         {
-            if (IItem.GetType() == 3) {
-                IPlayer.AddDef((check * QigongChest[QigongType - 1][0]) / 100);
-            } else if (IItem.GetType() == 4) {
-                IPlayer.AddDef((check * QigongShort[QigongType - 1][0]) / 100);
-            } else {
-                IPlayer.AddDef((check * QigongMain[QigongType - 1][0]) / 100);
-            }
+            switch (IItem.GetType()) {
+                case 3:
+                    IPlayer.AddDef((check * QigongChest[QigongType - 1][0]) / 100);
+                case 4:
+                    IPlayer.AddDef((check * QigongShort[QigongType - 1][0]) / 100);
+                default:
+                    IPlayer.AddDef((check * QigongMain[QigongType - 1][0]) / 100);
 
+            }
             int Type = QigongChest[QigongType - 1][1];
             int Stat = QigongChest[QigongType - 1][2];
             qigongChestStats(Type, Stat, Player, false);
-
         }
     }
 
@@ -286,24 +294,12 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 
         setBeadOfFire(Grade, IItem.GetType(), Player)
 
-        switch (IItem.GetType()) {
-            case 2:
-                BeadOfFire[IPlayer.GetPID()].Helmet = Grade;
-            case 3:
-                BeadOfFire[IPlayer.GetPID()].Chest = Grade;
-            case 4:
-                BeadOfFire[IPlayer.GetPID()].Short = Grade;
-            case 5:
-                BeadOfFire[IPlayer.GetPID()].Gloves = Grade;
-            case 6:
-                BeadOfFire[IPlayer.GetPID()].Boots = Grade;
-        }
-
         if (!BeadOfFire.count(IPlayer.GetPID())) {
             return;
         }
 
         CheckBof bof = BeadOfFire.find(IPlayer.GetPID())->second;
+
 
         beadOfFireApply(46, 1, Player, false);
         beadOfFireApply(50, 2, Player, false);
@@ -314,7 +310,6 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
         beadOfFireApply(80, 7, Player, false);
         beadOfFireApply(90, 8, Player, false);
         beadOfFireApply(95, 9, Player, false);
-    }
     }
 }
 

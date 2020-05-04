@@ -1,51 +1,60 @@
 void __fastcall ContinueArrowExplosion(IChar IPlayer)
 {
-    if (IPlayer.IsValid())
+    if (!IPlayer.IsValid())
     {
-        IPlayer.CancelBuff(300);
-        void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
-        int nSkillGrade = CheckContinueSkill.find(
-                IPlayer.GetPID())->second.PlayerSkillGrade;
+        ResetContinueSkill(IPlayer);
+        return;
+    }
 
-        if (nSkillGrade && pTarget &&
-            CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount)
+    IPlayer.CancelBuff(300);
+
+    void *pTarget = CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerTarget;
+    int nSkillGrade = CheckContinueSkill.find(
+            IPlayer.GetPID())->second.PlayerSkillGrade;
+
+    if (!(nSkillGrade && pTarget &&
+        CheckContinueSkill.find(IPlayer.GetPID())->second.PlayerSkillCount))
+    {
+        ResetContinueSkill(IPlayer);
+        return;
+    }
+    CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
+    IChar Target(pTarget);
+
+    if (!(IPlayer.IsValid() && Target.IsValid()))
+    {
+        ResetContinueSkill(IPlayer);
+        return;
+    }
+
+    if (!IPlayer.IsInRange(Target, 300))
+    {
+        ResetContinueSkill(IPlayer);
+        return;
+    }
+
+    int Around = Target.GetObjectListAround(3);
+
+    while (Around)
+    {
+        IChar Object((void*)*(DWORD*)Around);
+
+        if (Object.IsValid() && IPlayer.IsValid() &&
+            (*(int (__thiscall **)
+                    (int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))
+            ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
         {
-            CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount--;
-            IChar Target(pTarget);
+            int nDmg = (IPlayer.GetAttack() * AAEMul) +
+                (nSkillGrade * CTools::Rate(AAEMin, AAEMax));
 
-            if (IPlayer.IsValid() && Target.IsValid())
-            {
-                if (!IPlayer.IsInRange(Target, 300))
-                {
-                    ResetContinueSkill(IPlayer);
-                    return;
-                }
-
-                int Around = Target.GetObjectListAround(3);
-
-                while (Around)
-                {
-                    IChar Object((void*)*(DWORD*)Around);
-
-                    if (Object.IsValid() && IPlayer.IsValid() &&
-                        (*(int (__thiscall **)
-                                (int, int, DWORD))(*(DWORD *)IPlayer.GetOffset() + 176))
-                        ((int)IPlayer.GetOffset(), (int)Object.GetOffset(), 0))
-                    {
-                        int nDmg = (IPlayer.GetAttack() * AAEMul) +
-                            (nSkillGrade * CTools::Rate(AAEMin, AAEMax));
-
-                        if (Object.GetType() == 0) {
-                            nDmg = (nDmg * AAEReduce) / 100;
-                        }
-
-                        IPlayer.OktayDamageArea(Object, nDmg, 49);
-                    }
-
-                    Around = CBaseList::Pop((void*)Around);
-                }
+            if (Object.GetType() == 0) {
+                nDmg = (nDmg * AAEReduce) / 100;
             }
+
+            IPlayer.OktayDamageArea(Object, nDmg, 49);
         }
+
+        Around = CBaseList::Pop((void*)Around);
     }
 
     ResetContinueSkill(IPlayer);
