@@ -3,20 +3,36 @@ int getItemStat(int x, int y, int item) {
     return (GetItemStat.find(IItem.GetIID())->second % x) / y;
 }
 
-void playerAddStats(int x, int y, int z, int player) {
+void playerAddStats(int x, int y, int z, int player, bool remove) {
     IChar IPlayer((void*)player);
-    IPlayer.AddDef(z / 100);
-    switch ( x % 5 ) {
-        case 0:
-            IPlayer.AddAgi(y);
-        case 1:
-            IPlayer.AddStr(y);
-        case 2:
-            IPlayer.AddHp(y);
-        case 3:
-            IPlayer.AddInt(y);
-        case 4:
-            IPlayer.AddWis(y);
+    if (remove) {
+        IPlayer.RemoveDef(z / 100);
+        switch ( x % 5 ) {
+            case 0:
+                IPlayer.RemoveAgi(y);
+            case 1:
+                IPlayer.RemoveStr(y);
+            case 2:
+                IPlayer.RemoveHp(y);
+            case 3:
+                IPlayer.RemoveInt(y);
+            case 4:
+                IPlayer.RemoveWis(y);
+        }
+    } else {
+        IPlayer.AddDef(z / 100);
+        switch ( x % 5 ) {
+            case 0:
+                IPlayer.AddAgi(y);
+            case 1:
+                IPlayer.AddStr(y);
+            case 2:
+                IPlayer.AddHp(y);
+            case 3:
+                IPlayer.AddInt(y);
+            case 4:
+                IPlayer.AddWis(y);
+        }
     }
 }
 
@@ -119,6 +135,40 @@ void beadOfFireApply(int grade, int attr, int player, bool remove) {
     }
 }
 
+void nItemGSTApply(int gst, int check, int player, bool remove) {
+    if (gst >= 36 && gst <= 40) {
+        playerAddStats(gst, 7, (check * 18), player, remove);
+    }
+
+    if (gst >= 31 && gst <= 35) {
+        playerAddStats(gst, 5, (check * 16), player, remove);
+    }
+
+    if (gst >= 26 && gst <= 30) {
+        playerAddStats(gst, 3, (check * 14), player, remove);
+    }
+
+    if (gst >= 21 && gst <= 25) {
+        playerAddStats(gst, 3, (check * 12), player, remove);
+    }
+
+    if (gst >= 16 && gst <= 20) {
+        playerAddStats(gst, 2, (check * 10), player, remove);
+    }
+
+    if (gst >= 11 && gst <= 15) {
+        playerAddStats(gst, 2, (check * 8), player, remove);
+    }
+
+    if (gst >= 6 && gst <= 10) {
+        playerAddStats(gst, 1, (check * 6), player, remove);
+    }
+
+    if (gst >= 1 && gst <= 5) {
+        playerAddStats(gst, 1, (check * 4), player, remove);
+    }
+}
+
 void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
 {
     IItem IItem((void*)Item);
@@ -206,38 +256,7 @@ void __fastcall DefenseApplySpec(int Item, void *edx, int Player)
         }
 
         int nItemGST = IItem.GetSetGem() - 200;
-
-        if (nItemGST >= 36 && nItemGST <= 40) {
-            playerAddStats(nItemGST, 7, (check * 18), Player);
-        }
-
-        if (nItemGST >= 31 && nItemGST <= 35) {
-            playerAddStats(nItemGST, 5, (check * 16), Player);
-        }
-
-        if (nItemGST >= 26 && nItemGST <= 30) {
-            playerAddStats(nItemGST, 3, (check * 14), Player);
-        }
-
-        if (nItemGST >= 21 && nItemGST <= 25) {
-            playerAddStats(nItemGST, 3, (check * 12), Player);
-        }
-
-        if (nItemGST >= 16 && nItemGST <= 20) {
-            playerAddStats(nItemGST, 2, (check * 10), Player);
-        }
-
-        if (nItemGST >= 11 && nItemGST <= 15) {
-            playerAddStats(nItemGST, 2, (check * 8), Player);
-        }
-
-        if (nItemGST >= 6 && nItemGST <= 10) {
-            playerAddStats(nItemGST, 1, (check * 6), Player);
-        }
-
-        if (nItemGST >= 1 && nItemGST <= 5) {
-            playerAddStats(nItemGST, 1, (check * 4), Player);
-        }
+        nItemGSTApply(nItemGST, check, Player, false);
 
         if (IItem.GetInfo() & 2097152)
         {
@@ -492,165 +511,6 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
         }
     }
 
-    if (IItem.GetSetGem() == 240)
-    {
-        IPlayer.RemoveDef((check * 18) / 100);
-        IPlayer.RemoveAgi(7);
-    } else if (IItem.GetSetGem() == 239)
-    {
-        IPlayer.RemoveDef((check * 18) / 100);
-        IPlayer.RemoveWis(7);
-    } else if (IItem.GetSetGem() == 238)
-    {
-        IPlayer.RemoveDef((check * 18) / 100);
-        IPlayer.RemoveInt(7);
-    } else if (IItem.GetSetGem() == 237)
-    {
-        IPlayer.RemoveDef((check * 18) / 100);
-        IPlayer.RemoveHp(7);
-    } else if (IItem.GetSetGem() == 236)
-    {
-        IPlayer.RemoveDef((check * 18) / 100);
-        IPlayer.RemoveStr(7);
-    } else if (IItem.GetSetGem() == 235)
-    {
-        IPlayer.RemoveDef((check * 16) / 100);
-        IPlayer.RemoveAgi(5);
-    } else if (IItem.GetSetGem() == 234)
-    {
-        IPlayer.RemoveDef((check * 16) / 100);
-        IPlayer.RemoveWis(5);
-    } else if (IItem.GetSetGem() == 233)
-    {
-        IPlayer.RemoveDef((check * 16) / 100);
-        IPlayer.RemoveInt(5);
-    } else if (IItem.GetSetGem() == 232)
-    {
-        IPlayer.RemoveDef((check * 16) / 100);
-        IPlayer.RemoveHp(5);
-    } else if (IItem.GetSetGem() == 231)
-    {
-        IPlayer.RemoveDef((check * 16) / 100);
-        IPlayer.RemoveStr(5);
-    } else if (IItem.GetSetGem() == 230)
-    {
-        IPlayer.RemoveDef((check * 14) / 100);
-        IPlayer.RemoveAgi(3);
-    } else if (IItem.GetSetGem() == 229)
-    {
-        IPlayer.RemoveDef((check * 14) / 100);
-        IPlayer.RemoveWis(3);
-    } else if (IItem.GetSetGem() == 228)
-    {
-        IPlayer.RemoveDef((check * 14) / 100);
-        IPlayer.RemoveInt(3);
-    } else if (IItem.GetSetGem() == 227)
-    {
-        IPlayer.RemoveDef((check * 14) / 100);
-        IPlayer.RemoveHp(3);
-    } else if (IItem.GetSetGem() == 226)
-    {
-        IPlayer.RemoveDef((check * 14) / 100);
-        IPlayer.RemoveStr(3);
-    } else if (IItem.GetSetGem() == 225)
-    {
-        IPlayer.RemoveDef((check * 12) / 100);
-        IPlayer.RemoveAgi(3);
-    } else if (IItem.GetSetGem() == 224)
-    {
-        IPlayer.RemoveDef((check * 12) / 100);
-        IPlayer.RemoveWis(3);
-    } else if (IItem.GetSetGem() == 223)
-    {
-        IPlayer.RemoveDef((check * 12) / 100);
-        IPlayer.RemoveInt(3);
-    } else if (IItem.GetSetGem() == 222)
-    {
-        IPlayer.RemoveDef((check * 12) / 100);
-        IPlayer.RemoveHp(3);
-    } else if (IItem.GetSetGem() == 221)
-    {
-        IPlayer.RemoveDef((check * 12) / 100);
-        IPlayer.RemoveStr(3);
-    } else if (IItem.GetSetGem() == 220)
-    {
-        IPlayer.RemoveDef((check * 10) / 100);
-        IPlayer.RemoveAgi(2);
-    } else if (IItem.GetSetGem() == 219)
-    {
-        IPlayer.RemoveDef((check * 10) / 100);
-        IPlayer.RemoveWis(2);
-    } else if (IItem.GetSetGem() == 218)
-    {
-        IPlayer.RemoveDef((check * 10) / 100);
-        IPlayer.RemoveInt(2);
-    } else if (IItem.GetSetGem() == 217)
-    {
-        IPlayer.RemoveDef((check * 10) / 100);
-        IPlayer.RemoveHp(2);
-    } else if (IItem.GetSetGem() == 216)
-    {
-        IPlayer.RemoveDef((check * 10) / 100);
-        IPlayer.RemoveStr(2);
-    } else if (IItem.GetSetGem() == 215)
-    {
-        IPlayer.RemoveDef((check * 8) / 100);
-        IPlayer.RemoveAgi(2);
-    } else if (IItem.GetSetGem() == 214)
-    {
-        IPlayer.RemoveDef((check * 8) / 100);
-        IPlayer.RemoveWis(2);
-    } else if (IItem.GetSetGem() == 213)
-    {
-        IPlayer.RemoveDef((check * 8) / 100);
-        IPlayer.RemoveInt(2);
-    } else if (IItem.GetSetGem() == 212)
-    {
-        IPlayer.RemoveDef((check * 8) / 100);
-        IPlayer.RemoveHp(2);
-    } else if (IItem.GetSetGem() == 211)
-    {
-        IPlayer.RemoveDef((check * 8) / 100);
-        IPlayer.RemoveStr(2);
-    } else if (IItem.GetSetGem() == 210)
-    {
-        IPlayer.RemoveDef((check * 6) / 100);
-        IPlayer.RemoveAgi(1);
-    } else if (IItem.GetSetGem() == 209)
-    {
-        IPlayer.RemoveDef((check * 6) / 100);
-        IPlayer.RemoveWis(1);
-    } else if (IItem.GetSetGem() == 208)
-    {
-        IPlayer.RemoveDef((check * 6) / 100);
-        IPlayer.RemoveInt(1);
-    } else if (IItem.GetSetGem() == 207)
-    {
-        IPlayer.RemoveDef((check * 6) / 100);
-        IPlayer.RemoveHp(1);
-    } else if (IItem.GetSetGem() == 206)
-    {
-        IPlayer.RemoveDef((check * 6) / 100);
-        IPlayer.RemoveStr(1);
-    } else if (IItem.GetSetGem() == 205)
-    {
-        IPlayer.RemoveDef((check * 4) / 100);
-        IPlayer.RemoveAgi(1);
-    } else if (IItem.GetSetGem() == 204)
-    {
-        IPlayer.RemoveDef((check * 4) / 100);
-        IPlayer.RemoveWis(1);
-    } else if (IItem.GetSetGem() == 203)
-    {
-        IPlayer.RemoveDef((check * 4) / 100);
-        IPlayer.RemoveInt(1);
-    } else if (IItem.GetSetGem() == 202)
-    {
-        IPlayer.RemoveDef((check * 4) / 100);
-        IPlayer.RemoveHp(1);
-    } else if (IItem.GetSetGem() == 201)
-    {
-        IPlayer.RemoveDef((check * 4) / 100);
-        IPlayer.RemoveStr(1);
-    }
+    int nItemGST = IItem.GetSetGem() - 200;
+    nItemGSTApply(nItemGST, check, Player, true);
 }
