@@ -105,6 +105,7 @@ void __fastcall ArrowExplosion(IChar IPlayer, int pPacket, int pPos)
         {
             return;
         }
+
         if (!IPlayer.IsInRange(Target, 300)) {
             return;
         }
