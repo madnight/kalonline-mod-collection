@@ -3,6 +3,56 @@ int getItemStat(int x, int y, int item) {
     return (GetItemStat.find(IItem.GetIID())->second % x) / y;
 }
 
+void qigongChestStats(int type, int attr, int player, bool remove) {
+    IChar IPlayer((void*)player);
+    switch (Type) {
+        case 0:
+            playerRemoveOrAddAgi(player, Stat, remove);
+        case 1:
+            playerRemoveOrAddHp(player, Stat, remove);
+        case 2:
+            playerRemoveOrAddInt(player, Stat, remove);
+        case 3:
+            playerRemoveOrAddWis(player, Stat, remove);
+        case 4:
+}
+
+void playerRemoveOrAddAgi(int player, int value, bool remove) {
+    IChar IPlayer((void*)player);
+    if (remove) {
+        IPlayer.RemoveAgi(value);
+    } else {
+        IPlayer.AddAgi(value);
+    }
+}
+
+void playerRemoveOrAddWis(int player, int value, bool remove) {
+    IChar IPlayer((void*)player);
+    if (remove) {
+        IPlayer.RemoveWis(value);
+    } else {
+        IPlayer.AddWis(value);
+    }
+}
+
+void playerRemoveOrAddInt(int player, int value, bool remove) {
+    IChar IPlayer((void*)player);
+    if (remove) {
+        IPlayer.RemoveInt(value);
+    } else {
+        IPlayer.AddInt(value);
+    }
+}
+
+void playerRemoveOrAddHp(int player, int value, bool remove) {
+    IChar IPlayer((void*)player);
+    if (remove) {
+        IPlayer.RemoveHp(value);
+    } else {
+        IPlayer.AddHp(value);
+    }
+}
+
 void playerAddStats(int x, int y, int z, int player, bool remove) {
     IChar IPlayer((void*)player);
     if (remove) {
@@ -472,40 +522,36 @@ void __fastcall DefensePutOff(void *Item, void *edx, int Player)
                 int Type = QigongChest[QigongType - 1][1];
                 int Stat = QigongChest[QigongType - 1][2];
 
-                if (Type == 0) {
-                    IPlayer.RemoveStr(Stat);
+                switch (Type) {
+                    case 0:
+                        IPlayer.RemoveStr(Stat);
+                    case 1:
+                        IPlayer.RemoveHp(Stat);
+                    case 2:
+                        IPlayer.RemoveInt(Stat);
+                    case 3:
+                        IPlayer.RemoveWis(Stat);
+                    case 4:
+                        IPlayer.RemoveAgi(Stat);
                 }
-                else if (Type == 1) {
-                    IPlayer.RemoveHp(Stat);
-                }
-                else if (Type == 2) {
-                    IPlayer.RemoveInt(Stat);
-                }
-                else if (Type == 3) {
-                    IPlayer.RemoveWis(Stat);
-                }
-                else if (Type == 4) {
-                    IPlayer.RemoveAgi(Stat);
-                }
+
+
             } else {
                 IPlayer.RemoveDef((check * QigongMain[QigongType - 1][0]) / 100);
                 int Type = QigongChest[QigongType - 1][1];
                 int Stat = QigongChest[QigongType - 1][2];
 
-                if (Type == 0) {
-                    IPlayer.RemoveStr(Stat);
-                }
-                else if (Type == 1) {
-                    IPlayer.RemoveHp(Stat);
-                }
-                else if (Type == 2) {
-                    IPlayer.RemoveInt(Stat);
-                }
-                else if (Type == 3) {
-                    IPlayer.RemoveWis(Stat);
-                }
-                else if (Type == 4) {
-                    IPlayer.RemoveAgi(Stat);
+                switch (Type) {
+                    case 0:
+                        IPlayer.RemoveStr(Stat);
+                    case 1:
+                        IPlayer.RemoveHp(Stat);
+                    case 2:
+                        IPlayer.RemoveInt(Stat);
+                    case 3:
+                        IPlayer.RemoveWis(Stat);
+                    case 4:
+                        IPlayer.RemoveAgi(Stat);
                 }
             }
         }
