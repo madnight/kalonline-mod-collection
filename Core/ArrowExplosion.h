@@ -65,74 +65,76 @@ void __fastcall ArrowExplosion(IChar IPlayer, int pPacket, int pPos)
 {
     int pSkill = IPlayer.GetSkillPointer(49);
 
-    if (IPlayer.IsValid() && pSkill)
+    if (!(IPlayer.IsValid() && pSkill))
     {
-        ISkill xSkill((void*)pSkill);
-        int nSkillGrade = xSkill.GetGrade();
-        int nTargetID = 0;
-        char bType = 0;
-        void *pTarget = 0;
-        CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
-        int nMana = 20 + (IPlayer.GetLevel() * 4);
+        return;
+    }
 
-        if (bType == 0 && nTargetID) {
-            pTarget = CPlayer::FindPlayer(nTargetID);
-        }
+    ISkill xSkill((void*)pSkill);
+    int nSkillGrade = xSkill.GetGrade();
+    int nTargetID = 0;
+    char bType = 0;
+    void *pTarget = 0;
+    CPacket::Read((char*)pPacket, (char*)pPos, "bd", &bType, &nTargetID);
+    int nMana = 20 + (IPlayer.GetLevel() * 4);
 
-        if (bType == 1 && nTargetID) {
-            pTarget = CMonster::FindMonster(nTargetID);
-        }
+    if (bType == 0 && nTargetID) {
+        pTarget = CPlayer::FindPlayer(nTargetID);
+    }
 
-        if (bType >= 2) {
-            return;
-        }
+    if (bType == 1 && nTargetID) {
+        pTarget = CMonster::FindMonster(nTargetID);
+    }
 
-        if (!(IPlayer.IsValid() && pTarget && nSkillGrade) {
-            return;
-        }
+    if (bType >= 2) {
+        return;
+    }
 
-        IChar Target(pTarget);
+    if (!(IPlayer.IsValid() && pTarget && nSkillGrade) {
+        return;
+    }
 
-        if (pTarget == IPlayer.GetOffset()) {
-            return;
-        }
+    IChar Target(pTarget);
 
-        if (IPlayer.GetCurMp() < nMana) {
-            return;
-        }
+    if (pTarget == IPlayer.GetOffset()) {
+        return;
+    }
 
-        if (!(IPlayer.IsValid() && Target.IsValid()))
-        {
-            return;
-        }
+    if (IPlayer.GetCurMp() < nMana) {
+        return;
+    }
 
-        if (!IPlayer.IsInRange(Target, 300)) {
-            return;
-        }
+    if (!(IPlayer.IsValid() && Target.IsValid())) {
+        return;
+    }
 
-        IPlayer.DecreaseMana(nMana);
-        IPlayer.SetDirection(Target);
-        IPlayer._ShowBattleAnimation(Target, 49);
-        IPlayer.Buff(300, 5, 0);
-        Target.AddFxToTarget("davi_ef131_04", 1, 0, 0);
-        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 49;
-        CheckContinueSkill[IPlayer.GetPID()].PlayerTarget = Target.GetOffset();
-        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillGrade = nSkillGrade;
-        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = 1;
-        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 3000;
+    if (!IPlayer.IsInRange(Target, 300)) {
+        return;
+    }
 
-        if (Target.IsValid() && Target.GetType() == 1 && Target.GetMobTanker()
-            && Target.GetMobTanker() != (int)IPlayer.GetOffset()) {
-            Target.SetMobHostility(0);
-        }
+    IPlayer.DecreaseMana(nMana);
+    IPlayer.SetDirection(Target);
+    IPlayer._ShowBattleAnimation(Target, 49);
+    IPlayer.Buff(300, 5, 0);
+    Target.AddFxToTarget("davi_ef131_04", 1, 0, 0);
 
-        if (Target.GetType() == 1) {
-            IPlayer.OktayDamageSingle(Target, CTools::Rate(500, 750), 42);
-        }
+    CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 49;
+    CheckContinueSkill[IPlayer.GetPID()].PlayerTarget = Target.GetOffset();
+    CheckContinueSkill[IPlayer.GetPID()].PlayerSkillGrade = nSkillGrade;
+    CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = 1;
+    CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 3000;
 
-        if (Target.IsValid() && Target.GetType() == 1
-            && Target.GetMobTanker() == (int)IPlayer.GetOffset()) {
-            Target.SetMobHostility(25000);
-        }
+    if (Target.IsValid() && Target.GetType() == 1 && Target.GetMobTanker()
+        && Target.GetMobTanker() != (int)IPlayer.GetOffset()) {
+        Target.SetMobHostility(0);
+    }
+
+    if (Target.GetType() == 1) {
+        IPlayer.OktayDamageSingle(Target, CTools::Rate(500, 750), 42);
+    }
+
+    if (Target.IsValid() && Target.GetType() == 1
+        && Target.GetMobTanker() == (int)IPlayer.GetOffset()) {
+        Target.SetMobHostility(25000);
     }
 }
