@@ -87,49 +87,51 @@ void __fastcall ArrowExplosion(IChar IPlayer, int pPacket, int pPos)
             return;
         }
 
-        if (IPlayer.IsValid() && pTarget && nSkillGrade)
+        if (!(IPlayer.IsValid() && pTarget && nSkillGrade) {
+            return;
+        }
+
+        IChar Target(pTarget);
+
+        if (pTarget == IPlayer.GetOffset()) {
+            return;
+        }
+
+        if (IPlayer.GetCurMp() < nMana) {
+            return;
+        }
+
+        if (!(IPlayer.IsValid() && Target.IsValid()))
         {
-            IChar Target(pTarget);
+            return;
+        }
+        if (!IPlayer.IsInRange(Target, 300)) {
+            return;
+        }
 
-            if (pTarget == IPlayer.GetOffset()) {
-                return;
-            }
+        IPlayer.DecreaseMana(nMana);
+        IPlayer.SetDirection(Target);
+        IPlayer._ShowBattleAnimation(Target, 49);
+        IPlayer.Buff(300, 5, 0);
+        Target.AddFxToTarget("davi_ef131_04", 1, 0, 0);
+        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 49;
+        CheckContinueSkill[IPlayer.GetPID()].PlayerTarget = Target.GetOffset();
+        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillGrade = nSkillGrade;
+        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = 1;
+        CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 3000;
 
-            if (IPlayer.GetCurMp() < nMana) {
-                return;
-            }
+        if (Target.IsValid() && Target.GetType() == 1 && Target.GetMobTanker()
+            && Target.GetMobTanker() != (int)IPlayer.GetOffset()) {
+            Target.SetMobHostility(0);
+        }
 
-            if (IPlayer.IsValid() && Target.IsValid())
-            {
-                if (!IPlayer.IsInRange(Target, 300)) {
-                    return;
-                }
+        if (Target.GetType() == 1) {
+            IPlayer.OktayDamageSingle(Target, CTools::Rate(500, 750), 42);
+        }
 
-                IPlayer.DecreaseMana(nMana);
-                IPlayer.SetDirection(Target);
-                IPlayer._ShowBattleAnimation(Target, 49);
-                IPlayer.Buff(300, 5, 0);
-                Target.AddFxToTarget("davi_ef131_04", 1, 0, 0);
-                CheckContinueSkill[IPlayer.GetPID()].PlayerSkillID = 49;
-                CheckContinueSkill[IPlayer.GetPID()].PlayerTarget = Target.GetOffset();
-                CheckContinueSkill[IPlayer.GetPID()].PlayerSkillGrade = nSkillGrade;
-                CheckContinueSkill[IPlayer.GetPID()].PlayerSkillCount = 1;
-                CheckContinueSkill[IPlayer.GetPID()].PlayerSkillDelay = GetTickCount() + 3000;
-
-                if (Target.IsValid() && Target.GetType() == 1 && Target.GetMobTanker()
-                    && Target.GetMobTanker() != (int)IPlayer.GetOffset()) {
-                    Target.SetMobHostility(0);
-                }
-
-                if (Target.GetType() == 1) {
-                    IPlayer.OktayDamageSingle(Target, CTools::Rate(500, 750), 42);
-                }
-
-                if (Target.IsValid() && Target.GetType() == 1
-                    && Target.GetMobTanker() == (int)IPlayer.GetOffset()) {
-                    Target.SetMobHostility(25000);
-                }
-            }
+        if (Target.IsValid() && Target.GetType() == 1
+            && Target.GetMobTanker() == (int)IPlayer.GetOffset()) {
+            Target.SetMobHostility(25000);
         }
     }
 }
