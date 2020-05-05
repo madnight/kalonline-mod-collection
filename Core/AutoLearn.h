@@ -21,6 +21,23 @@ void playerLearnSkill(int skillid, int player) {
 }
 
 
+void sendSkill(int checkGrade, int skillID, int gradeLimit, int player) {
+
+    IChar IPlayer((void*)*(DWORD*)SkillPointer);
+    int pSkill = IPlayer.GetSkillPointer(64);
+    ISkill xSkill((void*)pSkill);
+
+    for (int i = 0; i <= checkGrade; i++)
+    {
+        if (xSkill.GetGrade() < gradeLimit && xSkill.GetGrade() + 1 <= checkGrade)
+        {
+            CDBSocket::Write(10, "ddbw", IPlayer.GetPID(), skillID, xSkill.GetGrade() + 1, 56);
+            CPlayer::Write(IPlayer.GetOffset(), 81, "bb", skillID, xSkill.GetGrade() + 1);
+            *(DWORD*)((int)xSkill.GetOffset() + 8) = xSkill.GetGrade() + 1;
+        }
+    }
+}
+
 int checkGrade(int level)
 {
     int CheckGrade = 0;
@@ -67,9 +84,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 4 && l >= 70 && s == 23)
     {
-        int pSkill = IPlayer.GetSkillPointer(70);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(70))
         {
             CSkill::LearnSkill(SkillPointer, 70);
             IPlayer.AddMaxAttack((IPlayer.GetMaxMagAttack() * 8) / 100);
@@ -79,9 +94,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 4 && l >= 70 && s == 43)
     {
-        int pSkill = IPlayer.GetSkillPointer(71);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(71))
         {
             CSkill::LearnSkill(SkillPointer, 71);
             IPlayer.AddMaxAttack((IPlayer.GetMaxMagAttack() * 8) / 100);
@@ -103,9 +116,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 0 && l >= 70 && s == 43)
     {
-        int pSkill = IPlayer.GetSkillPointer(39);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(39))
         {
             CSkill::LearnSkill(SkillPointer, 39);
             IPlayer.AddDef(((l - 65) * 5) - ((IPlayer.GetDef() * 2) / 50));
@@ -122,9 +133,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 0 && l >= 70 && (s == 23 || s == 43))
     {
-        int pSkill = IPlayer.GetSkillPointer(70);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(70))
         {
             CSkill::LearnSkill(SkillPointer, 70);
             IPlayer.AddMaxAttack((IPlayer.GetMaxPhyAttack() * 8) / 100);
@@ -142,9 +151,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 1 && l >= 70 && s == 23)
     {
-        int pSkill = IPlayer.GetSkillPointer(70);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(70))
         {
             CSkill::LearnSkill(SkillPointer, 70);
             IPlayer.AddMaxAttack((IPlayer.GetMaxMagAttack() * 8) / 100);
@@ -154,9 +161,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 1 && l >= 70 && s == 43)
     {
-        int pSkill = IPlayer.GetSkillPointer(71);
-
-        if (!pSkill)
+        if (IPlayer.GetSkillPointer(71))
         {
             CSkill::LearnSkill(SkillPointer, 71);
             IPlayer.AddDef(12);
@@ -173,9 +178,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 2 && l >= 70 && (s == 23 || s == 43))
     {
-        int pSkill = IPlayer.GetSkillPointer(70);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(70))
         {
             CSkill::LearnSkill(SkillPointer, 70);
             IPlayer.AddMaxAttack((IPlayer.GetMaxMagAttack() * 8) / 100);
@@ -185,9 +188,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 2 && l >= 70 && s == 43)
     {
-        int pSkill = IPlayer.GetSkillPointer(48);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(48))
         {
             CSkill::LearnSkill(SkillPointer, 48);
             IPlayer.AddEva((IPlayer.GetAgi() * (l / 2) / 400));
@@ -204,9 +205,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if (c == 3 && l >= 70 && (s == 23 || s == 43))
     {
-        int pSkill = IPlayer.GetSkillPointer(70);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(70))
         {
             CSkill::LearnSkill(SkillPointer, 70);
             IPlayer.AddMaxAttack((IPlayer.GetMaxMagAttack() * 8) / 100);
@@ -216,9 +215,7 @@ void __fastcall Occupation(void *SkillPointer, void *edx)
 
     if ((c == 3 || c == 4) && l >= 50 && s > 3)
     {
-        int pSkill = IPlayer.GetSkillPointer(30);
-
-        if (!pSkill)
+        if (!IPlayer.GetSkillPointer(30)
         {
             CSkill::LearnSkill(SkillPointer, 30);
             IPlayer.IncreaseMaxHp(5 * IPlayer.GetHth());
@@ -601,16 +598,7 @@ void __fastcall AutoLearn(void *SkillPointer, void *edx, int Value)
         {
             ISkill xSkill((void*)pSkill);
             int CheckGrade = IPlayer.GetLevel() - 80;
-
-            for (int i = 0; i <= CheckGrade; i++)
-            {
-                if (xSkill.GetGrade() < 10 && xSkill.GetGrade() + 1 <= CheckGrade)
-                {
-                    CDBSocket::Write(10, "ddbw", IPlayer.GetPID(), 79, xSkill.GetGrade() + 1, 56);
-                    CPlayer::Write(IPlayer.GetOffset(), 81, "bb", 79, xSkill.GetGrade() + 1);
-                    *(DWORD*)((int)xSkill.GetOffset() + 8) = xSkill.GetGrade() + 1;
-                }
-            }
+            sendSkill(CheckGrade, 79, 10, SkillPointer);
         }
     }
 
@@ -679,17 +667,7 @@ void __fastcall AutoLearn(void *SkillPointer, void *edx, int Value)
         {
             ISkill xSkill((void*)pSkill);
             int CheckGrade = checkGrade(IPlayer.GetLevel());
-
-            for (int i = 0; i <= CheckGrade; i++)
-            {
-                if (xSkill.GetGrade() < 7 && xSkill.GetGrade() + 1 <= CheckGrade)
-                {
-                    CDBSocket::Write(10, "ddbw", IPlayer.GetPID(), 71, xSkill.GetGrade() + 1, 56);
-                    CPlayer::Write(IPlayer.GetOffset(), 81, "bb", 71, xSkill.GetGrade() + 1);
-                    *(DWORD*)((int)xSkill.GetOffset() + 8) = xSkill.GetGrade() + 1;
-                    IPlayer.AddDef(4);
-                }
-            }
+            sendSkill(CheckGrade, 71, 7, SkillPointer);
         }
     }
 
@@ -709,16 +687,7 @@ void __fastcall AutoLearn(void *SkillPointer, void *edx, int Value)
             else {
                 CheckGrade = IPlayer.GetLevel() - 69;
             }
-
-            for (int i = 0; i <= CheckGrade; i++)
-            {
-                if (xSkill.GetGrade() < 6 && xSkill.GetGrade() + 1 <= CheckGrade)
-                {
-                    CDBSocket::Write(10, "ddbw", IPlayer.GetPID(), 64, xSkill.GetGrade() + 1, 56);
-                    CPlayer::Write(IPlayer.GetOffset(), 81, "bb", 64, xSkill.GetGrade() + 1);
-                    *(DWORD*)((int)xSkill.GetOffset() + 8) = xSkill.GetGrade() + 1;
-                }
-            }
+            sendSkill(CheckGrade, 64, 6, SkillPointer);
         }
     }
 
