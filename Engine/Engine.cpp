@@ -39,7 +39,7 @@ void DisableProtection()
     Chatbox->HookCommand();
     Interface<IPackets> Packets;
     Packets->Hook();
-    Packets->DssUpdateCheck = false;
+    Packets->DssUpdateCheck = true;
     Interface<IBuff> Buff;
     Buff->HookBuff();
 }
