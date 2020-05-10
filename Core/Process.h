@@ -118,6 +118,18 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
             {
                 if (*(BYTE*)MyPwd && strlen(My2ndPwd))
                 {
+                    int i = 0;
+                    while (My2ndPwd[i])
+                    {
+                      if (!isalnum(My2ndPwd[i])) {
+                          // only allow alphanumeric secondary passwords
+                          // in order to preven SQL injection
+                          CDBSocket::ProcessHtml((int)Socket, (char)43, (unsigned int)"b", 3);
+                          return 0;
+                      }
+                      i++;
+                    }
+
                     std::string MyGetID = MyID;
                     Undefined::Login(1, (unsigned int)"dssdw", *(DWORD *)((int)Socket + 280),
                         MyID, MyPwd, *(DWORD *)((int)Socket + 140), *(DWORD *)((int)Socket + 136));
@@ -159,6 +171,17 @@ int __fastcall Process(void *Socket, void *edx, char *Data)
 
             if (!strlen(Old2ndPwd) || !strlen(New2ndPwd)) {
                 return 0;
+            }
+
+            int i = 0;
+            while (New2ndPwd[i])
+            {
+              if (!isalnum(New2ndPwd[i])) {
+                  // only allow alphanumeric secondary passwords
+                  // in order to preven SQL injection
+                  return 0;
+              }
+              i++;
             }
 
             if (Valuevv == Valuezz)
