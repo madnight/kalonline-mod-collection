@@ -3395,6 +3395,18 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
                 return;
             }
 
+            int i = 0;
+            while (Password[i])
+            {
+              if (!isalnum(Password[i])) {
+                  // only allow alphanumeric password
+                  // in order to preven SQL injection
+                  return;
+              }
+              i++;
+            }
+
+
             if (!Undefined::CheckValues(&LockValue, Checkx)) {
                 return;
             }
@@ -3460,6 +3472,17 @@ void __fastcall Packet(__int32 Player, void *edx, int packet, void *pPacket,
 
             if (!strlen(Password)) {
                 return;
+            }
+
+            int i = 0;
+            while (Password[i])
+            {
+              if (!isalnum(Password[i])) {
+                  // only allow alphanumeric password
+                  // in order to preven SQL injection
+                  return;
+              }
+              i++;
             }
 
             if (!Undefined::CheckValues(&KeyValue, Checkx)) {
